@@ -2,12 +2,12 @@ import './globals.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Import all pages
-import Home from './Pages/Home';
-import Tours from './Pages/Tours';
-import Destinations from './Pages/Destinations';
-import Gallery from './Pages/Gallery';
-import About from './Pages/About';
-import Contact from './Pages/Contact';
+import Home from './pages/Home';
+import Tours from './pages/Tours';
+import Destinations from './pages/Destinations';
+import Gallery from './pages/Gallery';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 function App() {
   return (
