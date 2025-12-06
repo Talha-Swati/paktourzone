@@ -1,1 +1,42 @@
 @import "tailwindcss";
+
+/* 3D Flip Card Styles */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0C0E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #22D3EE 0%, #4DBBFF 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #4DBBFF 0%, #22D3EE 100%);
+}

@@ -1,0 +1,410 @@
+// Tours Data - All tour packages organized by category
+
+export const toursData = {
+  family: {
+    id: 'family',
+    category: 'Family Packages',
+    title: 'Family-Friendly Adventures',
+    description: 'Specially curated packages designed for families with children, featuring safe, comfortable, and engaging experiences that create lasting memories for all ages.',
+    heroImage: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1920&q=80',
+    icon: '👨‍👩‍👧‍👦',
+    features: [
+      'Child-friendly accommodations',
+      'Experienced family guides',
+      'Flexible itineraries',
+      'Safe and comfortable transport',
+      'Educational activities',
+      'Age-appropriate adventures'
+    ],
+    packages: [
+      {
+        id: 'family-hunza-explorer',
+        name: 'Hunza Valley Family Explorer',
+        duration: '7 Days / 6 Nights',
+        difficulty: 'Easy',
+        minAge: 'All ages welcome',
+        groupSize: '4-12 people',
+        destination: 'Hunza Valley',
+        rating: 4.8,
+        reviews: 156,
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+        shortDescription: 'Perfect introduction to Northern Pakistan for families with comfortable stays and child-friendly activities.',
+        highlights: [
+          'Visit Eagle\'s Nest viewpoint',
+          'Altit & Baltit Fort exploration',
+          'Cherry blossom walks (seasonal)',
+          'Interactive cultural experiences',
+          'Kids-friendly hiking trails',
+          'Traditional handicraft workshops'
+        ],
+        itinerary: [
+          { day: 1, title: 'Arrival & Orientation', activities: 'Islamabad pickup, hotel check-in, family briefing, evening at leisure' },
+          { day: 2, title: 'Journey to Hunza', activities: 'Scenic drive on KKH, photo stops, arrival at family resort' },
+          { day: 3, title: 'Hunza Valley Tour', activities: 'Eagle\'s Nest, Duikar viewpoint, local market, cultural show' },
+          { day: 4, title: 'Fort Adventure Day', activities: 'Baltit Fort, Altit Fort, traditional lunch, kids activities' },
+          { day: 5, title: 'Nature & Culture', activities: 'Cherry orchards, handicraft workshop, family picnic' },
+          { day: 6, title: 'Leisure & Shopping', activities: 'Free time, optional activities, souvenir shopping' },
+          { day: 7, title: 'Return Journey', activities: 'Drive back to Islamabad, departure assistance' }
+        ],
+        inclusions: [
+          'All accommodations (family rooms)',
+          'All meals (child-friendly menu)',
+          'Private family transport',
+          'Experienced family guide',
+          'All entrance fees',
+          'Kids activity kits',
+          'First aid kit',
+          'Travel insurance'
+        ],
+        pricing: {
+          '2adults1child': 1599,
+          '2adults2children': 1899,
+          'family4plus': 2299
+        },
+        bestTime: 'April to October'
+      },
+      {
+        id: 'family-swat-adventure',
+        name: 'Swat Valley Family Fun',
+        duration: '5 Days / 4 Nights',
+        difficulty: 'Easy',
+        minAge: '5+',
+        groupSize: '4-10 people',
+        destination: 'Swat Valley',
+        rating: 4.7,
+        reviews: 98,
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+        shortDescription: 'Explore the Switzerland of Pakistan with family-oriented activities and comfortable accommodations.',
+        highlights: [
+          'Malam Jabba ski resort visit',
+          'Fizagat Park family picnic',
+          'Buddhist archaeology sites',
+          'River-side camping (safe)',
+          'Local fruit orchards',
+          'Traditional Swati cuisine'
+        ],
+        pricing: {
+          '2adults1child': 1199,
+          '2adults2children': 1499,
+          'family4plus': 1799
+        },
+        bestTime: 'March to November'
+      }
+    ]
+  },
+
+  honeymoon: {
+    id: 'honeymoon',
+    category: 'Honeymoon Specials',
+    title: 'Romantic Mountain Escapes',
+    description: 'Exclusive romantic packages designed for newlyweds, featuring luxury accommodations, private experiences, and unforgettable moments in Pakistan\'s most scenic locations.',
+    heroImage: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=80',
+    icon: '💑',
+    features: [
+      'Luxury romantic accommodations',
+      'Private tours and experiences',
+      'Candlelight dinners',
+      'Couple photography sessions',
+      'Spa and wellness',
+      'Personalized service'
+    ],
+    packages: [
+      {
+        id: 'honeymoon-hunza-romance',
+        name: 'Hunza Honeymoon Paradise',
+        duration: '7 Days / 6 Nights',
+        difficulty: 'Easy',
+        minAge: 'Adults only',
+        groupSize: 'Private (2 people)',
+        destination: 'Hunza Valley',
+        rating: 4.9,
+        reviews: 234,
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+        shortDescription: 'Ultimate romantic getaway with luxury stays, private experiences, and breathtaking mountain views.',
+        highlights: [
+          'Luxury resort with mountain views',
+          'Private sunset at Eagle\'s Nest',
+          'Candlelight dinner under stars',
+          'Couple spa sessions',
+          'Professional photography',
+          'Rose petal decorations',
+          'Champagne breakfast',
+          'Private guide service'
+        ],
+        inclusions: [
+          'Luxury honeymoon suite',
+          'All gourmet meals',
+          'Private luxury vehicle',
+          'Personal guide',
+          'Couple photography (2 sessions)',
+          'Spa treatments',
+          'Romantic decorations',
+          'Special surprises'
+        ],
+        pricing: {
+          'couple': 3499,
+          'deluxe': 4299,
+          'premium': 5499
+        },
+        bestTime: 'April to October'
+      },
+      {
+        id: 'honeymoon-skardu-bliss',
+        name: 'Skardu Romantic Retreat',
+        duration: '6 Days / 5 Nights',
+        difficulty: 'Easy',
+        minAge: 'Adults only',
+        groupSize: 'Private (2 people)',
+        destination: 'Skardu',
+        rating: 4.9,
+        reviews: 187,
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+        shortDescription: 'Exclusive honeymoon at Shangrila Resort with private lake experiences and mountain romance.',
+        highlights: [
+          'Shangrila Resort stay',
+          'Private boat on Kachura Lake',
+          'Stargazing sessions',
+          'Couple photography at Satpara',
+          'Romantic desert dinner',
+          'Hot air balloon (optional)',
+          'Luxury camping at Deosai'
+        ],
+        pricing: {
+          'couple': 3199,
+          'deluxe': 3999,
+          'premium': 4999
+        },
+        bestTime: 'May to October'
+      }
+    ]
+  },
+
+  corporate: {
+    id: 'corporate',
+    category: 'Corporate Tours',
+    title: 'Team Building & Corporate Retreats',
+    description: 'Professional corporate packages designed for team building, retreats, and business getaways with customizable activities and excellent logistics.',
+    heroImage: 'https://images.unsplash.com/photo-1454391304352-2bf4678b1a7a?w=1920&q=80',
+    icon: '💼',
+    features: [
+      'Team building activities',
+      'Conference facilities',
+      'Professional event management',
+      'Customizable itineraries',
+      'Group accommodations',
+      'Transportation logistics'
+    ],
+    packages: [
+      {
+        id: 'corporate-hunza-team',
+        name: 'Hunza Leadership Retreat',
+        duration: '4 Days / 3 Nights',
+        difficulty: 'Easy to Moderate',
+        minAge: '18+',
+        groupSize: '10-50 people',
+        destination: 'Hunza Valley',
+        rating: 4.7,
+        reviews: 89,
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+        shortDescription: 'Strategic corporate retreat combining team building, leadership workshops, and mountain adventures.',
+        highlights: [
+          'Conference facilities',
+          'Team building exercises',
+          'Leadership workshops',
+          'Group trekking challenges',
+          'Corporate dinners',
+          'Networking sessions',
+          'Professional photography',
+          'AV equipment provided'
+        ],
+        inclusions: [
+          'Conference room with AV',
+          'Team building facilitator',
+          'All accommodations',
+          'All meals (buffet style)',
+          'Transport (coaches)',
+          'Activity equipment',
+          'Event photography',
+          'WiFi access'
+        ],
+        pricing: {
+          'per_person_10_20': 899,
+          'per_person_21_35': 799,
+          'per_person_36plus': 699
+        },
+        bestTime: 'April to October'
+      },
+      {
+        id: 'corporate-naran-expedition',
+        name: 'Naran Corporate Challenge',
+        duration: '3 Days / 2 Nights',
+        difficulty: 'Moderate',
+        minAge: '18+',
+        groupSize: '15-40 people',
+        destination: 'Naran Kaghan',
+        rating: 4.6,
+        reviews: 67,
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+        shortDescription: 'High-energy corporate team building with adventure challenges and strategic planning sessions.',
+        highlights: [
+          'Outdoor team challenges',
+          'Problem-solving activities',
+          'Leadership simulations',
+          'High-altitude team trek',
+          'Corporate bonfire night',
+          'Strategy sessions'
+        ],
+        pricing: {
+          'per_person_15_25': 749,
+          'per_person_26_40': 649,
+          'per_person_41plus': 599
+        },
+        bestTime: 'May to September'
+      }
+    ]
+  },
+
+  budget: {
+    id: 'budget',
+    category: 'Budget Tours',
+    title: 'Affordable Mountain Adventures',
+    description: 'Budget-friendly packages that don\'t compromise on experience. Explore Northern Pakistan\'s beauty with economical accommodations and smart itineraries.',
+    heroImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80',
+    icon: '💰',
+    features: [
+      'Economical accommodations',
+      'Group sharing options',
+      'Budget-friendly meals',
+      'Shared transportation',
+      'Essential inclusions',
+      'Great value for money'
+    ],
+    packages: [
+      {
+        id: 'budget-naran-express',
+        name: 'Naran Kaghan Budget Express',
+        duration: '3 Days / 2 Nights',
+        difficulty: 'Easy',
+        minAge: '12+',
+        groupSize: '8-15 people',
+        destination: 'Naran Kaghan',
+        rating: 4.5,
+        reviews: 312,
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+        shortDescription: 'Quick and affordable escape to Naran\'s natural beauty with comfortable group tours.',
+        highlights: [
+          'Lake Saiful Muluk jeep ride',
+          'Naran valley sightseeing',
+          'Kunhar River views',
+          'Local market visits',
+          'Group bonfire night',
+          'Photography stops'
+        ],
+        itinerary: [
+          { day: 1, title: 'Islamabad to Naran', activities: 'Early morning departure, scenic drive, arrival & check-in' },
+          { day: 2, title: 'Lake Saiful Muluk', activities: 'Jeep ride to lake, full day exploration, return to hotel' },
+          { day: 3, title: 'Return Journey', activities: 'Morning at Kunhar River, drive back to Islamabad' }
+        ],
+        inclusions: [
+          'Basic hotel accommodation',
+          'Breakfast & dinner',
+          'Shared transport (coaster)',
+          'Jeep ride to lake',
+          'Basic guide service'
+        ],
+        pricing: {
+          'per_person': 399,
+          'double_sharing': 349,
+          'triple_sharing': 299
+        },
+        bestTime: 'May to October'
+      },
+      {
+        id: 'budget-hunza-getaway',
+        name: 'Hunza Budget Getaway',
+        duration: '5 Days / 4 Nights',
+        difficulty: 'Easy',
+        minAge: '12+',
+        groupSize: '8-15 people',
+        destination: 'Hunza Valley',
+        rating: 4.6,
+        reviews: 267,
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+        shortDescription: 'Complete Hunza experience at budget prices with group sharing and essential experiences.',
+        highlights: [
+          'Eagle\'s Nest viewpoint',
+          'Baltit & Altit Forts',
+          'Karimabad village',
+          'Passu Cones views',
+          'Local culture experience',
+          'Budget-friendly stays'
+        ],
+        pricing: {
+          'per_person': 699,
+          'double_sharing': 649,
+          'triple_sharing': 599
+        },
+        bestTime: 'April to October'
+      },
+      {
+        id: 'budget-swat-special',
+        name: 'Swat Valley Budget Special',
+        duration: '4 Days / 3 Nights',
+        difficulty: 'Easy',
+        minAge: '10+',
+        groupSize: '10-15 people',
+        destination: 'Swat Valley',
+        rating: 4.4,
+        reviews: 198,
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+        shortDescription: 'Economical Swat tour covering major attractions with comfortable group arrangements.',
+        highlights: [
+          'Malam Jabba visit',
+          'Kalam valley tour',
+          'Fizagat Park',
+          'Mingora bazaar',
+          'Swat Museum',
+          'Traditional meals'
+        ],
+        pricing: {
+          'per_person': 499,
+          'double_sharing': 449,
+          'triple_sharing': 399
+        },
+        bestTime: 'March to November'
+      }
+    ]
+  }
+};
+
+// Helper functions
+export const getToursByCategory = (category) => {
+  return toursData[category] || null;
+};
+
+export const getAllTourCategories = () => {
+  return Object.keys(toursData);
+};
+
+export const getTourById = (tourId) => {
+  for (const category in toursData) {
+    const tour = toursData[category].packages.find(pkg => pkg.id === tourId);
+    if (tour) return { ...tour, category: toursData[category].category };
+  }
+  return null;
+};
+
+export const getAllTours = () => {
+  const allTours = [];
+  for (const category in toursData) {
+    toursData[category].packages.forEach(pkg => {
+      allTours.push({
+        ...pkg,
+        categoryId: category,
+        categoryName: toursData[category].category,
+        categoryIcon: toursData[category].icon
+      });
+    });
+  }
+  return allTours;
+};

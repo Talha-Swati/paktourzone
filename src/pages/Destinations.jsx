@@ -1,318 +1,405 @@
-import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
-
-const destinations = [
-  {
-    id: 1,
-    name: "Hunza Valley",
-    region: "Gilgit-Baltistan",
-    description: "Ancient Silk Road destination with breathtaking mountain views, historic forts, and legendary hospitality.",
-    highlights: ["Baltit Fort", "Attabad Lake", "Passu Cones", "Karimabad"],
-    bestTime: "March - October",
-    image: "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=1200",
-    tours: 12,
-    altitude: "2,438m"
-  },
-  {
-    id: 2,
-    name: "Skardu",
-    region: "Gilgit-Baltistan",
-    description: "Gateway to the world's highest peaks, featuring pristine lakes, desert landscapes, and K2 base camp.",
-    highlights: ["Shangrila Lake", "Deosai Plains", "Shigar Fort", "Katpana Desert"],
-    bestTime: "April - September",
-    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200",
-    tours: 15,
-    altitude: "2,286m"
-  },
-  {
-    id: 3,
-    name: "Naran Kaghan",
-    region: "Khyber Pakhtunkhwa",
-    description: "Lush green valleys with crystal-clear streams, pine forests, and the stunning Saif-ul-Malook Lake.",
-    highlights: ["Lake Saiful Malook", "Babusar Top", "Lulusar Lake", "Ansoo Lake"],
-    bestTime: "May - September",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
-    tours: 18,
-    altitude: "2,409m"
-  },
-  {
-    id: 4,
-    name: "Swat Valley",
-    region: "Khyber Pakhtunkhwa",
-    description: "Switzerland of Pakistan with emerald rivers, archaeological sites, and Buddhist heritage.",
-    highlights: ["Malam Jabba", "Kalam Valley", "Mahodand Lake", "Buddhist Ruins"],
-    bestTime: "March - November",
-    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200",
-    tours: 10,
-    altitude: "980m"
-  },
-  {
-    id: 5,
-    name: "Fairy Meadows",
-    region: "Gilgit-Baltistan",
-    description: "Alpine meadow offering the most stunning views of Nanga Parbat, the ninth-highest peak in the world.",
-    highlights: ["Nanga Parbat View", "Beyal Camp", "Raikot Glacier", "Star Gazing"],
-    bestTime: "June - September",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200",
-    tours: 8,
-    altitude: "3,300m"
-  },
-  {
-    id: 6,
-    name: "Chitral",
-    region: "Khyber Pakhtunkhwa",
-    description: "Remote mountain paradise home to the Kalash people, unique culture, and Hindu Kush peaks.",
-    highlights: ["Kalash Valleys", "Chitral Fort", "Shandur Pass", "Tirich Mir"],
-    bestTime: "May - October",
-    image: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=1200",
-    tours: 7,
-    altitude: "1,500m"
-  },
-  {
-    id: 7,
-    name: "Neelum Valley",
-    region: "Azad Kashmir",
-    description: "Paradise on earth with verdant landscapes, rushing rivers, and serene mountain villages.",
-    highlights: ["Keran", "Arang Kel", "Ratti Gali Lake", "Taobat"],
-    bestTime: "April - October",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
-    tours: 11,
-    altitude: "1,524m"
-  },
-];
+import { useState, useMemo, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { getAllDestinations } from '../data/destinationsData';
+import { useTheme } from '../context/ThemeContext';
+import TopBar from '../components/layout/TopBar';
+import Navbar from '../components/layout/Navbar';
+import { MapPin, Clock, TrendingUp, Star, Users, Search, Filter } from 'lucide-react';
 
 const Destinations = () => {
-  const scrollRef = useRef(null);
-  const [selectedDestination, setSelectedDestination] = useState(destinations[0]);
-  const [isDragging, setIsDragging] = useState(false);
+  const { isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen } = useTheme();
+  const allDestinations = getAllDestinations();
+  
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedDifficulty, setSelectedDifficulty] = useState('all');
+  const [sortBy, setSortBy] = useState('rating'); // rating, price, name
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
+  
+  const languageDropdownRef = useRef(null);
+  const themeDropdownRef = useRef(null);
 
-  const scroll = (direction) => {
-    if (scrollRef.current) {
-      const scrollAmount = 400;
-      scrollRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target)) {
+        setLanguageDropdownOpen(false);
+      }
+      if (themeDropdownRef.current && !themeDropdownRef.current.contains(event.target)) {
+        setThemeDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [languageDropdownOpen, themeDropdownOpen, setThemeDropdownOpen]);
+
+  // Memoize props
+  const topBarProps = useMemo(() => ({
+    isDarkMode,
+    themeMode,
+    setThemeMode,
+    themeDropdownOpen,
+    setThemeDropdownOpen,
+    themeDropdownRef,
+    languageDropdownOpen,
+    setLanguageDropdownOpen,
+    languageDropdownRef,
+  }), [isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen, languageDropdownOpen]);
+
+  const navbarProps = useMemo(() => ({
+    isDarkMode,
+    mobileMenuOpen,
+    setMobileMenuOpen,
+  }), [isDarkMode, mobileMenuOpen]);
+
+  // Filter and sort destinations
+  const filteredDestinations = useMemo(() => {
+    let filtered = allDestinations;
+
+    // Search filter
+    if (searchQuery) {
+      filtered = filtered.filter(dest =>
+        dest.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        dest.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        dest.description.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+
+    // Category filter
+    if (selectedCategory !== 'all') {
+      filtered = filtered.filter(dest => dest.category === selectedCategory);
+    }
+
+    // Difficulty filter
+    if (selectedDifficulty !== 'all') {
+      filtered = filtered.filter(dest => dest.difficulty === selectedDifficulty);
+    }
+
+    // Sort
+    filtered = [...filtered].sort((a, b) => {
+      switch (sortBy) {
+        case 'rating':
+          return b.rating - a.rating;
+        case 'price':
+          return a.pricing.basic.price - b.pricing.basic.price;
+        case 'name':
+          return a.name.localeCompare(b.name);
+        default:
+          return 0;
+      }
+    });
+
+    return filtered;
+  }, [allDestinations, searchQuery, selectedCategory, selectedDifficulty, sortBy]);
+
+  const getDifficultyColor = (difficulty) => {
+    switch (difficulty) {
+      case 'easy':
+        return 'bg-green-500';
+      case 'moderate':
+        return 'bg-yellow-500';
+      case 'challenging':
+        return 'bg-orange-500';
+      case 'extreme':
+        return 'bg-red-500';
+      default:
+        return 'bg-gray-500';
+    }
+  };
+
+  const getCategoryBadgeColor = (category) => {
+    switch (category) {
+      case 'adventure':
+        return 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200';
+      case 'cultural':
+        return 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200';
+      case 'trekking':
+        return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200';
+      default:
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
     }
   };
 
   return (
-    <div className="min-h-screen bg-[#0B0C0E] text-[#F2F6F9]">
-      {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-[#1E242B] bg-[rgba(11,12,14,0.95)] backdrop-blur-xl shadow-lg">
-        <div className="mx-auto max-w-7xl px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#22D3EE] to-[#0A3A67] shadow-[0_0_20px_rgba(34,211,238,0.4)]">
-                <span className="text-xl font-black text-white">PT</span>
-              </div>
-              <div>
-                <h1 className="text-lg font-black text-[#F2F6F9]">PakTourZone</h1>
-                <p className="text-[9px] font-bold uppercase tracking-wider text-[#22D3EE]">Destinations</p>
-              </div>
-            </div>
-            <nav className="hidden md:flex items-center gap-6 text-sm font-semibold text-[#C4CCD4]">
-              <Link to="/" className="transition-colors hover:text-[#22D3EE]">Home</Link>
-              <Link to="/tours" className="transition-colors hover:text-[#22D3EE]">Tours</Link>
-              <Link to="/destinations" className="text-[#22D3EE]">Destinations</Link>
-              <Link to="/contact" className="transition-colors hover:text-[#22D3EE]">Contact</Link>
-            </nav>
-          </div>
-        </div>
-      </header>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <TopBar {...topBarProps} />
+      <Navbar {...navbarProps} />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A3A67]/20 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_#22D3EE33,_transparent_50%)]"></div>
-        
-        <div className="relative mx-auto max-w-7xl px-6">
-          <div className="max-w-3xl">
-            <span className="inline-block rounded-full border border-[#22D3EE]/30 bg-[#22D3EE]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#22D3EE] mb-6">
-              🗺️ Discover Pakistan
-            </span>
-            <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
-              Explore <span className="bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF] bg-clip-text text-transparent">Majestic</span> Destinations
-            </h1>
-            <p className="text-xl text-[#C4CCD4] mb-8 leading-relaxed">
-              From snow-capped peaks to emerald valleys, discover the hidden gems of Northern Pakistan. 
-              Each destination tells a unique story of nature's grandeur.
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-5xl font-bold mb-4">Explore All Destinations</h1>
+            <p className="text-xl text-blue-100">
+              Discover Pakistan's most stunning landscapes and embark on unforgettable adventures
             </p>
-            <div className="flex items-center gap-6">
-              <div className="flex items-center gap-3">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#22D3EE]/20 to-[#4DBBFF]/20 border border-[#22D3EE]/30">
-                  <span className="text-2xl">🏔️</span>
-                </div>
-                <div>
-                  <p className="text-2xl font-bold text-[#22D3EE]">{destinations.length}</p>
-                  <p className="text-xs uppercase tracking-wider text-[#C4CCD4]">Destinations</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#22D3EE]/20 to-[#4DBBFF]/20 border border-[#22D3EE]/30">
-                  <span className="text-2xl">🎯</span>
-                </div>
-                <div>
-                  <p className="text-2xl font-bold text-[#22D3EE]">{destinations.reduce((acc, d) => acc + d.tours, 0)}+</p>
-                  <p className="text-xs uppercase tracking-wider text-[#C4CCD4]">Tour Packages</p>
-                </div>
-              </div>
+            <div className="mt-8 text-sm text-blue-100">
+              <span className="inline-flex items-center gap-2">
+                <MapPin className="w-4 h-4" />
+                {allDestinations.length} Amazing Destinations
+              </span>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Horizontal Scrolling Cards */}
-      <section className="relative py-12 overflow-hidden">
-        <div className="mx-auto max-w-7xl px-6 mb-8">
-          <div className="flex items-center justify-between">
-            <h2 className="text-3xl font-bold text-[#F2F6F9]">Featured Destinations</h2>
-            <div className="flex gap-3">
-              <button
-                onClick={() => scroll("left")}
-                className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#4DBBFF]/30 bg-[#141A1F] text-[#4DBBFF] transition-all hover:border-[#22D3EE] hover:bg-[#22D3EE]/10"
-              >
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button
-                onClick={() => scroll("right")}
-                className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#4DBBFF]/30 bg-[#141A1F] text-[#4DBBFF] transition-all hover:border-[#22D3EE] hover:bg-[#22D3EE]/10"
-              >
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div
-          ref={scrollRef}
-          className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth px-6 pb-8"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          <style>{`.scrollbar-hide::-webkit-scrollbar { display: none; }`}</style>
-          {destinations.map((destination, index) => (
-            <article
-              key={destination.id}
-              onClick={() => setSelectedDestination(destination)}
-              className={`group relative flex-shrink-0 w-96 cursor-pointer overflow-hidden rounded-3xl transition-all duration-500 hover:-translate-y-3 ${
-                selectedDestination.id === destination.id ? "ring-4 ring-[#22D3EE] shadow-[0_0_40px_rgba(34,211,238,0.5)]" : "shadow-xl"
-              }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Background Image */}
-              <div className="absolute inset-0">
-                <div
-                  className="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                  style={{ backgroundImage: `url('${destination.image}')` }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E] via-[#0B0C0E]/70 to-transparent"></div>
-              </div>
-
-              {/* Content */}
-              <div className="relative flex flex-col justify-end p-8 h-[500px]">
-                <div className="mb-4 flex items-center gap-3">
-                  <span className="rounded-lg bg-[#22D3EE]/20 backdrop-blur-sm border border-[#22D3EE]/50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#22D3EE]">
-                    {destination.region}
-                  </span>
-                  <span className="flex items-center gap-1 text-xs text-[#C4CCD4]">
-                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                    </svg>
-                    {destination.altitude}
-                  </span>
-                </div>
-
-                <h3 className="mb-3 text-3xl font-black text-white group-hover:text-[#22D3EE] transition-colors">
-                  {destination.name}
-                </h3>
-
-                <p className="mb-4 text-sm text-[#C4CCD4] leading-relaxed line-clamp-2">
-                  {destination.description}
-                </p>
-
-                <div className="flex items-center justify-between pt-4 border-t border-white/10">
-                  <div className="flex items-center gap-2 text-sm text-[#C4CCD4]">
-                    <span>🎯</span>
-                    <span className="font-semibold">{destination.tours} Tours</span>
-                  </div>
-                  <button className="text-sm font-bold uppercase tracking-wider text-[#22D3EE] transition-all hover:text-[#4DBBFF] flex items-center gap-2 group">
-                    Explore
-                    <span className="transition-transform group-hover:translate-x-1">→</span>
-                  </button>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* Selected Destination Detail */}
-      <section className="py-20 bg-gradient-to-b from-transparent to-[#0F1A27]">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-12 md:grid-cols-2 items-center">
-            <div className="space-y-6">
-              <div>
-                <span className="inline-block rounded-full border border-[#22D3EE]/30 bg-[#22D3EE]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#22D3EE] mb-4">
-                  Destination Spotlight
-                </span>
-                <h2 className="text-4xl font-black text-white mb-4">{selectedDestination.name}</h2>
-                <p className="text-lg text-[#C4CCD4] leading-relaxed">{selectedDestination.description}</p>
-              </div>
-
-              <div className="space-y-3">
-                <h3 className="text-xl font-bold text-white">Key Highlights</h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {selectedDestination.highlights.map((highlight, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center gap-2 rounded-xl border border-[#1E242B] bg-[#141A1F] p-3 text-sm text-[#C4CCD4]"
-                    >
-                      <span className="text-[#22D3EE]">✓</span>
-                      {highlight}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="rounded-2xl border border-[#1E242B] bg-[#141A1F] p-4">
-                  <p className="text-xs uppercase tracking-wider text-[#C4CCD4] mb-2">Best Time to Visit</p>
-                  <p className="text-lg font-bold text-[#22D3EE]">{selectedDestination.bestTime}</p>
-                </div>
-                <div className="rounded-2xl border border-[#1E242B] bg-[#141A1F] p-4">
-                  <p className="text-xs uppercase tracking-wider text-[#C4CCD4] mb-2">Available Tours</p>
-                  <p className="text-lg font-bold text-[#22D3EE]">{selectedDestination.tours} Packages</p>
-                </div>
-              </div>
-
-              <button className="w-full rounded-xl bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF] px-8 py-4 text-sm font-bold uppercase tracking-wider text-[#0B0C0E] shadow-[0_0_30px_rgba(34,211,238,0.5)] transition-all hover:shadow-[0_0_40px_rgba(34,211,238,0.7)] hover:scale-105">
-                View {selectedDestination.tours} Tours to {selectedDestination.name}
-              </button>
-            </div>
-
+      {/* Filters Section */}
+      <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-40 shadow-md">
+        <div className="container mx-auto px-4 py-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            {/* Search */}
             <div className="relative">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#22D3EE] to-[#4DBBFF] opacity-20 blur-3xl"></div>
-              <div className="relative overflow-hidden rounded-3xl border border-[#22D3EE]/30 shadow-2xl">
-                <img
-                  src={selectedDestination.image}
-                  alt={selectedDestination.name}
-                  className="w-full h-[600px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E]/50 via-transparent to-transparent"></div>
-              </div>
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <input
+                type="text"
+                placeholder="Search destinations..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
             </div>
+
+            {/* Category Filter */}
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+              <option value="all">All Categories</option>
+              <option value="adventure">Adventure</option>
+              <option value="cultural">Cultural</option>
+              <option value="trekking">Trekking</option>
+            </select>
+
+            {/* Difficulty Filter */}
+            <select
+              value={selectedDifficulty}
+              onChange={(e) => setSelectedDifficulty(e.target.value)}
+              className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+              <option value="all">All Difficulty Levels</option>
+              <option value="easy">Easy</option>
+              <option value="moderate">Moderate</option>
+              <option value="challenging">Challenging</option>
+              <option value="extreme">Extreme</option>
+            </select>
+
+            {/* Sort By */}
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+              <option value="rating">Sort by Rating</option>
+              <option value="price">Sort by Price</option>
+              <option value="name">Sort by Name</option>
+            </select>
           </div>
+
+          {/* Active Filters Display */}
+          {(searchQuery || selectedCategory !== 'all' || selectedDifficulty !== 'all') && (
+            <div className="mt-4 flex items-center gap-2 flex-wrap">
+              <span className="text-sm text-gray-600 dark:text-gray-400">Active filters:</span>
+              {searchQuery && (
+                <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full">
+                  Search: {searchQuery}
+                </span>
+              )}
+              {selectedCategory !== 'all' && (
+                <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-sm rounded-full">
+                  {selectedCategory}
+                </span>
+              )}
+              {selectedDifficulty !== 'all' && (
+                <span className="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 text-sm rounded-full">
+                  {selectedDifficulty}
+                </span>
+              )}
+              <button
+                onClick={() => {
+                  setSearchQuery('');
+                  setSelectedCategory('all');
+                  setSelectedDifficulty('all');
+                }}
+                className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Clear all
+              </button>
+            </div>
+          )}
         </div>
-      </section>
+      </div>
+
+      {/* Results Count */}
+      <div className="container mx-auto px-4 py-6">
+        <p className="text-gray-600 dark:text-gray-400">
+          Showing {filteredDestinations.length} of {allDestinations.length} destinations
+        </p>
+      </div>
+
+      {/* Destinations Grid */}
+      <div className="container mx-auto px-4 pb-16">
+        {filteredDestinations.length === 0 ? (
+          <div className="text-center py-20">
+            <Filter className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+            <h3 className="text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
+              No destinations found
+            </h3>
+            <p className="text-gray-500 dark:text-gray-400">
+              Try adjusting your filters or search query
+            </p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredDestinations.map((destination) => (
+              <Link
+                key={destination.id}
+                to={`/destination/${destination.slug}`}
+                className="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              >
+                {/* Image */}
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={destination.heroImage}
+                    alt={destination.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    onError={(e) => {
+                      e.target.src = `https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80`;
+                    }}
+                  />
+                  
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getCategoryBadgeColor(destination.category)}`}>
+                      {destination.category}
+                    </span>
+                  </div>
+
+                  {/* Difficulty Badge */}
+                  <div className="absolute top-4 right-4">
+                    <span className={`px-3 py-1 ${getDifficultyColor(destination.difficulty)} text-white rounded-full text-xs font-semibold capitalize`}>
+                      {destination.difficulty}
+                    </span>
+                  </div>
+
+                  {/* Overlay on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    {destination.name}
+                  </h3>
+                  
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 italic">
+                    {destination.tagline}
+                  </p>
+
+                  <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 mb-4">
+                    <MapPin className="w-4 h-4" />
+                    <span className="text-sm">{destination.location}</span>
+                  </div>
+
+                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
+                    {destination.description}
+                  </p>
+
+                  {/* Stats Row */}
+                  <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                    <div className="flex items-center gap-1">
+                      <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                      <span className="text-sm font-semibold text-gray-900 dark:text-white">
+                        {destination.rating}
+                      </span>
+                      <span className="text-xs text-gray-500 dark:text-gray-400">
+                        ({destination.reviews} reviews)
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                      <Clock className="w-4 h-4" />
+                      <span>{destination.duration}</span>
+                    </div>
+                  </div>
+
+                  {/* Pricing */}
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">Starting from</p>
+                      <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                        ${destination.pricing.basic.price}
+                      </p>
+                    </div>
+                    <div className="px-4 py-2 bg-blue-600 text-white rounded-lg group-hover:bg-blue-700 transition-colors">
+                      View Details
+                    </div>
+                  </div>
+
+                  {/* Highlights Preview */}
+                  <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">Top Highlights:</p>
+                    <div className="flex flex-wrap gap-1">
+                      {destination.highlights.slice(0, 3).map((highlight, index) => (
+                        <span
+                          key={index}
+                          className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded"
+                        >
+                          {highlight.split(' - ')[0]}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
 
       {/* Footer */}
-      <footer className="border-t border-[#1E242B] bg-[#0F1A27] py-8">
-        <div className="mx-auto max-w-7xl px-6 text-center">
-          <p className="text-sm text-[#C4CCD4]">© 2025 PakTourZone. All rights reserved.</p>
+      <footer className={`py-12 ${isDarkMode ? 'bg-[#0B0C0E]' : 'bg-[#1F2937]'}`}>
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h3 className="text-white font-bold text-xl mb-4">PakTourZone</h3>
+              <p className="text-gray-400 text-sm">
+                Your trusted partner for unforgettable adventures across Pakistan's most stunning destinations.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-gray-400 text-sm">
+                <li><Link to="/" className="hover:text-[#22D3EE]">Home</Link></li>
+                <li><Link to="/destinations" className="hover:text-[#22D3EE]">All Destinations</Link></li>
+                <li><Link to="/trip/adventure" className="hover:text-[#22D3EE]">Adventure Tours</Link></li>
+                <li><Link to="/about" className="hover:text-[#22D3EE]">About Us</Link></li>
+                <li><Link to="/contact" className="hover:text-[#22D3EE]">Contact</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Popular Destinations</h4>
+              <ul className="space-y-2 text-gray-400 text-sm">
+                <li><Link to="/destination/hunza-valley" className="hover:text-[#22D3EE]">Hunza Valley</Link></li>
+                <li><Link to="/destination/swat-valley" className="hover:text-[#22D3EE]">Swat Valley</Link></li>
+                <li><Link to="/destination/skardu" className="hover:text-[#22D3EE]">Skardu</Link></li>
+                <li><Link to="/destination/naran-kaghan" className="hover:text-[#22D3EE]">Naran Kaghan</Link></li>
+                <li><Link to="/destination/fairy-meadows" className="hover:text-[#22D3EE]">Fairy Meadows</Link></li>
+                <li><Link to="/destination/k2-base-camp" className="hover:text-[#22D3EE]">K2 Base Camp</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Contact Info</h4>
+              <ul className="space-y-2 text-gray-400 text-sm">
+                <li>Email: info@paktourzone.com</li>
+                <li>Phone: +92 300 1234567</li>
+                <li>Islamabad, Pakistan</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
+            <p>&copy; 2024 PakTourZone. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </div>

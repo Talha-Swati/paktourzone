@@ -1,26 +1,72 @@
 import './globals.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 
-// Import all pages
-import Home from './pages/Home';
-import Tours from './pages/Tours';
-import Destinations from './pages/Destinations';
-import Gallery from './pages/Gallery';
-import About from './pages/About';
-import Contact from './pages/Contact';
+// Lazy load pages for code splitting and faster initial load
+const Home = lazy(() => import('./pages/Home'));
+const AdventureTours = lazy(() => import('./pages/Trip/AdventureTours'));
+const FamilyTours = lazy(() => import('./pages/Trip/FamilyTours'));
+const HoneymoonTours = lazy(() => import('./pages/Trip/HoneymoonTours'));
+const CorporateTours = lazy(() => import('./pages/Trip/CorporateTours'));
+const BudgetTours = lazy(() => import('./pages/Trip/BudgetTours'));
+const DestinationDetail = lazy(() => import('./pages/DestinationDetail'));
+const CustomTourBuilder = lazy(() => import('./pages/CustomTourBuilder'));
+const Destinations = lazy(() => import('./pages/Destinations'));
+
+// Services Pages
+const Services = lazy(() => import('./pages/Services/Services'));
+const HotelBooking = lazy(() => import('./pages/Services/HotelBooking'));
+const TransportServices = lazy(() => import('./pages/Services/TransportServices'));
+const TourGuides = lazy(() => import('./pages/Services/TourGuides'));
+const VisaAssistance = lazy(() => import('./pages/Services/VisaAssistance'));
+const TravelInsurance = lazy(() => import('./pages/Services/TravelInsurance'));
+const PhotographyServices = lazy(() => import('./pages/Services/PhotographyServices'));
+
+// Loading fallback component
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0B0C0E] to-[#0F1419]">
+    <div className="text-center">
+      <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-[#22D3EE] border-r-transparent"></div>
+      <p className="mt-4 text-[#E0E7EE]">Loading...</p>
+    </div>
+  </div>
+);
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/tours" element={<Tours />} />
-        <Route path="/destinations" element={<Destinations />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            
+            {/* Tour Routes */}
+            <Route path="/trip/adventure" element={<AdventureTours />} />
+            <Route path="/trip/family" element={<FamilyTours />} />
+            <Route path="/trip/honeymoon" element={<HoneymoonTours />} />
+            <Route path="/trip/corporate" element={<CorporateTours />} />
+            <Route path="/trip/budget" element={<BudgetTours />} />
+            
+            {/* Destination Routes */}
+            <Route path="/destinations" element={<Destinations />} />
+            <Route path="/destination/:slug" element={<DestinationDetail />} />
+            
+            {/* Custom Tour */}
+            <Route path="/custom-tour" element={<CustomTourBuilder />} />
+            
+            {/* Services Routes */}
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/hotels" element={<HotelBooking />} />
+            <Route path="/services/transport" element={<TransportServices />} />
+            <Route path="/services/guides" element={<TourGuides />} />
+            <Route path="/services/visa" element={<VisaAssistance />} />
+            <Route path="/services/insurance" element={<TravelInsurance />} />
+            <Route path="/services/photography" element={<PhotographyServices />} />
+          </Routes>
+        </Suspense>
+      </Router>
+    </ThemeProvider>
   );
 }
 
