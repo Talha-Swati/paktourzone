@@ -20,9 +20,9 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen, themeMode, setT
         ? 'border-[rgba(30,36,43,0.5)] bg-[rgba(11,12,14,0.95)]'
         : 'border-[rgba(59,130,246,0.2)] bg-[rgba(255,255,255,0.95)]'
     }`}>
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-0 py-4">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 md:gap-4 group">
+        <Link to="/" className="flex items-center gap-2 md:gap-3 group">
           <div className="relative">
             <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-[#22D3EE] to-[#0A3A67] opacity-20 blur-xl group-hover:opacity-30 transition-opacity"></div>
             <div className="relative flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-2xl bg-linear-to-br from-[#22D3EE] to-[#0A3A67] shadow-[0_0_20px_rgba(34,211,238,0.4)] group-hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] transition-all">
@@ -44,12 +44,12 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen, themeMode, setT
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-2 lg:flex">
           {navItems.map((item, index) => (
             <div key={index} className="relative group">
               <Link
                 to={item.path}
-                className={`group/link relative px-4 py-2 text-sm font-semibold transition-all duration-300 flex items-center gap-1 ${
+                className={`group/link relative px-3 py-2 text-sm font-semibold transition-all duration-300 flex items-center gap-1 whitespace-nowrap ${
                   isDarkMode
                     ? 'text-[#C4CCD4] hover:text-[#F2F6F9]'
                     : 'text-[#4A5568] hover:text-[#1A202C]'
@@ -103,8 +103,8 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen, themeMode, setT
         </nav>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-2">
-          <Link to="/book-now" className={`hidden lg:flex items-center gap-2 rounded-xl bg-linear-to-r px-6 py-3 text-sm font-bold uppercase tracking-wider shadow-lg transition-all duration-300 hover:scale-105 ${
+        <div className="flex items-center gap-1">
+          <Link to="/book-now" className={`hidden lg:flex items-center gap-2 rounded-xl bg-linear-to-r px-4 py-2.5 text-sm font-bold uppercase tracking-wider shadow-lg transition-all duration-300 hover:scale-105 whitespace-nowrap ${
             isDarkMode
               ? 'from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] shadow-[0_0_20px_rgba(34,211,238,0.5)] hover:shadow-[0_0_30px_rgba(34,211,238,0.7)]'
               : 'from-[#3B82F6] to-[#60A5FA] text-white shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:shadow-[0_0_30px_rgba(59,130,246,0.7)]'
