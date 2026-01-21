@@ -1,7 +1,6 @@
 import { useState, useMemo, useRef } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import SEO from '../components/common/SEO';
-import TopBar from '../components/layout/TopBar';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { 
@@ -40,20 +39,16 @@ const Contact = () => {
 
   const [formStatus, setFormStatus] = useState({ submitted: false, error: false });
 
-  const topBarProps = useMemo(() => ({
+  const navbarProps = useMemo(() => ({
     isDarkMode,
+    mobileMenuOpen,
+    setMobileMenuOpen,
     themeMode,
     setThemeMode,
     themeDropdownOpen,
     setThemeDropdownOpen,
     themeDropdownRef
-  }), [isDarkMode, themeMode, themeDropdownOpen, setThemeDropdownOpen]);
-
-  const navbarProps = useMemo(() => ({
-    isDarkMode,
-    mobileMenuOpen,
-    setMobileMenuOpen
-  }), [isDarkMode, mobileMenuOpen]);
+  }), [isDarkMode, mobileMenuOpen, themeMode, themeDropdownOpen, setThemeDropdownOpen]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -184,7 +179,6 @@ const Contact = () => {
           isDarkMode ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'
         }`}
       >
-        <TopBar {...topBarProps} />
         <Navbar {...navbarProps} />
 
         {/* Hero Section */}

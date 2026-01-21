@@ -32,6 +32,8 @@ const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const BookNow = lazy(() => import('./pages/BookNow'));
 const Tours = lazy(() => import('./pages/Tours'));
+const TermsConditions = lazy(() => import('./pages/TermsConditions'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -85,6 +87,10 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/book-now" element={<BookNow />} />
+              
+              {/* Legal Pages */}
+              <Route path="/terms-conditions" element={<TermsConditions />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             </Routes>
           </Suspense>
         </Router>

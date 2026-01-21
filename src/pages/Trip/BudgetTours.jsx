@@ -2,7 +2,6 @@ import { useState, useMemo, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 import { getToursByCategory } from '../../data/toursData';
-import TopBar from '../../components/layout/TopBar';
 import Navbar from '../../components/layout/Navbar';
 import Footer from '../../components/layout/Footer';
 import { 
@@ -34,14 +33,16 @@ const BudgetTours = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [languageDropdownOpen, themeDropdownOpen, setThemeDropdownOpen]);
 
-  const topBarProps = useMemo(() => ({
-    isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen,
-    themeDropdownRef, languageDropdownOpen, setLanguageDropdownOpen, languageDropdownRef,
-  }), [isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen, languageDropdownOpen]);
-
   const navbarProps = useMemo(() => ({
-    isDarkMode, mobileMenuOpen, setMobileMenuOpen,
-  }), [isDarkMode, mobileMenuOpen]);
+    isDarkMode,
+    mobileMenuOpen,
+    setMobileMenuOpen,
+    themeMode,
+    setThemeMode,
+    themeDropdownOpen,
+    setThemeDropdownOpen,
+    themeDropdownRef,
+  }), [isDarkMode, mobileMenuOpen, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen]);
 
   const handleBookNow = (pkg) => {
     navigate('/custom-tour', {
@@ -57,7 +58,6 @@ const BudgetTours = () => {
 
   return (
     <div className={`min-h-screen ${isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}`}>
-      <TopBar {...topBarProps} />
       <Navbar {...navbarProps} />
 
       {/* Hero Section */}

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 
 // Layout Components
-import TopBar from '../../components/layout/TopBar';
 import Navbar from '../../components/layout/Navbar';
 
 // Common Components
@@ -175,25 +174,17 @@ const AdventureTours = () => {
     });
   }, [adventureTours, selectedDifficulty, selectedDuration, selectedRegion]);
 
-  // Memoize TopBar props
-  const topBarProps = useMemo(() => ({
-    isDarkMode,
-    themeMode,
-    setThemeMode,
-    themeDropdownOpen,
-    setThemeDropdownOpen,
-    themeDropdownRef,
-    languageDropdownOpen,
-    setLanguageDropdownOpen,
-    languageDropdownRef,
-  }), [isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen, languageDropdownOpen]);
-
   // Memoize Navbar props
   const navbarProps = useMemo(() => ({
     isDarkMode,
     mobileMenuOpen,
     setMobileMenuOpen,
-  }), [isDarkMode, mobileMenuOpen]);
+    themeMode,
+    setThemeMode,
+    themeDropdownOpen,
+    setThemeDropdownOpen,
+    themeDropdownRef,
+  }), [isDarkMode, mobileMenuOpen, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen]);
 
   return (
     <div className={`min-h-screen transition-colors duration-500 ${
@@ -201,9 +192,6 @@ const AdventureTours = () => {
         ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
         : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'
     }`}>
-      {/* Top Bar with Theme & Language Selectors */}
-      <TopBar {...topBarProps} />
-
       {/* Main Navbar */}
       <Navbar {...navbarProps} />
 

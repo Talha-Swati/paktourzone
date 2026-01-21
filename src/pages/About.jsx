@@ -1,37 +1,34 @@
 import { useState, useMemo, useRef } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import SEO from '../components/common/SEO';
-import TopBar from '../components/layout/TopBar';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { FaQuoteLeft, FaMountain, FaUsers, FaHeart, FaAward, FaGlobeAsia, FaHandshake, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import talhadp from '../assets/talhadp.png';
+import hammaddp from '../assets/hammaddp.jpeg';
 
 const About = () => {
   const { isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const themeDropdownRef = useRef(null);
 
-  const topBarProps = useMemo(() => ({
+  const navbarProps = useMemo(() => ({
     isDarkMode,
+    mobileMenuOpen,
+    setMobileMenuOpen,
     themeMode,
     setThemeMode,
     themeDropdownOpen,
     setThemeDropdownOpen,
     themeDropdownRef
-  }), [isDarkMode, themeMode, themeDropdownOpen, setThemeDropdownOpen]);
-
-  const navbarProps = useMemo(() => ({
-    isDarkMode,
-    mobileMenuOpen,
-    setMobileMenuOpen
-  }), [isDarkMode, mobileMenuOpen]);
+  }), [isDarkMode, mobileMenuOpen, themeMode, themeDropdownOpen, setThemeDropdownOpen]);
 
   const teamMembers = [
     {
       id: 1,
       name: 'Talha Riaz',
       position: 'Co-Founder',
-      avatar: 'https://ui-avatars.com/api/?name=Talha+Riaz&background=22D3EE&color=fff&size=300&bold=true',
+      avatar: talhadp,
       bio: 'Visionary leader with over 10 years of experience in tourism and hospitality industry. Talha founded PakTourZone with a dream to showcase the unparalleled beauty of Northern Pakistan to the world. His passion for adventure travel and deep understanding of local culture has transformed countless travelers\' experiences. Under his leadership, PakTourZone has become one of Pakistan\'s most trusted tour operators, serving thousands of satisfied clients from around the globe.',
       expertise: ['Strategic Leadership', 'Tourism Development', 'Business Growth', 'International Relations'],
       achievements: [
@@ -59,7 +56,7 @@ const About = () => {
       id: 3,
       name: 'Hammad Ashraf',
       position: 'Co-Founder',
-      avatar: 'https://ui-avatars.com/api/?name=Hammad+Ashraf&background=60A5FA&color=fff&size=300&bold=true',
+      avatar: hammaddp,
       bio: 'Creative marketing strategist and digital innovation expert. Hammad has revolutionized how PakTourZone connects with travelers worldwide through cutting-edge digital marketing and engaging storytelling. His background in technology and passion for photography has helped showcase Pakistan\'s beauty to millions across social media platforms.',
       expertise: ['Digital Marketing', 'Brand Strategy', 'Social Media', 'Content Creation'],
       achievements: [
@@ -144,7 +141,6 @@ const About = () => {
           isDarkMode ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'
         }`}
       >
-        <TopBar {...topBarProps} />
         <Navbar {...navbarProps} />
 
         {/* Hero Section */}
@@ -248,11 +244,11 @@ const About = () => {
                 >
                   <div className="md:flex">
                     {/* Photo */}
-                    <div className="md:w-1/3">
+                    <div className="md:w-1/3 overflow-hidden group">
                       <img
                         src={member.avatar}
                         alt={member.name}
-                        className="w-full h-full object-cover min-h-[300px]"
+                        className="w-full h-full object-cover min-h-[300px] transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
                       />
                     </div>
 

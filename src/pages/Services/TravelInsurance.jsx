@@ -1,7 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
-import TopBar from '../../components/layout/TopBar';
 import Navbar from '../../components/layout/Navbar';
 import { servicesData } from '../../data/servicesData';
 
@@ -28,18 +27,6 @@ const TravelInsurance = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [languageDropdownOpen, themeDropdownOpen, setThemeDropdownOpen]);
 
-  const topBarProps = useMemo(() => ({
-    isDarkMode,
-    themeMode,
-    setThemeMode,
-    themeDropdownOpen,
-    setThemeDropdownOpen,
-    themeDropdownRef,
-    languageDropdownOpen,
-    setLanguageDropdownOpen,
-    languageDropdownRef,
-  }), [isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen, languageDropdownOpen]);
-
   const navbarProps = useMemo(() => ({
     isDarkMode,
     mobileMenuOpen,
@@ -52,7 +39,6 @@ const TravelInsurance = () => {
         ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
         : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'
     }`}>
-      <TopBar {...topBarProps} />
       <Navbar {...navbarProps} />
 
       {/* Hero */}

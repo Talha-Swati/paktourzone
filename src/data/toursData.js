@@ -57,9 +57,9 @@ export const toursData = {
           'Travel insurance'
         ],
         pricing: {
-          '2adults1child': 1599,
-          '2adults2children': 1899,
-          'family4plus': 2299
+          '2adults1child': 549,
+          '2adults2children': 699,
+          'family4plus': 849
         },
         bestTime: 'April to October'
       },
@@ -84,9 +84,9 @@ export const toursData = {
           'Traditional Swati cuisine'
         ],
         pricing: {
-          '2adults1child': 1199,
-          '2adults2children': 1499,
-          'family4plus': 1799
+          '2adults1child': 399,
+          '2adults2children': 499,
+          'family4plus': 599
         },
         bestTime: 'March to November'
       }
@@ -142,9 +142,9 @@ export const toursData = {
           'Special surprises'
         ],
         pricing: {
-          'couple': 3499,
-          'deluxe': 4299,
-          'premium': 5499
+          'couple': 1399,
+          'deluxe': 1699,
+          'premium': 1999
         },
         bestTime: 'April to October'
       },
@@ -170,9 +170,9 @@ export const toursData = {
           'Luxury camping at Deosai'
         ],
         pricing: {
-          'couple': 3199,
-          'deluxe': 3999,
-          'premium': 4999
+          'couple': 1299,
+          'deluxe': 1599,
+          'premium': 1899
         },
         bestTime: 'May to October'
       }
@@ -228,9 +228,9 @@ export const toursData = {
           'WiFi access'
         ],
         pricing: {
-          'per_person_10_20': 899,
-          'per_person_21_35': 799,
-          'per_person_36plus': 699
+          'per_person_10_20': 599,
+          'per_person_21_35': 549,
+          'per_person_36plus': 499
         },
         bestTime: 'April to October'
       },
@@ -255,9 +255,9 @@ export const toursData = {
           'Strategy sessions'
         ],
         pricing: {
-          'per_person_15_25': 749,
-          'per_person_26_40': 649,
-          'per_person_41plus': 599
+          'per_person_15_25': 399,
+          'per_person_26_40': 359,
+          'per_person_41plus': 329
         },
         bestTime: 'May to September'
       }
@@ -313,9 +313,9 @@ export const toursData = {
           'Basic guide service'
         ],
         pricing: {
-          'per_person': 399,
-          'double_sharing': 349,
-          'triple_sharing': 299
+          'per_person': 199,
+          'double_sharing': 179,
+          'triple_sharing': 159
         },
         bestTime: 'May to October'
       },
@@ -340,9 +340,9 @@ export const toursData = {
           'Budget-friendly stays'
         ],
         pricing: {
-          'per_person': 699,
-          'double_sharing': 649,
-          'triple_sharing': 599
+          'per_person': 349,
+          'double_sharing': 319,
+          'triple_sharing': 289
         },
         bestTime: 'April to October'
       },
@@ -367,9 +367,9 @@ export const toursData = {
           'Traditional meals'
         ],
         pricing: {
-          'per_person': 499,
-          'double_sharing': 449,
-          'triple_sharing': 399
+          'per_person': 269,
+          'double_sharing': 239,
+          'triple_sharing': 209
         },
         bestTime: 'March to November'
       }

@@ -1,9 +1,18 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getNavItems } from '../../data/navigationData';
+import ThemeSelector from './ThemeSelector';
 
-const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen }) => {
+const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen, themeDropdownRef }) => {
   const navItems = getNavItems();
+  const [openDropdowns, setOpenDropdowns] = useState({});
+
+  const toggleDropdown = (index) => {
+    setOpenDropdowns(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
 
   return (
     <header className={`sticky top-0 z-50 border-b backdrop-blur-xl shadow-lg transition-colors duration-500 ${
@@ -13,20 +22,20 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen }) => {
     }`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-4 group">
+        <Link to="/" className="flex items-center gap-2 md:gap-4 group">
           <div className="relative">
             <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-[#22D3EE] to-[#0A3A67] opacity-20 blur-xl group-hover:opacity-30 transition-opacity"></div>
-            <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-linear-to-br from-[#22D3EE] to-[#0A3A67] shadow-[0_0_20px_rgba(34,211,238,0.4)] group-hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] transition-all">
-              <span className="text-2xl font-black text-[#F2F6F9]">PT</span>
+            <div className="relative flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-2xl bg-linear-to-br from-[#22D3EE] to-[#0A3A67] shadow-[0_0_20px_rgba(34,211,238,0.4)] group-hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] transition-all">
+              <span className="text-xl md:text-2xl font-black text-[#F2F6F9]">PT</span>
             </div>
           </div>
           <div className="leading-tight">
-            <h1 className={`text-xl font-black tracking-tight group-hover:text-[#22D3EE] transition-colors ${
+            <h1 className={`text-base md:text-xl font-black tracking-tight group-hover:text-[#22D3EE] transition-colors ${
               isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'
             }`}>
               PakTourZone
             </h1>
-            <p className={`text-[9px] font-bold uppercase tracking-[0.15em] ${
+            <p className={`text-[8px] md:text-[9px] font-bold uppercase tracking-[0.1em] md:tracking-[0.15em] ${
               isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'
             }`}>
               Northern Pakistan Adventures
@@ -94,7 +103,7 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen }) => {
         </nav>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
           <Link to="/book-now" className={`hidden lg:flex items-center gap-2 rounded-xl bg-linear-to-r px-6 py-3 text-sm font-bold uppercase tracking-wider shadow-lg transition-all duration-300 hover:scale-105 ${
             isDarkMode
               ? 'from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] shadow-[0_0_20px_rgba(34,211,238,0.5)] hover:shadow-[0_0_30px_rgba(34,211,238,0.7)]'
@@ -105,6 +114,15 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen }) => {
             </svg>
             Book Now
           </Link>
+          
+          <ThemeSelector 
+            isDarkMode={isDarkMode}
+            themeMode={themeMode}
+            setThemeMode={setThemeMode}
+            themeDropdownOpen={themeDropdownOpen}
+            setThemeDropdownOpen={setThemeDropdownOpen}
+            themeDropdownRef={themeDropdownRef}
+          />
           
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -132,46 +150,76 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen }) => {
             ? 'border-[rgba(30,36,43,0.5)] bg-[rgba(11,12,14,0.98)]'
             : 'border-[rgba(59,130,246,0.2)] bg-[rgba(255,255,255,0.98)]'
         }`}>
-          <nav className="mx-auto max-w-7xl px-6 py-4">
+          <nav className="mx-auto max-w-7xl px-6 py-4 max-h-[calc(100vh-80px)] overflow-y-auto">
             {navItems.map((item, index) => (
-              <div key={index}>
-                <Link
-                  to={item.path}
-                  className={`block py-3 text-sm font-semibold transition-colors ${
-                    isDarkMode
-                      ? 'text-[#C4CCD4] hover:text-[#22D3EE]'
-                      : 'text-[#4A5568] hover:text-[#3B82F6]'
-                  }`}
-                  onClick={() => !item.hasDropdown && setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-                {item.hasDropdown && item.dropdownItems && (
-                  <div className="ml-4 space-y-2 my-2">
+              <div key={index} className="border-b border-opacity-10 last:border-0 py-2">
+                <div className="flex items-center">
+                  <Link
+                    to={item.path}
+                    className={`flex-1 flex items-center py-3 text-base font-semibold transition-all duration-200 hover:pl-2 ${
+                      isDarkMode
+                        ? 'text-[#C4CCD4] hover:text-[#22D3EE]'
+                        : 'text-[#4A5568] hover:text-[#3B82F6]'
+                    }`}
+                    onClick={() => !item.hasDropdown && setMobileMenuOpen(false)}
+                  >
+                    <span className="flex items-center gap-2">
+                      {item.name}
+                      {item.badge && (
+                        <span className="rounded-md bg-gradient-to-r from-[#FF6B6B] to-[#FF8E53] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider text-white shadow-lg">
+                          {item.badge}
+                        </span>
+                      )}
+                    </span>
+                  </Link>
+                  {item.hasDropdown && (
+                    <button
+                      onClick={() => toggleDropdown(index)}
+                      className={`p-3 transition-transform duration-200 ${
+                        openDropdowns[index] ? 'rotate-180' : ''
+                      }`}
+                    >
+                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  )}
+                </div>
+                {item.hasDropdown && item.dropdownItems && openDropdowns[index] && (
+                  <div className={`ml-4 space-y-1 mt-2 pb-2 border-l-2 pl-4 ${
+                    isDarkMode ? 'border-[#22D3EE]/30' : 'border-[#3B82F6]/30'
+                  }`}>
                     {item.dropdownItems.map((dropItem, dropIndex) => (
                       <Link
                         key={dropIndex}
                         to={dropItem.path}
-                        className={`block py-2 text-xs transition-colors ${
+                        className={`block py-2.5 px-3 text-sm rounded-lg transition-all duration-200 hover:pl-5 ${
                           isDarkMode
-                            ? 'text-[#8B949E] hover:text-[#22D3EE]'
-                            : 'text-[#6B7280] hover:text-[#3B82F6]'
+                            ? 'text-[#8B949E] hover:bg-[rgba(34,211,238,0.1)] hover:text-[#22D3EE]'
+                            : 'text-[#6B7280] hover:bg-[#EBF8FF] hover:text-[#3B82F6]'
                         }`}
                         onClick={() => setMobileMenuOpen(false)}
                       >
-                        <span>{dropItem.icon} {dropItem.name}</span>
+                        <span className="flex items-center gap-2">
+                          <span className="text-base">{dropItem.icon}</span>
+                          <span>{dropItem.name}</span>
+                        </span>
                       </Link>
                     ))}
                   </div>
                 )}
               </div>
             ))}
-            <Link to="/book-now" className={`mt-4 w-full flex items-center justify-center gap-2 rounded-xl bg-linear-to-r px-6 py-3 text-sm font-bold uppercase tracking-wider shadow-lg ${
-              isDarkMode
-                ? 'from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E]'
-                : 'from-[#3B82F6] to-[#60A5FA] text-white'
-            }`} onClick={() => setMobileMenuOpen(false)}>
-              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <Link 
+              to="/book-now" 
+              className={`mt-6 mb-2 w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r px-6 py-4 text-sm font-bold uppercase tracking-wider shadow-lg transition-transform active:scale-95 ${
+                isDarkMode
+                  ? 'from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E]'
+                  : 'from-[#3B82F6] to-[#60A5FA] text-white'
+              }`} 
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
               Book Now

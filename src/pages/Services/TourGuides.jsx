@@ -1,7 +1,6 @@
 import { useState, useMemo, useRef } from 'react';
 import { useTheme } from '../../context/ThemeContext';
 import SEO from '../../components/common/SEO';
-import TopBar from '../../components/layout/TopBar';
 import Navbar from '../../components/layout/Navbar';
 import { FaStar, FaMapMarkerAlt, FaLanguage, FaMountain, FaHiking, FaCamera, FaUsers, FaLandmark, FaAward, FaGlobeAsia } from 'react-icons/fa';
 
@@ -195,15 +194,6 @@ const TourGuides = () => {
   const [selectedSpecialty, setSelectedSpecialty] = useState('all');
   const themeDropdownRef = useRef(null);
 
-  const topBarProps = useMemo(() => ({
-    isDarkMode,
-    themeMode,
-    setThemeMode,
-    themeDropdownOpen,
-    setThemeDropdownOpen,
-    themeDropdownRef
-  }), [isDarkMode, themeMode, themeDropdownOpen, setThemeDropdownOpen]);
-
   const navbarProps = useMemo(() => ({
     isDarkMode,
     mobileMenuOpen,
@@ -290,7 +280,6 @@ const TourGuides = () => {
           isDarkMode ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'
         }`}
       >
-        <TopBar {...topBarProps} />
         <Navbar {...navbarProps} />
 
         {/* Hero Section */}

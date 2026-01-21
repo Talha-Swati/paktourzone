@@ -2,7 +2,6 @@ import { useState, useMemo, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getAllDestinations } from '../data/destinationsData';
 import { useTheme } from '../context/ThemeContext';
-import TopBar from '../components/layout/TopBar';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { MapPin, Clock, TrendingUp, Star, Users, Search, Filter } from 'lucide-react';
@@ -36,23 +35,16 @@ const Destinations = () => {
   }, [languageDropdownOpen, themeDropdownOpen, setThemeDropdownOpen]);
 
   // Memoize props
-  const topBarProps = useMemo(() => ({
-    isDarkMode,
-    themeMode,
-    setThemeMode,
-    themeDropdownOpen,
-    setThemeDropdownOpen,
-    themeDropdownRef,
-    languageDropdownOpen,
-    setLanguageDropdownOpen,
-    languageDropdownRef,
-  }), [isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen, languageDropdownOpen]);
-
   const navbarProps = useMemo(() => ({
     isDarkMode,
     mobileMenuOpen,
     setMobileMenuOpen,
-  }), [isDarkMode, mobileMenuOpen]);
+    themeMode,
+    setThemeMode,
+    themeDropdownOpen,
+    setThemeDropdownOpen,
+    themeDropdownRef
+  }), [isDarkMode, mobileMenuOpen, themeMode, themeDropdownOpen, setThemeDropdownOpen]);
 
   // Filter and sort destinations
   const filteredDestinations = useMemo(() => {
@@ -124,7 +116,6 @@ const Destinations = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <TopBar {...topBarProps} />
       <Navbar {...navbarProps} />
 
       {/* Hero Section */}

@@ -3,7 +3,6 @@ import { useTheme } from '../context/ThemeContext';
 import SEO from '../components/common/SEO';
 
 // Layout Components
-import TopBar from '../components/layout/TopBar';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 
@@ -207,20 +206,16 @@ const Reviews = () => {
     }))
   }), [averageRating]);
 
-  const topBarProps = useMemo(() => ({
+  const navbarProps = useMemo(() => ({
     isDarkMode,
     themeMode,
     setThemeMode,
     themeDropdownOpen,
     setThemeDropdownOpen,
-    themeDropdownRef
-  }), [isDarkMode, themeMode, themeDropdownOpen, setThemeDropdownOpen]);
-
-  const navbarProps = useMemo(() => ({
-    isDarkMode,
+    themeDropdownRef,
     mobileMenuOpen,
     setMobileMenuOpen
-  }), [isDarkMode, mobileMenuOpen]);
+  }), [isDarkMode, themeMode, themeDropdownOpen, mobileMenuOpen]);
 
   // Filter and sort reviews
   const filteredReviews = useMemo(() => {
@@ -270,7 +265,6 @@ const Reviews = () => {
           isDarkMode ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'
         }`}
       >
-        <TopBar {...topBarProps} />
         <Navbar {...navbarProps} />
 
         {/* Hero Section */}

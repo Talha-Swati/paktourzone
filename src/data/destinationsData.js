@@ -68,7 +68,7 @@ export const destinationsData = {
     
     pricing: {
       basic: {
-        price: 3499,
+        price: 1299,
         title: 'Basic Package',
         features: [
           'Standard camping equipment',
@@ -81,7 +81,7 @@ export const destinationsData = {
         ]
       },
       premium: {
-        price: 4299,
+        price: 1599,
         title: 'Premium Package',
         popular: true,
         features: [
@@ -97,7 +97,7 @@ export const destinationsData = {
         ]
       },
       ultimate: {
-        price: 5999,
+        price: 1999,
         title: 'Ultimate Package',
         features: [
           'Top-tier mountaineering equipment',
@@ -148,7 +148,7 @@ export const destinationsData = {
     pricingByDuration: {
       '10days': {
         basic: {
-          price: 2999,
+          price: 1199,
           title: 'Basic Package',
           popular: false,
           features: [
@@ -163,7 +163,7 @@ export const destinationsData = {
           ]
         },
         premium: {
-          price: 3799,
+          price: 1499,
           title: 'Premium Package',
           popular: true,
           features: [
@@ -179,7 +179,7 @@ export const destinationsData = {
           ]
         },
         ultimate: {
-          price: 5299,
+          price: 1899,
           title: 'Ultimate Package',
           popular: false,
           features: [
@@ -198,7 +198,7 @@ export const destinationsData = {
       },
       '14days': {
         basic: {
-          price: 3499,
+          price: 1399,
           title: 'Basic Package',
           popular: false,
           features: [
@@ -213,7 +213,7 @@ export const destinationsData = {
           ]
         },
         premium: {
-          price: 4299,
+          price: 1699,
           title: 'Premium Package',
           popular: true,
           features: [
@@ -229,7 +229,7 @@ export const destinationsData = {
           ]
         },
         ultimate: {
-          price: 5999,
+          price: 1999,
           title: 'Ultimate Package',
           popular: false,
           features: [
@@ -250,7 +250,7 @@ export const destinationsData = {
       },
       '18days': {
         basic: {
-          price: 3999,
+          price: 1599,
           title: 'Basic Package',
           popular: false,
           features: [
@@ -266,7 +266,7 @@ export const destinationsData = {
           ]
         },
         premium: {
-          price: 4999,
+          price: 1899,
           title: 'Premium Package',
           popular: true,
           features: [
@@ -283,7 +283,7 @@ export const destinationsData = {
           ]
         },
         ultimate: {
-          price: 6999,
+          price: 2299,
           title: 'Ultimate Package',
           popular: false,
           features: [

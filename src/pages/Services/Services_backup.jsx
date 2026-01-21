@@ -30,9 +30,14 @@ const HotelBooking = () => {
 
   const navbarProps = useMemo(() => ({
     isDarkMode,
+    themeMode,
+    setThemeMode,
+    themeDropdownOpen,
+    setThemeDropdownOpen,
+    themeDropdownRef,
     mobileMenuOpen,
-    setMobileMenuOpen,
-  }), [isDarkMode, mobileMenuOpen]);
+    setMobileMenuOpen
+  }), [isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen, mobileMenuOpen, setMobileMenuOpen]);
 
   const locations = ['all', 'Skardu', 'Hunza', 'Naran', 'Swat'];
 
@@ -50,7 +55,7 @@ const HotelBooking = () => {
     }`}>
       <Navbar {...navbarProps} />
 
-      {/* Hero */}
+      {/* Hero */
       <div className="relative h-[50vh] min-h-[400px]">
         <div 
           className="absolute inset-0 bg-cover bg-center"

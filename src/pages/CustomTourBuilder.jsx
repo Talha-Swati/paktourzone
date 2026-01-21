@@ -6,7 +6,6 @@ import {
   FaUtensils, FaHiking, FaCamera, FaUmbrellaBeach, FaMountain,
   FaSwimmer, FaSkiing, FaBiking, FaFish, FaGlassCheers
 } from 'react-icons/fa';
-import TopBar from '../components/layout/TopBar';
 import Navbar from '../components/layout/Navbar';
 
 const CustomTourBuilder = () => {
@@ -768,20 +767,14 @@ const CustomTourBuilder = () => {
 
   return (
     <div className={`min-h-screen ${isDarkMode ? 'bg-[#0B0C0E]' : 'bg-[#F8FAFB]'}`}>
-      {/* TopBar and Navbar */}
-      <TopBar
+      {/* Navbar */}
+      <Navbar
         isDarkMode={isDarkMode}
         themeMode={themeMode}
         setThemeMode={setThemeMode}
         themeDropdownOpen={themeDropdownOpen}
         setThemeDropdownOpen={setThemeDropdownOpen}
         themeDropdownRef={themeDropdownRef}
-        languageDropdownOpen={languageDropdownOpen}
-        setLanguageDropdownOpen={setLanguageDropdownOpen}
-        languageDropdownRef={languageDropdownRef}
-      />
-      <Navbar
-        isDarkMode={isDarkMode}
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
       />

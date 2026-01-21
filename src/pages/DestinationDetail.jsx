@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
-import TopBar from '../components/layout/TopBar';
 import Navbar from '../components/layout/Navbar';
 import { getDestinationBySlug } from '../data/destinationsData';
 import { 
@@ -13,7 +12,7 @@ import {
 const DestinationDetail = React.memo(() => {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const { isDarkMode } = useTheme();
+  const { isDarkMode, themeMode, setThemeMode } = useTheme();
   
   const [destination, setDestination] = useState(null);
   const [selectedPackage, setSelectedPackage] = useState('premium');
@@ -23,6 +22,7 @@ const DestinationDetail = React.memo(() => {
   const [showFullItinerary, setShowFullItinerary] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
+  const [themeDropdownOpen, setThemeDropdownOpen] = useState(false);
   
   const languageDropdownRef = useRef(null);
   const themeDropdownRef = useRef(null);
@@ -82,6 +82,9 @@ const DestinationDetail = React.memo(() => {
       if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target)) {
         setLanguageDropdownOpen(false);
       }
+      if (themeDropdownRef.current && !themeDropdownRef.current.contains(event.target)) {
+        setThemeDropdownOpen(false);
+      }
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
@@ -126,18 +129,14 @@ const DestinationDetail = React.memo(() => {
     <div className={`min-h-screen ${
       isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-white text-[#1F2937]'
     }`}>
-      {/* TopBar and Navbar */}
-      <TopBar
-        isDarkMode={isDarkMode}
-        mobileMenuOpen={mobileMenuOpen}
-        setMobileMenuOpen={setMobileMenuOpen}
-        languageDropdownOpen={languageDropdownOpen}
-        setLanguageDropdownOpen={setLanguageDropdownOpen}
-        languageDropdownRef={languageDropdownRef}
-        themeDropdownRef={themeDropdownRef}
-      />
+      {/* Navbar */}
       <Navbar
         isDarkMode={isDarkMode}
+        themeMode={themeMode}
+        setThemeMode={setThemeMode}
+        themeDropdownOpen={themeDropdownOpen}
+        setThemeDropdownOpen={setThemeDropdownOpen}
+        themeDropdownRef={themeDropdownRef}
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
       />
