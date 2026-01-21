@@ -4,6 +4,7 @@ import { useTheme } from '../../context/ThemeContext';
 import { getToursByCategory } from '../../data/toursData';
 import TopBar from '../../components/layout/TopBar';
 import Navbar from '../../components/layout/Navbar';
+import Footer from '../../components/layout/Footer';
 import { 
   Heart, Calendar, MapPin, Star, Sparkles,
   Camera, Wine, Award, Shield, Check, ArrowRight, Gift
@@ -445,6 +446,9 @@ const HoneymoonTours = () => {
           </div>
         </div>
       )}
+
+      {/* Footer */}
+      <Footer isDarkMode={isDarkMode} />
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { useTheme } from '../context/ThemeContext';
 import { 
   FaTimes, FaMapMarkerAlt, FaCalendar, FaUsers, FaHotel, FaCar, 
@@ -11,7 +10,6 @@ import TopBar from '../components/layout/TopBar';
 import Navbar from '../components/layout/Navbar';
 
 const CustomTourBuilder = () => {
-  const { t } = useTranslation();
   const { isDarkMode, themeMode, setThemeMode } = useTheme();
   const navigate = useNavigate();
   const location = useLocation();

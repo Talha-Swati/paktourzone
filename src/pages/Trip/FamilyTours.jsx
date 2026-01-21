@@ -4,6 +4,7 @@ import { useTheme } from '../../context/ThemeContext';
 import { getToursByCategory } from '../../data/toursData';
 import TopBar from '../../components/layout/TopBar';
 import Navbar from '../../components/layout/Navbar';
+import Footer from '../../components/layout/Footer';
 import { 
   Users, Calendar, MapPin, Star, Clock, 
   TrendingUp, Award, Shield, Heart, Baby,
@@ -442,6 +443,9 @@ const FamilyTours = () => {
           </div>
         </div>
       )}
+
+      {/* Footer */}
+      <Footer isDarkMode={isDarkMode} />
     </div>
   );
 };

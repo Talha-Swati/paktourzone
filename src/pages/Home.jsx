@@ -1,6 +1,10 @@
-import React, { useState, useEffect, useRef, useMemo, useCallback } from "react";
-import { useTranslation } from 'react-i18next';
+import React, { useState, useEffect, useRef, useMemo } from "react";
+import { Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
+
+// SEO
+import SEO from '../components/common/SEO';
+import { getOrganizationSchema, getReviewSchema } from '../utils/structuredData';
 
 // Layout Components
 import TopBar from '../components/layout/TopBar';
@@ -16,19 +20,15 @@ import FeatureFlipCard from '../components/common/FeatureFlipCard';
 
 // Data
 import { heroImages } from '../data/navigationData';
-import { Link } from 'react-router-dom';
 
 const Home = () => {
-  const { t } = useTranslation();
   const { isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen } = useTheme();
   
   // State Management
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   
   // Refs
-  const languageDropdownRef = useRef(null);
   const themeDropdownRef = useRef(null);
 
   // Auto-play slider - 3 seconds
@@ -42,22 +42,19 @@ const Home = () => {
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target)) {
-        setLanguageDropdownOpen(false);
-      }
       if (themeDropdownRef.current && !themeDropdownRef.current.contains(event.target)) {
         setThemeDropdownOpen(false);
       }
     };
 
-    if (languageDropdownOpen || themeDropdownOpen) {
+    if (themeDropdownOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [languageDropdownOpen, themeDropdownOpen, setThemeDropdownOpen]);
+  }, [themeDropdownOpen, setThemeDropdownOpen]);
 
   // Memoize TopBar props to prevent unnecessary re-renders
   const topBarProps = useMemo(() => ({
@@ -67,10 +64,7 @@ const Home = () => {
     themeDropdownOpen,
     setThemeDropdownOpen,
     themeDropdownRef,
-    languageDropdownOpen,
-    setLanguageDropdownOpen,
-    languageDropdownRef,
-  }), [isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen, languageDropdownOpen]);
+  }), [isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen]);
 
   // Memoize Navbar props
   const navbarProps = useMemo(() => ({
@@ -87,102 +81,122 @@ const Home = () => {
     heroImages,
   }), [isDarkMode, currentSlide]);
 
+  // Structured data for SEO
+  const structuredData = {
+    ...getOrganizationSchema(),
+    ...getReviewSchema({ averageRating: "4.9", count: "1250" })
+  };
+
   return (
-    <div className={`min-h-screen transition-colors duration-500 ${
-      isDarkMode
-        ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
-        : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'
-    }`}>
-      {/* Top Bar with Theme & Language Selectors */}
-      <TopBar {...topBarProps} />
+    <>
+      <SEO 
+        title="PakTourZone - Discover Northern Pakistan's Hidden Treasures | Adventure Tours & Packages"
+        description="Explore Northern Pakistan's breathtaking landscapes with PakTourZone. Expert-guided tours to Hunza Valley, Skardu, K2 Base Camp, Fairy Meadows, and more. Book your dream adventure today!"
+        keywords="Pakistan tours, Northern Pakistan, Hunza Valley, Skardu tours, K2 base camp, Fairy Meadows, Swat Valley, adventure travel Pakistan, tour packages, mountain tours"
+        url="/"
+        structuredData={structuredData}
+      />
+      
+      <div className={`min-h-screen transition-colors duration-500 ${
+        isDarkMode
+          ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
+          : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
+      }`}>
+        {/* Top Bar with Theme Selector */}
+        <TopBar {...topBarProps} />
 
       {/* Main Navbar */}
-      <Navbar {...navbarProps} />
+        <Navbar {...navbarProps} />
 
-      {/* Hero Section */}
-      <HeroSection {...heroProps} />
+        {/* Main Content */}
+        <main>
+          {/* Hero Section */}
+          <HeroSection {...heroProps} />
 
-      {/* Quick Action Buttons */}
-      <QuickActions isDarkMode={isDarkMode} />
+          {/* Quick Action Buttons */}
+          <QuickActions isDarkMode={isDarkMode} />
 
-      {/* Featured Tours Section */}
-      <FeaturedTours isDarkMode={isDarkMode} />
+          {/* Featured Tours Section */}
+          <FeaturedTours isDarkMode={isDarkMode} />
 
-      {/* Section Separator */}
-      <div className={`border-b ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`} />
+          {/* Section Separator */}
+          <hr className={`border-t ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`} aria-hidden="true" />
 
-      {/* Why Choose Us Section */}
-      <section className={`relative py-32 overflow-hidden transition-colors duration-500 ${
-        isDarkMode ? 'bg-[#0B0C0E]' : 'bg-[#F8FAFB]'
-      }`}>
-        
+          {/* Why Choose Us Section */}
+          <section aria-labelledby="why-choose-us" className={`relative py-32 overflow-hidden transition-colors duration-500 ${
+            isDarkMode ? 'bg-[#0B0C0E]' : 'bg-[#F8FAFB]'
+          }`}>
         <div className="relative z-10 mx-auto max-w-7xl px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className={isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'}>Why Choose </span>
-              <span className={`bg-clip-text text-transparent ${
-                isDarkMode ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA]'
-              }`}>PakTourZone</span>
-            </h2>
+            <header className="text-center mb-20">
+              <h2 id="why-choose-us" className="text-4xl md:text-5xl font-bold mb-6">
+                <span className={isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'}>Why Choose </span>
+                <span className={`bg-clip-text text-transparent ${
+                  isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
+                }`}>PakTourZone</span>
+              </h2>
+            </header>
+            <article className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <FeatureFlipCard icon="🛡️" title="Safety First" description="Your safety is our top priority with certified guides" isDarkMode={isDarkMode} />
+              <FeatureFlipCard icon="👥" title="Expert Guides" description="Local experts with years of experience" isDarkMode={isDarkMode} />
+              <FeatureFlipCard icon="💎" title="Premium Experience" description="Luxury accommodations and services" isDarkMode={isDarkMode} />
+              <FeatureFlipCard icon="🌟" title="Best Value" description="Competitive prices with no hidden costs" isDarkMode={isDarkMode} />
+            </article>
           </div>
+        </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <FeatureFlipCard icon="🛡️" title="Safety First" description="Your safety is our top priority with certified guides" isDarkMode={isDarkMode} />
-            <FeatureFlipCard icon="👥" title="Expert Guides" description="Local experts with years of experience" isDarkMode={isDarkMode} />
-            <FeatureFlipCard icon="💎" title="Premium Experience" description="Luxury accommodations and services" isDarkMode={isDarkMode} />
-            <FeatureFlipCard icon="🌟" title="Best Value" description="Competitive prices with no hidden costs" isDarkMode={isDarkMode} />
+        {/* Section Separator */}
+        <hr className={`border-t ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`} aria-hidden="true" />
+
+        {/* Destinations Grid */}
+        <section aria-labelledby="destinations" className={`relative py-32 overflow-hidden transition-colors duration-500 ${
+          isDarkMode ? 'bg-linear-to-b from-[#0B0C0E] via-[#0A3A67] to-[#0B0C0E]' : 'bg-linear-to-b from-white via-[#EBF8FF] to-white'
+        }`}>
+          <div className="relative z-10 mx-auto max-w-7xl px-6">
+            <header className="text-center mb-20">
+              <h2 id="destinations" className="text-4xl md:text-5xl font-bold mb-6">
+                <span className={isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'}>Explore </span>
+                <span className={`bg-clip-text text-transparent ${
+                  isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
+                }`}>Destinations</span>
+              </h2>
+            </header>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {['Hunza Valley', 'Skardu', 'Swat Valley', 'Naran Kaghan', 'Fairy Meadows', 'Murree'].map((dest, i) => (
+                <Link key={i} to="/destinations" className="group relative aspect-4/3 overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500" aria-label={`Explore ${dest} tours`}>
+                  <img 
+                    src={`https://images.unsplash.com/photo-${i % 2 === 0 ? '1506905925346-21bda4d32df4' : '1464207687429-7505649dae38'}?w=600`} 
+                    alt={`Scenic view of ${dest}, Pakistan`} 
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-125" 
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-[rgba(11,12,14,0.9)] to-transparent opacity-60 group-hover:opacity-80 transition-opacity" aria-hidden="true" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-2xl font-bold text-white mb-2">{dest}</h3>
+                    <p className="text-sm text-[#22D3EE]">{8 + i} Tours Available</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Section Separator */}
-      <div className={`border-b ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`} />
+        {/* Section Separator */}
+        <hr className={`border-t ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`} aria-hidden="true" />
 
-      {/* Destinations Grid */}
-      <section className={`relative py-32 overflow-hidden transition-colors duration-500 ${
-        isDarkMode ? 'bg-gradient-to-b from-[#0B0C0E] via-[#0A3A67] to-[#0B0C0E]' : 'bg-gradient-to-b from-white via-[#EBF8FF] to-white'
-      }`}>
-        <div className="relative z-10 mx-auto max-w-7xl px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className={isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'}>Explore </span>
-              <span className={`bg-clip-text text-transparent ${
-                isDarkMode ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA]'
-              }`}>Destinations</span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {['Hunza Valley', 'Skardu', 'Swat Valley', 'Naran Kaghan', 'Fairy Meadows', 'Murree'].map((dest, i) => (
-              <Link key={i} to="/destinations" className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
-                <img src={`https://images.unsplash.com/photo-${i % 2 === 0 ? '1506905925346-21bda4d32df4' : '1464207687429-7505649dae38'}?w=600`} alt={dest} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-125" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(11,12,14,0.9)] to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">{dest}</h3>
-                  <p className="text-sm text-[#22D3EE]">{8 + i} Tours Available</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Section Separator */}
-      <div className={`border-b ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`} />
-
-      {/* Testimonials */}
-      <section className={`relative py-32 overflow-hidden transition-colors duration-500 ${
-        isDarkMode ? 'bg-[#0B0C0E]' : 'bg-white'
-      }`}>
-        <div className="relative z-10 mx-auto max-w-7xl px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className={isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'}>Traveler </span>
-              <span className={`bg-clip-text text-transparent ${
-                isDarkMode ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA]'
-              }`}>Stories</span>
-            </h2>
-          </div>
+        {/* Testimonials */}
+        <section aria-labelledby="testimonials" className={`relative py-32 overflow-hidden transition-colors duration-500 ${
+          isDarkMode ? 'bg-[#0B0C0E]' : 'bg-white'
+        }`}>
+          <div className="relative z-10 mx-auto max-w-7xl px-6">
+            <header className="text-center mb-20">
+              <h2 id="testimonials" className="text-4xl md:text-5xl font-bold mb-6">
+                <span className={isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'}>Traveler </span>
+                <span className={`bg-clip-text text-transparent ${
+                  isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
+                }`}>Stories</span>
+              </h2>
+            </header>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -311,11 +325,13 @@ const Home = () => {
             </div>
           </div>
           <div className={`pt-8 border-t text-center ${isDarkMode ? 'border-[rgba(30,36,43,0.5)] text-[#8B949E]' : 'border-[rgba(59,130,246,0.2)] text-[#6B7280]'}`}>
-            <p>&copy; 2025 PakTourZone. All rights reserved.</p>
+            <p>&copy; 2026 PakTourZone. All rights reserved.</p>
           </div>
         </div>
       </footer>
-    </div>
+    </main>
+  </div>
+</>
   );
 };
 

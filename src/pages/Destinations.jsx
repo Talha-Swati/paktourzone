@@ -4,6 +4,7 @@ import { getAllDestinations } from '../data/destinationsData';
 import { useTheme } from '../context/ThemeContext';
 import TopBar from '../components/layout/TopBar';
 import Navbar from '../components/layout/Navbar';
+import Footer from '../components/layout/Footer';
 import { MapPin, Clock, TrendingUp, Star, Users, Search, Filter } from 'lucide-react';
 
 const Destinations = () => {
@@ -402,6 +403,9 @@ const Destinations = () => {
           </div>
         </div>
       </footer>
+
+      {/* Footer */}
+      <Footer isDarkMode={isDarkMode} />
     </div>
   );
 };

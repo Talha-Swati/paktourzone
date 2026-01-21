@@ -1,11 +1,9 @@
 import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { getNavItems } from '../../data/navigationData';
 
 const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen }) => {
-  const { t } = useTranslation();
-  const navItems = getNavItems(t);
+  const navItems = getNavItems();
 
   return (
     <header className={`sticky top-0 z-50 border-b backdrop-blur-xl shadow-lg transition-colors duration-500 ${
@@ -97,7 +95,7 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen }) => {
 
         {/* Right Actions */}
         <div className="flex items-center gap-4">
-          <button className={`hidden lg:flex items-center gap-2 rounded-xl bg-linear-to-r px-6 py-3 text-sm font-bold uppercase tracking-wider shadow-lg transition-all duration-300 hover:scale-105 ${
+          <Link to="/book-now" className={`hidden lg:flex items-center gap-2 rounded-xl bg-linear-to-r px-6 py-3 text-sm font-bold uppercase tracking-wider shadow-lg transition-all duration-300 hover:scale-105 ${
             isDarkMode
               ? 'from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] shadow-[0_0_20px_rgba(34,211,238,0.5)] hover:shadow-[0_0_30px_rgba(34,211,238,0.7)]'
               : 'from-[#3B82F6] to-[#60A5FA] text-white shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:shadow-[0_0_30px_rgba(59,130,246,0.7)]'
@@ -105,8 +103,8 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen }) => {
             <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            {t('nav.bookNow')}
-          </button>
+            Book Now
+          </Link>
           
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -168,16 +166,16 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen }) => {
                 )}
               </div>
             ))}
-            <button className={`mt-4 w-full flex items-center justify-center gap-2 rounded-xl bg-linear-to-r px-6 py-3 text-sm font-bold uppercase tracking-wider shadow-lg ${
+            <Link to="/book-now" className={`mt-4 w-full flex items-center justify-center gap-2 rounded-xl bg-linear-to-r px-6 py-3 text-sm font-bold uppercase tracking-wider shadow-lg ${
               isDarkMode
                 ? 'from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E]'
                 : 'from-[#3B82F6] to-[#60A5FA] text-white'
-            }`}>
+            }`} onClick={() => setMobileMenuOpen(false)}>
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              {t('nav.bookNow')}
-            </button>
+              Book Now
+            </Link>
           </nav>
         </div>
       )}

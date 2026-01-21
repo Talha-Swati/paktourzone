@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo, memo } from 'react';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../context/ThemeContext';
 
 // Layout Components
@@ -11,7 +10,6 @@ import Navbar from '../../components/layout/Navbar';
 import FlipCard from '../../components/common/FlipCard';
 
 const AdventureTours = () => {
-  const { t } = useTranslation();
   const { isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen } = useTheme();
   
   // State Management

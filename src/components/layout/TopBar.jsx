@@ -1,10 +1,7 @@
 import React, { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import ThemeSelector from './ThemeSelector';
-import LanguageSelector from './LanguageSelector';
 
-const TopBar = ({ isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen, themeDropdownRef, languageDropdownOpen, setLanguageDropdownOpen, languageDropdownRef }) => {
-  const { t } = useTranslation();
+const TopBar = ({ isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen, themeDropdownRef }) => {
 
   return (
     <div className={`relative z-[60] border-b transition-colors duration-500 backdrop-blur-sm ${
@@ -35,12 +32,6 @@ const TopBar = ({ isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThe
             themeDropdownOpen={themeDropdownOpen}
             setThemeDropdownOpen={setThemeDropdownOpen}
             themeDropdownRef={themeDropdownRef}
-          />
-          <LanguageSelector 
-            isDarkMode={isDarkMode}
-            languageDropdownOpen={languageDropdownOpen}
-            setLanguageDropdownOpen={setLanguageDropdownOpen}
-            languageDropdownRef={languageDropdownRef}
           />
         </div>
       </div>

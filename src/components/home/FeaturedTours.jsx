@@ -1,56 +1,53 @@
 import React, { memo, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import FlipCard from '../common/FlipCard';
 
 const FeaturedTours = ({ isDarkMode }) => {
-  const { t } = useTranslation();
-
   // Memoize tours data to prevent recreation on every render
   const tours = useMemo(() => [
     {
       frontImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
-      title: t('tour.hunza.title'),
-      subtitle: t('tour.hunza.subtitle'),
+      title: "Hunza Valley Trek",
+      subtitle: "7 Days • Moderate",
       price: "$1,299",
-      description: t('tour.hunza.description'),
+      description: "Explore ancient forts, terraced fields, and stunning mountain vistas. Visit Baltit Fort, Attabad Lake, and experience local Hunza culture.",
       highlights: [
-        t('tour.hunza.highlight1'),
-        t('tour.hunza.highlight2'),
-        t('tour.hunza.highlight3'),
-        t('tour.hunza.highlight4')
+        "Baltit & Altit Forts",
+        "Attabad Lake Boat Ride",
+        "Local Cultural Experience",
+        "Mountain Photography"
       ],
       link: "/tours?destination=hunza"
     },
     {
       frontImage: "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800",
-      title: t('tour.skardu.title'),
-      subtitle: t('tour.skardu.subtitle'),
+      title: "Skardu & K2 Base",
+      subtitle: "10 Days • Challenging",
       price: "$2,499",
-      description: t('tour.skardu.description'),
+      description: "Journey to the world's second-highest peak. Trek through Baltistan's rugged terrain and experience the raw beauty of the Karakoram.",
       highlights: [
-        t('tour.skardu.highlight1'),
-        t('tour.skardu.highlight2'),
-        t('tour.skardu.highlight3'),
-        t('tour.skardu.highlight4')
+        "K2 Base Camp Trek",
+        "Shangrila Resort",
+        "Shigar Valley",
+        "Desert Safari"
       ],
       link: "/tours?destination=skardu"
     },
     {
       frontImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
-      title: t('tour.fairy.title'),
-      subtitle: t('tour.fairy.subtitle'),
+      title: "Fairy Meadows Magic",
+      subtitle: "5 Days • Moderate",
       price: "$899",
-      description: t('tour.fairy.description'),
+      description: "Camp under the stars with Nanga Parbat as your backdrop. This alpine meadow offers unparalleled views of the 'Killer Mountain'.",
       highlights: [
-        t('tour.fairy.highlight1'),
-        t('tour.fairy.highlight2'),
-        t('tour.fairy.highlight3'),
-        t('tour.fairy.highlight4')
+        "Nanga Parbat Views",
+        "Alpine Camping",
+        "Jeep Safari",
+        "Raikot Bridge"
       ],
       link: "/tours?destination=fairy-meadows"
     }
-  ], [t]); // Only recreate when translation function changes
+  ], []); // No dependencies needed now
 
   return (
     <section className={`relative py-32 overflow-hidden transition-colors duration-500 ${
@@ -71,7 +68,7 @@ const FeaturedTours = ({ isDarkMode }) => {
             }`} />
             <span className={`text-sm font-bold uppercase tracking-wider transition-colors duration-500 ${
               isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'
-            }`}>{t('tours.badge')}</span>
+            }`}>Signature Experiences</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             <Link to="/tours" className={`group inline-block transition-colors ${
@@ -79,13 +76,13 @@ const FeaturedTours = ({ isDarkMode }) => {
             }`}>
               <span className={`transition-colors duration-500 ${
                 isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'
-              }`}>{t('tours.title1')} </span>
+              }`}>Featured </span>
               <span className={`bg-clip-text text-transparent transition-colors duration-500 ${
                 isDarkMode
                   ? 'bg-gradient-to-r from-[#22D3EE] via-[#4DBBFF] to-[#22D3EE]'
                   : 'bg-gradient-to-r from-[#3B82F6] via-[#60A5FA] to-[#3B82F6]'
               }`}>
-                {t('tours.title2')}
+                Adventures
               </span>
               <div className={`h-0.5 w-0 rounded-full transition-all duration-500 group-hover:w-full mt-2 ${
                 isDarkMode
@@ -97,7 +94,7 @@ const FeaturedTours = ({ isDarkMode }) => {
           <p className={`text-lg md:text-xl max-w-3xl mx-auto leading-relaxed transition-colors duration-500 ${
             isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'
           }`}>
-            {t('tours.description')}
+            Handpicked journeys curated for international travelers seeking authentic Pakistani experiences
           </p>
         </div>
 
@@ -119,7 +116,7 @@ const FeaturedTours = ({ isDarkMode }) => {
                 : 'border-[rgba(59,130,246,0.5)] bg-[rgba(255,255,255,0.6)] text-[#1A202C] hover:border-[#3B82F6] hover:bg-[rgba(59,130,246,0.1)]'
             }`}>
               <span className="flex items-center gap-2">
-                {t('tours.viewAll')}
+                View All Tours
                 <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>

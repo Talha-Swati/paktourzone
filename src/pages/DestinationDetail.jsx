@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { useTheme } from '../context/ThemeContext';
 import TopBar from '../components/layout/TopBar';
 import Navbar from '../components/layout/Navbar';
@@ -14,7 +13,6 @@ import {
 const DestinationDetail = React.memo(() => {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const { t } = useTranslation();
   const { isDarkMode } = useTheme();
   
   const [destination, setDestination] = useState(null);

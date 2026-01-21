@@ -1,8 +1,8 @@
 // Navigation items configuration
-export const getNavItems = (t) => [
-  { name: t('nav.home'), path: "/" },
+export const getNavItems = () => [
+  { name: "Home", path: "/" },
   { 
-    name: t('nav.tours'), 
+    name: "Tours", 
     path: "/tours", 
     hasDropdown: true,
     dropdownItems: [
@@ -15,7 +15,7 @@ export const getNavItems = (t) => [
     ]
   },
   { 
-    name: t('nav.destinations'), 
+    name: "Destinations", 
     path: "/destinations",
     hasDropdown: true,
     dropdownItems: [
@@ -42,11 +42,11 @@ export const getNavItems = (t) => [
     ]
   },
   { name: "Special Offers", path: "/offers", badge: "HOT" },
-  { name: t('nav.gallery'), path: "/gallery" },
+  { name: "Gallery", path: "/gallery" },
   { name: "Reviews", path: "/reviews" },
-  { name: "Travel Guide", path: "/blog" },
-  { name: t('nav.about'), path: "/about" },
-  { name: t('nav.contact'), path: "/contact" },
+  { name: "Travel Guide", path: "/services/guides" },
+  { name: "About Us", path: "/about" },
+  { name: "Contact", path: "/contact" },
 ];
 
 // Hero slider images

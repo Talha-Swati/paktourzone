@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
 
 const Home = () => {
-  const { t, i18n } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -23,10 +21,6 @@ const Home = () => {
     'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80', // Valley
     'https://images.unsplash.com/photo-1454391304352-2bf4678b1a7a?w=1920&q=80', // Snow mountains
   ];
-
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
 
   // Auto-play slider - 3 seconds
   useEffect(() => {
@@ -57,9 +51,9 @@ const Home = () => {
   }, [languageDropdownOpen, themeDropdownOpen]);
 
   const navItems = [
-    { name: t('nav.home'), path: "/" },
+    { name: "Home", path: "/" },
     { 
-      name: t('nav.tours'), 
+      name: "Tours", 
       path: "/tours", 
       hasDropdown: true,
       dropdownItems: [
@@ -72,7 +66,7 @@ const Home = () => {
       ]
     },
     { 
-      name: t('nav.destinations'), 
+      name: "Destinations", 
       path: "/destinations",
       hasDropdown: true,
       dropdownItems: [
@@ -99,11 +93,11 @@ const Home = () => {
       ]
     },
     { name: "Special Offers", path: "/offers", badge: "HOT" },
-    { name: t('nav.gallery'), path: "/gallery" },
+    { name: "Gallery", path: "/gallery" },
     { name: "Reviews", path: "/reviews" },
     { name: "Travel Guide", path: "/blog" },
-    { name: t('nav.about'), path: "/about" },
-    { name: t('nav.contact'), path: "/contact" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
   ];
 
   useEffect(() => {
@@ -239,7 +233,7 @@ const Home = () => {
                 className="flex items-center gap-1 text-[#C4CCD4] hover:text-[#22D3EE] transition-colors cursor-pointer"
               >
                 <span>🌍</span>
-                <span className="font-semibold">{i18n.language.toUpperCase().slice(0, 2)}</span>
+                <span className="font-semibold">EN</span>
                 <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -369,7 +363,7 @@ const Home = () => {
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              {t('nav.bookNow')}
+              Book Now
             </button>
             
             <button 
@@ -429,7 +423,7 @@ const Home = () => {
                 </div>
               ))}
               <button className="mt-4 w-full rounded-xl bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] px-6 py-3 text-sm font-bold uppercase tracking-wider text-[#0B0C0E]">
-                {t('nav.bookNow')}
+                Book Now
               </button>
             </nav>
           </div>
@@ -511,13 +505,13 @@ const Home = () => {
           <h1 className="mb-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
             <span className={`block transition-colors duration-500 ${
               isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'
-            }`}>{t('hero.title1')}</span>
+            }`}>Experience the Magic of</span>
             <span className={`block bg-clip-text text-transparent transition-colors duration-500 ${
               isDarkMode
                 ? 'bg-gradient-to-r from-[#22D3EE] via-[#4DBBFF] to-[#22D3EE]'
                 : 'bg-gradient-to-r from-[#3B82F6] via-[#60A5FA] to-[#3B82F6]'
             }`}>
-              {t('hero.title2')}
+              Northern Pakistan
             </span>
           </h1>
           
@@ -538,7 +532,7 @@ const Home = () => {
                   <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                  {t('hero.exploreTours')}
+                  Explore Tours
                 </span>
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
                   isDarkMode
@@ -557,7 +551,7 @@ const Home = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              {t('hero.watchVideo')}
+              Watch Video
             </button>
           </div>
 
@@ -570,28 +564,28 @@ const Home = () => {
             <AnimatedStatBadge 
               target={12000}
               suffix="+"
-              label={t('hero.travelers')}
+              label="Happy Travelers"
               duration={2500}
             />
             <div className="hidden md:block h-12 w-px bg-gradient-to-b from-transparent via-[rgba(34,211,238,0.5)] to-transparent" />
             <AnimatedStatBadge 
               target={50}
               suffix="+"
-              label={t('hero.destinations')}
+              label="Destinations"
               duration={2000}
             />
             <div className="hidden md:block h-12 w-px bg-gradient-to-b from-transparent via-[rgba(34,211,238,0.5)] to-transparent" />
             <AnimatedStatBadge 
               target={15}
               suffix=" Yrs"
-              label={t('hero.experience')}
+              label="Years Experience"
               duration={1500}
             />
             <div className="hidden md:block h-12 w-px bg-gradient-to-b from-transparent via-[rgba(34,211,238,0.5)] to-transparent" />
             <AnimatedStatBadge 
               target={4.9}
               suffix="★"
-              label={t('hero.rating')}
+              label="Rating"
               duration={2000}
               decimal={true}
             />
@@ -762,7 +756,7 @@ const Home = () => {
               }`} />
               <span className={`text-sm font-bold uppercase tracking-wider transition-colors duration-500 ${
                 isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'
-              }`}>{t('tours.badge')}</span>
+              }`}>Featured Tours</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               <Link to="/tours" className={`group inline-block transition-colors ${
@@ -770,13 +764,13 @@ const Home = () => {
               }`}>
                 <span className={`transition-colors duration-500 ${
                   isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'
-                }`}>{t('tours.title1')} </span>
+                }`}>Explore Our </span>
                 <span className={`bg-clip-text text-transparent transition-colors duration-500 ${
                   isDarkMode
                     ? 'bg-gradient-to-r from-[#22D3EE] via-[#4DBBFF] to-[#22D3EE]'
                     : 'bg-gradient-to-r from-[#3B82F6] via-[#60A5FA] to-[#3B82F6]'
                 }`}>
-                  {t('tours.title2')}
+                  Amazing Tours
                 </span>
                 <div className={`h-0.5 w-0 rounded-full transition-all duration-500 group-hover:w-full mt-2 ${
                   isDarkMode
@@ -788,52 +782,52 @@ const Home = () => {
             <p className={`text-lg md:text-xl max-w-3xl mx-auto leading-relaxed transition-colors duration-500 ${
               isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'
             }`}>
-              {t('tours.description')}
+              Discover handpicked tour packages designed to showcase the best of Pakistan's northern mountains, valleys, and cultural treasures.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <FlipCard
               frontImage="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
-              title={t('tour.hunza.title')}
-              subtitle={t('tour.hunza.subtitle')}
+              title="Hunza Valley Explorer"
+              subtitle="7 Days Paradise"
               price="$1,299"
-              description={t('tour.hunza.description')}
+              description="Explore the legendary Hunza Valley, featuring stunning mountain views, ancient forts, and warm hospitality."
               highlights={[
-                t('tour.hunza.highlight1'),
-                t('tour.hunza.highlight2'),
-                t('tour.hunza.highlight3'),
-                t('tour.hunza.highlight4')
+                "Visit Baltit and Altit Forts",
+                "Eagles Nest viewpoint at sunrise",
+                "Passu Glacier trekking",
+                "Local culture immersion"
               ]}
               link="/tours?destination=hunza"
             />
             
             <FlipCard
               frontImage="https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800"
-              title={t('tour.skardu.title')}
-              subtitle={t('tour.skardu.subtitle')}
+              title="Skardu Adventure"
+              subtitle="10 Days Expedition"
               price="$2,499"
-              description={t('tour.skardu.description')}
+              description="Journey through the heart of Baltistan, visiting pristine lakes, majestic peaks, and historic sites."
               highlights={[
-                t('tour.skardu.highlight1'),
-                t('tour.skardu.highlight2'),
-                t('tour.skardu.highlight3'),
-                t('tour.skardu.highlight4')
+                "Shangrila Resort & Kachura Lakes",
+                "Deosai National Park safari",
+                "Shigar Fort heritage stay",
+                "K2 viewpoint visit"
               ]}
               link="/tours?destination=skardu"
             />
             
             <FlipCard
               frontImage="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
-              title={t('tour.fairy.title')}
-              subtitle={t('tour.fairy.subtitle')}
+              title="Fairy Meadows Trek"
+              subtitle="5 Days Nature Escape"
               price="$899"
-              description={t('tour.fairy.description')}
+              description="Trek to the base of Nanga Parbat, the 9th highest mountain in the world, through lush green meadows."
               highlights={[
-                t('tour.fairy.highlight1'),
-                t('tour.fairy.highlight2'),
-                t('tour.fairy.highlight3'),
-                t('tour.fairy.highlight4')
+                "Nanga Parbat base camp",
+                "Camping under the stars",
+                "Raikot Glacier views",
+                "Local shepherd experience"
               ]}
               link="/tours?destination=fairy-meadows"
             />
@@ -847,7 +841,7 @@ const Home = () => {
                   : 'border-[rgba(59,130,246,0.5)] bg-[rgba(255,255,255,0.6)] text-[#1A202C] hover:border-[#3B82F6] hover:bg-[rgba(59,130,246,0.1)]'
               }`}>
                 <span className="flex items-center gap-2">
-                  {t('tours.viewAll')}
+                  View All Tours
                   <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
@@ -882,7 +876,7 @@ const Home = () => {
               <div className="h-2 w-2 rounded-full bg-[#FFD700] animate-pulse" />
               <span className={`text-sm font-bold uppercase tracking-wider transition-colors duration-500 ${
                 isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'
-              }`}>{t('why.badge')}</span>
+              }`}>Why Choose Us</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               <Link to="/about" className={`group inline-block transition-colors ${
@@ -890,13 +884,13 @@ const Home = () => {
               }`}>
                 <span className={`transition-colors duration-500 ${
                   isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'
-                }`}>{t('why.title1')} </span>
+                }`}>Why Choose </span>
                 <span className={`bg-clip-text text-transparent transition-colors duration-500 ${
                   isDarkMode
                     ? 'bg-gradient-to-r from-[#22D3EE] via-[#4DBBFF] to-[#22D3EE]'
                     : 'bg-gradient-to-r from-[#3B82F6] via-[#60A5FA] to-[#3B82F6]'
                 }`}>
-                  {t('why.title2')}
+                  PakTourZone?
                 </span>
                 <div className={`h-0.5 w-0 rounded-full transition-all duration-500 group-hover:w-full mt-2 ${
                   isDarkMode
@@ -908,30 +902,30 @@ const Home = () => {
             <p className={`text-lg md:text-xl max-w-3xl mx-auto leading-relaxed transition-colors duration-500 ${
               isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'
             }`}>
-              {t('why.description')}
+              We deliver exceptional travel experiences with safety, expertise, and personalized service that makes your journey unforgettable.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <FeatureFlipCard
               icon="🛡️"
-              title={t('why.safe.title')}
-              description={t('why.safe.description')}
+              title="Safe & Secure"
+              description="Your safety is our top priority with comprehensive insurance and 24/7 support."
             />
             <FeatureFlipCard
               icon="👥"
-              title={t('why.guides.title')}
-              description={t('why.guides.description')}
+              title="Expert Guides"
+              description="Local guides with deep knowledge of the region, culture, and mountain terrain."
             />
             <FeatureFlipCard
               icon="💎"
-              title={t('why.premium.title')}
-              description={t('why.premium.description')}
+              title="Premium Experience"
+              description="Carefully curated accommodations, meals, and activities for unforgettable memories."
             />
             <FeatureFlipCard
               icon="🌟"
-              title={t('why.value.title')}
-              description={t('why.value.description')}
+              title="Best Value"
+              description="Competitive pricing without compromising on quality or safety standards."
             />
           </div>
         </div>
@@ -975,7 +969,7 @@ const Home = () => {
               }`} />
               <span className={`text-sm font-bold uppercase tracking-wider transition-colors duration-500 ${
                 isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'
-              }`}>{t('destinations.badge')}</span>
+              }`}>Popular Destinations</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               <Link to="/destinations" className={`group inline-block transition-colors ${
@@ -983,13 +977,13 @@ const Home = () => {
               }`}>
                 <span className={`transition-colors duration-500 ${
                   isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'
-                }`}>{t('destinations.title1')} </span>
+                }`}>Discover Our </span>
                 <span className={`bg-clip-text text-transparent transition-colors duration-500 ${
                   isDarkMode
                     ? 'bg-gradient-to-r from-[#22D3EE] via-[#4DBBFF] to-[#22D3EE]'
                     : 'bg-gradient-to-r from-[#3B82F6] via-[#60A5FA] to-[#3B82F6]'
                 }`}>
-                  {t('destinations.title2')}
+                  Top Destinations
                 </span>
                 <div className={`h-0.5 w-0 rounded-full transition-all duration-500 group-hover:w-full mt-2 ${
                   isDarkMode
@@ -1001,7 +995,7 @@ const Home = () => {
             <p className={`text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-light transition-colors duration-500 ${
               isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'
             }`}>
-              {t('destinations.description')}
+              Explore breathtaking landscapes, ancient cultures, and unforgettable adventures across Pakistan's most stunning regions.
             </p>
           </div>
 
@@ -1072,24 +1066,24 @@ const Home = () => {
               <div className="h-2 w-2 rounded-full bg-[#FFD700] animate-pulse" />
               <span className={`text-sm font-bold uppercase tracking-wider transition-colors duration-500 ${
                 isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'
-              }`}>{t('testimonials.badge')}</span>
+              }`}>Client Reviews</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               <span className={`transition-colors duration-500 ${
                 isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'
-              }`}>{t('testimonials.title1')} </span>
+              }`}>What Our </span>
               <span className={`bg-clip-text text-transparent transition-colors duration-500 ${
                 isDarkMode
                   ? 'bg-gradient-to-r from-[#22D3EE] via-[#4DBBFF] to-[#22D3EE]'
                   : 'bg-gradient-to-r from-[#3B82F6] via-[#60A5FA] to-[#3B82F6]'
               }`}>
-                {t('testimonials.title2')}
+                Clients Say
               </span>
             </h2>
             <p className={`text-lg md:text-xl max-w-3xl mx-auto leading-relaxed transition-colors duration-500 ${
               isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'
             }`}>
-              {t('testimonials.description')}
+              Hear from travelers who have experienced the adventure of a lifetime with PakTourZone.
             </p>
           </div>
 
@@ -1147,7 +1141,7 @@ const Home = () => {
               }`} />
               <span className={`text-sm font-bold uppercase tracking-wider transition-colors duration-500 ${
                 isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'
-              }`}>{t('gallery.badge')}</span>
+              }`}>Photo Gallery</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               <Link to="/gallery" className={`group inline-block transition-colors ${
@@ -1155,13 +1149,13 @@ const Home = () => {
               }`}>
                 <span className={`transition-colors duration-500 ${
                   isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'
-                }`}>{t('gallery.title1')} </span>
+                }`}>Moments Worth </span>
                 <span className={`bg-clip-text text-transparent transition-colors duration-500 ${
                   isDarkMode
                     ? 'bg-gradient-to-r from-[#22D3EE] via-[#4DBBFF] to-[#22D3EE]'
                     : 'bg-gradient-to-r from-[#3B82F6] via-[#60A5FA] to-[#3B82F6]'
                 }`}>
-                  {t('gallery.title2')}
+                  A Thousand Words
                 </span>
                 <div className={`h-0.5 w-0 rounded-full transition-all duration-500 group-hover:w-full mt-2 ${
                   isDarkMode
@@ -1173,7 +1167,7 @@ const Home = () => {
             <p className={`text-lg md:text-xl max-w-3xl mx-auto leading-relaxed transition-colors duration-500 ${
               isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'
             }`}>
-              {t('gallery.description')}
+              Stunning visuals from our travelers and guides showcasing the beauty of Pakistan's northern regions.
             </p>
           </div>
 
@@ -1256,27 +1250,27 @@ const Home = () => {
             <div className="h-2 w-2 rounded-full bg-[#FFD700] animate-pulse" />
             <span className={`text-sm font-bold uppercase tracking-wider transition-colors duration-500 ${
               isDarkMode ? 'text-[#0B0C0E]' : 'text-white'
-            }`}>{t('cta.badge')}</span>
+            }`}>Limited Time Offer</span>
           </div>
 
           <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight transition-colors duration-500 ${
             isDarkMode ? 'text-[#0B0C0E]' : 'text-white'
           }`}>
-            {t('cta.title1')}
+            Ready for Your Next Adventure?
             <br />
             <span className={`bg-clip-text text-transparent transition-colors duration-500 ${
               isDarkMode
                 ? 'bg-gradient-to-r from-[#0B0C0E] via-[rgba(11,12,14,0.8)] to-[#0B0C0E]'
                 : 'bg-gradient-to-r from-white via-[rgba(255,255,255,0.8)] to-white'
             }`}>
-              {t('cta.title2')}
+              Let's Make It Happen!
             </span>
           </h2>
           
           <p className={`text-lg md:text-xl mb-12 font-medium max-w-3xl mx-auto leading-relaxed transition-colors duration-500 ${
             isDarkMode ? 'text-[#0B0C0E]' : 'text-white'
           }`}>
-            {t('cta.description')}
+            Join thousands of satisfied travelers who have discovered the magic of Pakistan's northern regions with our expert-guided tours.
           </p>
           
           <div className="flex flex-wrap items-center justify-center gap-6 mb-10">
@@ -1290,7 +1284,7 @@ const Home = () => {
                   <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                  {t('cta.browseTours')}
+                  Browse All Tours
                 </span>
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
                   isDarkMode
@@ -1310,7 +1304,7 @@ const Home = () => {
                   <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  {t('cta.contactUs')}
+                  Contact Us
                 </span>
               </button>
             </Link>
@@ -1324,19 +1318,19 @@ const Home = () => {
               <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
-              <span className="font-bold">{t('cta.tripAdvisor')}</span>
+              <span className="font-bold">4.9★ on TripAdvisor</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
-              <span className="font-bold">{t('cta.safeSecure')}</span>
+              <span className="font-bold">100% Safe & Secure</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span className="font-bold">{t('cta.priceGuarantee')}</span>
+              <span className="font-bold">Best Price Guarantee</span>
             </div>
           </div>
         </div>
@@ -1372,7 +1366,7 @@ const Home = () => {
               <p className={`text-sm mb-4 transition-colors duration-500 ${
                 isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'
               }`}>
-                {t('footer.tagline')}
+                Your trusted partner for unforgettable adventures across Pakistan's most stunning destinations.
               </p>
               <div className="flex gap-3">
                 <a href="#" className={`flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${
@@ -1403,7 +1397,7 @@ const Home = () => {
             <div>
               <h4 className={`text-sm font-bold uppercase tracking-wider mb-4 transition-colors duration-500 ${
                 isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'
-              }`}>{t('footer.quickLinks')}</h4>
+              }`}>Quick Links</h4>
               <ul className={`space-y-2 text-sm transition-colors duration-500 ${
                 isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'
               }`}>
@@ -1432,7 +1426,7 @@ const Home = () => {
             <div>
               <h4 className={`text-sm font-bold uppercase tracking-wider mb-4 transition-colors duration-500 ${
                 isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'
-              }`}>{t('footer.popularTours')}</h4>
+              }`}>Popular Tours</h4>
               <ul className={`space-y-2 text-sm transition-colors duration-500 ${
                 isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'
               }`}>
@@ -1458,7 +1452,7 @@ const Home = () => {
             <div>
               <h4 className={`text-sm font-bold uppercase tracking-wider mb-4 transition-colors duration-500 ${
                 isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'
-              }`}>{t('footer.contactUs')}</h4>
+              }`}>Contact Us</h4>
               <ul className={`space-y-3 text-sm transition-colors duration-500 ${
                 isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'
               }`}>
@@ -1492,7 +1486,7 @@ const Home = () => {
               ? 'border-[rgba(30,36,43,0.5)] text-[#C4CCD4]'
               : 'border-[rgba(59,130,246,0.2)] text-[#4A5568]'
           }`}>
-            <p>{t('footer.rights')}</p>
+            <p>&copy; 2025 PakTourZone. All rights reserved.</p>
             <div className="flex gap-6">
               <Link to="/privacy" className={`transition-colors ${
                 isDarkMode ? 'hover:text-[#22D3EE]' : 'hover:text-[#3B82F6]'

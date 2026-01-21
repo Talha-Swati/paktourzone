@@ -4,6 +4,7 @@ import { useTheme } from '../../context/ThemeContext';
 import { getToursByCategory } from '../../data/toursData';
 import TopBar from '../../components/layout/TopBar';
 import Navbar from '../../components/layout/Navbar';
+import Footer from '../../components/layout/Footer';
 import { 
   Briefcase, Calendar, MapPin, Star, Users,
   Award, Target, TrendingUp, Shield, Check, ArrowRight, Lightbulb
@@ -213,6 +214,9 @@ const CorporateTours = () => {
           </div>
         </div>
       </footer>
+
+      {/* Footer */}
+      <Footer isDarkMode={isDarkMode} />
     </div>
   );
 };
