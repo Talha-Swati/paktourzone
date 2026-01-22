@@ -1,11 +1,12 @@
 import React, { memo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { getNavItems } from '../../data/navigationData';
 import ThemeSelector from './ThemeSelector';
 
 const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen, themeDropdownRef }) => {
   const navItems = getNavItems();
   const [openDropdowns, setOpenDropdowns] = useState({});
+  const location = useLocation();
 
   const toggleDropdown = (index) => {
     setOpenDropdowns(prev => ({
@@ -20,36 +21,24 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen, themeMode, setT
         ? 'border-[rgba(30,36,43,0.5)] bg-[rgba(11,12,14,0.95)]'
         : 'border-[rgba(59,130,246,0.2)] bg-[rgba(255,255,255,0.95)]'
     }`}>
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-2 lg:px-2 xl:px-6 py-3 lg:py-2.5 xl:py-4">
+      <div className="w-full mx-auto flex items-center justify-between px-2 lg:px-3 xl:px-6 py-2 lg:py-2 xl:py-4" style={{maxWidth: 'calc(100vw - 1rem)'}}>
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-1 lg:gap-1.5 xl:gap-3 group">
+        <Link to="/" className="flex items-center group flex-shrink-0">
           <div className="relative">
             <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-[#22D3EE] to-[#0A3A67] opacity-20 blur-xl group-hover:opacity-30 transition-opacity"></div>
             <div className="relative flex h-9 w-9 lg:h-10 lg:w-10 xl:h-14 xl:w-14 items-center justify-center rounded-2xl bg-linear-to-br from-[#22D3EE] to-[#0A3A67] shadow-[0_0_20px_rgba(34,211,238,0.4)] group-hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] transition-all">
               <span className="text-base lg:text-lg xl:text-2xl font-black text-[#F2F6F9]">PT</span>
             </div>
           </div>
-          <div className="leading-tight">
-            <h1 className={`text-xs lg:text-sm xl:text-xl font-black tracking-tight group-hover:text-[#22D3EE] transition-colors ${
-              isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'
-            }`}>
-              PakTourZone
-            </h1>
-            <p className={`hidden xl:block text-[8px] md:text-[9px] font-bold uppercase tracking-[0.1em] md:tracking-[0.15em] ${
-              isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'
-            }`}>
-              Northern Pakistan Adventures
-            </p>
-          </div>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-0 xl:gap-2 lg:flex">
+        <nav className="hidden items-center gap-0.5 xl:gap-2 lg:flex flex-shrink lg:ml-3 xl:ml-4">
           {navItems.map((item, index) => (
             <div key={index} className="relative group">
               <Link
                 to={item.path}
-                className={`group/link relative px-0.5 xl:px-3 py-1.5 xl:py-2 text-[10px] xl:text-sm font-semibold transition-all duration-300 flex items-center gap-0.5 xl:gap-1 whitespace-nowrap ${
+                className={`group/link relative px-1 xl:px-3 py-1.5 xl:py-2 text-[10px] xl:text-sm font-semibold transition-all duration-300 flex items-center gap-0.5 xl:gap-1 whitespace-nowrap ${
                   isDarkMode
                     ? 'text-[#C4CCD4] hover:text-[#F2F6F9]'
                     : 'text-[#4A5568] hover:text-[#1A202C]'
@@ -66,7 +55,7 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen, themeMode, setT
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 )}
-                {index === 0 && (
+                {location.pathname === item.path && (
                   <span className="absolute bottom-0 left-0 h-0.5 w-full rounded-full bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]" />
                 )}
                 <span className="absolute bottom-0 left-0 h-0.5 w-0 rounded-full bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] transition-all duration-300 group-hover/link:w-full" />
@@ -103,8 +92,8 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen, themeMode, setT
         </nav>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-0.5 xl:gap-3">
-          <Link to="/book-now" className={`hidden lg:flex items-center gap-0.5 xl:gap-2 rounded-lg xl:rounded-xl bg-linear-to-r px-1.5 xl:px-4 py-1 xl:py-2.5 text-[9px] xl:text-sm font-bold uppercase tracking-tight xl:tracking-wider shadow-lg transition-all duration-300 hover:scale-105 whitespace-nowrap ${
+        <div className="flex items-center gap-0.5 xl:gap-3 flex-shrink-0 ml-auto">
+          <Link to="/book-now" className={`hidden lg:flex items-center gap-0.5 xl:gap-2 rounded-md xl:rounded-xl bg-linear-to-r px-1.5 xl:px-4 py-1 xl:py-2.5 text-[9px] xl:text-sm font-bold uppercase tracking-tight xl:tracking-wider shadow-lg transition-all duration-300 hover:scale-105 whitespace-nowrap ${
             isDarkMode
               ? 'from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] shadow-[0_0_20px_rgba(34,211,238,0.5)] hover:shadow-[0_0_30px_rgba(34,211,238,0.7)]'
               : 'from-[#3B82F6] to-[#60A5FA] text-white shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:shadow-[0_0_30px_rgba(59,130,246,0.7)]'
