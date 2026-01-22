@@ -49,9 +49,10 @@ function App() {
   return (
     <HelmetProvider>
       <ThemeProvider>
-        <Router>
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
+        <div className="overflow-x-hidden w-full">
+          <Router>
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
               <Route path="/" element={<Home />} />
               
               {/* Tours */}
@@ -94,6 +95,7 @@ function App() {
             </Routes>
           </Suspense>
         </Router>
+        </div>
       </ThemeProvider>
     </HelmetProvider>
   );

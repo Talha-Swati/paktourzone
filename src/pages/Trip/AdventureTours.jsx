@@ -269,7 +269,7 @@ const AdventureTours = () => {
       <div className={`border-b ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`} />
 
       {/* Filters Section */}
-      <section className={`py-12 sticky top-[120px] z-30 backdrop-blur-xl transition-colors ${
+      <section className={`py-12 backdrop-blur-xl transition-colors ${
         isDarkMode ? 'bg-[rgba(11,12,14,0.9)] border-b border-gray-800' : 'bg-[rgba(255,255,255,0.9)] border-b border-gray-200'
       }`}>
         <div className="mx-auto max-w-7xl px-6">

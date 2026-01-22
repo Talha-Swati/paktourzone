@@ -621,7 +621,7 @@ const DestinationDetail = React.memo(() => {
 
           {/* Right Column - Sidebar */}
           <div className="lg:col-span-1">
-            <div className="sticky top-24 space-y-6">
+            <div className="space-y-6">
               
               {/* Quick Info Card */}
               <div className={`p-6 rounded-xl ${isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F9FAFB]'}`}>

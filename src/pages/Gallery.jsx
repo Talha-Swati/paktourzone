@@ -261,7 +261,7 @@ const Gallery = () => {
         </section>
 
         {/* Filter & Layout Controls */}
-        <section className={`sticky top-16 z-40 py-4 backdrop-blur-lg border-b ${isDarkMode ? 'bg-[#0B0C0E]/95 border-[#1E242B]' : 'bg-white/95 border-gray-200'}`}>
+        <section className={`py-4 backdrop-blur-lg border-b ${isDarkMode ? 'bg-[#0B0C0E]/95 border-[#1E242B]' : 'bg-white/95 border-gray-200'}`}>
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap items-center justify-between gap-4">
               {/* Category Filters */}

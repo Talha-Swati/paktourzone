@@ -150,7 +150,7 @@ const Tours = () => {
         </section>
 
         {/* Category Filter */}
-        <section className={`sticky top-16 z-40 py-6 backdrop-blur-lg border-b ${
+        <section className={`py-6 backdrop-blur-lg border-b ${
           isDarkMode ? 'bg-[#0B0C0E]/95 border-[#1E242B]' : 'bg-white/95 border-gray-200'
         }`}>
           <div className="container mx-auto px-4">

@@ -263,7 +263,7 @@ const BookNow = () => {
         </section>
 
         {/* Progress Bar */}
-        <div className={`sticky top-16 z-40 py-4 backdrop-blur-lg border-b ${isDarkMode ? 'bg-[#0B0C0E]/95 border-[#1E242B]' : 'bg-white/95 border-gray-200'}`}>
+        <div className={`py-4 backdrop-blur-lg border-b ${isDarkMode ? 'bg-[#0B0C0E]/95 border-[#1E242B]' : 'bg-white/95 border-gray-200'}`}>
           <div className="container mx-auto px-4">
             <div className="flex justify-between items-center max-w-4xl mx-auto">
               {progressSteps.map((item, idx) => (
@@ -768,7 +768,7 @@ const BookNow = () => {
 
               {/* Summary Sidebar */}
               <div>
-                <div className={`p-6 rounded-xl ${isDarkMode ? 'bg-[#141A1F]' : 'bg-white'} shadow-xl sticky top-32`}>
+                <div className={`p-6 rounded-xl ${isDarkMode ? 'bg-[#141A1F]' : 'bg-white'} shadow-xl`}>
                   <h3 className={`text-xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
                     Booking Summary
                   </h3>

@@ -11,7 +11,7 @@ const ThemeSelector = ({ isDarkMode, themeMode, setThemeMode, themeDropdownOpen,
     >
       <button
         onClick={() => setThemeDropdownOpen(!themeDropdownOpen)}
-        className={`group relative p-2 rounded-lg transition-all duration-300 ${
+        className={`group relative p-1.5 xl:p-2.5 rounded-lg transition-all duration-300 ${
           isDarkMode
             ? 'hover:bg-[rgba(34,211,238,0.1)]'
             : 'hover:bg-[rgba(59,130,246,0.1)]'
@@ -21,7 +21,7 @@ const ThemeSelector = ({ isDarkMode, themeMode, setThemeMode, themeDropdownOpen,
         {/* Arrow Icon with Glow Effect */}
         <div className="relative">
           <svg
-            className={`w-5 h-5 transition-all duration-300 ${
+            className={`w-3.5 h-3.5 xl:w-5 xl:h-5 transition-all duration-300 ${
               themeDropdownOpen ? 'rotate-180' : ''
             } ${
               isDarkMode

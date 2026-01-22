@@ -1,6 +1,7 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useNavbarSetup, useClickOutside } from '../../hooks';
+import { useTheme } from '../../context/ThemeContext';
 import { getToursByCategory } from '../../data/toursData';
 import Navbar from '../../components/layout/Navbar';
 import Footer from '../../components/layout/Footer';
