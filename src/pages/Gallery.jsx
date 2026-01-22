@@ -1,5 +1,5 @@
-import { useState, useMemo, useRef } from 'react';
-import { useTheme } from '../context/ThemeContext';
+import { useState, useMemo } from 'react';
+import { useNavbarSetup } from '../hooks';
 import SEO from '../components/common/SEO';
 
 // Layout Components
@@ -144,13 +144,11 @@ const categories = [
 ];
 
 const Gallery = () => {
-  const { isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen } = useTheme();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { navbarProps, isDarkMode } = useNavbarSetup();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [layout, setLayout] = useState('grid');
-  const themeDropdownRef = useRef(null);
 
   // SEO structured data
   const structuredData = useMemo(() => ({
@@ -164,17 +162,6 @@ const Gallery = () => {
       "name": "Northern Pakistan"
     }
   }), []);
-
-  const navbarProps = useMemo(() => ({
-    isDarkMode,
-    mobileMenuOpen,
-    setMobileMenuOpen,
-    themeMode,
-    setThemeMode,
-    themeDropdownOpen,
-    setThemeDropdownOpen,
-    themeDropdownRef
-  }), [isDarkMode, mobileMenuOpen, themeMode, themeDropdownOpen]);
 
   // Filter photos
   const filteredPhotos = useMemo(() => {

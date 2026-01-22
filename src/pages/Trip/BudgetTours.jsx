@@ -1,6 +1,6 @@
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useTheme } from '../../context/ThemeContext';
+import { useNavbarSetup, useClickOutside } from '../../hooks';
 import { getToursByCategory } from '../../data/toursData';
 import Navbar from '../../components/layout/Navbar';
 import Footer from '../../components/layout/Footer';
@@ -10,39 +10,17 @@ import {
 } from 'lucide-react';
 
 const BudgetTours = () => {
-  const { isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen } = useTheme();
+  const { navbarProps, isDarkMode, themeDropdownRef } = useNavbarSetup();
   const navigate = useNavigate();
   const tourData = getToursByCategory('budget');
 
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
-  
   const languageDropdownRef = useRef(null);
-  const themeDropdownRef = useRef(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target)) {
-        setLanguageDropdownOpen(false);
-      }
-      if (themeDropdownRef.current && !themeDropdownRef.current.contains(event.target)) {
-        setThemeDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [languageDropdownOpen, themeDropdownOpen, setThemeDropdownOpen]);
-
-  const navbarProps = useMemo(() => ({
-    isDarkMode,
-    mobileMenuOpen,
-    setMobileMenuOpen,
-    themeMode,
-    setThemeMode,
-    themeDropdownOpen,
-    setThemeDropdownOpen,
-    themeDropdownRef,
-  }), [isDarkMode, mobileMenuOpen, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen]);
+  useClickOutside(
+    [languageDropdownRef, themeDropdownRef],
+    [setLanguageDropdownOpen, navbarProps.setThemeDropdownOpen]
+  );
 
   const handleBookNow = (pkg) => {
     navigate('/custom-tour', {
@@ -207,47 +185,6 @@ const BudgetTours = () => {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className={`py-12 ${isDarkMode ? 'bg-[#0B0C0E]' : 'bg-[#1F2937]'}`}>
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="text-white font-bold text-xl mb-4">PakTourZone</h3>
-              <p className="text-gray-400 text-sm">Affordable adventures for budget-conscious travelers.</p>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><Link to="/" className="hover:text-green-400">Home</Link></li>
-                <li><Link to="/destinations" className="hover:text-green-400">Destinations</Link></li>
-                <li><Link to="/contact" className="hover:text-green-400">Contact</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Tour Types</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><Link to="/trip/family" className="hover:text-green-400">Family Packages</Link></li>
-                <li><Link to="/trip/honeymoon" className="hover:text-green-400">Honeymoon Tours</Link></li>
-                <li><Link to="/trip/corporate" className="hover:text-green-400">Corporate Tours</Link></li>
-                <li><Link to="/trip/budget" className="hover:text-green-400">Budget Tours</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Contact Info</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li>Email: budget@paktourzone.com</li>
-                <li>Phone: +92 300 1234567</li>
-                <li>Islamabad, Pakistan</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2024 PakTourZone. Adventure for everyone, everywhere.</p>
-          </div>
-        </div>
-      </footer>
-
-      {/* Footer */}
       <Footer isDarkMode={isDarkMode} />
     </div>
   );

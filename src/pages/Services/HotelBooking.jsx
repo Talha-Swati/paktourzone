@@ -2,6 +2,7 @@ import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 import Navbar from '../../components/layout/Navbar';
+import Footer from '../../components/layout/Footer';
 import { servicesData } from '../../data/servicesData';
 
 const HotelBooking = () => {
@@ -293,12 +294,7 @@ const HotelBooking = () => {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="py-12 px-4 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-gray-400">&copy; 2024 PakTourZone. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer isDarkMode={isDarkMode} />
     </div>
   );
 };

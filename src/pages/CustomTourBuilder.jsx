@@ -7,6 +7,7 @@ import {
   FaSwimmer, FaSkiing, FaBiking, FaFish, FaGlassCheers
 } from 'react-icons/fa';
 import Navbar from '../components/layout/Navbar';
+import Footer from '../components/layout/Footer';
 
 const CustomTourBuilder = () => {
   const { isDarkMode, themeMode, setThemeMode } = useTheme();
@@ -877,47 +878,7 @@ const CustomTourBuilder = () => {
         </form>
       </div>
 
-      {/* Footer */}
-      <footer className={`py-12 ${isDarkMode ? 'bg-[#0B0C0E]' : 'bg-[#1F2937]'}`}>
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="text-white font-bold text-xl mb-4">PakTourZone</h3>
-              <p className="text-gray-400 text-sm">
-                Your trusted partner for unforgettable adventures across Pakistan's most stunning destinations.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><Link to="/" className="hover:text-[#22D3EE]">Home</Link></li>
-                <li><Link to="/trip/adventure" className="hover:text-[#22D3EE]">Adventure Tours</Link></li>
-                <li><Link to="/about" className="hover:text-[#22D3EE]">About Us</Link></li>
-                <li><Link to="/contact" className="hover:text-[#22D3EE]">Contact</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Popular Destinations</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><Link to="/destination/hunza-valley" className="hover:text-[#22D3EE]">Hunza Valley</Link></li>
-                <li><Link to="/destination/swat-valley" className="hover:text-[#22D3EE]">Swat Valley</Link></li>
-                <li><Link to="/destination/k2-base-camp" className="hover:text-[#22D3EE]">K2 Base Camp</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Contact Info</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li>Email: info@paktourzone.com</li>
-                <li>Phone: +92 300 1234567</li>
-                <li>Islamabad, Pakistan</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2024 PakTourZone. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer isDarkMode={isDarkMode} />
     </div>
   );
 };

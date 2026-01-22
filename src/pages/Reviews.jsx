@@ -1,5 +1,5 @@
-import { useState, useMemo, useRef } from 'react';
-import { useTheme } from '../context/ThemeContext';
+import { useState, useMemo } from 'react';
+import { useNavbarSetup } from '../hooks';
 import SEO from '../components/common/SEO';
 
 // Layout Components
@@ -166,11 +166,9 @@ const ratings = [
 ];
 
 const Reviews = () => {
-  const { isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen } = useTheme();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { navbarProps, isDarkMode } = useNavbarSetup();
   const [selectedRating, setSelectedRating] = useState('all');
   const [sortBy, setSortBy] = useState('recent');
-  const themeDropdownRef = useRef(null);
 
   // Calculate average rating
   const averageRating = useMemo(() => {
@@ -205,17 +203,6 @@ const Reviews = () => {
       "reviewBody": review.review
     }))
   }), [averageRating]);
-
-  const navbarProps = useMemo(() => ({
-    isDarkMode,
-    themeMode,
-    setThemeMode,
-    themeDropdownOpen,
-    setThemeDropdownOpen,
-    themeDropdownRef,
-    mobileMenuOpen,
-    setMobileMenuOpen
-  }), [isDarkMode, themeMode, themeDropdownOpen, mobileMenuOpen]);
 
   // Filter and sort reviews
   const filteredReviews = useMemo(() => {

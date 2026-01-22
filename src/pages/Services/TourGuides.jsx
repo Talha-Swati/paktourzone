@@ -2,6 +2,7 @@ import { useState, useMemo, useRef } from 'react';
 import { useTheme } from '../../context/ThemeContext';
 import SEO from '../../components/common/SEO';
 import Navbar from '../../components/layout/Navbar';
+import Footer from '../../components/layout/Footer';
 import { FaStar, FaMapMarkerAlt, FaLanguage, FaMountain, FaHiking, FaCamera, FaUsers, FaLandmark, FaAward, FaGlobeAsia } from 'react-icons/fa';
 
 // Tour Guides Data - Organized by Regions
@@ -549,14 +550,7 @@ const TourGuides = () => {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className={`py-12 border-t ${isDarkMode ? 'bg-[#0B0C0E] border-[#1E242B]' : 'bg-white border-gray-200'}`}>
-          <div className="container mx-auto px-4 text-center">
-            <p className={isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}>
-              &copy; 2026 PakTourZone. All guides are licensed and certified professionals.
-            </p>
-          </div>
-        </footer>
+        <Footer isDarkMode={isDarkMode} />
       </div>
     </>
   );

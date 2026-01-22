@@ -1,5 +1,5 @@
-import { useState, useMemo, useRef } from 'react';
-import { useTheme } from '../context/ThemeContext';
+import { useState, useMemo } from 'react';
+import { useNavbarSetup } from '../hooks';
 import SEO from '../components/common/SEO';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
@@ -8,20 +8,7 @@ import talhadp from '../assets/talhadp.png';
 import hammaddp from '../assets/hammaddp.jpeg';
 
 const About = () => {
-  const { isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen } = useTheme();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const themeDropdownRef = useRef(null);
-
-  const navbarProps = useMemo(() => ({
-    isDarkMode,
-    mobileMenuOpen,
-    setMobileMenuOpen,
-    themeMode,
-    setThemeMode,
-    themeDropdownOpen,
-    setThemeDropdownOpen,
-    themeDropdownRef
-  }), [isDarkMode, mobileMenuOpen, themeMode, themeDropdownOpen, setThemeDropdownOpen]);
+  const { navbarProps, isDarkMode } = useNavbarSetup();
 
   const teamMembers = [
     {

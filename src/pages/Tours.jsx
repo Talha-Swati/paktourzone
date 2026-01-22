@@ -1,6 +1,6 @@
-import { useState, useMemo, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext';
+import { useNavbarSetup, useClickOutside } from '../hooks';
 import SEO from '../components/common/SEO';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
@@ -17,21 +17,10 @@ import {
 } from 'react-icons/fa';
 
 const Tours = () => {
-  const { isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen } = useTheme();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { navbarProps, isDarkMode, themeDropdownRef } = useNavbarSetup();
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const themeDropdownRef = useRef(null);
 
-  const navbarProps = useMemo(() => ({
-    isDarkMode,
-    mobileMenuOpen,
-    setMobileMenuOpen,
-    themeMode,
-    setThemeMode,
-    themeDropdownOpen,
-    setThemeDropdownOpen,
-    themeDropdownRef
-  }), [isDarkMode, mobileMenuOpen, themeMode, themeDropdownOpen, setThemeDropdownOpen]);
+  useClickOutside([themeDropdownRef], [navbarProps.setThemeDropdownOpen]);
 
   const tourCategories = [
     {

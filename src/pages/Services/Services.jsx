@@ -1,41 +1,21 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../../context/ThemeContext';
+import { useNavbarSetup, useClickOutside } from '../../hooks';
 import Navbar from '../../components/layout/Navbar';
+import Footer from '../../components/layout/Footer';
 import { servicesData } from '../../data/servicesData';
 
 const Services = () => {
-  const { isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen } = useTheme();
+  const { navbarProps, isDarkMode, themeDropdownRef } = useNavbarSetup();
   const [hoveredService, setHoveredService] = useState(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
   
   const languageDropdownRef = useRef(null);
-  const themeDropdownRef = useRef(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target)) {
-        setLanguageDropdownOpen(false);
-      }
-      if (themeDropdownRef.current && !themeDropdownRef.current.contains(event.target)) {
-        setThemeDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [languageDropdownOpen, themeDropdownOpen, setThemeDropdownOpen]);
-
-  const navbarProps = useMemo(() => ({
-    isDarkMode,
-    themeMode,
-    setThemeMode,
-    themeDropdownOpen,
-    setThemeDropdownOpen,
-    themeDropdownRef,
-    mobileMenuOpen,
-    setMobileMenuOpen
-  }), [isDarkMode, themeMode, themeDropdownOpen, setThemeDropdownOpen, mobileMenuOpen, setMobileMenuOpen]);
+  useClickOutside(
+    [languageDropdownRef, themeDropdownRef],
+    [setLanguageDropdownOpen, navbarProps.setThemeDropdownOpen]
+  );
 
   const services = [
     {
@@ -140,6 +120,8 @@ const Services = () => {
           </div>
         </div>
       </div>
+      
+      <Footer isDarkMode={isDarkMode} />
     </div>
   );
 };
