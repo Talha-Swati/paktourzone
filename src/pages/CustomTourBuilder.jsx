@@ -1,22 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import { 
-  FaTimes, FaMapMarkerAlt, FaCalendar, FaUsers, FaHotel, FaCar, 
-  FaUtensils, FaHiking, FaCamera, FaUmbrellaBeach, FaMountain,
-  FaSwimmer, FaSkiing, FaBiking, FaFish, FaGlassCheers
+  FaMapMarkerAlt, FaCalendar, FaUsers, FaHotel, FaCar, 
+  FaUtensils
 } from 'react-icons/fa';
-import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
+import PageLayout from '../components/layout/PageLayout';
+import { customTourActivities, customTourDestinations } from '../data/customTourData';
 
 const CustomTourBuilder = () => {
-  const { isDarkMode, themeMode, setThemeMode } = useTheme();
+  const { isDarkMode } = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
-  
-  // Refs for dropdowns
-  const languageDropdownRef = useRef(null);
-  const themeDropdownRef = useRef(null);
   
   // Get pre-filled data from location state (if coming from destination page)
   const preFilledData = location.state?.preFilledData || {};
@@ -54,49 +49,8 @@ const CustomTourBuilder = () => {
     }
   });
 
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
-  const [themeDropdownOpen, setThemeDropdownOpen] = useState(false);
   const [step, setStep] = useState(1); // Multi-step form
   const [estimatedPrice, setEstimatedPrice] = useState(0);
-
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target)) {
-        setLanguageDropdownOpen(false);
-      }
-      if (themeDropdownRef.current && !themeDropdownRef.current.contains(event.target)) {
-        setThemeDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  // Available options
-  const destinations = [
-    { value: 'hunza', label: 'Hunza Valley', icon: '🏔️' },
-    { value: 'swat', label: 'Swat Valley', icon: '🌲' },
-    { value: 'skardu', label: 'Skardu & Baltistan', icon: '⛰️' },
-    { value: 'naran', label: 'Naran Kaghan', icon: '🏞️' },
-    { value: 'k2', label: 'K2 Base Camp', icon: '🗻' },
-    { value: 'fairy-meadows', label: 'Fairy Meadows', icon: '🌸' },
-    { value: 'chitral', label: 'Chitral & Kalash', icon: '🏛️' },
-    { value: 'gilgit', label: 'Gilgit Region', icon: '🏔️' },
-  ];
-
-  const activities = [
-    { value: 'trekking', label: 'Trekking', icon: <FaHiking /> },
-    { value: 'photography', label: 'Photography', icon: <FaCamera /> },
-    { value: 'camping', label: 'Camping', icon: <FaUmbrellaBeach /> },
-    { value: 'mountaineering', label: 'Mountaineering', icon: <FaMountain /> },
-    { value: 'rafting', label: 'Rafting', icon: <FaSwimmer /> },
-    { value: 'skiing', label: 'Skiing', icon: <FaSkiing /> },
-    { value: 'cycling', label: 'Cycling', icon: <FaBiking /> },
-    { value: 'fishing', label: 'Fishing', icon: <FaFish /> },
-    { value: 'cultural-tour', label: 'Cultural Tour', icon: <FaGlassCheers /> },
-  ];
 
   // Calculate estimated price based on selections
   useEffect(() => {
@@ -176,7 +130,7 @@ const CustomTourBuilder = () => {
           Select Destination *
         </label>
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-          {destinations.map(dest => (
+          {customTourDestinations.map(dest => (
             <button
               key={dest.value}
               type="button"
@@ -237,7 +191,7 @@ const CustomTourBuilder = () => {
             min={new Date().toISOString().split('T')[0]}
             className={`w-full rounded-lg border px-4 py-3 ${
               isDarkMode
-                ? 'bg-[#0B0C0E] border-gray-700 text-[#E0E7EE] [color-scheme:dark]'
+                ? 'bg-[#0B0C0E] border-gray-700 text-[#E0E7EE] scheme-dark'
                 : 'bg-white border-gray-300 text-[#1F2937]'
             }`}
           />
@@ -393,7 +347,7 @@ const CustomTourBuilder = () => {
           Select Activities (Optional)
         </label>
         <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
-          {activities.map(activity => (
+          {customTourActivities.map(activity => (
             <button
               key={activity.value}
               type="button"
@@ -745,8 +699,8 @@ const CustomTourBuilder = () => {
       {/* Price Estimate */}
       <div className={`rounded-xl p-6 ${
         isDarkMode 
-          ? 'bg-gradient-to-r from-[#0A3A67] to-[#22D3EE]/20' 
-          : 'bg-gradient-to-r from-blue-50 to-cyan-50'
+          ? 'bg-linear-to-r from-[#0A3A67] to-[#22D3EE]/20' 
+          : 'bg-linear-to-r from-blue-50 to-cyan-50'
       }`}>
         <h3 className={`mb-2 text-xl font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
           Estimated Total Price
@@ -767,18 +721,7 @@ const CustomTourBuilder = () => {
   );
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? 'bg-[#0B0C0E]' : 'bg-[#F8FAFB]'}`}>
-      {/* Navbar */}
-      <Navbar
-        isDarkMode={isDarkMode}
-        themeMode={themeMode}
-        setThemeMode={setThemeMode}
-        themeDropdownOpen={themeDropdownOpen}
-        setThemeDropdownOpen={setThemeDropdownOpen}
-        themeDropdownRef={themeDropdownRef}
-        mobileMenuOpen={mobileMenuOpen}
-        setMobileMenuOpen={setMobileMenuOpen}
-      />
+    <PageLayout className={`min-h-screen ${isDarkMode ? 'bg-[#0B0C0E]' : 'bg-[#F8FAFB]'}`}>
 
       <div className="container mx-auto px-4 py-12">
         {/* Header */}
@@ -795,7 +738,7 @@ const CustomTourBuilder = () => {
         <div className="mx-auto mb-12 max-w-3xl">
           <div className="flex items-center justify-between">
             {[1, 2, 3].map((stepNum) => (
-              <React.Fragment key={stepNum}>
+              <Fragment key={stepNum}>
                 <div className="flex flex-col items-center">
                   <div
                     className={`flex h-12 w-12 items-center justify-center rounded-full font-bold transition-all ${
@@ -823,7 +766,7 @@ const CustomTourBuilder = () => {
                     step > stepNum ? 'bg-[#22D3EE]' : isDarkMode ? 'bg-gray-700' : 'bg-gray-300'
                   }`} />
                 )}
-              </React.Fragment>
+              </Fragment>
             ))}
           </div>
         </div>
@@ -878,8 +821,7 @@ const CustomTourBuilder = () => {
         </form>
       </div>
 
-      <Footer isDarkMode={isDarkMode} />
-    </div>
+    </PageLayout>
   );
 };
 

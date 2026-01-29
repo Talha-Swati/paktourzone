@@ -17,8 +17,8 @@ const PageHero = ({
     <section
       className={`relative py-20 overflow-hidden ${
         isDarkMode 
-          ? 'bg-gradient-to-br from-[#0B0C0E] via-[#0A3A67] to-[#0B0C0E]' 
-          : 'bg-gradient-to-br from-white via-[#EBF8FF] to-white'
+          ? 'bg-linear-to-br from-[#0B0C0E] via-[#0A3A67] to-[#0B0C0E]' 
+          : 'bg-linear-to-br from-white via-[#EBF8FF] to-white'
       } ${className}`}
     >
       <div className="container mx-auto px-4">
@@ -46,8 +46,8 @@ const PageHero = ({
               className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${
                 gradient
                   ? isDarkMode
-                    ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF]'
-                    : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA]'
+                    ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]'
+                    : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
                   : isDarkMode
                   ? 'text-[#E0E7EE]'
                   : 'text-[#1F2937]'

@@ -37,7 +37,7 @@ const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 
 // Loading fallback component
 const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0B0C0E] to-[#0F1419]">
+  <div className="min-h-screen flex items-center justify-center bg-linear-to-b from-[#0B0C0E] to-[#0F1419]">
     <div className="text-center">
       <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-[#22D3EE] border-r-transparent"></div>
       <p className="mt-4 text-[#E0E7EE]">Loading...</p>

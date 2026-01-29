@@ -1,9 +1,7 @@
-import { useState, useMemo, useRef } from 'react';
+import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
-import SEO from '../components/common/SEO';
-import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
+import PageLayout from '../components/layout/PageLayout';
 import { 
   FaCalendarAlt,
   FaUsers, 
@@ -20,9 +18,7 @@ import {
 const BookNow = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen } = useTheme();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const themeDropdownRef = useRef(null);
+  const { isDarkMode } = useTheme();
 
   // Get tour/package data from navigation state or default
   const packageData = location.state?.packageData || {
@@ -62,16 +58,6 @@ const BookNow = () => {
 
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
 
-  const navbarProps = useMemo(() => ({
-    isDarkMode,
-    themeMode,
-    setThemeMode,
-    themeDropdownOpen,
-    setThemeDropdownOpen,
-    themeDropdownRef,
-    mobileMenuOpen,
-    setMobileMenuOpen
-  }), [isDarkMode, themeMode, themeDropdownOpen, mobileMenuOpen]);
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -143,17 +129,16 @@ const BookNow = () => {
 
   if (bookingConfirmed) {
     return (
-      <>
-        <SEO
-          title="Booking Confirmed - PakTourZone"
-          description="Your tour booking has been confirmed"
-          url="/book-now"
-        />
+      <PageLayout
+        seo={{
+          title: 'Booking Confirmed - PakTourZone',
+          description: 'Your tour booking has been confirmed',
+          url: '/book-now'
+        }}
+      >
         <div className={`min-h-screen transition-colors duration-500 ${
-          isDarkMode ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'
+          isDarkMode ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
         }`}>
-          <Navbar {...navbarProps} />
-          
           <div className="container mx-auto px-4 py-16">
             <div className="max-w-2xl mx-auto text-center">
               <div className="mb-8">
@@ -172,19 +157,19 @@ const BookNow = () => {
                 </h2>
                 <div className={`text-left space-y-4 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
                   <div className="flex items-start gap-3">
-                    <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
+                    <FaCheckCircle className="text-green-500 mt-1 shrink-0" />
                     <p>Check your email for booking confirmation and detailed itinerary</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
+                    <FaCheckCircle className="text-green-500 mt-1 shrink-0" />
                     <p>Our team will contact you within 24 hours to finalize details</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
+                    <FaCheckCircle className="text-green-500 mt-1 shrink-0" />
                     <p>You'll receive payment instructions and booking reference number</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
+                    <FaCheckCircle className="text-green-500 mt-1 shrink-0" />
                     <p>Pre-departure information will be sent 2 weeks before your trip</p>
                   </div>
                 </div>
@@ -210,8 +195,8 @@ const BookNow = () => {
                   onClick={() => navigate('/')}
                   className={`px-8 py-4 rounded-lg font-bold transition-all duration-300 ${
                     isDarkMode
-                      ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] hover:shadow-lg hover:shadow-[#22D3EE]/50'
-                      : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white hover:shadow-lg hover:shadow-blue-500/50'
+                      ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] hover:shadow-lg hover:shadow-[#22D3EE]/50'
+                      : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white hover:shadow-lg hover:shadow-blue-500/50'
                   } transform hover:scale-105`}
                 >
                   Back to Home
@@ -230,29 +215,25 @@ const BookNow = () => {
             </div>
           </div>
         </div>
-      </>
+      </PageLayout>
     );
   }
 
   return (
-    <>
-      <SEO
-        title="Book Your Tour - Secure Booking | PakTourZone"
-        description="Book your Northern Pakistan adventure securely online. Flexible payment options and instant confirmation."
-        keywords="book Pakistan tour, online booking, secure payment, tour reservation"
-        url="/book-now"
-      />
-
-      <div className={`min-h-screen transition-colors duration-500 ${
-        isDarkMode ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'
-      }`}>
-        <Navbar {...navbarProps} />
+    <PageLayout
+      seo={{
+        title: 'Book Your Tour - Secure Booking | PakTourZone',
+        description: 'Book your Northern Pakistan adventure securely online. Flexible payment options and instant confirmation.',
+        keywords: 'book Pakistan tour, online booking, secure payment, tour reservation',
+        url: '/book-now'
+      }}
+    >
 
         {/* Hero */}
-        <section className={`relative py-12 ${isDarkMode ? 'bg-gradient-to-br from-[#0B0C0E] via-[#0A3A67] to-[#0B0C0E]' : 'bg-gradient-to-br from-white via-[#EBF8FF] to-white'}`}>
+        <section className={`relative py-12 ${isDarkMode ? 'bg-linear-to-br from-[#0B0C0E] via-[#0A3A67] to-[#0B0C0E]' : 'bg-linear-to-br from-white via-[#EBF8FF] to-white'}`}>
           <div className="container mx-auto px-4">
             <h1 className={`text-3xl md:text-4xl font-bold mb-4 text-center ${
-              isDarkMode ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA]'
+              isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
             } bg-clip-text text-transparent`}>
               Complete Your Booking
             </h1>
@@ -272,8 +253,8 @@ const BookNow = () => {
                     <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold transition-all ${
                       step >= item.number
                         ? isDarkMode
-                          ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E]'
-                          : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white'
+                          ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E]'
+                          : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white'
                         : isDarkMode
                         ? 'bg-[#1E242B] text-[#8B949E]'
                         : 'bg-gray-200 text-gray-400'
@@ -755,8 +736,8 @@ const BookNow = () => {
                         type="submit"
                         className={`flex-1 px-8 py-3 rounded-lg font-bold transition-all duration-300 ${
                           isDarkMode
-                            ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] hover:shadow-lg hover:shadow-[#22D3EE]/50'
-                            : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white hover:shadow-lg hover:shadow-blue-500/50'
+                            ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] hover:shadow-lg hover:shadow-[#22D3EE]/50'
+                            : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white hover:shadow-lg hover:shadow-blue-500/50'
                         } transform hover:scale-105`}
                       >
                         {step === 4 ? 'Confirm Booking' : 'Continue'}
@@ -827,10 +808,7 @@ const BookNow = () => {
           </div>
         </section>
 
-        {/* Footer */}
-        <Footer isDarkMode={isDarkMode} />
-      </div>
-    </>
+    </PageLayout>
   );
 };
 

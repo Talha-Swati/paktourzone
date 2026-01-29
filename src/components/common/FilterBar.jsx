@@ -31,8 +31,8 @@ const FilterBar = ({
               className={`px-4 py-2 rounded-lg font-medium transition-all ${
                 activeFilters[filter.id] === option.value
                   ? isDarkMode
-                    ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E]'
-                    : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white'
+                    ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E]'
+                    : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white'
                   : isDarkMode
                   ? 'bg-[#141A1F] text-[#C4CCD4] hover:bg-[#1E242B]'
                   : 'bg-gray-100 text-[#4A5568] hover:bg-gray-200'

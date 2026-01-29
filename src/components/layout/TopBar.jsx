@@ -6,8 +6,8 @@ const TopBar = ({ isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThe
   return (
     <div className={`relative z-[60] border-b transition-colors duration-500 backdrop-blur-sm ${
       isDarkMode 
-        ? 'bg-gradient-to-br from-[#0B0C0E] via-[#0F1419] to-[#141A1F] border-[#1A2229] text-[#C4CCD4]'
-        : 'bg-gradient-to-br from-[#F8FAFB] via-[#E8F4F8] to-[#F0F9FF] text-[#1A202C]'
+        ? 'bg-linear-to-br from-[#0B0C0E] via-[#0F1419] to-[#141A1F] border-[#1A2229] text-[#C4CCD4]'
+        : 'bg-linear-to-br from-[#F8FAFB] via-[#E8F4F8] to-[#F0F9FF] text-[#1A202C]'
     }`}>
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center text-sm">
         <div className="flex items-center gap-6">

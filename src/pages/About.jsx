@@ -1,14 +1,12 @@
-import { useState, useMemo } from 'react';
-import { useNavbarSetup } from '../hooks';
-import SEO from '../components/common/SEO';
-import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
+import { useMemo } from 'react';
+import { useTheme } from '../context/ThemeContext';
+import PageLayout from '../components/layout/PageLayout';
 import { FaQuoteLeft, FaMountain, FaUsers, FaHeart, FaAward, FaGlobeAsia, FaHandshake, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 import talhadp from '../assets/talhadp.png';
 import hammaddp from '../assets/hammaddp.jpeg';
 
 const About = () => {
-  const { navbarProps, isDarkMode } = useNavbarSetup();
+  const { isDarkMode } = useTheme();
 
   const teamMembers = [
     {
@@ -114,26 +112,19 @@ const About = () => {
   }), []);
 
   return (
-    <>
-      <SEO
-        title="About Us - Meet Our Team | PakTourZone"
-        description="Meet the passionate team behind PakTourZone. Founded by Talha Riaz, Muhammad Saeed, and Hammad Ashraf, we're dedicated to showcasing Northern Pakistan's beauty."
-        keywords="about PakTourZone, tour company Pakistan, travel team, Talha Riaz, Muhammad Saeed, Hammad Ashraf"
-        url="/about"
-        structuredData={structuredData}
-      />
-
-      <div
-        className={`min-h-screen transition-colors duration-500 ${
-          isDarkMode ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'
-        }`}
-      >
-        <Navbar {...navbarProps} />
-
-        {/* Hero Section */}
+    <PageLayout
+      seo={{
+        title: "About Us - Meet Our Team | PakTourZone",
+        description: "Meet the passionate team behind PakTourZone. Founded by Talha Riaz, Muhammad Saeed, and Hammad Ashraf, we're dedicated to showcasing Northern Pakistan's beauty.",
+        keywords: "about PakTourZone, tour company Pakistan, travel team, Talha Riaz, Muhammad Saeed, Hammad Ashraf",
+        url: "/about",
+        structuredData
+      }}
+    >
+      {/* Hero Section */}
         <section
           className={`relative py-20 overflow-hidden ${
-            isDarkMode ? 'bg-gradient-to-br from-[#0B0C0E] via-[#0A3A67] to-[#0B0C0E]' : 'bg-gradient-to-br from-white via-[#EBF8FF] to-white'
+            isDarkMode ? 'bg-linear-to-br from-[#0B0C0E] via-[#0A3A67] to-[#0B0C0E]' : 'bg-linear-to-br from-white via-[#EBF8FF] to-white'
           }`}
         >
           <div className="container mx-auto px-4">
@@ -143,7 +134,7 @@ const About = () => {
               </div>
               <h1
                 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${
-                  isDarkMode ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA]'
+                  isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
                 } bg-clip-text text-transparent`}
               >
                 About PakTourZone
@@ -334,7 +325,7 @@ const About = () => {
         {/* Call to Action */}
         <section
           className={`py-16 ${
-            isDarkMode ? 'bg-gradient-to-r from-[#0F1419] to-[#141A1F]' : 'bg-gradient-to-r from-gray-50 to-blue-50'
+            isDarkMode ? 'bg-linear-to-r from-[#0F1419] to-[#141A1F]' : 'bg-linear-to-r from-gray-50 to-blue-50'
           }`}
         >
           <div className="container mx-auto px-4 text-center">
@@ -349,8 +340,8 @@ const About = () => {
                 href="/destinations"
                 className={`inline-block px-8 py-4 rounded-lg font-bold transition-all duration-300 ${
                   isDarkMode
-                    ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] hover:shadow-lg hover:shadow-[#22D3EE]/50'
-                    : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white hover:shadow-lg hover:shadow-blue-500/50'
+                    ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] hover:shadow-lg hover:shadow-[#22D3EE]/50'
+                    : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white hover:shadow-lg hover:shadow-blue-500/50'
                 } transform hover:scale-105`}
               >
                 Explore Destinations
@@ -370,9 +361,7 @@ const About = () => {
         </section>
 
         {/* Footer */}
-        <Footer isDarkMode={isDarkMode} />
-      </div>
-    </>
+    </PageLayout>
   );
 };
 

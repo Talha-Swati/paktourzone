@@ -16,8 +16,8 @@ const FlipCard = ({ frontImage, title, subtitle, price, description, highlights,
           <img src={frontImage} alt={title} className="w-full h-full object-cover" />
           <div className={`absolute inset-0 ${
             isDarkMode
-              ? 'bg-gradient-to-t from-[rgba(11,12,14,0.95)] via-[rgba(11,12,14,0.4)] to-transparent'
-              : 'bg-gradient-to-t from-[rgba(0,0,0,0.9)] via-[rgba(0,0,0,0.3)] to-transparent'
+              ? 'bg-linear-to-t from-[rgba(11,12,14,0.95)] via-[rgba(11,12,14,0.4)] to-transparent'
+              : 'bg-linear-to-t from-[rgba(0,0,0,0.9)] via-[rgba(0,0,0,0.3)] to-transparent'
           }`} />
           <div className="absolute bottom-0 left-0 right-0 p-6">
             <div className={`inline-block mb-2 rounded-full border backdrop-blur-sm px-4 py-1 ${
@@ -42,8 +42,8 @@ const FlipCard = ({ frontImage, title, subtitle, price, description, highlights,
         {/* Back */}
         <div className={`absolute inset-0 backface-hidden rotate-y-180 rounded-2xl overflow-hidden shadow-2xl border ${
           isDarkMode
-            ? 'bg-gradient-to-br from-[#0A3A67] via-[#141A1F] to-[#0B0C0E] border-[rgba(34,211,238,0.3)]'
-            : 'bg-gradient-to-br from-[#3B82F6] via-[#2563EB] to-[#1E40AF] border-[rgba(255,255,255,0.3)]'
+            ? 'bg-linear-to-br from-[#0A3A67] via-[#141A1F] to-[#0B0C0E] border-[rgba(34,211,238,0.3)]'
+            : 'bg-linear-to-br from-[#3B82F6] via-[#2563EB] to-[#1E40AF] border-[rgba(255,255,255,0.3)]'
         }`}>
           <div className="p-6 h-full flex flex-col justify-between">
             <div>
@@ -64,7 +64,7 @@ const FlipCard = ({ frontImage, title, subtitle, price, description, highlights,
             <Link to={link}>
               <button className={`w-full rounded-xl px-6 py-3 text-sm font-bold uppercase tracking-wider shadow-lg transition-all duration-300 hover:scale-105 ${
                 isDarkMode
-                  ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] shadow-[0_0_20px_rgba(34,211,238,0.5)] hover:shadow-[0_0_30px_rgba(34,211,238,0.7)]'
+                  ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] shadow-[0_0_20px_rgba(34,211,238,0.5)] hover:shadow-[0_0_30px_rgba(34,211,238,0.7)]'
                   : 'bg-white text-[#3B82F6] shadow-[0_0_20px_rgba(255,255,255,0.5)] hover:shadow-[0_0_30px_rgba(255,255,255,0.7)]'
               }`}>
                 View Details

@@ -1,46 +1,20 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
+import PageLayout from '../../components/layout/PageLayout';
 import { servicesData } from '../../data/servicesData';
 
 const PhotographyServices = () => {
-  const { isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen } = useTheme();
+  const { isDarkMode } = useTheme();
   const photoData = servicesData.photography;
   const [selectedPackage, setSelectedPackage] = useState(photoData.packages[1]); // Default to daily
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
-  
-  const languageDropdownRef = useRef(null);
-  const themeDropdownRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target)) {
-        setLanguageDropdownOpen(false);
-      }
-      if (themeDropdownRef.current && !themeDropdownRef.current.contains(event.target)) {
-        setThemeDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [languageDropdownOpen, themeDropdownOpen, setThemeDropdownOpen]);
-
-  const navbarProps = useMemo(() => ({
-    isDarkMode,
-    mobileMenuOpen,
-    setMobileMenuOpen,
-  }), [isDarkMode, mobileMenuOpen]);
 
   return (
-    <div className={`min-h-screen transition-colors duration-500 ${
+    <PageLayout className={`min-h-screen transition-colors duration-500 ${
       isDarkMode
-        ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
-        : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'
+        ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
+        : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
     }`}>
-      <Navbar {...navbarProps} />
 
       {/* Hero */}
       <div className="relative h-[60vh] min-h-[500px]">
@@ -48,7 +22,7 @@ const PhotographyServices = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url('${photoData.heroImage}')` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/90 to-purple-900/90"></div>
+          <div className="absolute inset-0 bg-linear-to-r from-indigo-900/90 to-purple-900/90"></div>
         </div>
         
         <div className="relative h-full flex items-center justify-center px-4">
@@ -325,7 +299,7 @@ const PhotographyServices = () => {
       </div>
 
       {/* CTA */}
-      <div className={`py-16 px-4 ${isDarkMode ? 'bg-gray-800' : 'bg-gradient-to-r from-indigo-50 to-purple-50'}`}>
+      <div className={`py-16 px-4 ${isDarkMode ? 'bg-gray-800' : 'bg-linear-to-r from-indigo-50 to-purple-50'}`}>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
             Capture Your Journey Forever
@@ -352,8 +326,7 @@ const PhotographyServices = () => {
         </div>
       </div>
 
-      <Footer isDarkMode={isDarkMode} />
-    </div>
+    </PageLayout>
   );
 };
 

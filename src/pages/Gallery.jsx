@@ -1,150 +1,14 @@
 import { useState, useMemo } from 'react';
-import { useNavbarSetup } from '../hooks';
-import SEO from '../components/common/SEO';
-
-// Layout Components
-import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
+import { useTheme } from '../context/ThemeContext';
+import PageLayout from '../components/layout/PageLayout';
+import { galleryPhotos, categories } from '../data/galleryPhotosData';
 
 // Icons
 import { FaSearch, FaTh, FaThLarge, FaTimes, FaMapMarkerAlt, FaCamera } from 'react-icons/fa';
 
-// Gallery Photos Data - Using Unsplash for demo
-const galleryPhotos = [
-  {
-    id: 1,
-    title: 'Hunza Valley Autumn Colors',
-    location: 'Hunza Valley',
-    category: 'landscapes',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
-    photographer: 'PakTourZone',
-    description: 'Golden autumn colors paint Hunza Valley in spectacular hues',
-    tags: ['hunza', 'autumn', 'landscape']
-  },
-  {
-    id: 2,
-    title: 'Nanga Parbat Majesty',
-    location: 'Fairy Meadows',
-    category: 'mountains',
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80',
-    photographer: 'PakTourZone',
-    description: 'The Killer Mountain stands tall against the clear blue sky',
-    tags: ['mountain', 'peak', 'nanga parbat']
-  },
-  {
-    id: 3,
-    title: 'Attabad Lake Serenity',
-    location: 'Hunza Valley',
-    category: 'lakes',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
-    photographer: 'PakTourZone',
-    description: 'Crystal clear turquoise waters of Attabad Lake',
-    tags: ['lake', 'water', 'hunza']
-  },
-  {
-    id: 4,
-    title: 'Skardu Sunset Magic',
-    location: 'Skardu',
-    category: 'landscapes',
-    image: 'https://images.unsplash.com/photo-1454391304352-2bf4678b1a7a?w=1200&q=80',
-    photographer: 'PakTourZone',
-    description: 'Breathtaking sunset over Skardu mountains',
-    tags: ['sunset', 'skardu', 'landscape']
-  },
-  {
-    id: 5,
-    title: 'Deosai Plains Wildlife',
-    location: 'Deosai National Park',
-    category: 'wildlife',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
-    photographer: 'PakTourZone',
-    description: 'Himalayan brown bear in the Land of Giants',
-    tags: ['wildlife', 'deosai', 'nature']
-  },
-  {
-    id: 6,
-    title: 'Karakoram Highway Adventure',
-    location: 'KKH',
-    category: 'adventure',
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80',
-    photographer: 'PakTourZone',
-    description: 'The highest paved international road in the world',
-    tags: ['road', 'adventure', 'kkh']
-  },
-  {
-    id: 7,
-    title: 'Baltit Fort Heritage',
-    location: 'Karimabad',
-    category: 'culture',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
-    photographer: 'PakTourZone',
-    description: '700-year-old fort overlooking Hunza Valley',
-    tags: ['fort', 'culture', 'heritage']
-  },
-  {
-    id: 8,
-    title: 'Shigar Fort Elegance',
-    location: 'Shigar',
-    category: 'culture',
-    image: 'https://images.unsplash.com/photo-1454391304352-2bf4678b1a7a?w=1200&q=80',
-    photographer: 'PakTourZone',
-    description: 'Beautifully restored heritage hotel in Baltistan',
-    tags: ['fort', 'shigar', 'heritage']
-  },
-  {
-    id: 9,
-    title: 'Upper Kachura Lake',
-    location: 'Skardu',
-    category: 'lakes',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
-    photographer: 'PakTourZone',
-    description: 'Shangrila Resort nestled by the pristine lake',
-    tags: ['lake', 'skardu', 'shangrila']
-  },
-  {
-    id: 10,
-    title: 'Rakaposhi Basecamp Trek',
-    location: 'Nagar Valley',
-    category: 'adventure',
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80',
-    photographer: 'PakTourZone',
-    description: 'Trekking towards the magnificent Rakaposhi peak',
-    tags: ['trek', 'mountain', 'adventure']
-  },
-  {
-    id: 11,
-    title: 'Passu Cones',
-    location: 'Gojal Valley',
-    category: 'mountains',
-    image: 'https://images.unsplash.com/photo-1454391304352-2bf4678b1a7a?w=1200&q=80',
-    photographer: 'PakTourZone',
-    description: 'Iconic cathedral-shaped peaks of Passu',
-    tags: ['mountains', 'passu', 'gojal']
-  },
-  {
-    id: 12,
-    title: 'Khunjerab Pass Border',
-    location: 'Pak-China Border',
-    category: 'adventure',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
-    photographer: 'PakTourZone',
-    description: 'Highest border crossing in the world at 4,693m',
-    tags: ['border', 'pass', 'khunjerab']
-  }
-];
-
-const categories = [
-  { id: 'all', name: 'All Photos', icon: '📸' },
-  { id: 'landscapes', name: 'Landscapes', icon: '🏔️' },
-  { id: 'mountains', name: 'Mountains', icon: '⛰️' },
-  { id: 'lakes', name: 'Lakes', icon: '🏞️' },
-  { id: 'culture', name: 'Culture', icon: '🏛️' },
-  { id: 'adventure', name: 'Adventure', icon: '🎒' },
-  { id: 'wildlife', name: 'Wildlife', icon: '🦌' }
-];
 
 const Gallery = () => {
-  const { navbarProps, isDarkMode } = useNavbarSetup();
+  const { isDarkMode } = useTheme();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -196,27 +60,20 @@ const Gallery = () => {
   };
 
   return (
-    <>
-      <SEO
-        title="Photo Gallery - Northern Pakistan Beauty | PakTourZone"
-        description="Explore stunning photography from Hunza, Skardu, Fairy Meadows, and other breathtaking destinations in Northern Pakistan. High-quality travel photos and landscapes."
-        keywords="Pakistan photography, Hunza photos, Skardu images, travel photography, Northern Pakistan pictures, landscape photography"
-        url="/gallery"
-        image={galleryPhotos[0].image}
-        structuredData={structuredData}
-      />
-
-      <div
-        className={`min-h-screen transition-colors duration-500 ${
-          isDarkMode ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'
-        }`}
-      >
-        <Navbar {...navbarProps} />
-
-        {/* Hero Section */}
+    <PageLayout
+      seo={{
+        title: "Photo Gallery - Northern Pakistan Beauty | PakTourZone",
+        description: "Explore stunning photography from Hunza, Skardu, Fairy Meadows, and other breathtaking destinations in Northern Pakistan. High-quality travel photos and landscapes.",
+        keywords: "Pakistan photography, Hunza photos, Skardu images, travel photography, Northern Pakistan pictures, landscape photography",
+        url: "/gallery",
+        image: galleryPhotos[0].image,
+        structuredData
+      }}
+    >
+      {/* Hero Section */}
         <section
           className={`relative py-20 overflow-hidden ${
-            isDarkMode ? 'bg-gradient-to-br from-[#0B0C0E] via-[#0A3A67] to-[#0B0C0E]' : 'bg-gradient-to-br from-white via-[#EBF8FF] to-white'
+            isDarkMode ? 'bg-linear-to-br from-[#0B0C0E] via-[#0A3A67] to-[#0B0C0E]' : 'bg-linear-to-br from-white via-[#EBF8FF] to-white'
           }`}
         >
           <div className="container mx-auto px-4">
@@ -230,7 +87,7 @@ const Gallery = () => {
 
               <h1
                 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${
-                  isDarkMode ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA]'
+                  isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
                 } bg-clip-text text-transparent`}
               >
                 Photo Gallery
@@ -273,8 +130,8 @@ const Gallery = () => {
                     className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 text-sm ${
                       selectedCategory === cat.id
                         ? isDarkMode
-                          ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E]'
-                          : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white'
+                          ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E]'
+                          : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white'
                         : isDarkMode
                         ? 'bg-[#141A1F] text-[#C4CCD4] border border-[rgba(34,211,238,0.2)] hover:border-[#22D3EE]'
                         : 'bg-white text-[#4A5568] border border-gray-200 hover:border-blue-400'
@@ -366,7 +223,7 @@ const Gallery = () => {
                     />
 
                     {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="absolute bottom-0 left-0 right-0 p-4">
                         <h3 className="text-white font-bold text-lg mb-1">{photo.title}</h3>
                         <div className="flex items-center gap-2 text-white/80 text-sm mb-2">
@@ -461,9 +318,7 @@ const Gallery = () => {
         )}
 
         {/* Footer */}
-        <Footer isDarkMode={isDarkMode} />
-      </div>
-    </>
+    </PageLayout>
   );
 };
 

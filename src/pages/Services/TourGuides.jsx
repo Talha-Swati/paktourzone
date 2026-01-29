@@ -1,8 +1,6 @@
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo } from 'react';
 import { useTheme } from '../../context/ThemeContext';
-import SEO from '../../components/common/SEO';
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
+import PageLayout from '../../components/layout/PageLayout';
 import { FaStar, FaMapMarkerAlt, FaLanguage, FaMountain, FaHiking, FaCamera, FaUsers, FaLandmark, FaAward, FaGlobeAsia } from 'react-icons/fa';
 
 // Tour Guides Data - Organized by Regions
@@ -189,17 +187,9 @@ const tourGuides = [
 ];
 
 const TourGuides = () => {
-  const { isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen } = useTheme();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { isDarkMode } = useTheme();
   const [selectedRegion, setSelectedRegion] = useState('all');
   const [selectedSpecialty, setSelectedSpecialty] = useState('all');
-  const themeDropdownRef = useRef(null);
-
-  const navbarProps = useMemo(() => ({
-    isDarkMode,
-    mobileMenuOpen,
-    setMobileMenuOpen
-  }), [isDarkMode, mobileMenuOpen]);
 
   const regions = useMemo(() => [
     { id: 'all', name: 'All Regions', icon: <FaGlobeAsia /> },
@@ -267,26 +257,20 @@ const TourGuides = () => {
   );
 
   return (
-    <>
-      <SEO
-        title="Expert Tour Guides - Professional Local Guides in Pakistan | PakTourZone"
-        description={`Meet our ${tourGuides.length} expert tour guides across Northern Pakistan. Licensed professionals with local expertise in Hunza, Skardu, Gilgit, and more. ${averageRating}/5 average rating.`}
-        keywords="tour guides Pakistan, local guides, mountain guides, trekking guides, cultural guides, professional tour guides"
-        url="/services/guides"
-        structuredData={structuredData}
-      />
-
-      <div
-        className={`min-h-screen transition-colors duration-500 ${
-          isDarkMode ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'
-        }`}
-      >
-        <Navbar {...navbarProps} />
+    <PageLayout
+      seo={{
+        title: 'Expert Tour Guides - Professional Local Guides in Pakistan | PakTourZone',
+        description: `Meet our ${tourGuides.length} expert tour guides across Northern Pakistan. Licensed professionals with local expertise in Hunza, Skardu, Gilgit, and more. ${averageRating}/5 average rating.`,
+        keywords: 'tour guides Pakistan, local guides, mountain guides, trekking guides, cultural guides, professional tour guides',
+        url: '/services/guides',
+        structuredData
+      }}
+    >
 
         {/* Hero Section */}
         <section
           className={`relative py-20 overflow-hidden ${
-            isDarkMode ? 'bg-gradient-to-br from-[#0B0C0E] via-[#0A3A67] to-[#0B0C0E]' : 'bg-gradient-to-br from-white via-[#EBF8FF] to-white'
+            isDarkMode ? 'bg-linear-to-br from-[#0B0C0E] via-[#0A3A67] to-[#0B0C0E]' : 'bg-linear-to-br from-white via-[#EBF8FF] to-white'
           }`}
         >
           <div className="container mx-auto px-4">
@@ -296,7 +280,7 @@ const TourGuides = () => {
               </div>
               <h1
                 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${
-                  isDarkMode ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA]'
+                  isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
                 } bg-clip-text text-transparent`}
               >
                 Meet Our Expert Tour Guides
@@ -353,8 +337,8 @@ const TourGuides = () => {
                       className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all duration-300 text-sm ${
                         selectedRegion === region.id
                           ? isDarkMode
-                            ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E]'
-                            : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white'
+                            ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E]'
+                            : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white'
                           : isDarkMode
                           ? 'bg-[#141A1F] text-[#C4CCD4] border border-[rgba(34,211,238,0.2)] hover:border-[#22D3EE]'
                           : 'bg-white text-[#4A5568] border border-gray-200 hover:border-blue-400'
@@ -527,7 +511,7 @@ const TourGuides = () => {
         {/* Call to Action */}
         <section
           className={`py-16 ${
-            isDarkMode ? 'bg-gradient-to-r from-[#0F1419] to-[#141A1F]' : 'bg-gradient-to-r from-gray-50 to-blue-50'
+            isDarkMode ? 'bg-linear-to-r from-[#0F1419] to-[#141A1F]' : 'bg-linear-to-r from-gray-50 to-blue-50'
           }`}
         >
           <div className="container mx-auto px-4 text-center">
@@ -541,8 +525,8 @@ const TourGuides = () => {
               href="/destinations"
               className={`inline-block px-8 py-4 rounded-lg font-bold transition-all duration-300 ${
                 isDarkMode
-                  ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] hover:shadow-lg hover:shadow-[#22D3EE]/50'
-                  : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white hover:shadow-lg hover:shadow-blue-500/50'
+                  ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] hover:shadow-lg hover:shadow-[#22D3EE]/50'
+                  : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white hover:shadow-lg hover:shadow-blue-500/50'
               } transform hover:scale-105`}
             >
               Browse Destinations
@@ -550,9 +534,7 @@ const TourGuides = () => {
           </div>
         </section>
 
-        <Footer isDarkMode={isDarkMode} />
-      </div>
-    </>
+    </PageLayout>
   );
 };
 

@@ -1,6 +1,64 @@
-import React, { memo } from 'react';
+import React, { memo, useState, useEffect } from 'react';
 
 const HeroSection = ({ isDarkMode, currentSlide, setCurrentSlide, heroImages }) => {
+  const [typedIndex, setTypedIndex] = useState(0);
+  const fullText = 'Explore Northern Pakistan Paradise';
+  const words = fullText.split(' ');
+
+  useEffect(() => {
+    if (typedIndex < fullText.length) {
+      const timeout = setTimeout(() => {
+        setTypedIndex(prev => prev + 1);
+      }, 80);
+      return () => clearTimeout(timeout);
+    }
+  }, [typedIndex]);
+
+  const renderText = () => {
+    let charCount = 0;
+    return words.map((word, wordIndex) => {
+      const wordChars = word.split('').map((char, charIndex) => {
+        const currentIndex = charCount;
+        charCount++;
+        const isTyped = currentIndex < typedIndex;
+        const isCurrentlyTyping = currentIndex === typedIndex;
+        
+        return (
+          <span
+            key={`${wordIndex}-${charIndex}`}
+            className={`inline-block transition-all duration-300 ${
+              isTyped 
+                ? 'opacity-100 blur-0' 
+                : 'opacity-30 blur-[2px]'
+            }`}
+          >
+            {char}
+            {isCurrentlyTyping && <span className="animate-pulse">|</span>}
+          </span>
+        );
+      });
+      
+      charCount++; // for space
+      
+      if (wordIndex === 1) {
+        return (
+          <React.Fragment key={wordIndex}>
+            <span className={isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}>
+              {wordChars}
+            </span>
+            <br />
+          </React.Fragment>
+        );
+      }
+      
+      return (
+        <React.Fragment key={wordIndex}>
+          {wordChars}
+          {wordIndex < words.length - 1 && <span className={typedIndex > charCount - 1 ? 'opacity-100' : 'opacity-30'}> </span>}
+        </React.Fragment>
+      );
+    });
+  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -23,13 +81,13 @@ const HeroSection = ({ isDarkMode, currentSlide, setCurrentSlide, heroImages }) 
       {/* Multi-layer Gradients */}
       <div className={`absolute inset-0 transition-colors duration-500 ${
         isDarkMode
-          ? 'bg-gradient-to-br from-[rgba(11,12,14,0.85)] via-[rgba(10,58,103,0.75)] to-[rgba(11,12,14,0.9)]'
-          : 'bg-gradient-to-br from-[rgba(255,255,255,0.75)] via-[rgba(219,234,254,0.65)] to-[rgba(239,246,255,0.85)]'
+          ? 'bg-linear-to-br from-[rgba(11,12,14,0.85)] via-[rgba(10,58,103,0.75)] to-[rgba(11,12,14,0.9)]'
+          : 'bg-linear-to-br from-[rgba(255,255,255,0.75)] via-[rgba(219,234,254,0.65)] to-[rgba(239,246,255,0.85)]'
       }`} />
       <div className={`absolute inset-0 transition-colors duration-500 ${
         isDarkMode
-          ? 'bg-gradient-to-t from-[#0B0C0E] via-transparent to-transparent'
-          : 'bg-gradient-to-t from-white via-transparent to-transparent'
+          ? 'bg-linear-to-t from-[#0B0C0E] via-transparent to-transparent'
+          : 'bg-linear-to-t from-white via-transparent to-transparent'
       }`} />
       
       {/* Slider Indicators */}
@@ -68,12 +126,10 @@ const HeroSection = ({ isDarkMode, currentSlide, setCurrentSlide, heroImages }) 
         </div>
 
         {/* Main Heading */}
-        <h1 className={`mb-6 text-5xl font-black tracking-tight sm:text-6xl md:text-7xl lg:text-8xl transition-colors duration-500 ${
+        <h1 className={`mb-6 text-4xl font-bold tracking-normal sm:text-5xl md:text-6xl lg:text-7xl transition-colors duration-500 ${
           isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'
-        }`}>
-          <span className={isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}>Explore Northern</span>
-          <br />
-          Pakistan Paradise
+        }`} style={{ fontFamily: 'Playfair Display, serif', letterSpacing: '0.02em' }}>
+          {renderText()}
         </h1>
 
         {/* Subtitle */}

@@ -1,96 +1,16 @@
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
-import SEO from '../components/common/SEO';
-
-// Layout Components
-import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
+import PageLayout from '../components/layout/PageLayout';
+import { specialOfferPackages } from '../data/specialOffersData';
 
 // Icons
 import { FaClock, FaUsers, FaMapMarkerAlt, FaStar, FaTag, FaCalendarAlt, FaCheckCircle, FaArrowRight, FaFire } from 'react-icons/fa';
 
-// Special Offer Packages with Discounts
-const specialOfferPackages = [
-  {
-    id: 'hunza-winter-special',
-    name: 'Hunza Valley Winter Special',
-    originalPrice: 1200,
-    offerPrice: 899,
-    discount: 25,
-    duration: '7 Days / 6 Nights',
-    difficulty: 'Easy',
-    groupSize: '4-12 people',
-    destination: 'Hunza Valley',
-    rating: 4.8,
-    reviews: 156,
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-    validUntil: '2026-02-28',
-    badge: 'Limited Time',
-    description: 'Experience the magical winter beauty of Hunza Valley at an unbeatable price!',
-    link: '/destinations/hunza'
-  },
-  {
-    id: 'skardu-adventure-deal',
-    name: 'Skardu Adventure Deal',
-    originalPrice: 1500,
-    offerPrice: 1125,
-    discount: 25,
-    duration: '8 Days / 7 Nights',
-    difficulty: 'Moderate',
-    groupSize: '6-15 people',
-    destination: 'Skardu & Baltistan',
-    rating: 4.9,
-    reviews: 203,
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-    validUntil: '2026-03-15',
-    badge: 'Hot Deal',
-    description: 'Explore Skardu\'s breathtaking landscapes with this exclusive adventure package!',
-    link: '/destinations/skardu'
-  },
-  {
-    id: 'fairy-meadows-trek',
-    name: 'Fairy Meadows Trek Special',
-    originalPrice: 1800,
-    offerPrice: 1260,
-    discount: 30,
-    duration: '10 Days / 9 Nights',
-    difficulty: 'Challenging',
-    groupSize: '4-10 people',
-    destination: 'Fairy Meadows',
-    rating: 5.0,
-    reviews: 178,
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
-    validUntil: '2026-04-30',
-    badge: 'Best Value',
-    description: 'Trek to the base of Nanga Parbat with our most popular discounted package!',
-    link: '/trips/adventure'
-  },
-  {
-    id: 'naran-kaghan-family',
-    name: 'Naran Kaghan Family Package',
-    originalPrice: 950,
-    offerPrice: 713,
-    discount: 25,
-    duration: '5 Days / 4 Nights',
-    difficulty: 'Easy',
-    groupSize: '4-20 people',
-    destination: 'Naran Kaghan',
-    rating: 4.7,
-    reviews: 289,
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-    validUntil: '2026-05-31',
-    badge: 'Family Special',
-    description: 'Perfect family getaway to Naran Kaghan valley with amazing discounts!',
-    link: '/destinations/naran-kaghan'
-  }
-];
 
 const SpecialOffers = () => {
-  const { isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen } = useTheme();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { isDarkMode } = useTheme();
   const [selectedFilter, setSelectedFilter] = useState('all');
-  const themeDropdownRef = useRef(null);
 
   // SEO structured data
   const structuredData = useMemo(() => ({
@@ -113,16 +33,6 @@ const SpecialOffers = () => {
     }))
   }), []);
 
-  const navbarProps = useMemo(() => ({
-    isDarkMode,
-    mobileMenuOpen,
-    setMobileMenuOpen,
-    themeMode,
-    setThemeMode,
-    themeDropdownOpen,
-    setThemeDropdownOpen,
-    themeDropdownRef
-  }), [isDarkMode, mobileMenuOpen, themeMode, themeDropdownOpen, setThemeDropdownOpen]);
 
   // Filter packages
   const filteredPackages = useMemo(() => {
@@ -143,26 +53,20 @@ const SpecialOffers = () => {
   };
 
   return (
-    <>
-      <SEO 
-        title="Special Offers & Deals - PakTourZone"
-        description="Exclusive tour package deals and discounts for Northern Pakistan. Save up to 30% on Hunza, Skardu, Fairy Meadows, and Naran Kaghan tours. Limited time offers!"
-        keywords="Pakistan tour deals, Hunza discount, Skardu offer, tour package deals, Northern Pakistan discount"
-        url="/special-offers"
-        structuredData={structuredData}
-      />
-
-      <div
-        className={`min-h-screen transition-colors duration-500 ${
-          isDarkMode ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'
-        }`}
-      >
-        <Navbar {...navbarProps} />
+    <PageLayout
+      seo={{
+        title: 'Special Offers & Deals - PakTourZone',
+        description: 'Exclusive tour package deals and discounts for Northern Pakistan. Save up to 30% on Hunza, Skardu, Fairy Meadows, and Naran Kaghan tours. Limited time offers!',
+        keywords: 'Pakistan tour deals, Hunza discount, Skardu offer, tour package deals, Northern Pakistan discount',
+        url: '/special-offers',
+        structuredData
+      }}
+    >
 
         {/* Hero Section */}
         <section
           className={`relative py-20 overflow-hidden ${
-            isDarkMode ? 'bg-gradient-to-br from-[#0B0C0E] via-[#0A3A67] to-[#0B0C0E]' : 'bg-gradient-to-br from-white via-[#EBF8FF] to-white'
+            isDarkMode ? 'bg-linear-to-br from-[#0B0C0E] via-[#0A3A67] to-[#0B0C0E]' : 'bg-linear-to-br from-white via-[#EBF8FF] to-white'
           }`}
         >
           <div className="container mx-auto px-4 relative z-10">
@@ -177,7 +81,7 @@ const SpecialOffers = () => {
 
               <h1
                 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${
-                  isDarkMode ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA]'
+                  isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
                 } bg-clip-text text-transparent`}
               >
                 Exclusive Tour Deals
@@ -245,8 +149,8 @@ const SpecialOffers = () => {
                   className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ${
                     selectedFilter === filter.id
                       ? isDarkMode
-                        ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] shadow-lg'
-                        : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white shadow-lg'
+                        ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] shadow-lg'
+                        : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white shadow-lg'
                       : isDarkMode
                       ? 'bg-[#141A1F] text-[#C4CCD4] border border-[rgba(34,211,238,0.2)] hover:border-[#22D3EE]'
                       : 'bg-white text-[#4A5568] border border-gray-200 hover:border-blue-400'
@@ -279,7 +183,7 @@ const SpecialOffers = () => {
                   >
                     {/* Image Section */}
                     <div className="relative h-48 overflow-hidden">
-                      <div className={`absolute inset-0 bg-gradient-to-t ${isDarkMode ? 'from-[#0B0C0E]' : 'from-gray-900'} to-transparent z-10`}></div>
+                      <div className={`absolute inset-0 bg-linear-to-t ${isDarkMode ? 'from-[#0B0C0E]' : 'from-gray-900'} to-transparent z-10`}></div>
                       <img
                         src={pkg.image}
                         alt={pkg.name}
@@ -300,8 +204,8 @@ const SpecialOffers = () => {
                         <div className="absolute top-4 left-4 z-20">
                           <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                             isDarkMode
-                              ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E]'
-                              : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white'
+                              ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E]'
+                              : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white'
                           }`}>
                             {pkg.badge}
                           </span>
@@ -375,8 +279,8 @@ const SpecialOffers = () => {
                         to={pkg.link}
                         className={`block w-full py-3 rounded-lg font-bold text-center transition-all duration-300 ${
                           isDarkMode
-                            ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] hover:shadow-lg hover:shadow-[#22D3EE]/50'
-                            : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white hover:shadow-lg hover:shadow-blue-500/50'
+                            ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] hover:shadow-lg hover:shadow-[#22D3EE]/50'
+                            : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white hover:shadow-lg hover:shadow-blue-500/50'
                         } transform hover:scale-105`}
                       >
                         View Details <FaArrowRight className="inline ml-2" />
@@ -392,7 +296,7 @@ const SpecialOffers = () => {
         {/* Why Book Now Section */}
         <section
           className={`py-16 ${
-            isDarkMode ? 'bg-gradient-to-r from-[#0F1419] to-[#141A1F]' : 'bg-gradient-to-r from-gray-50 to-blue-50'
+            isDarkMode ? 'bg-linear-to-r from-[#0F1419] to-[#141A1F]' : 'bg-linear-to-r from-gray-50 to-blue-50'
           }`}
         >
           <div className="container mx-auto px-4">
@@ -437,10 +341,7 @@ const SpecialOffers = () => {
           </div>
         </section>
 
-        {/* Footer */}
-        <Footer isDarkMode={isDarkMode} />
-      </div>
-    </>
+    </PageLayout>
   );
 };
 

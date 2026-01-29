@@ -56,8 +56,8 @@ const AnimatedStatBadge = ({ target, suffix, label, duration, decimal = false, i
     <div ref={badgeRef} className="text-center">
       <div className={`text-3xl md:text-4xl font-bold mb-1 bg-clip-text text-transparent ${
         isDarkMode
-          ? 'bg-gradient-to-r from-[#22D3EE] via-[#4DBBFF] to-[#22D3EE]'
-          : 'bg-gradient-to-r from-[#3B82F6] via-[#60A5FA] to-[#3B82F6]'
+          ? 'bg-linear-to-r from-[#22D3EE] via-[#4DBBFF] to-[#22D3EE]'
+          : 'bg-linear-to-r from-[#3B82F6] via-[#60A5FA] to-[#3B82F6]'
       }`}>
         {decimal ? count.toFixed(1) : count.toLocaleString()}{suffix}
       </div>

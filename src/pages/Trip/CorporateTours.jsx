@@ -1,50 +1,18 @@
-import { useState, useRef, useEffect, useMemo } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useNavbarSetup, useClickOutside } from '../../hooks';
 import { useTheme } from '../../context/ThemeContext';
 import { getToursByCategory } from '../../data/toursData';
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
+import PageLayout from '../../components/layout/PageLayout';
 import { 
   Briefcase, Calendar, MapPin, Star, Users,
   Award, Target, TrendingUp, Shield, Check, ArrowRight, Lightbulb
 } from 'lucide-react';
 
 const CorporateTours = () => {
-  const { isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen } = useTheme();
+  const { isDarkMode } = useTheme();
   const navigate = useNavigate();
   const tourData = getToursByCategory('corporate');
-
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState(null);
-  
-  const languageDropdownRef = useRef(null);
-  const themeDropdownRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target)) {
-        setLanguageDropdownOpen(false);
-      }
-      if (themeDropdownRef.current && !themeDropdownRef.current.contains(event.target)) {
-        setThemeDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [languageDropdownOpen, themeDropdownOpen, setThemeDropdownOpen]);
-
-  const navbarProps = useMemo(() => ({
-    isDarkMode,
-    mobileMenuOpen,
-    setMobileMenuOpen,
-    themeMode,
-    setThemeMode,
-    themeDropdownOpen,
-    setThemeDropdownOpen,
-    themeDropdownRef,
-  }), [isDarkMode, mobileMenuOpen, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen]);
 
   const handleBookNow = (pkg) => {
     navigate('/custom-tour', {
@@ -59,12 +27,11 @@ const CorporateTours = () => {
   };
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}`}>
-      <Navbar {...navbarProps} />
+    <PageLayout className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}>
 
       {/* Hero Section */}
       <div className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: `url(${tourData.heroImage})` }}>
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-indigo-900/80" />
+        <div className="absolute inset-0 bg-linear-to-r from-blue-900/90 to-indigo-900/80" />
         <div className="relative h-full container mx-auto px-4 flex items-center">
           <div className="max-w-3xl text-white">
             <div className="flex items-center gap-3 mb-4">
@@ -176,8 +143,7 @@ const CorporateTours = () => {
         </div>
       </div>
 
-      <Footer isDarkMode={isDarkMode} />
-    </div>
+    </PageLayout>
   );
 };
 

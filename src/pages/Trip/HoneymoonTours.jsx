@@ -1,29 +1,19 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useNavbarSetup, useClickOutside } from '../../hooks';
+import { useTheme } from '../../context/ThemeContext';
 import { getToursByCategory } from '../../data/toursData';
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
+import PageLayout from '../../components/layout/PageLayout';
 import { 
   Heart, Calendar, MapPin, Star, Sparkles,
   Camera, Wine, Award, Shield, Check, ArrowRight, Gift
 } from 'lucide-react';
 
 const HoneymoonTours = () => {
-  const { navbarProps, isDarkMode, themeDropdownRef } = useNavbarSetup();
+  const { isDarkMode } = useTheme();
   const navigate = useNavigate();
   const tourData = getToursByCategory('honeymoon');
-
-  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
-  
-  const languageDropdownRef = useRef(null);
-
-  useClickOutside(
-    [languageDropdownRef, themeDropdownRef],
-    [setLanguageDropdownOpen, navbarProps.setThemeDropdownOpen]
-  );
 
   const handleBookNow = (pkg) => {
     navigate('/custom-tour', {
@@ -45,25 +35,24 @@ const HoneymoonTours = () => {
   };
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}`}>
-      <Navbar {...navbarProps} />
+    <PageLayout className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}>
 
       {/* Hero Section with Romantic Gradient */}
       <div 
         className="relative h-[600px] bg-cover bg-center"
         style={{ backgroundImage: `url(${tourData.heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-pink-900/80 via-purple-900/70 to-blue-900/80" />
+        <div className="absolute inset-0 bg-linear-to-r from-pink-900/80 via-purple-900/70 to-blue-900/80" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_black_100%)] opacity-40" />
         <div className="relative h-full container mx-auto px-4 flex items-center">
           <div className="max-w-3xl text-white">
             <div className="flex items-center gap-3 mb-6">
               <Heart className="w-12 h-12 text-pink-300 fill-pink-300 animate-pulse" />
-              <span className="px-5 py-2 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full text-sm font-semibold shadow-lg">
+              <span className="px-5 py-2 bg-linear-to-r from-pink-500 to-purple-500 rounded-full text-sm font-semibold shadow-lg">
                 {tourData.category}
               </span>
             </div>
-            <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-pink-200 via-purple-200 to-blue-200 bg-clip-text text-transparent">
+            <h1 className="text-6xl font-bold mb-6 bg-linear-to-r from-pink-200 via-purple-200 to-blue-200 bg-clip-text text-transparent">
               {tourData.title}
             </h1>
             <p className="text-2xl text-gray-100 mb-8 leading-relaxed">{tourData.description}</p>
@@ -86,11 +75,11 @@ const HoneymoonTours = () => {
       </div>
 
       {/* Romantic Features */}
-      <div className={`py-16 ${isDarkMode ? 'bg-gradient-to-b from-[#0F1419] to-[#0B0C0E]' : 'bg-gradient-to-b from-white to-pink-50'}`}>
+      <div className={`py-16 ${isDarkMode ? 'bg-linear-to-b from-[#0F1419] to-[#0B0C0E]' : 'bg-linear-to-b from-white to-pink-50'}`}>
         <div className="container mx-auto px-4">
           <h2 className={`text-4xl font-bold text-center mb-12 ${
             isDarkMode 
-              ? 'bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent' 
+              ? 'bg-linear-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent' 
               : 'text-pink-600'
           }`}>
             What Makes Our Honeymoon Packages Special?
@@ -101,7 +90,7 @@ const HoneymoonTours = () => {
                 key={index}
                 className={`group p-8 rounded-2xl border-2 ${
                   isDarkMode 
-                    ? 'bg-gradient-to-br from-[#141A1F] to-[#0F1419] border-pink-900/30 hover:border-pink-500/50' 
+                    ? 'bg-linear-to-br from-[#141A1F] to-[#0F1419] border-pink-900/30 hover:border-pink-500/50' 
                     : 'bg-white border-pink-200 hover:border-pink-400'
                 } transition-all duration-500 hover:shadow-2xl hover:scale-105`}
               >
@@ -135,7 +124,7 @@ const HoneymoonTours = () => {
                 key={pkg.id}
                 className={`rounded-3xl overflow-hidden shadow-2xl ${
                   isDarkMode 
-                    ? 'bg-gradient-to-br from-[#141A1F] via-[#1A1F2E] to-[#141A1F]' 
+                    ? 'bg-linear-to-br from-[#141A1F] via-[#1A1F2E] to-[#141A1F]' 
                     : 'bg-white'
                 } border-2 ${
                   isDarkMode ? 'border-pink-900/30' : 'border-pink-100'
@@ -152,7 +141,7 @@ const HoneymoonTours = () => {
                         e.target.src = 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80';
                       }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-pink-900/80 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-pink-900/80 via-transparent to-transparent" />
                     <div className="absolute bottom-6 left-6 right-6">
                       {pkg.rating && (
                         <div className="bg-white/95 backdrop-blur-sm px-4 py-3 rounded-xl inline-flex items-center gap-2">
@@ -268,7 +257,7 @@ const HoneymoonTours = () => {
                       </button>
                       <button
                         onClick={() => handleBookNow(pkg)}
-                        className="flex-1 py-4 px-6 rounded-xl bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold hover:from-pink-600 hover:to-purple-700 transition-all flex items-center justify-center gap-2 shadow-lg"
+                        className="flex-1 py-4 px-6 rounded-xl bg-linear-to-r from-pink-500 to-purple-600 text-white font-bold hover:from-pink-600 hover:to-purple-700 transition-all flex items-center justify-center gap-2 shadow-lg"
                       >
                         Book Now
                         <Heart className="w-5 h-5 fill-white" />
@@ -283,7 +272,7 @@ const HoneymoonTours = () => {
       </div>
 
       {/* Why Choose Us */}
-      <div className={`py-20 ${isDarkMode ? 'bg-gradient-to-b from-[#0F1419] to-[#0B0C0E]' : 'bg-gradient-to-b from-pink-50 to-white'}`}>
+      <div className={`py-20 ${isDarkMode ? 'bg-linear-to-b from-[#0F1419] to-[#0B0C0E]' : 'bg-linear-to-b from-pink-50 to-white'}`}>
         <div className="container mx-auto px-4">
           <h2 className={`text-4xl font-bold text-center mb-16 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
             Creating Unforgettable Memories Since Day One
@@ -297,7 +286,7 @@ const HoneymoonTours = () => {
             ].map((item, idx) => (
               <div key={idx} className="text-center group">
                 <div className={`w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center ${
-                  isDarkMode ? 'bg-gradient-to-br from-pink-900/40 to-purple-900/40' : 'bg-gradient-to-br from-pink-100 to-purple-100'
+                  isDarkMode ? 'bg-linear-to-br from-pink-900/40 to-purple-900/40' : 'bg-linear-to-br from-pink-100 to-purple-100'
                 } group-hover:scale-110 transition-transform`}>
                   <item.icon className={`w-10 h-10 ${isDarkMode ? 'text-pink-400' : 'text-pink-600'}`} />
                 </div>
@@ -365,7 +354,7 @@ const HoneymoonTours = () => {
                   setShowDetails(false);
                   handleBookNow(selectedPackage);
                 }}
-                className="w-full py-5 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold text-lg rounded-xl hover:from-pink-600 hover:to-purple-700 transition-all shadow-lg"
+                className="w-full py-5 bg-linear-to-r from-pink-500 to-purple-600 text-white font-bold text-lg rounded-xl hover:from-pink-600 hover:to-purple-700 transition-all shadow-lg"
               >
                 Book This Honeymoon Package
               </button>
@@ -374,9 +363,7 @@ const HoneymoonTours = () => {
         </div>
       )}
 
-      {/* Footer */}
-      <Footer isDarkMode={isDarkMode} />
-    </div>
+    </PageLayout>
   );
 };
 

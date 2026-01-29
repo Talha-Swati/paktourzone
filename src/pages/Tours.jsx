@@ -1,15 +1,11 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useNavbarSetup, useClickOutside } from '../hooks';
-import SEO from '../components/common/SEO';
-import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
+import { useTheme } from '../context/ThemeContext';
+import PageLayout from '../components/layout/PageLayout';
+import { baseTourCategories } from '../data/tourCategoriesData';
 import { 
   FaUsers, 
-  FaHeart, 
   FaMountain, 
-  FaBriefcase, 
-  FaDollarSign,
   FaClock,
   FaStar,
   FaArrowRight,
@@ -17,98 +13,34 @@ import {
 } from 'react-icons/fa';
 
 const Tours = () => {
-  const { navbarProps, isDarkMode, themeDropdownRef } = useNavbarSetup();
+  const { isDarkMode } = useTheme();
   const [selectedCategory, setSelectedCategory] = useState('all');
-
-  useClickOutside([themeDropdownRef], [navbarProps.setThemeDropdownOpen]);
-
-  const tourCategories = [
-    {
-      id: 'all',
-      name: 'All Tours',
-      icon: <FaMountain />,
-      count: 5,
-      color: isDarkMode ? 'from-[#22D3EE] to-[#4DBBFF]' : 'from-[#3B82F6] to-[#60A5FA]'
-    },
-    {
-      id: 'family',
-      name: 'Family Packages',
-      icon: <FaUsers />,
-      count: 12,
-      path: '/trip/family',
-      color: 'from-green-400 to-green-600',
-      description: 'Perfect adventures for families with children',
-      features: ['Child-friendly', 'Safe & Comfortable', 'Educational'],
-      image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80'
-    },
-    {
-      id: 'honeymoon',
-      name: 'Honeymoon Tours',
-      icon: <FaHeart />,
-      count: 8,
-      path: '/trip/honeymoon',
-      color: 'from-pink-400 to-red-500',
-      description: 'Romantic escapes for newlyweds',
-      features: ['Luxury Stays', 'Private Experiences', 'Scenic Views'],
-      image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80'
-    },
-    {
-      id: 'adventure',
-      name: 'Adventure Tours',
-      icon: <FaMountain />,
-      count: 15,
-      path: '/trip/adventure',
-      color: 'from-orange-400 to-red-600',
-      description: 'Thrilling experiences for adrenaline seekers',
-      features: ['Trekking', 'Camping', 'Mountain Climbing'],
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
-    },
-    {
-      id: 'corporate',
-      name: 'Corporate Tours',
-      icon: <FaBriefcase />,
-      count: 6,
-      path: '/trip/corporate',
-      color: 'from-blue-400 to-indigo-600',
-      description: 'Team building and corporate retreats',
-      features: ['Team Building', 'Conference Facilities', 'Custom Planning'],
-      image: 'https://images.unsplash.com/photo-1542224566-6e85f2e6772f?w=800&q=80'
-    },
-    {
-      id: 'budget',
-      name: 'Budget Tours',
-      icon: <FaDollarSign />,
-      count: 10,
-      path: '/trip/budget',
-      color: 'from-yellow-400 to-orange-500',
-      description: 'Affordable adventures without compromising quality',
-      features: ['Budget-Friendly', 'Shared Transport', 'Value for Money'],
-      image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80'
-    }
-  ];
+  const tourCategories = baseTourCategories.map((category) =>
+    category.id === 'all'
+      ? {
+          ...category,
+          color: isDarkMode ? category.colorDark : category.colorLight
+        }
+      : category
+  );
 
   const filteredTours = selectedCategory === 'all' 
     ? tourCategories.filter(cat => cat.id !== 'all')
     : tourCategories.filter(cat => cat.id === selectedCategory);
 
   return (
-    <>
-      <SEO
-        title="All Tours & Packages - Adventure, Family, Honeymoon | PakTourZone"
-        description="Explore our complete range of tour packages - Adventure treks, Family vacations, Romantic honeymoons, Corporate retreats, and Budget tours across Northern Pakistan."
-        keywords="Pakistan tours, adventure packages, family tours, honeymoon packages, corporate tours, budget travel, Hunza tours, Skardu trips"
-        url="/tours"
-      />
-
-      <div className={`min-h-screen transition-colors duration-500 ${
-        isDarkMode ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'
+    <PageLayout
+      seo={{
+        title: 'All Tours & Packages - Adventure, Family, Honeymoon | PakTourZone',
+        description: 'Explore our complete range of tour packages - Adventure treks, Family vacations, Romantic honeymoons, Corporate retreats, and Budget tours across Northern Pakistan.',
+        keywords: 'Pakistan tours, adventure packages, family tours, honeymoon packages, corporate tours, budget travel, Hunza tours, Skardu trips',
+        url: '/tours'
+      }}
+    >
+      {/* Hero Section */}
+      <section className={`relative py-20 overflow-hidden ${
+        isDarkMode ? 'bg-linear-to-br from-[#0B0C0E] via-[#0A3A67] to-[#0B0C0E]' : 'bg-linear-to-br from-white via-[#EBF8FF] to-white'
       }`}>
-        <Navbar {...navbarProps} />
-
-        {/* Hero Section */}
-        <section className={`relative py-20 overflow-hidden ${
-          isDarkMode ? 'bg-gradient-to-br from-[#0B0C0E] via-[#0A3A67] to-[#0B0C0E]' : 'bg-gradient-to-br from-white via-[#EBF8FF] to-white'
-        }`}>
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 left-10 w-72 h-72 bg-[#22D3EE] rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#4DBBFF] rounded-full blur-3xl"></div>
@@ -117,7 +49,7 @@ const Tours = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className={`text-5xl md:text-6xl font-bold mb-6 ${
-                isDarkMode ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA]'
+                isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
               } bg-clip-text text-transparent`}>
                 Discover Your Perfect Adventure
               </h1>
@@ -162,8 +94,8 @@ const Tours = () => {
                   className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold whitespace-nowrap transition-all duration-300 ${
                     selectedCategory === category.id
                       ? isDarkMode
-                        ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] shadow-lg shadow-[#22D3EE]/50'
-                        : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white shadow-lg shadow-blue-500/50'
+                        ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] shadow-lg shadow-[#22D3EE]/50'
+                        : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white shadow-lg shadow-blue-500/50'
                       : isDarkMode
                       ? 'bg-[#141A1F] text-[#C4CCD4] hover:bg-[#1E242B]'
                       : 'bg-gray-100 text-[#4A5568] hover:bg-gray-200'
@@ -204,10 +136,10 @@ const Tours = () => {
                       alt={tour.name}
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent"></div>
                     
                     {/* Category Badge */}
-                    <div className={`absolute top-4 right-4 px-4 py-2 rounded-full bg-gradient-to-r ${tour.color} text-white font-bold text-sm shadow-lg flex items-center gap-2`}>
+                    <div className={`absolute top-4 right-4 px-4 py-2 rounded-full bg-linear-to-r ${tour.color} text-white font-bold text-sm shadow-lg flex items-center gap-2`}>
                       {tour.icon}
                       <span>{tour.count}+ Tours</span>
                     </div>
@@ -267,7 +199,7 @@ const Tours = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className={`text-4xl font-bold mb-4 ${
-                isDarkMode ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA]'
+                isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
               } bg-clip-text text-transparent`}>
                 Why Choose PakTourZone?
               </h2>
@@ -310,7 +242,7 @@ const Tours = () => {
 
         {/* CTA Section */}
         <section className={`py-20 ${
-          isDarkMode ? 'bg-gradient-to-br from-[#0A3A67] to-[#0B0C0E]' : 'bg-gradient-to-br from-[#EBF8FF] to-white'
+          isDarkMode ? 'bg-linear-to-br from-[#0A3A67] to-[#0B0C0E]' : 'bg-linear-to-br from-[#EBF8FF] to-white'
         }`}>
           <div className="container mx-auto px-4 text-center">
             <h2 className={`text-4xl font-bold mb-6 ${
@@ -326,8 +258,8 @@ const Tours = () => {
                 to="/custom-tour"
                 className={`px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 ${
                   isDarkMode
-                    ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] hover:shadow-lg hover:shadow-[#22D3EE]/50'
-                    : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white hover:shadow-lg hover:shadow-blue-500/50'
+                    ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] hover:shadow-lg hover:shadow-[#22D3EE]/50'
+                    : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white hover:shadow-lg hover:shadow-blue-500/50'
                 } transform hover:scale-105`}
               >
                 Build Custom Tour
@@ -346,10 +278,7 @@ const Tours = () => {
           </div>
         </section>
 
-        {/* Footer */}
-        <Footer isDarkMode={isDarkMode} />
-      </div>
-    </>
+    </PageLayout>
   );
 };
 

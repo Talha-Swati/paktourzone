@@ -156,7 +156,7 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen, themeMode, setT
                     <span className="flex items-center gap-2">
                       {item.name}
                       {item.badge && (
-                        <span className="rounded-md bg-gradient-to-r from-[#FF6B6B] to-[#FF8E53] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider text-white shadow-lg">
+                        <span className="rounded-md bg-linear-to-r from-[#FF6B6B] to-[#FF8E53] px-2 py-0.5 text-[10px] font-black uppercase tracking-wider text-white shadow-lg">
                           {item.badge}
                         </span>
                       )}
@@ -202,7 +202,7 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen, themeMode, setT
             ))}
             <Link 
               to="/book-now" 
-              className={`mt-6 mb-2 w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r px-6 py-4 text-sm font-bold uppercase tracking-wider shadow-lg transition-transform active:scale-95 ${
+              className={`mt-6 mb-2 w-full flex items-center justify-center gap-2 rounded-xl bg-linear-to-r px-6 py-4 text-sm font-bold uppercase tracking-wider shadow-lg transition-transform active:scale-95 ${
                 isDarkMode
                   ? 'from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E]'
                   : 'from-[#3B82F6] to-[#60A5FA] text-white'

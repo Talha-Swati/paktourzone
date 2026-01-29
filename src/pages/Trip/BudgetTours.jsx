@@ -1,26 +1,17 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useNavbarSetup, useClickOutside } from '../../hooks';
+import { useTheme } from '../../context/ThemeContext';
 import { getToursByCategory } from '../../data/toursData';
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
+import PageLayout from '../../components/layout/PageLayout';
 import { 
   DollarSign, Calendar, MapPin, Star, Users,
   ThumbsUp, TrendingUp, Check, ArrowRight, Zap
 } from 'lucide-react';
 
 const BudgetTours = () => {
-  const { navbarProps, isDarkMode, themeDropdownRef } = useNavbarSetup();
+  const { isDarkMode } = useTheme();
   const navigate = useNavigate();
   const tourData = getToursByCategory('budget');
-
-  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
-  const languageDropdownRef = useRef(null);
-
-  useClickOutside(
-    [languageDropdownRef, themeDropdownRef],
-    [setLanguageDropdownOpen, navbarProps.setThemeDropdownOpen]
-  );
 
   const handleBookNow = (pkg) => {
     navigate('/custom-tour', {
@@ -35,12 +26,11 @@ const BudgetTours = () => {
   };
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}`}>
-      <Navbar {...navbarProps} />
+    <PageLayout className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}>
 
       {/* Hero Section */}
       <div className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: `url(${tourData.heroImage})` }}>
-        <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 to-emerald-900/80" />
+        <div className="absolute inset-0 bg-linear-to-r from-green-900/90 to-emerald-900/80" />
         <div className="relative h-full container mx-auto px-4 flex items-center">
           <div className="max-w-3xl text-white">
             <div className="flex items-center gap-3 mb-4">
@@ -185,8 +175,7 @@ const BudgetTours = () => {
         </div>
       </div>
 
-      <Footer isDarkMode={isDarkMode} />
-    </div>
+    </PageLayout>
   );
 };
 

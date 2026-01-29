@@ -52,8 +52,8 @@ const FeaturedTours = ({ isDarkMode }) => {
   return (
     <section className={`relative py-32 overflow-hidden transition-colors duration-500 ${
       isDarkMode
-        ? 'bg-gradient-to-b from-[#0B0C0E] via-[#0F1419] to-[#0B0C0E]'
-        : 'bg-gradient-to-b from-white via-[#F8FAFB] to-white'
+        ? 'bg-linear-to-b from-[#0B0C0E] via-[#0F1419] to-[#0B0C0E]'
+        : 'bg-linear-to-b from-white via-[#F8FAFB] to-white'
     }`}>
       
       <div className="relative z-10 mx-auto max-w-7xl px-6">
@@ -79,15 +79,15 @@ const FeaturedTours = ({ isDarkMode }) => {
               }`}>Featured </span>
               <span className={`bg-clip-text text-transparent transition-colors duration-500 ${
                 isDarkMode
-                  ? 'bg-gradient-to-r from-[#22D3EE] via-[#4DBBFF] to-[#22D3EE]'
-                  : 'bg-gradient-to-r from-[#3B82F6] via-[#60A5FA] to-[#3B82F6]'
+                  ? 'bg-linear-to-r from-[#22D3EE] via-[#4DBBFF] to-[#22D3EE]'
+                  : 'bg-linear-to-r from-[#3B82F6] via-[#60A5FA] to-[#3B82F6]'
               }`}>
                 Adventures
               </span>
               <div className={`h-0.5 w-0 rounded-full transition-all duration-500 group-hover:w-full mt-2 ${
                 isDarkMode
-                  ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF]'
-                  : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA]'
+                  ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]'
+                  : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
               }`} />
             </Link>
           </h2>

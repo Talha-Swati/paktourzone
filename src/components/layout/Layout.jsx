@@ -20,8 +20,8 @@ const Layout = ({ children, className = '' }) => {
   return (
     <div className={`min-h-screen transition-colors duration-500 ${
       isDarkMode
-        ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
-        : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'
+        ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
+        : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
     } ${className}`}>
       <Navbar {...navbarProps} />
       <main className="flex-grow">

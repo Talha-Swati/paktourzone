@@ -1,21 +1,12 @@
-import React, { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useNavbarSetup, useClickOutside } from '../../hooks';
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
+import { useTheme } from '../../context/ThemeContext';
+import PageLayout from '../../components/layout/PageLayout';
 import { servicesData } from '../../data/servicesData';
 
 const Services = () => {
-  const { navbarProps, isDarkMode, themeDropdownRef } = useNavbarSetup();
+  const { isDarkMode } = useTheme();
   const [hoveredService, setHoveredService] = useState(null);
-  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
-  
-  const languageDropdownRef = useRef(null);
-
-  useClickOutside(
-    [languageDropdownRef, themeDropdownRef],
-    [setLanguageDropdownOpen, navbarProps.setThemeDropdownOpen]
-  );
 
   const services = [
     {
@@ -57,12 +48,11 @@ const Services = () => {
   ];
 
   return (
-    <div className={`min-h-screen transition-colors duration-500 ${isDarkMode ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'}`}>
-      <Navbar {...navbarProps} />
+    <PageLayout className={`transition-colors duration-500 ${isDarkMode ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'}`}>
 
       <div className="relative h-[60vh] min-h-[500px]">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920&q=80)' }}>
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-purple-900/90"></div>
+          <div className="absolute inset-0 bg-linear-to-r from-blue-900/90 to-purple-900/90"></div>
         </div>
         <div className="relative h-full flex items-center justify-center px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
@@ -84,8 +74,8 @@ const Services = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Link key={service.path} to={service.path} onMouseEnter={() => setHoveredService(index)} onMouseLeave={() => setHoveredService(null)} className={`group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${isDarkMode ? 'bg-gradient-to-br from-[#141A1F] to-[#0B0C0E] border border-[rgba(34,211,238,0.1)] hover:border-[rgba(34,211,238,0.3)]' : 'bg-white border border-gray-100 hover:border-blue-200'}`}>
-                <div className={`h-48 bg-gradient-to-br ${service.gradient} p-8 text-white relative overflow-hidden`}>
+              <Link key={service.path} to={service.path} onMouseEnter={() => setHoveredService(index)} onMouseLeave={() => setHoveredService(null)} className={`group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${isDarkMode ? 'bg-linear-to-br from-[#141A1F] to-[#0B0C0E] border border-[rgba(34,211,238,0.1)] hover:border-[rgba(34,211,238,0.3)]' : 'bg-white border border-gray-100 hover:border-blue-200'}`}>
+                <div className={`h-48 bg-linear-to-br ${service.gradient} p-8 text-white relative overflow-hidden`}>
                   <div className="relative z-10">
                     <div className="text-5xl mb-4">{service.icon}</div>
                     <h3 className="text-2xl font-bold mb-2">{service.name}</h3>
@@ -103,26 +93,25 @@ const Services = () => {
                     <span className="transform group-hover:translate-x-2 transition-transform">→</span>
                   </div>
                 </div>
-                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${service.gradient} transform origin-left transition-transform ${hoveredService === index ? 'scale-x-100' : 'scale-x-0'}`}></div>
+                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r ${service.gradient} transform origin-left transition-transform ${hoveredService === index ? 'scale-x-100' : 'scale-x-0'}`}></div>
               </Link>
             ))}
           </div>
         </div>
       </div>
 
-      <div className={`py-20 px-4 ${isDarkMode ? 'bg-[#0F1419]' : 'bg-gradient-to-br from-blue-50 via-white to-purple-50'}`}>
+      <div className={`py-20 px-4 ${isDarkMode ? 'bg-[#0F1419]' : 'bg-linear-to-br from-blue-50 via-white to-purple-50'}`}>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className={`text-4xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Ready to Plan Your Journey?</h2>
           <p className={`text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-gray-600'}`}>Let us take care of everything while you focus on creating memories</p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link to="/custom-tour" className={`px-8 py-4 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 ${isDarkMode ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] hover:from-[#4DBBFF] hover:to-[#22D3EE]' : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700'}`}>Build Your Custom Tour</Link>
+            <Link to="/custom-tour" className={`px-8 py-4 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 ${isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] hover:from-[#4DBBFF] hover:to-[#22D3EE]' : 'bg-linear-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700'}`}>Build Your Custom Tour</Link>
             <Link to="/contact" className={`px-8 py-4 rounded-lg font-semibold transition-all ${isDarkMode ? 'bg-[#141A1F] text-white hover:bg-[#1A2229] border border-[rgba(34,211,238,0.2)]' : 'bg-white text-gray-900 hover:bg-gray-100 border border-gray-200'} shadow-lg`}>Contact Us</Link>
           </div>
         </div>
       </div>
       
-      <Footer isDarkMode={isDarkMode} />
-    </div>
+    </PageLayout>
   );
 };
 

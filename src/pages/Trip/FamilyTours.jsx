@@ -1,9 +1,8 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useNavbarSetup, useClickOutside } from '../../hooks';
+import { useTheme } from '../../context/ThemeContext';
 import { getToursByCategory } from '../../data/toursData';
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
+import PageLayout from '../../components/layout/PageLayout';
 import { 
   Users, Calendar, MapPin, Star, Clock, 
   TrendingUp, Award, Shield, Heart, Baby,
@@ -11,20 +10,11 @@ import {
 } from 'lucide-react';
 
 const FamilyTours = () => {
-  const { navbarProps, isDarkMode, themeDropdownRef } = useNavbarSetup();
+  const { isDarkMode } = useTheme();
   const navigate = useNavigate();
   const tourData = getToursByCategory('family');
-
-  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState(null);
   const [showItinerary, setShowItinerary] = useState(false);
-  
-  const languageDropdownRef = useRef(null);
-
-  useClickOutside(
-    [languageDropdownRef, themeDropdownRef],
-    [setLanguageDropdownOpen, navbarProps.setThemeDropdownOpen]
-  );
 
   const handleBookNow = (pkg) => {
     navigate('/custom-tour', {
@@ -38,8 +28,7 @@ const FamilyTours = () => {
   };
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}`}>
-      <Navbar {...navbarProps} />
+    <PageLayout className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}>
 
       {/* Hero Section */}
       <div 
@@ -372,8 +361,7 @@ const FamilyTours = () => {
       )}
 
       {/* Footer */}
-      <Footer isDarkMode={isDarkMode} />
-    </div>
+    </PageLayout>
   );
 };
 

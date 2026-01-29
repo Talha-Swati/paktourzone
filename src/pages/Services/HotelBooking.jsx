@@ -1,39 +1,14 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
+import PageLayout from '../../components/layout/PageLayout';
 import { servicesData } from '../../data/servicesData';
 
 const HotelBooking = () => {
-  const { isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen } = useTheme();
+  const { isDarkMode } = useTheme();
   const hotelData = servicesData.hotels;
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedLocation, setSelectedLocation] = useState('all');
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
-  
-  const languageDropdownRef = useRef(null);
-  const themeDropdownRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target)) {
-        setLanguageDropdownOpen(false);
-      }
-      if (themeDropdownRef.current && !themeDropdownRef.current.contains(event.target)) {
-        setThemeDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [languageDropdownOpen, themeDropdownOpen, setThemeDropdownOpen]);
-
-  const navbarProps = useMemo(() => ({
-    isDarkMode,
-    mobileMenuOpen,
-    setMobileMenuOpen,
-  }), [isDarkMode, mobileMenuOpen]);
 
   const locations = ['all', 'Skardu', 'Hunza', 'Naran', 'Swat'];
 
@@ -44,12 +19,11 @@ const HotelBooking = () => {
   });
 
   return (
-    <div className={`min-h-screen transition-colors duration-500 ${
+    <PageLayout className={`transition-colors duration-500 ${
       isDarkMode
-        ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
-        : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'
+        ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
+        : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
     }`}>
-      <Navbar {...navbarProps} />
 
       {/* Hero */}
       <div className="relative h-[50vh] min-h-[400px]">
@@ -57,7 +31,7 @@ const HotelBooking = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url('${hotelData.heroImage}')` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-indigo-900/90"></div>
+          <div className="absolute inset-0 bg-linear-to-r from-blue-900/90 to-indigo-900/90"></div>
         </div>
         
         <div className="relative h-full flex items-center justify-center px-4">
@@ -294,8 +268,7 @@ const HotelBooking = () => {
         </div>
       </div>
 
-      <Footer isDarkMode={isDarkMode} />
-    </div>
+    </PageLayout>
   );
 };
 

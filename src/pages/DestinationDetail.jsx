@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, memo } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
-import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
+import PageLayout from '../components/layout/PageLayout';
 import { getDestinationBySlug } from '../data/destinationsData';
 import { 
   FaMapMarkerAlt, FaClock, FaUsers, FaStar, FaCheck, FaTimes, 
@@ -10,10 +9,10 @@ import {
   FaMountain, FaHiking, FaCamera, FaUtensils, FaBed, FaCar
 } from 'react-icons/fa';
 
-const DestinationDetail = React.memo(() => {
+const DestinationDetail = memo(() => {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const { isDarkMode, themeMode, setThemeMode } = useTheme();
+  const { isDarkMode } = useTheme();
   
   const [destination, setDestination] = useState(null);
   const [selectedPackage, setSelectedPackage] = useState('premium');
@@ -21,12 +20,7 @@ const DestinationDetail = React.memo(() => {
   const [selectedItineraryDuration, setSelectedItineraryDuration] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showFullItinerary, setShowFullItinerary] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
-  const [themeDropdownOpen, setThemeDropdownOpen] = useState(false);
   
-  const languageDropdownRef = useRef(null);
-  const themeDropdownRef = useRef(null);
 
   // Load destination data
   useEffect(() => {
@@ -77,20 +71,6 @@ const DestinationDetail = React.memo(() => {
     return () => clearInterval(interval);
   }, [destination]);
 
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target)) {
-        setLanguageDropdownOpen(false);
-      }
-      if (themeDropdownRef.current && !themeDropdownRef.current.contains(event.target)) {
-        setThemeDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
   if (!destination) {
     return (
       <div className={`min-h-screen flex items-center justify-center ${
@@ -127,20 +107,9 @@ const DestinationDetail = React.memo(() => {
   };
 
   return (
-    <div className={`min-h-screen ${
+    <PageLayout className={`min-h-screen ${
       isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-white text-[#1F2937]'
     }`}>
-      {/* Navbar */}
-      <Navbar
-        isDarkMode={isDarkMode}
-        themeMode={themeMode}
-        setThemeMode={setThemeMode}
-        themeDropdownOpen={themeDropdownOpen}
-        setThemeDropdownOpen={setThemeDropdownOpen}
-        themeDropdownRef={themeDropdownRef}
-        mobileMenuOpen={mobileMenuOpen}
-        setMobileMenuOpen={setMobileMenuOpen}
-      />
 
       {/* Hero Section with Image Gallery */}
       <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
@@ -194,7 +163,7 @@ const DestinationDetail = React.memo(() => {
         </div>
 
         {/* Hero Content Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end">
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent flex items-end">
           <div className="container mx-auto px-4 pb-12 md:pb-16">
             <div className="max-w-4xl">
               {/* Badge */}
@@ -287,7 +256,7 @@ const DestinationDetail = React.memo(() => {
                       isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F9FAFB]'
                     }`}
                   >
-                    <FaCheck className="text-[#22D3EE] mt-1 flex-shrink-0" />
+                    <FaCheck className="text-[#22D3EE] mt-1 shrink-0" />
                     <span className={isDarkMode ? 'text-[#C9D6DF]' : 'text-[#4B5563]'}>
                       {highlight}
                     </span>
@@ -452,7 +421,7 @@ const DestinationDetail = React.memo(() => {
                           <ul className="space-y-3 mb-6">
                             {pkg.features.map((feature, index) => (
                               <li key={index} className="flex items-start gap-2">
-                                <FaCheck className="text-[#22D3EE] mt-1 flex-shrink-0" size={14} />
+                                <FaCheck className="text-[#22D3EE] mt-1 shrink-0" size={14} />
                                 <span className={`text-sm ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#4B5563]'}`}>
                                   {feature}
                                 </span>
@@ -487,7 +456,7 @@ const DestinationDetail = React.memo(() => {
                       </p>
                       <button
                         onClick={() => navigate('/custom-tour', { state: { preFilledData: { destination: slug, duration: selectedDuration } } })}
-                        className="px-8 py-3 bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF] text-white font-semibold rounded-lg transition-all transform hover:scale-105 shadow-lg"
+                        className="px-8 py-3 bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] text-white font-semibold rounded-lg transition-all transform hover:scale-105 shadow-lg"
                       >
                         Create Custom Tour →
                       </button>
@@ -531,7 +500,7 @@ const DestinationDetail = React.memo(() => {
                           <ul className="space-y-3 mb-6">
                             {pkg.features.map((feature, index) => (
                               <li key={index} className="flex items-start gap-2">
-                                <FaCheck className="text-[#22D3EE] mt-1 flex-shrink-0" size={14} />
+                                <FaCheck className="text-[#22D3EE] mt-1 shrink-0" size={14} />
                                 <span className={`text-sm ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#4B5563]'}`}>
                                   {feature}
                                 </span>
@@ -571,7 +540,7 @@ const DestinationDetail = React.memo(() => {
                     <li key={index} className={`flex items-start gap-2 text-sm ${
                       isDarkMode ? 'text-[#C9D6DF]' : 'text-green-800'
                     }`}>
-                      <FaCheck className="text-green-500 mt-1 flex-shrink-0" size={12} />
+                      <FaCheck className="text-green-500 mt-1 shrink-0" size={12} />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -591,7 +560,7 @@ const DestinationDetail = React.memo(() => {
                     <li key={index} className={`flex items-start gap-2 text-sm ${
                       isDarkMode ? 'text-[#C9D6DF]' : 'text-red-800'
                     }`}>
-                      <FaTimes className="text-red-500 mt-1 flex-shrink-0" size={12} />
+                      <FaTimes className="text-red-500 mt-1 shrink-0" size={12} />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -657,7 +626,7 @@ const DestinationDetail = React.memo(() => {
               </div>
 
               {/* Contact Card */}
-              <div className={`p-6 rounded-xl bg-gradient-to-br from-[#22D3EE] to-[#4DBBFF] text-white`}>
+              <div className={`p-6 rounded-xl bg-linear-to-br from-[#22D3EE] to-[#4DBBFF] text-white`}>
                 <h3 className="text-xl font-bold mb-4">Need Help Planning?</h3>
                 <p className="text-sm mb-4 text-white/90">
                   Our travel experts are here to help you customize your perfect adventure.
@@ -717,8 +686,7 @@ const DestinationDetail = React.memo(() => {
         </div>
       </section>
 
-      <Footer isDarkMode={isDarkMode} />
-    </div>
+    </PageLayout>
   );
 });
 

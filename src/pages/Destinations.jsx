@@ -1,27 +1,19 @@
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { getAllDestinations } from '../data/destinationsData';
-import { useNavbarSetup, useClickOutside } from '../hooks';
-import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
+import { useTheme } from '../context/ThemeContext';
+import PageLayout from '../components/layout/PageLayout';
+import PageHero from '../components/common/PageHero';
 import { MapPin, Clock, TrendingUp, Star, Users, Search, Filter } from 'lucide-react';
 
 const Destinations = () => {
-  const { navbarProps, isDarkMode, themeDropdownRef } = useNavbarSetup();
+  const { isDarkMode } = useTheme();
   const allDestinations = getAllDestinations();
   
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
   const [sortBy, setSortBy] = useState('rating');
-  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
-  
-  const languageDropdownRef = useRef(null);
-
-  useClickOutside(
-    [languageDropdownRef, themeDropdownRef], 
-    [setLanguageDropdownOpen, navbarProps.setThemeDropdownOpen]
-  );
 
   // Filter and sort destinations
   const filteredDestinations = useMemo(() => {
@@ -92,26 +84,28 @@ const Destinations = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <Navbar {...navbarProps} />
-
+    <PageLayout
+      seo={{
+        title: 'Destinations | PakTourZone',
+        description: 'Explore Northern Pakistan destinations. Filter by category, difficulty, and rating to find your perfect adventure.',
+        keywords: 'Pakistan destinations, Hunza, Skardu, Fairy Meadows, Northern Pakistan travel',
+        url: '/destinations'
+      }}
+      className="bg-gray-50 dark:bg-gray-900"
+    >
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-4">Explore All Destinations</h1>
-            <p className="text-xl text-blue-100">
-              Discover Pakistan's most stunning landscapes and embark on unforgettable adventures
-            </p>
-            <div className="mt-8 text-sm text-blue-100">
-              <span className="inline-flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
-                {allDestinations.length} Amazing Destinations
-              </span>
-            </div>
-          </div>
+      <PageHero
+        title="Explore All Destinations"
+        subtitle="Discover Pakistan's most stunning landscapes and embark on unforgettable adventures"
+        isDarkMode={isDarkMode}
+      >
+        <div className="mt-8 text-sm text-blue-100">
+          <span className="inline-flex items-center gap-2">
+            <MapPin className="w-4 h-4" />
+            {allDestinations.length} Amazing Destinations
+          </span>
         </div>
-      </div>
+      </PageHero>
 
       {/* Filters Section */}
       <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-md">
@@ -253,7 +247,7 @@ const Destinations = () => {
                   </div>
 
                   {/* Overlay on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
 
                 {/* Content */}
@@ -326,8 +320,7 @@ const Destinations = () => {
         )}
       </div>
 
-      <Footer isDarkMode={isDarkMode} />
-    </div>
+    </PageLayout>
   );
 };
 

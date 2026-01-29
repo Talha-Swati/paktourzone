@@ -1,46 +1,20 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
+import PageLayout from '../../components/layout/PageLayout';
 import { servicesData } from '../../data/servicesData';
 
 const TransportServices = () => {
-  const { isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen } = useTheme();
+  const { isDarkMode } = useTheme();
   const transportData = servicesData.transport;
   const [selectedVehicle, setSelectedVehicle] = useState(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
-  
-  const languageDropdownRef = useRef(null);
-  const themeDropdownRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target)) {
-        setLanguageDropdownOpen(false);
-      }
-      if (themeDropdownRef.current && !themeDropdownRef.current.contains(event.target)) {
-        setThemeDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [languageDropdownOpen, themeDropdownOpen, setThemeDropdownOpen]);
-
-  const navbarProps = useMemo(() => ({
-    isDarkMode,
-    mobileMenuOpen,
-    setMobileMenuOpen,
-  }), [isDarkMode, mobileMenuOpen]);
 
   return (
-    <div className={`min-h-screen transition-colors duration-500 ${
+    <PageLayout className={`transition-colors duration-500 ${
       isDarkMode
-        ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
-        : 'bg-gradient-to-b from-white to-[#F8FAFB] text-[#1F2937]'
+        ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
+        : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
     }`}>
-      <Navbar {...navbarProps} />
 
       {/* Hero */}
       <div className="relative h-[50vh] min-h-[400px]">
@@ -48,7 +22,7 @@ const TransportServices = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url('${transportData.heroImage}')` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 to-emerald-900/90"></div>
+          <div className="absolute inset-0 bg-linear-to-r from-green-900/90 to-emerald-900/90"></div>
         </div>
         
         <div className="relative h-full flex items-center justify-center px-4">
@@ -188,7 +162,7 @@ const TransportServices = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {transportData.whyChooseUs.map((reason, index) => (
               <div key={index} className="text-center">
-                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
+                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-linear-to-br from-green-500 to-emerald-600 flex items-center justify-center">
                   <span className="text-3xl">✓</span>
                 </div>
                 <h3 className={`text-lg font-semibold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
@@ -204,7 +178,7 @@ const TransportServices = () => {
       </div>
 
       {/* CTA */}
-      <div className={`py-16 px-4 ${isDarkMode ? 'bg-gray-800' : 'bg-gradient-to-r from-green-50 to-emerald-50'}`}>
+      <div className={`py-16 px-4 ${isDarkMode ? 'bg-gray-800' : 'bg-linear-to-r from-green-50 to-emerald-50'}`}>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
             Ready to Book Your Transport?
@@ -231,8 +205,7 @@ const TransportServices = () => {
         </div>
       </div>
 
-      <Footer isDarkMode={isDarkMode} />
-    </div>
+    </PageLayout>
   );
 };
 

@@ -1,34 +1,27 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useNavbarSetup, useClickOutside } from '../hooks';
-
-// SEO
-import SEO from '../components/common/SEO';
+import { useTheme } from '../context/ThemeContext';
 import { getOrganizationSchema, getReviewSchema } from '../utils/structuredData';
 
 // Layout Components
-import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
+import PageLayout from '../components/layout/PageLayout';
 
 // Home Components
 import HeroSection from '../components/home/HeroSection';
-import QuickActions from '../components/home/QuickActions';
 import FeaturedTours from '../components/home/FeaturedTours';
 
 // Common Components
 import FeatureFlipCard from '../components/common/FeatureFlipCard';
+import SectionHeader from '../components/common/SectionHeader';
 
 // Data
 import { heroImages } from '../data/navigationData';
 
 const Home = () => {
-  const { navbarProps, isDarkMode, themeDropdownRef } = useNavbarSetup();
+  const { isDarkMode } = useTheme();
   
   // State Management
   const [currentSlide, setCurrentSlide] = useState(0);
-  
-  // Handle click outside for dropdowns
-  useClickOutside([themeDropdownRef], [navbarProps.setThemeDropdownOpen]);
 
   // Auto-play slider - 3 seconds
   useEffect(() => {
@@ -53,30 +46,17 @@ const Home = () => {
   };
 
   return (
-    <>
-      <SEO 
-        title="PakTourZone - Discover Northern Pakistan's Hidden Treasures | Adventure Tours & Packages"
-        description="Explore Northern Pakistan's breathtaking landscapes with PakTourZone. Expert-guided tours to Hunza Valley, Skardu, K2 Base Camp, Fairy Meadows, and more. Book your dream adventure today!"
-        keywords="Pakistan tours, Northern Pakistan, Hunza Valley, Skardu tours, K2 base camp, Fairy Meadows, Swat Valley, adventure travel Pakistan, tour packages, mountain tours"
-        url="/"
-        structuredData={structuredData}
-      />
-      
-      <div className={`min-h-screen transition-colors duration-500 ${
-        isDarkMode
-          ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
-          : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
-      }`}>
-      {/* Main Navbar */}
-        <Navbar {...navbarProps} />
-
-        {/* Main Content */}
-        <main>
-          {/* Hero Section */}
-          <HeroSection {...heroProps} />
-
-          {/* Quick Action Buttons */}
-          <QuickActions isDarkMode={isDarkMode} />
+    <PageLayout
+      seo={{
+        title: "PakTourZone - Discover Northern Pakistan's Hidden Treasures | Adventure Tours & Packages",
+        description: "Explore Northern Pakistan's breathtaking landscapes with PakTourZone. Expert-guided tours to Hunza Valley, Skardu, K2 Base Camp, Fairy Meadows, and more. Book your dream adventure today!",
+        keywords: "Pakistan tours, Northern Pakistan, Hunza Valley, Skardu tours, K2 base camp, Fairy Meadows, Swat Valley, adventure travel Pakistan, tour packages, mountain tours",
+        url: "/",
+        structuredData
+      }}
+    >
+      {/* Hero Section */}
+      <HeroSection {...heroProps} />
 
           {/* Featured Tours Section */}
           <FeaturedTours isDarkMode={isDarkMode} />
@@ -195,23 +175,21 @@ const Home = () => {
 
       {/* Gallery Preview */}
       <section className={`relative py-32 overflow-hidden transition-colors duration-500 ${
-        isDarkMode ? 'bg-gradient-to-b from-[#0B0C0E] to-[#0F1419]' : 'bg-gradient-to-b from-[#F8FAFB] to-white'
+        isDarkMode ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419]' : 'bg-linear-to-b from-[#F8FAFB] to-white'
       }`}>
         <div className="relative z-10 mx-auto max-w-7xl px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className={isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'}>Photo </span>
-              <span className={`bg-clip-text text-transparent ${
-                isDarkMode ? 'bg-gradient-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA]'
-              }`}>Gallery</span>
-            </h2>
-          </div>
+          <SectionHeader
+            title="Photo"
+            accent="Gallery"
+            isDarkMode={isDarkMode}
+            className="mb-20"
+          />
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[...Array(8)].map((_, i) => (
               <Link key={i} to="/gallery" className="group relative aspect-square overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all">
                 <img src={`https://images.unsplash.com/photo-${i % 2 === 0 ? '1506905925346-21bda4d32df4' : '1464207687429-7505649dae38'}?w=400`} alt={`Gallery ${i+1}`} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-125" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(11,12,14,0.9)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-linear-to-t from-[rgba(11,12,14,0.9)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </Link>
             ))}
           </div>
@@ -232,7 +210,7 @@ const Home = () => {
       {/* CTA Section */}
       <section className="relative py-40 overflow-hidden">
         <div className={`absolute inset-0 ${
-          isDarkMode ? 'bg-gradient-to-br from-[#0A3A67] via-[#22D3EE] to-[#4DBBFF]' : 'bg-gradient-to-br from-[#2563EB] via-[#3B82F6] to-[#60A5FA]'
+          isDarkMode ? 'bg-linear-to-br from-[#0A3A67] via-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-br from-[#2563EB] via-[#3B82F6] to-[#60A5FA]'
         }`} />
         
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
@@ -254,10 +232,7 @@ const Home = () => {
         </div>
       </section>
 
-      <Footer isDarkMode={isDarkMode} />
-    </main>
-  </div>
-</>
+    </PageLayout>
   );
 };
 

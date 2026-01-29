@@ -212,8 +212,8 @@ const PricingModal = ({ isOpen, onClose, destination, isDarkMode }) => {
             {/* Custom Tour CTA */}
             <div className={`mt-8 rounded-xl p-6 text-center ${
               isDarkMode 
-                ? 'bg-gradient-to-r from-[#0A3A67] to-[#22D3EE]/20' 
-                : 'bg-gradient-to-r from-blue-50 to-cyan-50'
+                ? 'bg-linear-to-r from-[#0A3A67] to-[#22D3EE]/20' 
+                : 'bg-linear-to-r from-blue-50 to-cyan-50'
             }`}>
               <h3 className={`mb-2 text-xl font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
                 Need a Custom Itinerary?
