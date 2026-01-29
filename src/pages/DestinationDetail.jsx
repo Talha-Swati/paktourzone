@@ -58,18 +58,21 @@ const DestinationDetail = memo(() => {
     return Object.keys(destination.itineraryByDuration).map(key => key.replace('days', ''));
   };
 
-  // Auto-rotate gallery images
+  const mediaItems = destination?.videos?.length ? destination.videos : destination?.gallery || [];
+  const isVideoHero = Boolean(destination?.videos?.length);
+
+  // Auto-rotate gallery images or videos
   useEffect(() => {
-    if (!destination?.gallery) return;
-    
+    if (!mediaItems?.length) return;
+
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => 
-        prev === destination.gallery.length - 1 ? 0 : prev + 1
+        prev === mediaItems.length - 1 ? 0 : prev + 1
       );
     }, 5000);
-    
+
     return () => clearInterval(interval);
-  }, [destination]);
+  }, [mediaItems?.length]);
 
   if (!destination) {
     return (
@@ -106,29 +109,57 @@ const DestinationDetail = memo(() => {
     );
   };
 
+  const handleBookNow = (pkg, durationOverride) => {
+    const resolvedDuration = durationOverride ? `${durationOverride} Days` : destination.duration;
+    navigate('/book-now', {
+      state: {
+        packageData: {
+          title: `${destination.name} - ${pkg.title}`,
+          price: pkg.price,
+          duration: resolvedDuration,
+          currency: 'USD',
+          destination: destination.name,
+          packageType: pkg.title,
+          source: `destination-${slug}`
+        }
+      }
+    });
+  };
+
   return (
     <PageLayout className={`min-h-screen ${
       isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-white text-[#1F2937]'
     }`}>
 
-      {/* Hero Section with Image Gallery */}
+      {/* Hero Section with Media Gallery */}
       <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
-        {/* Image Slider */}
+        {/* Media Slider */}
         <div className="absolute inset-0">
-          {destination.gallery.map((image, index) => (
+          {mediaItems.map((item, index) => (
             <div
               key={index}
               className={`absolute inset-0 transition-opacity duration-1000 ${
                 index === currentImageIndex ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              <div 
-                className="w-full h-full bg-cover bg-center"
-                style={{ 
-                  backgroundImage: `url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop)`,
-                  filter: 'brightness(0.7)'
-                }}
-              />
+              {isVideoHero ? (
+                <video
+                  className="w-full h-full object-cover"
+                  src={item.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              ) : (
+                <div 
+                  className="w-full h-full bg-cover bg-center"
+                  style={{ 
+                    backgroundImage: `url(${item})`,
+                    filter: 'brightness(0.7)'
+                  }}
+                />
+              )}
             </div>
           ))}
         </div>
@@ -149,7 +180,7 @@ const DestinationDetail = memo(() => {
 
         {/* Image Indicators */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex gap-2">
-          {destination.gallery.map((_, index) => (
+          {mediaItems.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentImageIndex(index)}
@@ -242,6 +273,42 @@ const DestinationDetail = memo(() => {
                 {destination.description}
               </p>
             </section>
+
+            {/* Videos */}
+            {destination.videos?.length > 0 && (
+              <section>
+                <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                  Snow View Videos
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {destination.videos.map((video, index) => (
+                    <div
+                      key={`${video.title}-${index}`}
+                      className={`rounded-xl overflow-hidden border ${isDarkMode ? 'border-gray-800 bg-[#0F1419]' : 'border-gray-200 bg-white'}`}
+                    >
+                      <video
+                        className="w-full aspect-video object-cover"
+                        src={video.src}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        controls
+                        preload="metadata"
+                      />
+                      <div className="p-4">
+                        <p className={`text-sm font-semibold ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#4B5563]'}`}>
+                          {video.title}
+                        </p>
+                        <p className={`text-xs mt-1 ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+                          Autoplay is muted by default.
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* Highlights */}
             <section>
@@ -429,13 +496,16 @@ const DestinationDetail = memo(() => {
                             ))}
                           </ul>
                           
-                          <button className={`w-full py-3 rounded-lg font-semibold transition-all ${
-                            pkg.popular
-                              ? 'bg-[#22D3EE] hover:bg-[#4DBBFF] text-white'
-                              : isDarkMode
-                                ? 'bg-[#0B0C0E] hover:bg-gray-800 text-[#E0E7EE] border border-gray-700'
-                                : 'bg-gray-100 hover:bg-gray-200 text-[#1F2937]'
-                          }`}>
+                          <button
+                            onClick={() => handleBookNow(pkg, selectedDuration)}
+                            className={`w-full py-3 rounded-lg font-semibold transition-all ${
+                              pkg.popular
+                                ? 'bg-[#22D3EE] hover:bg-[#4DBBFF] text-white'
+                                : isDarkMode
+                                  ? 'bg-[#0B0C0E] hover:bg-gray-800 text-[#E0E7EE] border border-gray-700'
+                                  : 'bg-gray-100 hover:bg-gray-200 text-[#1F2937]'
+                            }`}
+                          >
                             Book Now
                           </button>
                         </div>
@@ -508,13 +578,16 @@ const DestinationDetail = memo(() => {
                             ))}
                           </ul>
                           
-                          <button className={`w-full py-3 rounded-lg font-semibold transition-all ${
-                            pkg.popular
-                              ? 'bg-[#22D3EE] hover:bg-[#4DBBFF] text-white'
-                              : isDarkMode
-                                ? 'bg-[#0B0C0E] hover:bg-gray-800 text-[#E0E7EE] border border-gray-700'
-                                : 'bg-gray-100 hover:bg-gray-200 text-[#1F2937]'
-                          }`}>
+                          <button
+                            onClick={() => handleBookNow(pkg)}
+                            className={`w-full py-3 rounded-lg font-semibold transition-all ${
+                              pkg.popular
+                                ? 'bg-[#22D3EE] hover:bg-[#4DBBFF] text-white'
+                                : isDarkMode
+                                  ? 'bg-[#0B0C0E] hover:bg-gray-800 text-[#E0E7EE] border border-gray-700'
+                                  : 'bg-gray-100 hover:bg-gray-200 text-[#1F2937]'
+                            }`}
+                          >
                             Book Now
                           </button>
                         </div>

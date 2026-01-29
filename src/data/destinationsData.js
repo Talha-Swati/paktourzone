@@ -1,3 +1,6 @@
+import siranVideo1 from '../assets/videos/siran1.mp4';
+import siranVideo2 from '../assets/videos/siran2.mp4';
+
 // Complete destinations database for Pakistan tours
 export const destinationsData = {
   // ADVENTURE TOURS
@@ -1285,6 +1288,120 @@ export const destinationsData = {
       '/images/gallery/naran-3.jpg',
       '/images/gallery/naran-4.jpg',
       '/images/gallery/naran-5.jpg'
+    ]
+  },
+
+  'siran-valley': {
+    id: 'siran-valley',
+    category: 'adventure',
+    name: 'Siran Valley Escape',
+    slug: 'siran-valley',
+    tagline: 'Hidden Gem of Mansehra',
+    location: 'Siran Valley, Mansehra District, Khyber Pakhtunkhwa',
+    duration: '4 Days',
+    difficulty: 'easy',
+    rating: 4.6,
+    reviews: 84,
+    heroImage: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600&q=80',
+
+    description: 'Siran Valley lies along the Siran River in Mansehra District, Khyber Pakhtunkhwa. It is a calm, forested valley with alpine meadows and small villages, reached via Mansehra with common access through Oghi, Ichrian, Baffa, and onward to Jabori. The valley is best known for its cool summers, scenic river views, and easy nature walks.',
+
+    highlights: [
+      'Siran River valley landscapes and pine forests',
+      'Access route via Oghi, Ichrian, Baffa to Jabori',
+      'Meadows like Khandagali, Aram Gali, and Mundi',
+      'Local villages and cultural hospitality',
+      'Musa ka Musalla and Churko peak viewpoints',
+      'Photography-friendly scenery and gentle hikes'
+    ],
+
+    itinerary: [
+      { day: 1, title: 'Islamabad to Siran Valley', description: 'Drive to Mansehra, continue via Oghi–Ichrian–Baffa, arrive in Jabori area, evening riverside walk' },
+      { day: 2, title: 'Meadows Day Trip', description: 'Explore Khandagali and Aram Gali meadows, short hikes, picnic with valley views' },
+      { day: 3, title: 'Village & Forest Trails', description: 'Visit local villages, forest walks, and scenic viewpoints toward Musa ka Musalla region' },
+      { day: 4, title: 'Return to Islamabad', description: 'Relaxed breakfast, optional local market stop, return via Mansehra' }
+    ],
+
+    inclusions: [
+      'Comfortable accommodation (3-4 star)',
+      'Daily breakfast and dinner',
+      'Private transport with driver',
+      'Local guide for day trips',
+      'Jeep ride where required',
+      'Bottled water'
+    ],
+
+    exclusions: [
+      'Travel insurance',
+      'Personal expenses',
+      'Lunch meals',
+      'Tips for guide/driver',
+      'Optional activities'
+    ],
+
+    pricing: {
+      basic: {
+        price: 499,
+        title: 'Basic Package',
+        features: [
+          'Standard hotel stay',
+          'Shared transport option',
+          'Group tour (6-10 people)',
+          'Standard meals',
+          'Local guide'
+        ]
+      },
+      premium: {
+        price: 699,
+        title: 'Premium Package',
+        popular: true,
+        features: [
+          'Comfortable hotel stay',
+          'Smaller group (4-6 people)',
+          'Private vehicle',
+          'Enhanced meals',
+          'Dedicated guide',
+          'Jeep ride included'
+        ]
+      },
+      ultimate: {
+        price: 899,
+        title: 'Ultimate Package',
+        features: [
+          'Luxury resort stay',
+          'Private tour (1-4 people)',
+          'Private 4x4 vehicle',
+          'Gourmet meals',
+          'Personal guide',
+          'Flexible itinerary'
+        ]
+      }
+    },
+
+    bestTime: 'April to October (cool summers and clear views; winters can be very cold)',
+
+    whatToBring: [
+      'Warm layer for evenings',
+      'Comfortable walking shoes',
+      'Sunglasses and sunscreen',
+      'Camera/phone for photography',
+      'Reusable water bottle',
+      'Basic personal medications'
+    ],
+
+    fitnessLevel: 'Easy - Suitable for families and all ages. Short hikes with gentle terrain.',
+
+    videos: [
+      { src: siranVideo1, title: 'Siran Valley Snow View 1' },
+      { src: siranVideo2, title: 'Siran Valley Snow View 2' }
+    ],
+
+    gallery: [
+      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80',
+      'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&q=80',
+      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+      'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=80',
+      'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80'
     ]
   },
 

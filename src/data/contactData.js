@@ -4,7 +4,7 @@ export const contactInfo = [
     title: 'Phone',
     details: '+92 300 1234567',
     subtext: 'WhatsApp Available',
-    link: 'tel:+923001234567'
+    link: 'tel:+923285000209'
   },
   {
     iconKey: 'email',
@@ -52,6 +52,7 @@ export const tourInterests = [
   'Skardu & K2 Base Camp',
   'Fairy Meadows Trek',
   'Naran Kaghan Package',
+  'Siran Valley Getaway',
   'Swat Valley Heritage',
   'Complete Northern Pakistan Tour',
   'Customized Itinerary',

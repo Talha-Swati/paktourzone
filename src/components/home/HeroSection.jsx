@@ -1,4 +1,5 @@
 import React, { memo, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const HeroSection = ({ isDarkMode, currentSlide, setCurrentSlide, heroImages }) => {
   const [typedIndex, setTypedIndex] = useState(0);
@@ -29,7 +30,7 @@ const HeroSection = ({ isDarkMode, currentSlide, setCurrentSlide, heroImages }) 
             className={`inline-block transition-all duration-300 ${
               isTyped 
                 ? 'opacity-100 blur-0' 
-                : 'opacity-30 blur-[2px]'
+                : 'opacity-70 blur-[1px] sm:opacity-30 sm:blur-[2px]'
             }`}
           >
             {char}
@@ -67,12 +68,11 @@ const HeroSection = ({ isDarkMode, currentSlide, setCurrentSlide, heroImages }) 
         {heroImages.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 bg-cover bg-center bg-fixed transition-opacity duration-1000 ${
+            className={`absolute inset-0 bg-cover bg-center bg-scroll md:bg-fixed transition-opacity duration-1000 ${
               index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
             style={{
-              backgroundImage: `url('${image}')`,
-              backgroundAttachment: 'fixed'
+              backgroundImage: `url('${image}')`
             }}
           />
         ))}
@@ -141,26 +141,32 @@ const HeroSection = ({ isDarkMode, currentSlide, setCurrentSlide, heroImages }) 
 
         {/* CTA Buttons */}
         <div className="flex flex-wrap justify-center gap-4">
-          <button className={`group flex items-center gap-3 rounded-2xl bg-linear-to-r px-8 py-4 text-base font-bold uppercase tracking-wider shadow-2xl transition-all duration-300 hover:scale-105 ${
-            isDarkMode
-              ? 'from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] shadow-[0_0_30px_rgba(34,211,238,0.6)] hover:shadow-[0_0_50px_rgba(34,211,238,0.8)]'
-              : 'from-[#3B82F6] to-[#60A5FA] text-white shadow-[0_0_30px_rgba(59,130,246,0.5)] hover:shadow-[0_0_50px_rgba(59,130,246,0.7)]'
-          }`}>
+          <Link
+            to="/tours"
+            className={`group flex items-center gap-3 rounded-2xl bg-linear-to-r px-8 py-4 text-base font-bold uppercase tracking-wider shadow-2xl transition-all duration-300 hover:scale-105 ${
+              isDarkMode
+                ? 'from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] shadow-[0_0_30px_rgba(34,211,238,0.6)] hover:shadow-[0_0_50px_rgba(34,211,238,0.8)]'
+                : 'from-[#3B82F6] to-[#60A5FA] text-white shadow-[0_0_30px_rgba(59,130,246,0.5)] hover:shadow-[0_0_50px_rgba(59,130,246,0.7)]'
+            }`}
+          >
             <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
             Explore Tours
-          </button>
-          <button className={`flex items-center gap-3 rounded-2xl border-2 px-8 py-4 text-base font-bold uppercase tracking-wider backdrop-blur-md transition-all duration-300 hover:scale-105 ${
-            isDarkMode
-              ? 'border-[#4DBBFF] bg-[rgba(20,26,31,0.6)] text-[#4DBBFF] hover:bg-[rgba(77,187,255,0.1)]'
-              : 'border-[#60A5FA] bg-[rgba(255,255,255,0.6)] text-[#60A5FA] hover:bg-[rgba(96,165,250,0.1)]'
-          }`}>
+          </Link>
+          <Link
+            to="/gallery"
+            className={`flex items-center gap-3 rounded-2xl border-2 px-8 py-4 text-base font-bold uppercase tracking-wider backdrop-blur-md transition-all duration-300 hover:scale-105 ${
+              isDarkMode
+                ? 'border-[#4DBBFF] bg-[rgba(20,26,31,0.6)] text-[#4DBBFF] hover:bg-[rgba(77,187,255,0.1)]'
+                : 'border-[#60A5FA] bg-[rgba(255,255,255,0.6)] text-[#60A5FA] hover:bg-[rgba(96,165,250,0.1)]'
+            }`}
+          >
             <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
             Watch Video
-          </button>
+          </Link>
         </div>
 
         {/* Stats */}

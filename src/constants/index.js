@@ -16,7 +16,8 @@ export const POPULAR_DESTINATIONS = [
   { name: 'Hunza Valley', slug: 'hunza-valley' },
   { name: 'Skardu', slug: 'skardu' },
   { name: 'Swat Valley', slug: 'swat-valley' },
-  { name: 'Fairy Meadows', slug: 'fairy-meadows' }
+  { name: 'Fairy Meadows', slug: 'fairy-meadows' },
+  { name: 'Siran Valley', slug: 'siran-valley' }
 ];
 
 // Contact Information

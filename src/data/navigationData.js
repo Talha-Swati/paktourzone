@@ -24,6 +24,7 @@ export const getNavItems = () => [
       { name: "Swat Valley", path: "/destination/swat-valley", icon: "🌲" },
       { name: "Naran Kaghan", path: "/destination/naran-kaghan", icon: "🏞️" },
       { name: "Fairy Meadows", path: "/destination/fairy-meadows", icon: "🌸" },
+      { name: "Siran Valley", path: "/destination/siran-valley", icon: "🌿" },
       { name: "K2 Base Camp", path: "/destination/k2-base-camp", icon: "🗻" },
       { name: "View All Destinations", path: "/destinations", icon: "🗺️" },
     ]

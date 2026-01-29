@@ -15,7 +15,7 @@ export const specialOfferPackages = [
     validUntil: '2026-02-28',
     badge: 'Limited Time',
     description: 'Experience the magical winter beauty of Hunza Valley at an unbeatable price!',
-    link: '/destinations/hunza'
+    link: '/destination/hunza-valley'
   },
   {
     id: 'skardu-adventure-deal',
@@ -33,7 +33,7 @@ export const specialOfferPackages = [
     validUntil: '2026-03-15',
     badge: 'Hot Deal',
     description: "Explore Skardu's breathtaking landscapes with this exclusive adventure package!",
-    link: '/destinations/skardu'
+    link: '/destination/skardu'
   },
   {
     id: 'fairy-meadows-trek',
@@ -51,7 +51,7 @@ export const specialOfferPackages = [
     validUntil: '2026-04-30',
     badge: 'Best Value',
     description: 'Trek to the base of Nanga Parbat with our most popular discounted package!',
-    link: '/trips/adventure'
+    link: '/destination/fairy-meadows'
   },
   {
     id: 'naran-kaghan-family',
@@ -69,6 +69,6 @@ export const specialOfferPackages = [
     validUntil: '2026-05-31',
     badge: 'Family Special',
     description: 'Perfect family getaway to Naran Kaghan valley with amazing discounts!',
-    link: '/destinations/naran-kaghan'
+    link: '/destination/naran-kaghan'
   }
 ];

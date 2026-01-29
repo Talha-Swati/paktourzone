@@ -10,7 +10,7 @@ const HotelBooking = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedLocation, setSelectedLocation] = useState('all');
 
-  const locations = ['all', 'Skardu', 'Hunza', 'Naran', 'Swat'];
+  const locations = ['all', 'Skardu', 'Hunza', 'Naran', 'Siran', 'Swat'];
 
   const filteredProperties = hotelData.featuredProperties.filter(property => {
     const categoryMatch = selectedCategory === 'all' || property.category === selectedCategory;

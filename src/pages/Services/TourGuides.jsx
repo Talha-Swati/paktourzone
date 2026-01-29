@@ -155,6 +155,36 @@ const tourGuides = [
     certifications: ['Family Tour Specialist', 'Hospitality Expert', 'Licensed Guide']
   },
 
+  // Siran Valley Guides
+  {
+    id: 13,
+    name: 'Adeel Farooq',
+    area: 'Siran Valley',
+    region: 'siran-valley',
+    avatar: 'https://ui-avatars.com/api/?name=Adeel+Farooq&background=22D3EE&color=fff&size=200',
+    rating: 4.8,
+    experience: '8 years',
+    specialties: ['Nature Trails', 'Photography', 'Family Tours'],
+    languages: ['English', 'Urdu', 'Hindko'],
+    bio: 'Local guide with deep knowledge of Siran Valley’s forests, rivers, and hidden viewpoints. Specializes in relaxed family itineraries, easy hikes, and scenic photography stops.',
+    toursCompleted: 240,
+    certifications: ['Nature Guide', 'First Aid Certified', 'Photography Guide']
+  },
+  {
+    id: 14,
+    name: 'Hina Riaz',
+    area: 'Siran Valley',
+    region: 'siran-valley',
+    avatar: 'https://ui-avatars.com/api/?name=Hina+Riaz&background=4DBBFF&color=fff&size=200',
+    rating: 4.9,
+    experience: '6 years',
+    specialties: ['Cultural Tours', 'Local Cuisine', 'Village Walks'],
+    languages: ['English', 'Urdu', 'Hindko'],
+    bio: 'Cultural guide focused on authentic village experiences, local crafts, and culinary traditions of the Hazara region. Creates warm, community-based travel memories.',
+    toursCompleted: 190,
+    certifications: ['Licensed Tour Guide', 'Cultural Heritage Specialist']
+  },
+
   // Swat Valley Guides
   {
     id: 11,
@@ -198,6 +228,7 @@ const TourGuides = () => {
     { id: 'gilgit', name: 'Gilgit Region', icon: <FaLandmark /> },
     { id: 'fairy-meadows', name: 'Fairy Meadows', icon: <FaHiking /> },
     { id: 'naran-kaghan', name: 'Naran Kaghan', icon: <FaHiking /> },
+    { id: 'siran-valley', name: 'Siran Valley', icon: <FaHiking /> },
     { id: 'swat', name: 'Swat Valley', icon: <FaLandmark /> }
   ], []);
 

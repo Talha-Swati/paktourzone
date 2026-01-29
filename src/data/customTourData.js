@@ -17,6 +17,7 @@ export const customTourDestinations = [
   { value: 'naran', label: 'Naran Kaghan', icon: '🏞️' },
   { value: 'k2', label: 'K2 Base Camp', icon: '🗻' },
   { value: 'fairy-meadows', label: 'Fairy Meadows', icon: '🌸' },
+  { value: 'siran-valley', label: 'Siran Valley', icon: '🌿' },
   { value: 'chitral', label: 'Chitral & Kalash', icon: '🏛️' },
   { value: 'gilgit', label: 'Gilgit Region', icon: '🏔️' },
 ];
