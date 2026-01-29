@@ -10,7 +10,7 @@ export const baseTourCategories = [
   {
     id: 'all',
     name: 'All Tours',
-    icon: <FaMountain />,
+    icon: FaMountain,
     count: 5,
     colorDark: 'from-[#22D3EE] to-[#4DBBFF]',
     colorLight: 'from-[#3B82F6] to-[#60A5FA]'
@@ -18,7 +18,7 @@ export const baseTourCategories = [
   {
     id: 'family',
     name: 'Family Packages',
-    icon: <FaUsers />,
+    icon: FaUsers,
     count: 12,
     path: '/trip/family',
     color: 'from-green-400 to-green-600',
@@ -29,7 +29,7 @@ export const baseTourCategories = [
   {
     id: 'honeymoon',
     name: 'Honeymoon Tours',
-    icon: <FaHeart />,
+    icon: FaHeart,
     count: 8,
     path: '/trip/honeymoon',
     color: 'from-pink-400 to-red-500',
@@ -40,7 +40,7 @@ export const baseTourCategories = [
   {
     id: 'adventure',
     name: 'Adventure Tours',
-    icon: <FaMountain />,
+    icon: FaMountain,
     count: 15,
     path: '/trip/adventure',
     color: 'from-orange-400 to-red-600',
@@ -51,7 +51,7 @@ export const baseTourCategories = [
   {
     id: 'corporate',
     name: 'Corporate Tours',
-    icon: <FaBriefcase />,
+    icon: FaBriefcase,
     count: 6,
     path: '/trip/corporate',
     color: 'from-blue-400 to-indigo-600',
@@ -62,7 +62,7 @@ export const baseTourCategories = [
   {
     id: 'budget',
     name: 'Budget Tours',
-    icon: <FaDollarSign />,
+    icon: FaDollarSign,
     count: 10,
     path: '/trip/budget',
     color: 'from-yellow-400 to-orange-500',

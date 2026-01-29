@@ -101,7 +101,9 @@ const Tours = () => {
                       : 'bg-gray-100 text-[#4A5568] hover:bg-gray-200'
                   } transform hover:scale-105`}
                 >
-                  <span className="text-lg">{category.icon}</span>
+                  <span className="text-lg">
+                    {category.icon && <category.icon />}
+                  </span>
                   <span>{category.name}</span>
                   <span className={`px-2 py-0.5 rounded-full text-xs ${
                     selectedCategory === category.id
@@ -140,7 +142,7 @@ const Tours = () => {
                     
                     {/* Category Badge */}
                     <div className={`absolute top-4 right-4 px-4 py-2 rounded-full bg-linear-to-r ${tour.color} text-white font-bold text-sm shadow-lg flex items-center gap-2`}>
-                      {tour.icon}
+                      {tour.icon && <tour.icon />}
                       <span>{tour.count}+ Tours</span>
                     </div>
                   </div>
@@ -161,7 +163,7 @@ const Tours = () => {
                     <div className="space-y-2 mb-6">
                       {tour.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-2">
-                          <FaCheckCircle className={`text-green-500 flex-shrink-0`} />
+                          <FaCheckCircle className="text-green-500 shrink-0" />
                           <span className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-gray-600'}`}>
                             {feature}
                           </span>
