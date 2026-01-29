@@ -22,13 +22,13 @@ export const customTourDestinations = [
 ];
 
 export const customTourActivities = [
-  { value: 'trekking', label: 'Trekking', icon: <FaHiking /> },
-  { value: 'photography', label: 'Photography', icon: <FaCamera /> },
-  { value: 'camping', label: 'Camping', icon: <FaUmbrellaBeach /> },
-  { value: 'mountaineering', label: 'Mountaineering', icon: <FaMountain /> },
-  { value: 'rafting', label: 'Rafting', icon: <FaSwimmer /> },
-  { value: 'skiing', label: 'Skiing', icon: <FaSkiing /> },
-  { value: 'cycling', label: 'Cycling', icon: <FaBiking /> },
-  { value: 'fishing', label: 'Fishing', icon: <FaFish /> },
-  { value: 'cultural-tour', label: 'Cultural Tour', icon: <FaGlassCheers /> },
+  { value: 'trekking', label: 'Trekking', icon: FaHiking },
+  { value: 'photography', label: 'Photography', icon: FaCamera },
+  { value: 'camping', label: 'Camping', icon: FaUmbrellaBeach },
+  { value: 'mountaineering', label: 'Mountaineering', icon: FaMountain },
+  { value: 'rafting', label: 'Rafting', icon: FaSwimmer },
+  { value: 'skiing', label: 'Skiing', icon: FaSkiing },
+  { value: 'cycling', label: 'Cycling', icon: FaBiking },
+  { value: 'fishing', label: 'Fishing', icon: FaFish },
+  { value: 'cultural-tour', label: 'Cultural Tour', icon: FaGlassCheers },
 ];

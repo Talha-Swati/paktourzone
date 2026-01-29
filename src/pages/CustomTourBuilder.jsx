@@ -360,7 +360,9 @@ const CustomTourBuilder = () => {
                     : 'bg-white text-[#4B5563] hover:bg-gray-50 border border-gray-200'
               }`}
             >
-              <div className="mb-2 text-2xl">{activity.icon}</div>
+              <div className="mb-2 text-2xl">
+                {activity.icon && <activity.icon />}
+              </div>
               <div className="text-sm font-semibold">{activity.label}</div>
             </button>
           ))}
