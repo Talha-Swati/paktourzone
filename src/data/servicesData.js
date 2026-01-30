@@ -6,8 +6,8 @@ export const servicesData = {
     name: 'Hotel Booking',
     slug: 'hotels',
     icon: '🏨',
-    tagline: 'Comfort Away From Home',
-    description: 'Handpicked accommodations ranging from budget-friendly stays to luxury resorts across Northern Pakistan. We ensure quality, comfort, and authentic hospitality.',
+    tagline: 'Comfortable Stays, Trusted Quality',
+    description: 'Handpicked hotels and resorts across Northern Pakistan with reliable standards, great locations, and honest pricing for international travelers.',
     heroImage: 'https://images.unsplash.com/photo-1566073171259-6a40f3e9e391?w=1920&q=80',
     
     categories: [
@@ -98,8 +98,8 @@ export const servicesData = {
     name: 'Transport Services',
     slug: 'transport',
     icon: '🚐',
-    tagline: 'Safe & Comfortable Travel',
-    description: 'Professional transport services with experienced drivers, well-maintained vehicles, and comprehensive coverage across Northern Pakistan.',
+    tagline: 'Safe, Scenic, and On‑Time',
+    description: 'Experienced local drivers, well‑maintained vehicles, and route planning built for mountain travel and international guests.',
     heroImage: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1920&q=80',
 
     vehicleTypes: [
@@ -195,8 +195,8 @@ export const servicesData = {
     name: 'Tour Guides',
     slug: 'guides',
     icon: '👨‍🏫',
-    tagline: 'Expert Local Knowledge',
-    description: 'Professional, certified tour guides with deep local knowledge, multiple language skills, and passion for showcasing Pakistan\'s beauty.',
+    tagline: 'Expert Guides, Real Local Insight',
+    description: 'Licensed guides with strong English skills and deep regional knowledge—perfect for cultural tours and mountain adventures.',
     heroImage: 'https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=1920&q=80',
 
     guides: [
@@ -296,8 +296,8 @@ export const servicesData = {
     name: 'Visa Assistance',
     slug: 'visa',
     icon: '📋',
-    tagline: 'Hassle-Free Documentation',
-    description: 'Complete visa assistance service for international travelers visiting Pakistan. We handle applications, documentation, and processing.',
+    tagline: 'Clear, Guided Visa Support',
+    description: 'Step‑by‑step visa assistance for international travelers, with document checks, timelines, and practical guidance.',
     heroImage: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&q=80',
 
     visaTypes: [
@@ -390,8 +390,8 @@ export const servicesData = {
     name: 'Travel Insurance',
     slug: 'insurance',
     icon: '🛡️',
-    tagline: 'Travel With Confidence',
-    description: 'Comprehensive travel insurance plans covering medical emergencies, trip cancellations, lost baggage, and more for worry-free travel.',
+    tagline: 'Peace of Mind on the Road',
+    description: 'Clear insurance options covering medical care, delays, and cancellations—ideal for international travelers in mountain regions.',
     heroImage: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=80',
 
     plans: [
@@ -512,8 +512,8 @@ export const servicesData = {
     name: 'Photography Services',
     slug: 'photography',
     icon: '📸',
-    tagline: 'Capture Your Memories',
-    description: 'Professional photography and videography services to capture your Pakistan adventure with stunning quality and creative excellence.',
+    tagline: 'Capture Every Moment',
+    description: 'Professional travel photography for landscapes, portraits, and adventures—perfect for international travelers and special trips.',
     heroImage: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1920&q=80',
 
     photographers: [

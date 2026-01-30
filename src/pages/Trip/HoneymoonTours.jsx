@@ -35,7 +35,15 @@ const HoneymoonTours = () => {
   };
 
   return (
-    <PageLayout className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}>
+    <PageLayout
+      seo={{
+        title: 'Honeymoon Tours in Northern Pakistan | PakTourZone',
+        description: 'Romantic Pakistan honeymoon packages with private experiences, scenic stays, and stress‑free planning.',
+        keywords: 'Pakistan honeymoon tours, romantic Northern Pakistan, couples travel Hunza, Skardu honeymoon',
+        url: '/trip/honeymoon'
+      }}
+      className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}
+    >
 
       {/* Hero Section with Romantic Gradient */}
       <div 

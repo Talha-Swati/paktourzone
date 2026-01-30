@@ -48,7 +48,15 @@ const Services = () => {
   ];
 
   return (
-    <PageLayout className={`transition-colors duration-500 ${isDarkMode ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'}`}>
+    <PageLayout
+      seo={{
+        title: 'Travel Services in Pakistan | PakTourZone',
+        description: 'Complete travel services for Northern Pakistan—hotels, transport, guides, visa support, insurance, and photography. One trusted partner for your trip.',
+        keywords: 'Pakistan travel services, hotel booking Pakistan, transport services, tour guides Pakistan, visa assistance',
+        url: '/services'
+      }}
+      className={`transition-colors duration-500 ${isDarkMode ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'}`}
+    >
 
       <div className="relative h-[60vh] min-h-[500px]">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920&q=80)' }}>
@@ -57,7 +65,7 @@ const Services = () => {
         <div className="relative h-full flex items-center justify-center px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Complete Travel Services</h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-200">Everything you need for an unforgettable journey through Pakistan</p>
+            <p className="text-xl md:text-2xl mb-8 text-gray-200">Hotels, transport, guides, and essentials—planned for international travelers</p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link to="/custom-tour" className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Build Custom Tour</Link>
               <a href="#services" className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all">Explore Services</a>

@@ -27,7 +27,15 @@ const CorporateTours = () => {
   };
 
   return (
-    <PageLayout className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}>
+    <PageLayout
+      seo={{
+        title: 'Corporate Retreats in Northern Pakistan | PakTourZone',
+        description: 'Team‑building and corporate retreat packages with expert planning, safe logistics, and inspiring mountain settings.',
+        keywords: 'corporate tours Pakistan, team building retreat, Northern Pakistan corporate trips, company travel',
+        url: '/trip/corporate'
+      }}
+      className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}
+    >
 
       {/* Hero Section */}
       <div className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: `url(${tourData.heroImage})` }}>

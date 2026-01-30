@@ -126,10 +126,29 @@ const DestinationDetail = memo(() => {
     });
   };
 
+  const buildSeoDescription = (text) => {
+    if (!text) return undefined;
+    const clean = text.replace(/\s+/g, ' ').trim();
+    return clean.length > 160 ? `${clean.slice(0, 157)}...` : clean;
+  };
+
+  const seo = destination
+    ? {
+        title: `${destination.name} Tour Packages | PakTourZone`,
+        description: buildSeoDescription(destination.description),
+        keywords: `${destination.name}, ${destination.location}, Northern Pakistan tours, guided tour, travel package`,
+        url: `/destination/${destination.slug}`,
+        image: destination.heroImage
+      }
+    : {};
+
   return (
-    <PageLayout className={`min-h-screen ${
+    <PageLayout
+      seo={seo}
+      className={`min-h-screen ${
       isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-white text-[#1F2937]'
-    }`}>
+    }`}
+    >
 
       {/* Hero Section with Media Gallery */}
       <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">

@@ -723,7 +723,15 @@ const CustomTourBuilder = () => {
   );
 
   return (
-    <PageLayout className={`min-h-screen ${isDarkMode ? 'bg-[#0B0C0E]' : 'bg-[#F8FAFB]'}`}>
+    <PageLayout
+      seo={{
+        title: 'Custom Pakistan Tour Builder | PakTourZone',
+        description: 'Build a tailor-made Northern Pakistan itinerary with dates, budget, and activities. Perfect for international travelers who want a personalized journey.',
+        keywords: 'custom Pakistan tour, tailor-made itinerary, Northern Pakistan travel planner, bespoke tour',
+        url: '/custom-tour'
+      }}
+      className={`min-h-screen ${isDarkMode ? 'bg-[#0B0C0E]' : 'bg-[#F8FAFB]'}`}
+    >
 
       <div className="container mx-auto px-4 py-12">
         {/* Header */}

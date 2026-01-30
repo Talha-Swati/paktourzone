@@ -82,9 +82,9 @@ const Reviews = () => {
   return (
     <PageLayout
       seo={{
-        title: "Customer Reviews & Testimonials - PakTourZone",
-        description: `Read ${reviews.length} verified customer reviews. ${averageRating}/5 stars rating. Discover what travelers say about our Northern Pakistan tours and experiences.`,
-        keywords: "PakTourZone reviews, customer testimonials, tour reviews, Pakistan travel reviews, tourist feedback",
+        title: "PakTourZone Reviews | Verified Traveler Feedback",
+        description: `Read ${reviews.length} verified reviews from international travelers. Rated ${averageRating}/5 for Northern Pakistan tours, guides, and service.`,
+        keywords: "PakTourZone reviews, Northern Pakistan tour reviews, traveler testimonials, Pakistan travel ratings",
         url: "/reviews",
         structuredData
       }}
@@ -102,10 +102,10 @@ const Reviews = () => {
                   isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
                 } bg-clip-text text-transparent`}
               >
-                Customer Reviews
+                Traveler Reviews
               </h1>
               <p className={`text-lg md:text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
-                Real experiences from travelers who explored Northern Pakistan with us
+                Honest feedback from guests who toured Northern Pakistan with PakTourZone
               </p>
 
               {/* Overall Rating Card */}

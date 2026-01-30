@@ -28,7 +28,15 @@ const FamilyTours = () => {
   };
 
   return (
-    <PageLayout className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}>
+    <PageLayout
+      seo={{
+        title: 'Family Tours in Northern Pakistan | PakTourZone',
+        description: 'Family‑friendly Pakistan tours with safe transport, comfortable stays, and flexible itineraries for all ages.',
+        keywords: 'family tours Pakistan, Northern Pakistan family trips, Hunza family tour, safe travel Pakistan',
+        url: '/trip/family'
+      }}
+      className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}
+    >
 
       {/* Hero Section */}
       <div 

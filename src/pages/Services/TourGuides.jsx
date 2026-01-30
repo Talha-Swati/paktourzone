@@ -290,9 +290,9 @@ const TourGuides = () => {
   return (
     <PageLayout
       seo={{
-        title: 'Expert Tour Guides - Professional Local Guides in Pakistan | PakTourZone',
-        description: `Meet our ${tourGuides.length} expert tour guides across Northern Pakistan. Licensed professionals with local expertise in Hunza, Skardu, Gilgit, and more. ${averageRating}/5 average rating.`,
-        keywords: 'tour guides Pakistan, local guides, mountain guides, trekking guides, cultural guides, professional tour guides',
+        title: 'Expert Tour Guides in Northern Pakistan | PakTourZone',
+        description: `Meet ${tourGuides.length} licensed local guides across Hunza, Skardu, Gilgit and more. Average ${averageRating}/5 rating from international travelers.`,
+        keywords: 'Pakistan tour guides, local guides Hunza, Skardu guides, trekking guides, cultural guides',
         url: '/services/guides',
         structuredData
       }}
@@ -317,7 +317,7 @@ const TourGuides = () => {
                 Meet Our Expert Tour Guides
               </h1>
               <p className={`text-lg md:text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
-                Licensed professionals with deep local knowledge and years of experience
+                English‑speaking, safety‑focused guides who turn every destination into a meaningful story
               </p>
 
               {/* Stats */}

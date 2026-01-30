@@ -30,11 +30,19 @@ const AdventureTours = () => {
   }, [adventureTours, selectedDifficulty, selectedDuration, selectedRegion]);
 
   return (
-    <PageLayout className={`transition-colors duration-500 ${
+    <PageLayout
+      seo={{
+        title: 'Adventure Tours in Northern Pakistan | PakTourZone',
+        description: 'High‑energy treks, base‑camp routes, and mountain adventures designed for international travelers. Expert guides and safe logistics included.',
+        keywords: 'Pakistan adventure tours, trekking Pakistan, K2 base camp, Northern Pakistan hikes, mountain tours',
+        url: '/trip/adventure'
+      }}
+      className={`transition-colors duration-500 ${
       isDarkMode
         ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
         : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
-    }`}>
+    }`}
+    >
 
       {/* Hero Section */}
       <section className={`relative py-32 overflow-hidden transition-colors duration-500 ${
@@ -73,7 +81,7 @@ const AdventureTours = () => {
           <p className={`text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed mb-8 ${
             isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'
           }`}>
-            Push your limits. Conquer mighty peaks. Create unforgettable memories in Pakistan's most spectacular mountain ranges.
+            Push your limits with safe, guided treks through Pakistan’s most spectacular mountain ranges—built for international travelers.
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 mb-12">

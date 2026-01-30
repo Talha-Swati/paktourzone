@@ -10,11 +10,19 @@ const VisaAssistance = () => {
   const [selectedVisaType, setSelectedVisaType] = useState(visaData.visaTypes[0]);
 
   return (
-    <PageLayout className={`transition-colors duration-500 ${
+    <PageLayout
+      seo={{
+        title: 'Pakistan Visa Assistance | PakTourZone',
+        description: 'Step‑by‑step visa guidance for international travelers. Clear requirements, timelines, and support for your Pakistan tour.',
+        keywords: 'Pakistan visa assistance, Pakistan tourist visa, visa help for Pakistan travel',
+        url: '/services/visa'
+      }}
+      className={`transition-colors duration-500 ${
       isDarkMode
         ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
         : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
-    }`}>
+    }`}
+    >
 
       {/* Hero */}
       <div className="relative h-[50vh] min-h-[400px]">

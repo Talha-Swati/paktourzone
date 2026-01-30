@@ -91,9 +91,9 @@ const Contact = () => {
   return (
     <PageLayout
       seo={{
-        title: "Contact Us - Plan Your Pakistan Adventure | PakTourZone",
-        description: "Get in touch with PakTourZone for customized tour packages. We specialize in serving international travelers with professional tour planning services across Northern Pakistan.",
-        keywords: "contact PakTourZone, Pakistan tour inquiry, international tour booking, travel consultation Pakistan",
+        title: "Contact PakTourZone | Plan Your Pakistan Tour",
+        description: "Speak with our travel experts to plan a safe, comfortable Northern Pakistan tour. Fast replies for international travelers and clear guidance from start to finish.",
+        keywords: "contact Pakistan travel agency, Northern Pakistan tour inquiry, international tour planning, PakTourZone contact",
         url: "/contact",
         structuredData
       }}
@@ -114,13 +114,13 @@ const Contact = () => {
                   isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
                 } bg-clip-text text-transparent`}
               >
-                Let's Plan Your Adventure
+                Plan Your Pakistan Tour
               </h1>
               <p className={`text-lg md:text-xl mb-4 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
-                Ready to explore Northern Pakistan? We're here to help create your perfect journey
+                Tell us your dates and interests—our team will build a safe, seamless itinerary
               </p>
               <p className={`text-base ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
-                Serving international travelers worldwide • Available 24/7 via WhatsApp
+                Serving international travelers worldwide • WhatsApp support available
               </p>
             </div>
           </div>

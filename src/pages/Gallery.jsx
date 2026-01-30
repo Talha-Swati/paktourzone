@@ -62,9 +62,9 @@ const Gallery = () => {
   return (
     <PageLayout
       seo={{
-        title: "Photo Gallery - Northern Pakistan Beauty | PakTourZone",
-        description: "Explore stunning photography from Hunza, Skardu, Fairy Meadows, and other breathtaking destinations in Northern Pakistan. High-quality travel photos and landscapes.",
-        keywords: "Pakistan photography, Hunza photos, Skardu images, travel photography, Northern Pakistan pictures, landscape photography",
+        title: "Northern Pakistan Photo Gallery | PakTourZone",
+        description: "See real landscapes from Hunza, Skardu, Fairy Meadows, and more. A curated gallery to help you choose the perfect Pakistan tour.",
+        keywords: "Northern Pakistan photos, Hunza gallery, Skardu images, Pakistan travel photography, Fairy Meadows pictures",
         url: "/gallery",
         image: galleryPhotos[0].image,
         structuredData
@@ -90,10 +90,10 @@ const Gallery = () => {
                   isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
                 } bg-clip-text text-transparent`}
               >
-                Photo Gallery
+                Northern Pakistan Gallery
               </h1>
               <p className={`text-lg md:text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
-                Discover the breathtaking beauty of Northern Pakistan through our curated collection of stunning photography
+                Explore real locations, seasons, and landscapes to plan your ideal journey
               </p>
 
               {/* Search Bar */}

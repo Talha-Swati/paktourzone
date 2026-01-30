@@ -31,9 +31,9 @@ const Tours = () => {
   return (
     <PageLayout
       seo={{
-        title: 'All Tours & Packages - Adventure, Family, Honeymoon | PakTourZone',
-        description: 'Explore our complete range of tour packages - Adventure treks, Family vacations, Romantic honeymoons, Corporate retreats, and Budget tours across Northern Pakistan.',
-        keywords: 'Pakistan tours, adventure packages, family tours, honeymoon packages, corporate tours, budget travel, Hunza tours, Skardu trips',
+        title: 'Pakistan Tour Packages | Adventure, Family, Honeymoon & More',
+        description: 'Browse curated Northern Pakistan tours designed for international travelers. Adventure treks, family holidays, honeymoons, corporate retreats, and budget-friendly packages.',
+        keywords: 'Pakistan tour packages, Northern Pakistan tours, adventure treks, family holidays, honeymoon tours, corporate retreats, budget tours',
         url: '/tours'
       }}
     >
@@ -51,10 +51,10 @@ const Tours = () => {
               <h1 className={`text-5xl md:text-6xl font-bold mb-6 ${
                 isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
               } bg-clip-text text-transparent`}>
-                Discover Your Perfect Adventure
+                Choose Your Pakistan Adventure
               </h1>
               <p className={`text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
-                Explore Northern Pakistan's most breathtaking destinations with our curated tour packages
+                Handpicked itineraries with expert guides, comfortable transport, and clear pricing—built for international travelers
               </p>
               
               <div className="flex flex-wrap items-center justify-center gap-4 mb-12">

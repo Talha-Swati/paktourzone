@@ -55,10 +55,10 @@ const SpecialOffers = () => {
   return (
     <PageLayout
       seo={{
-        title: 'Special Offers & Deals - PakTourZone',
-        description: 'Exclusive tour package deals and discounts for Northern Pakistan. Save up to 30% on Hunza, Skardu, Fairy Meadows, and Naran Kaghan tours. Limited time offers!',
-        keywords: 'Pakistan tour deals, Hunza discount, Skardu offer, tour package deals, Northern Pakistan discount',
-        url: '/special-offers',
+        title: 'Pakistan Tour Deals | Limited-Time Offers',
+        description: 'Limited-time savings on Northern Pakistan tours. Secure special prices for Hunza, Skardu, Fairy Meadows, and Naran Kaghan trips.',
+        keywords: 'Pakistan tour deals, Northern Pakistan discounts, Hunza offers, Skardu specials, tour package savings',
+        url: '/offers',
         structuredData
       }}
     >
@@ -84,10 +84,10 @@ const SpecialOffers = () => {
                   isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
                 } bg-clip-text text-transparent`}
               >
-                Exclusive Tour Deals
+                Limited-Time Pakistan Tour Deals
               </h1>
               <p className={`text-lg md:text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
-                Save up to 30% on our most popular Northern Pakistan tour packages. Limited slots available!
+                Save up to 30% on our best‑selling routes. Perfect for international travelers who want great value and trusted local guides.
               </p>
 
               {/* Stats */}

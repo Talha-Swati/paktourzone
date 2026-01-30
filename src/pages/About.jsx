@@ -114,9 +114,9 @@ const About = () => {
   return (
     <PageLayout
       seo={{
-        title: "About Us - Meet Our Team | PakTourZone",
-        description: "Meet the passionate team behind PakTourZone. Founded by Talha Riaz, Muhammad Saeed, and Hammad Ashraf, we're dedicated to showcasing Northern Pakistan's beauty.",
-        keywords: "about PakTourZone, tour company Pakistan, travel team, Talha Riaz, Muhammad Saeed, Hammad Ashraf",
+        title: "About PakTourZone | Trusted Northern Pakistan Tour Experts",
+        description: "Meet the local team behind PakTourZone. We design safe, authentic Northern Pakistan tours for international travelers with transparent pricing and expert guides.",
+        keywords: "PakTourZone team, Pakistan tour experts, Northern Pakistan travel company, local guides Pakistan",
         url: "/about",
         structuredData
       }}
@@ -140,7 +140,7 @@ const About = () => {
                 About PakTourZone
               </h1>
               <p className={`text-lg md:text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
-                Turning travel dreams into unforgettable adventures since 2016
+                Local experts creating safe, memorable journeys for international travelers since 2016
               </p>
 
               {/* Quote */}

@@ -10,11 +10,19 @@ const PhotographyServices = () => {
   const [selectedPackage, setSelectedPackage] = useState(photoData.packages[1]); // Default to daily
 
   return (
-    <PageLayout className={`min-h-screen transition-colors duration-500 ${
+    <PageLayout
+      seo={{
+        title: 'Photography Services in Northern Pakistan | PakTourZone',
+        description: 'Hire experienced travel photographers for your Pakistan tour. Capture landscapes, portraits, and adventure moments with pro equipment.',
+        keywords: 'Pakistan travel photography, tour photographer, Northern Pakistan photoshoot, adventure photography',
+        url: '/services/photography'
+      }}
+      className={`min-h-screen transition-colors duration-500 ${
       isDarkMode
         ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
         : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
-    }`}>
+    }`}
+    >
 
       {/* Hero */}
       <div className="relative h-[60vh] min-h-[500px]">

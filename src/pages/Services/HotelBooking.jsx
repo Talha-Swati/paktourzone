@@ -19,11 +19,19 @@ const HotelBooking = () => {
   });
 
   return (
-    <PageLayout className={`transition-colors duration-500 ${
+    <PageLayout
+      seo={{
+        title: 'Hotel Booking in Northern Pakistan | PakTourZone',
+        description: 'Handpicked hotels and resorts in Hunza, Skardu, Naran, and Swat. Reliable stays for international travelers with transparent pricing.',
+        keywords: 'Pakistan hotel booking, Hunza hotels, Skardu resorts, Northern Pakistan accommodation',
+        url: '/services/hotels'
+      }}
+      className={`transition-colors duration-500 ${
       isDarkMode
         ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
         : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
-    }`}>
+    }`}
+    >
 
       {/* Hero */}
       <div className="relative h-[50vh] min-h-[400px]">

@@ -223,8 +223,8 @@ const BookNow = () => {
     <PageLayout
       seo={{
         title: 'Book Your Tour - Secure Booking | PakTourZone',
-        description: 'Book your Northern Pakistan adventure securely online. Flexible payment options and instant confirmation.',
-        keywords: 'book Pakistan tour, online booking, secure payment, tour reservation',
+        description: 'Reserve your Northern Pakistan tour in minutes. Secure booking, clear pricing, and fast confirmation for international travelers.',
+        keywords: 'book Pakistan tour, secure tour booking, Northern Pakistan reservation, travel booking',
         url: '/book-now'
       }}
     >
@@ -711,7 +711,7 @@ const BookNow = () => {
                             className="mt-1 w-5 h-5"
                           />
                           <label className={`text-sm ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
-                            I agree to the <a href="/terms" className={isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}>Terms & Conditions</a> and <a href="/privacy" className={isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}>Privacy Policy</a>
+                            I agree to the <a href="/terms-conditions" className={isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}>Terms & Conditions</a> and <a href="/privacy-policy" className={isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}>Privacy Policy</a>
                           </label>
                         </div>
                       </div>

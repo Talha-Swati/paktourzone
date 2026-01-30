@@ -5,7 +5,7 @@ export const toursData = {
     id: 'family',
     category: 'Family Packages',
     title: 'Family-Friendly Adventures',
-    description: 'Specially curated packages designed for families with children, featuring safe, comfortable, and engaging experiences that create lasting memories for all ages.',
+    description: 'Family‑friendly journeys with safe transport, flexible pacing, and memorable activities for all ages—ideal for international travelers.',
     heroImage: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1920&q=80',
     icon: '👨‍👩‍👧‍👦',
     features: [
@@ -97,7 +97,7 @@ export const toursData = {
     id: 'honeymoon',
     category: 'Honeymoon Specials',
     title: 'Romantic Mountain Escapes',
-    description: 'Exclusive romantic packages designed for newlyweds, featuring luxury accommodations, private experiences, and unforgettable moments in Pakistan\'s most scenic locations.',
+    description: 'Romantic escapes with private moments, scenic stays, and thoughtful touches—perfect for couples seeking comfort and beauty.',
     heroImage: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=80',
     icon: '💑',
     features: [
@@ -183,7 +183,7 @@ export const toursData = {
     id: 'corporate',
     category: 'Corporate Tours',
     title: 'Team Building & Corporate Retreats',
-    description: 'Professional corporate packages designed for team building, retreats, and business getaways with customizable activities and excellent logistics.',
+    description: 'Professional retreats with team‑building activities, smooth logistics, and inspiring mountain settings for leadership and culture.',
     heroImage: 'https://images.unsplash.com/photo-1454391304352-2bf4678b1a7a?w=1920&q=80',
     icon: '💼',
     features: [
@@ -268,7 +268,7 @@ export const toursData = {
     id: 'budget',
     category: 'Budget Tours',
     title: 'Affordable Mountain Adventures',
-    description: 'Budget-friendly packages that don\'t compromise on experience. Explore Northern Pakistan\'s beauty with economical accommodations and smart itineraries.',
+    description: 'Great‑value adventures with reliable service, smart itineraries, and honest pricing for international travelers.',
     heroImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80',
     icon: '💰',
     features: [

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const HeroSection = ({ isDarkMode, currentSlide, setCurrentSlide, heroImages }) => {
   const [typedIndex, setTypedIndex] = useState(0);
-  const fullText = 'Explore Northern Pakistan Paradise';
+  const fullText = 'Discover Northern Pakistan';
   const words = fullText.split(' ');
 
   useEffect(() => {
@@ -136,7 +136,7 @@ const HeroSection = ({ isDarkMode, currentSlide, setCurrentSlide, heroImages }) 
         <p className={`mx-auto mb-12 max-w-2xl text-lg font-medium sm:text-xl md:text-2xl transition-colors duration-500 ${
           isDarkMode ? 'text-[#8B949E]' : 'text-[#4A5568]'
         }`}>
-          Experience breathtaking valleys, majestic peaks, and ancient cultures. Your adventure of a lifetime starts here.
+          Safe, comfortable journeys for international travelers. Explore majestic valleys, iconic peaks, and authentic culture with expert local guides.
         </p>
 
         {/* CTA Buttons */}

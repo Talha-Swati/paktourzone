@@ -26,7 +26,15 @@ const BudgetTours = () => {
   };
 
   return (
-    <PageLayout className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}>
+    <PageLayout
+      seo={{
+        title: 'Budget Tours in Northern Pakistan | PakTourZone',
+        description: 'Great‑value Pakistan tours with trusted guides and smart itineraries. Ideal for international travelers seeking quality on a budget.',
+        keywords: 'budget Pakistan tours, affordable Northern Pakistan trips, low cost travel Pakistan',
+        url: '/trip/budget'
+      }}
+      className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}
+    >
 
       {/* Hero Section */}
       <div className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: `url(${tourData.heroImage})` }}>

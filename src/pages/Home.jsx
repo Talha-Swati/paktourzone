@@ -48,9 +48,9 @@ const Home = () => {
   return (
     <PageLayout
       seo={{
-        title: "PakTourZone - Discover Northern Pakistan's Hidden Treasures | Adventure Tours & Packages",
-        description: "Explore Northern Pakistan's breathtaking landscapes with PakTourZone. Expert-guided tours to Hunza Valley, Skardu, K2 Base Camp, Fairy Meadows, and more. Book your dream adventure today!",
-        keywords: "Pakistan tours, Northern Pakistan, Hunza Valley, Skardu tours, K2 base camp, Fairy Meadows, Swat Valley, adventure travel Pakistan, tour packages, mountain tours",
+        title: "PakTourZone | Northern Pakistan Tours for European Travelers",
+        description: "Plan safe, comfortable, and authentic tours to Hunza, Skardu, Fairy Meadows, and the Karakoram. Small groups, local experts, and transparent pricing for international travelers.",
+        keywords: "Northern Pakistan tours, Pakistan travel agency, European travelers, Hunza tours, Skardu trips, Karakoram tours, guided Pakistan travel, mountain tours",
         url: "/",
         structuredData
       }}

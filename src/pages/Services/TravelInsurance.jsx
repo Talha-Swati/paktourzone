@@ -10,11 +10,19 @@ const TravelInsurance = () => {
   const [selectedPlan, setSelectedPlan] = useState(insuranceData.plans[1]); // Default to comprehensive
 
   return (
-    <PageLayout className={`transition-colors duration-500 ${
+    <PageLayout
+      seo={{
+        title: 'Travel Insurance for Pakistan Tours | PakTourZone',
+        description: 'Travel with confidence. Compare coverage plans designed for Northern Pakistan adventures and international travelers.',
+        keywords: 'Pakistan travel insurance, tour insurance, adventure travel coverage, medical evacuation',
+        url: '/services/insurance'
+      }}
+      className={`transition-colors duration-500 ${
       isDarkMode
         ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
         : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
-    }`}>
+    }`}
+    >
 
       {/* Hero */}
       <div className="relative h-[50vh] min-h-[400px]">

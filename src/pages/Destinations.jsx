@@ -86,9 +86,9 @@ const Destinations = () => {
   return (
     <PageLayout
       seo={{
-        title: 'Destinations | PakTourZone',
-        description: 'Explore Northern Pakistan destinations. Filter by category, difficulty, and rating to find your perfect adventure.',
-        keywords: 'Pakistan destinations, Hunza, Skardu, Fairy Meadows, Northern Pakistan travel',
+        title: 'Northern Pakistan Destinations | Hunza, Skardu, Fairy Meadows',
+        description: 'Compare destinations by difficulty, season, and ratings. Find the right place for your Pakistan tour with clear, traveler-friendly details.',
+        keywords: 'Northern Pakistan destinations, Hunza Valley, Skardu, Fairy Meadows, Naran Kaghan, Pakistan travel',
         url: '/destinations'
       }}
       className="bg-gray-50 dark:bg-gray-900"
@@ -96,7 +96,7 @@ const Destinations = () => {
       {/* Hero Section */}
       <PageHero
         title="Explore All Destinations"
-        subtitle="Discover Pakistan's most stunning landscapes and embark on unforgettable adventures"
+        subtitle="Compare highlights, travel seasons, and difficulty to choose the perfect destination"
         isDarkMode={isDarkMode}
       >
         <div className="mt-8 text-sm text-blue-100">

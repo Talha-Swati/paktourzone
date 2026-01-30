@@ -10,11 +10,19 @@ const TransportServices = () => {
   const [selectedVehicle, setSelectedVehicle] = useState(null);
 
   return (
-    <PageLayout className={`transition-colors duration-500 ${
+    <PageLayout
+      seo={{
+        title: 'Transport Services in Northern Pakistan | PakTourZone',
+        description: 'Safe, comfortable transport with experienced local drivers. Choose from sedans, SUVs, and 4x4s for mountain travel.',
+        keywords: 'Pakistan transport services, 4x4 rental Pakistan, Northern Pakistan driver, tour transport',
+        url: '/services/transport'
+      }}
+      className={`transition-colors duration-500 ${
       isDarkMode
         ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
         : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
-    }`}>
+    }`}
+    >
 
       {/* Hero */}
       <div className="relative h-[50vh] min-h-[400px]">
