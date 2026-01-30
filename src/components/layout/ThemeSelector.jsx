@@ -18,31 +18,24 @@ const ThemeSelector = ({ isDarkMode, themeMode, setThemeMode, themeDropdownOpen,
         }`}
         aria-label="Theme selector"
       >
-        {/* Arrow Icon with Glow Effect */}
-        <div className="relative">
-          <svg
-            className={`w-3.5 h-3.5 xl:w-5 xl:h-5 transition-all duration-300 ${
-              themeDropdownOpen ? 'rotate-180' : ''
-            } ${
-              isDarkMode
-                ? 'text-[#22D3EE] drop-shadow-[0_0_8px_rgba(34,211,238,0.6)] group-hover:drop-shadow-[0_0_12px_rgba(34,211,238,0.9)]'
-                : 'text-[#3B82F6] drop-shadow-[0_0_8px_rgba(59,130,246,0.5)] group-hover:drop-shadow-[0_0_12px_rgba(59,130,246,0.8)]'
-            }`}
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 15.5l-6-6h12z" />
-          </svg>
-          
-          {/* Additional Glow Ring */}
-          <div
-            className={`absolute inset-0 rounded-full blur-md transition-opacity duration-300 ${
-              isDarkMode
-                ? 'bg-[#22D3EE] opacity-20 group-hover:opacity-40'
-                : 'bg-[#3B82F6] opacity-15 group-hover:opacity-30'
-            }`}
-          />
-        </div>
+        <svg
+          className={`h-5 w-5 xl:h-6 xl:w-6 ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="4" />
+          <g>
+            <rect x="11" y="2" width="2" height="4" rx="1" />
+            <rect x="11" y="18" width="2" height="4" rx="1" />
+            <rect x="2" y="11" width="4" height="2" rx="1" />
+            <rect x="18" y="11" width="4" height="2" rx="1" />
+            <rect x="4.2" y="4.2" width="2" height="4" rx="1" transform="rotate(-45 5.2 6.2)" />
+            <rect x="17.8" y="15.8" width="2" height="4" rx="1" transform="rotate(-45 18.8 17.8)" />
+            <rect x="15.8" y="4.2" width="2" height="4" rx="1" transform="rotate(45 16.8 6.2)" />
+            <rect x="4.2" y="15.8" width="2" height="4" rx="1" transform="rotate(45 5.2 17.8)" />
+          </g>
+        </svg>
       </button>
 
       {/* Dropdown Menu */}
@@ -60,7 +53,6 @@ const ThemeSelector = ({ isDarkMode, themeMode, setThemeMode, themeDropdownOpen,
                 : 'text-[#4A5568] hover:bg-[#EBF8FF] hover:text-[#3B82F6] border-[#E2E8F0]'
             } ${themeMode === 'system' ? (isDarkMode ? 'bg-[rgba(34,211,238,0.1)] text-[#22D3EE]' : 'bg-[#EBF8FF] text-[#3B82F6]') : ''}`}
           >
-            <span className="text-lg">💻</span>
             <span className="font-semibold">System Default</span>
             {themeMode === 'system' && <span className="ml-auto text-xs">✓</span>}
           </button>
@@ -73,7 +65,6 @@ const ThemeSelector = ({ isDarkMode, themeMode, setThemeMode, themeDropdownOpen,
                 : 'text-[#4A5568] hover:bg-[#EBF8FF] hover:text-[#3B82F6] border-[#E2E8F0]'
             } ${themeMode === 'light' ? (isDarkMode ? 'bg-[rgba(34,211,238,0.1)] text-[#22D3EE]' : 'bg-[#EBF8FF] text-[#3B82F6]') : ''}`}
           >
-            <span className="text-lg">☀️</span>
             <span className="font-semibold">Light Mode</span>
             {themeMode === 'light' && <span className="ml-auto text-xs">✓</span>}
           </button>
@@ -86,7 +77,6 @@ const ThemeSelector = ({ isDarkMode, themeMode, setThemeMode, themeDropdownOpen,
                 : 'text-[#4A5568] hover:bg-[#EBF8FF] hover:text-[#3B82F6]'
             } ${themeMode === 'dark' ? (isDarkMode ? 'bg-[rgba(34,211,238,0.1)] text-[#22D3EE]' : 'bg-[#EBF8FF] text-[#3B82F6]') : ''}`}
           >
-            <span className="text-lg">🌙</span>
             <span className="font-semibold">Dark Mode</span>
             {themeMode === 'dark' && <span className="ml-auto text-xs">✓</span>}
           </button>

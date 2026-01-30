@@ -630,12 +630,12 @@ export const isOfferExpiringSoon = (validUntil, daysThreshold = 7) => {
 };
 
 export const offerCategories = [
-  { id: 'all', name: 'All Offers', icon: '🎁' },
-  { id: 'seasonal', name: 'Seasonal', icon: '🌸' },
-  { id: 'early-bird', name: 'Early Bird', icon: '🐦' },
-  { id: 'group', name: 'Group Deals', icon: '👥' },
-  { id: 'last-minute', name: 'Last Minute', icon: '⚡' },
-  { id: 'festive', name: 'Festive', icon: '🎉' },
-  { id: 'honeymoon', name: 'Honeymoon', icon: '💑' },
-  { id: 'adventure', name: 'Adventure', icon: '🏔️' }
+  { id: 'all', name: 'All Offers', icon: '' },
+  { id: 'seasonal', name: 'Seasonal', icon: '' },
+  { id: 'early-bird', name: 'Early Bird', icon: '' },
+  { id: 'group', name: 'Group Deals', icon: '' },
+  { id: 'last-minute', name: 'Last Minute', icon: '' },
+  { id: 'festive', name: 'Festive', icon: '' },
+  { id: 'honeymoon', name: 'Honeymoon', icon: '' },
+  { id: 'adventure', name: 'Adventure', icon: '' }
 ];

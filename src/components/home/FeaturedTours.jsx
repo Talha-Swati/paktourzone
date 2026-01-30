@@ -7,43 +7,46 @@ const FeaturedTours = ({ isDarkMode }) => {
   const tours = useMemo(() => [
     {
       frontImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
-      title: "Hunza Valley Trek",
-      subtitle: "7 Days • Moderate",
+      title: "Hunza Valley Highlights",
+      subtitle: "7 Days • Guided Cultural Tour",
       price: "$1,299",
-      description: "Explore ancient forts, terraced fields, and stunning mountain vistas. Visit Baltit Fort, Attabad Lake, and experience local Hunza culture.",
+      description: "Discover Hunza Valley on a guided Pakistan tour with heritage forts, Attabad Lake, and panoramic viewpoints. Perfect for first time international travelers.",
       highlights: [
         "Baltit & Altit Forts",
-        "Attabad Lake Boat Ride",
-        "Local Cultural Experience",
-        "Mountain Photography"
+        "Attabad Lake boat cruise",
+        "Local culture & cuisine",
+        "Eagles Nest viewpoint",
+        "Safe transport and guide"
       ],
       link: "/tours?destination=hunza"
     },
     {
       frontImage: "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800",
-      title: "Skardu & K2 Base",
-      subtitle: "10 Days • Challenging",
+      title: "Skardu & Baltistan",
+      subtitle: "10 Days • Mountain Adventure",
       price: "$2,499",
-      description: "Journey to the world's second-highest peak. Trek through Baltistan's rugged terrain and experience the raw beauty of the Karakoram.",
+      description: "Explore Skardu and Baltistan with expert local guides, alpine lakes, and dramatic Karakoram scenery, ideal for adventure and landscape lovers.",
       highlights: [
-        "K2 Base Camp Trek",
         "Shangrila Resort",
         "Shigar Valley",
-        "Desert Safari"
+        "Deosai National Park",
+        "High altitude landscapes",
+        "Comfortable stays"
       ],
       link: "/tours?destination=skardu"
     },
     {
       frontImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
-      title: "Fairy Meadows Magic",
-      subtitle: "5 Days • Moderate",
+      title: "Fairy Meadows Escape",
+      subtitle: "5 Days • Scenic Trek",
       price: "$899",
-      description: "Camp under the stars with Nanga Parbat as your backdrop. This alpine meadow offers unparalleled views of the 'Killer Mountain'.",
+      description: "Trek to Fairy Meadows for unbeatable views of Nanga Parbat. A short Pakistan trekking tour with safe support and starry nights.",
       highlights: [
-        "Nanga Parbat Views",
-        "Alpine Camping",
-        "Jeep Safari",
-        "Raikot Bridge"
+        "Nanga Parbat views",
+        "Alpine meadow camp",
+        "Jeep access",
+        "Stargazing nights",
+        "Local guide support"
       ],
       link: "/tours?destination=fairy-meadows"
     }

@@ -29,15 +29,15 @@ const BudgetTours = () => {
     <PageLayout
       seo={{
         title: 'Budget Tours in Northern Pakistan | PakTourZone',
-        description: 'Great‑value Pakistan tours with trusted guides and smart itineraries. Ideal for international travelers seeking quality on a budget.',
-        keywords: 'budget Pakistan tours, affordable Northern Pakistan trips, low cost travel Pakistan',
+        description: 'Great value tours in Pakistan with trusted guides, smart itineraries, and comfortable stays. Ideal for travelers seeking quality on a budget.',
+        keywords: 'budget Pakistan tours, affordable Northern Pakistan trips, low cost travel Pakistan, affordable tours Pakistan',
         url: '/trip/budget'
       }}
       className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}
     >
 
       {/* Hero Section */}
-      <div className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: `url(${tourData.heroImage})` }}>
+      <div className="relative h-125 bg-cover bg-center" style={{ backgroundImage: `url(${tourData.heroImage})` }}>
         <div className="absolute inset-0 bg-linear-to-r from-green-900/90 to-emerald-900/80" />
         <div className="relative h-full container mx-auto px-4 flex items-center">
           <div className="max-w-3xl text-white">
@@ -49,9 +49,9 @@ const BudgetTours = () => {
             <p className="text-xl text-gray-200 mb-6">{tourData.description}</p>
             <div className="flex flex-wrap gap-4">
               {[
-                { icon: ThumbsUp, text: 'Best Value' },
-                { icon: TrendingUp, text: 'Great Quality' },
-                { icon: Zap, text: 'Quick Booking' }
+                { icon: ThumbsUp, text: 'Best Value Travel' },
+                { icon: TrendingUp, text: 'Reliable Quality' },
+                { icon: Zap, text: 'Fast Booking' }
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
                   <item.icon className="w-5 h-5" />
@@ -67,7 +67,7 @@ const BudgetTours = () => {
       <div className={`py-12 ${isDarkMode ? 'bg-[#0F1419]' : 'bg-white'}`}>
         <div className="container mx-auto px-4">
           <h2 className={`text-3xl font-bold text-center mb-8 ${isDarkMode ? 'text-[#22D3EE]' : 'text-green-600'}`}>
-            Why Choose Our Budget Packages?
+            Why Travelers Choose Our Budget Tours
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tourData.features.map((feature, index) => (
@@ -84,10 +84,10 @@ const BudgetTours = () => {
       <div className={`py-16 ${isDarkMode ? 'bg-[#0B0C0E]' : 'bg-gray-50'}`}>
         <div className="container mx-auto px-4">
           <h2 className={`text-4xl font-bold text-center mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-            Affordable Adventure Packages
+            Affordable Tours in Northern Pakistan
           </h2>
           <p className={`text-center text-lg mb-12 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-            Experience Pakistan's beauty without breaking the bank
+            Explore northern Pakistan with a smart budget and a premium experience
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -128,7 +128,7 @@ const BudgetTours = () => {
                     <ul className="space-y-1">
                       {pkg.highlights.slice(0, 3).map((highlight, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-xs">
-                          <Check className={`w-3 h-3 mt-0.5 flex-shrink-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
+                          <Check className={`w-3 h-3 mt-0.5 shrink-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
                           <span className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>{highlight}</span>
                         </li>
                       ))}
@@ -160,14 +160,14 @@ const BudgetTours = () => {
       <div className={`py-16 ${isDarkMode ? 'bg-[#0F1419]' : 'bg-white'}`}>
         <div className="container mx-auto px-4">
           <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-            Maximum Adventure, Minimum Cost
+            High Value, Low Cost Travel
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { icon: DollarSign, title: 'Best Prices', desc: 'Unbeatable value for money' },
-              { icon: ThumbsUp, title: 'Quality Service', desc: 'No compromise on experience' },
-              { icon: Users, title: 'Group Savings', desc: 'Shared costs, shared fun' },
-              { icon: Zap, title: 'Quick Booking', desc: 'Easy and fast process' }
+              { icon: DollarSign, title: 'Best Prices', desc: 'Excellent value with transparent pricing' },
+              { icon: ThumbsUp, title: 'Quality Service', desc: 'Reliable guides and comfortable stays' },
+              { icon: Users, title: 'Group Savings', desc: 'Smart itineraries with shared costs' },
+              { icon: Zap, title: 'Fast Booking', desc: 'Simple planning with quick confirmations' }
             ].map((item, idx) => (
               <div key={idx} className="text-center">
                 <div className={`w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center ${

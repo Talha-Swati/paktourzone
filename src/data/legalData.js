@@ -9,7 +9,7 @@ export const termsSections = [
   },
   {
     title: '3. Cancellation and Refund Policy',
-    content: 'Cancellation policies vary depending on the tour package and timing. Cancellations made 30 days or more before the tour date may be eligible for a full refund minus processing fees. Cancellations within 15-30 days may receive a 50% refund. Cancellations within 15 days of the tour date are generally non-refundable. Special circumstances will be considered on a case-by-case basis.'
+    content: 'Cancellation policies vary depending on the tour package and timing. Cancellations made 30 days or more before the tour date may be eligible for a full refund minus processing fees. Cancellations within 15 to 30 days may receive a 50% refund. Cancellations within 15 days of the tour date are generally non refundable. Special circumstances will be considered on a case by case basis.'
   },
   {
     title: '4. Travel Insurance',
@@ -72,7 +72,7 @@ export const privacySections = [
   },
   {
     title: '4. Data Security',
-    content: 'We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. This includes: secure SSL encryption for data transmission, restricted access to personal information on a need-to-know basis, regular security assessments and updates, secure payment processing through trusted providers. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.'
+    content: 'We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. This includes: secure SSL encryption for data transmission, restricted access to personal information on a need to know basis, regular security assessments and updates, secure payment processing through trusted providers. However, no method of transmission over the internet is 100 percent secure, and we cannot guarantee absolute security.'
   },
   {
     title: '5. Cookies and Tracking Technologies',
@@ -95,8 +95,8 @@ export const privacySections = [
     content: 'Our services are not directed to children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately, and we will take steps to delete such information.'
   },
   {
-    title: '10. Third-Party Links',
-    content: 'Our website may contain links to third-party websites. We are not responsible for the privacy practices of these websites. We encourage you to read the privacy policies of any third-party sites you visit.'
+    title: '10. Third Party Links',
+    content: 'Our website may contain links to third party websites. We are not responsible for the privacy practices of these websites. We encourage you to read the privacy policies of any third party sites you visit.'
   },
   {
     title: '11. Marketing Communications',

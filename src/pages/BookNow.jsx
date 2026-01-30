@@ -170,7 +170,7 @@ const BookNow = () => {
                   </div>
                   <div className="flex items-start gap-3">
                     <FaCheckCircle className="text-green-500 mt-1 shrink-0" />
-                    <p>Pre-departure information will be sent 2 weeks before your trip</p>
+                    <p>Pre departure information will be sent 2 weeks before your trip</p>
                   </div>
                 </div>
 

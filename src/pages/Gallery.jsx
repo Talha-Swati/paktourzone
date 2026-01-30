@@ -19,11 +19,11 @@ const Gallery = () => {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
     "name": "PakTourZone Photo Gallery",
-    "description": "Stunning photography collection from Northern Pakistan's most beautiful destinations",
+    "description": "Stunning photography collection from Northern Areas and Kashmir with Pakistan's most beautiful destinations",
     "image": galleryPhotos.map(photo => photo.image),
     "about": {
       "@type": "Place",
-      "name": "Northern Pakistan"
+      "name": "Pakistan"
     }
   }), []);
 
@@ -62,9 +62,9 @@ const Gallery = () => {
   return (
     <PageLayout
       seo={{
-        title: "Northern Pakistan Photo Gallery | PakTourZone",
-        description: "See real landscapes from Hunza, Skardu, Fairy Meadows, and more. A curated gallery to help you choose the perfect Pakistan tour.",
-        keywords: "Northern Pakistan photos, Hunza gallery, Skardu images, Pakistan travel photography, Fairy Meadows pictures",
+        title: "Pakistan Photo Gallery | PakTourZone",
+        description: "See real landscapes from Northern Areas and Kashmir including Hunza, Skardu, Neelam Valley, and more. A curated gallery to help you choose the perfect Pakistan tour.",
+        keywords: "Pakistan photos, Northern Areas gallery, Kashmir images, Hunza photos, Neelam Valley pictures",
         url: "/gallery",
         image: galleryPhotos[0].image,
         structuredData
@@ -90,7 +90,7 @@ const Gallery = () => {
                   isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
                 } bg-clip-text text-transparent`}
               >
-                Northern Pakistan Gallery
+                Pakistan Gallery
               </h1>
               <p className={`text-lg md:text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
                 Explore real locations, seasons, and landscapes to plan your ideal journey
@@ -190,7 +190,7 @@ const Gallery = () => {
           <div className="container mx-auto px-4">
             {filteredPhotos.length === 0 ? (
               <div className="text-center py-20">
-                <div className="text-6xl mb-4">🔍</div>
+                <div className="text-6xl mb-4">Search</div>
                 <h3 className={`text-2xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
                   No photos found
                 </h3>

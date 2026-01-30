@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { getAllDestinations } from '../data/destinationsData';
+import { getRegions, getAllSubregions } from '../data/regionsData';
 import { useTheme } from '../context/ThemeContext';
 import PageLayout from '../components/layout/PageLayout';
 import PageHero from '../components/common/PageHero';
@@ -9,10 +10,13 @@ import { MapPin, Clock, TrendingUp, Star, Users, Search, Filter } from 'lucide-r
 const Destinations = () => {
   const { isDarkMode } = useTheme();
   const allDestinations = getAllDestinations();
+  const regions = getRegions();
+  const subregions = getAllSubregions();
   
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
+  const [selectedRegion, setSelectedRegion] = useState('all');
   const [sortBy, setSortBy] = useState('rating');
 
   // Filter and sort destinations
@@ -31,6 +35,11 @@ const Destinations = () => {
     // Category filter
     if (selectedCategory !== 'all') {
       filtered = filtered.filter(dest => dest.category === selectedCategory);
+    }
+
+    // Region filter
+    if (selectedRegion !== 'all') {
+      filtered = filtered.filter((dest) => (dest.regionId || 'north') === selectedRegion);
     }
 
     // Difficulty filter
@@ -53,7 +62,21 @@ const Destinations = () => {
     });
 
     return filtered;
-  }, [allDestinations, searchQuery, selectedCategory, selectedDifficulty, sortBy]);
+  }, [allDestinations, searchQuery, selectedCategory, selectedDifficulty, selectedRegion, sortBy]);
+
+  const regionNameById = useMemo(() => {
+    return regions.reduce((acc, region) => {
+      acc[region.id] = region.name;
+      return acc;
+    }, {});
+  }, [regions]);
+
+  const subregionNameById = useMemo(() => {
+    return subregions.reduce((acc, subregion) => {
+      acc[subregion.id] = subregion.name;
+      return acc;
+    }, {});
+  }, [subregions]);
 
   const getDifficultyColor = (difficulty) => {
     switch (difficulty) {
@@ -86,9 +109,9 @@ const Destinations = () => {
   return (
     <PageLayout
       seo={{
-        title: 'Northern Pakistan Destinations | Hunza, Skardu, Fairy Meadows',
-        description: 'Compare destinations by difficulty, season, and ratings. Find the right place for your Pakistan tour with clear, traveler-friendly details.',
-        keywords: 'Northern Pakistan destinations, Hunza Valley, Skardu, Fairy Meadows, Naran Kaghan, Pakistan travel',
+        title: 'Pakistan Destinations | Northern Areas and Kashmir',
+        description: 'Compare destinations by difficulty, season, and ratings. Explore Northern Areas and Kashmir with clear, traveler friendly details.',
+        keywords: 'Pakistan destinations, Northern Areas, Kashmir, Hunza Valley, Skardu, Neelam Valley, Pakistan travel',
         url: '/destinations'
       }}
       className="bg-gray-50 dark:bg-gray-900"
@@ -110,7 +133,7 @@ const Destinations = () => {
       {/* Filters Section */}
       <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-md">
         <div className="container mx-auto px-4 py-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
             {/* Search */}
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -148,6 +171,20 @@ const Destinations = () => {
               <option value="extreme">Extreme</option>
             </select>
 
+            {/* Region Filter */}
+            <select
+              value={selectedRegion}
+              onChange={(e) => setSelectedRegion(e.target.value)}
+              className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+              <option value="all">All Regions</option>
+              {regions.map((region) => (
+                <option key={region.id} value={region.id}>
+                  {region.name}
+                </option>
+              ))}
+            </select>
+
             {/* Sort By */}
             <select
               value={sortBy}
@@ -161,7 +198,7 @@ const Destinations = () => {
           </div>
 
           {/* Active Filters Display */}
-          {(searchQuery || selectedCategory !== 'all' || selectedDifficulty !== 'all') && (
+          {(searchQuery || selectedCategory !== 'all' || selectedDifficulty !== 'all' || selectedRegion !== 'all') && (
             <div className="mt-4 flex items-center gap-2 flex-wrap">
               <span className="text-sm text-gray-600 dark:text-gray-400">Active filters:</span>
               {searchQuery && (
@@ -179,11 +216,17 @@ const Destinations = () => {
                   {selectedDifficulty}
                 </span>
               )}
+              {selectedRegion !== 'all' && (
+                <span className="px-3 py-1 bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200 text-sm rounded-full">
+                  {regionNameById[selectedRegion]}
+                </span>
+              )}
               <button
                 onClick={() => {
                   setSearchQuery('');
                   setSelectedCategory('all');
                   setSelectedDifficulty('all');
+                  setSelectedRegion('all');
                 }}
                 className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
               >
@@ -255,6 +298,13 @@ const Destinations = () => {
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {destination.name}
                   </h3>
+
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                    {regionNameById[destination.regionId || 'north']}
+                    {destination.subregionId && subregionNameById[destination.subregionId]
+                      ? `, ${subregionNameById[destination.subregionId]}`
+                      : ''}
+                  </p>
                   
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 italic">
                     {destination.tagline}

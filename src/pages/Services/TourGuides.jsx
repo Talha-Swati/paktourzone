@@ -78,7 +78,7 @@ const tourGuides = [
     languages: ['English', 'Urdu', 'Shina', 'French'],
     bio: 'History buff and expert on the ancient Silk Road. Leads comprehensive tours along the Karakoram Highway, sharing stories of traders, conquests, and cultural exchanges. Knows every hidden gem in Gilgit.',
     toursCompleted: 380,
-    certifications: ['Heritage Tour Guide', 'Historical Sites Expert', 'Licensed Driver-Guide']
+    certifications: ['Heritage Tour Guide', 'Historical Sites Expert', 'Licensed Driver Guide']
   },
   {
     id: 6,
@@ -90,7 +90,7 @@ const tourGuides = [
     experience: '7 years',
     specialties: ['Adventure Tours', 'Rock Climbing', 'Camping'],
     languages: ['English', 'Urdu', 'Shina'],
-    bio: 'Adventure specialist with expertise in rock climbing, camping, and outdoor survival. Organizes thrilling multi-day expeditions combining trekking, climbing, and cultural experiences in Gilgit-Baltistan.',
+    bio: 'Adventure specialist with expertise in rock climbing, camping, and outdoor survival. Organizes thrilling multi day expeditions combining trekking, climbing, and cultural experiences in Gilgit Baltistan.',
     toursCompleted: 215,
     certifications: ['Rock Climbing Instructor', 'Outdoor Adventure Guide', 'Survival Skills Expert']
   },
@@ -118,11 +118,11 @@ const tourGuides = [
     avatar: 'https://ui-avatars.com/api/?name=Sana+Malik&background=4DBBFF&color=fff&size=200',
     rating: 4.9,
     experience: '5 years',
-    specialties: ['Nature Tours', 'Stargazing', 'Eco-Tourism'],
+    specialties: ['Nature Tours', 'Stargazing', 'Eco Tourism'],
     languages: ['English', 'Urdu', 'German'],
-    bio: 'Environmentalist and stargazing expert who creates eco-friendly tours to Fairy Meadows. Passionate about sustainable tourism and preserving the pristine beauty of alpine meadows around Nanga Parbat.',
+    bio: 'Environmentalist and stargazing expert who creates eco friendly tours to Fairy Meadows. Passionate about sustainable tourism and preserving the pristine beauty of alpine meadows around Nanga Parbat.',
     toursCompleted: 165,
-    certifications: ['Eco-Tourism Guide', 'Astronomy Educator', 'Environmental Conservation']
+    certifications: ['Eco Tourism Guide', 'Astronomy Educator', 'Environmental Conservation']
   },
 
   // Naran Kaghan Valley
@@ -317,7 +317,7 @@ const TourGuides = () => {
                 Meet Our Expert Tour Guides
               </h1>
               <p className={`text-lg md:text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
-                English‑speaking, safety‑focused guides who turn every destination into a meaningful story
+                English speaking, safety focused guides who turn every destination into a meaningful story
               </p>
 
               {/* Stats */}

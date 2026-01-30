@@ -18,15 +18,14 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen, themeMode, setT
   return (
     <header className={`sticky top-0 z-50 border-b backdrop-blur-xl shadow-lg transition-colors duration-500 ${
       isDarkMode
-        ? 'border-[rgba(30,36,43,0.5)] bg-[rgba(11,12,14,0.95)]'
+        ? 'border-[rgba(30,36,43,0.5)] bg-[rgba(11,12,14,0.98)]'
         : 'border-[rgba(59,130,246,0.2)] bg-[rgba(255,255,255,0.95)]'
     }`}>
       <div className="w-full mx-auto flex items-center justify-between px-2 lg:px-3 xl:px-6 py-2 lg:py-2 xl:py-4" style={{maxWidth: 'calc(100vw - 1rem)'}}>
         {/* Logo */}
         <Link to="/" className="flex items-center group flex-shrink-0">
           <div className="relative">
-            <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-[#22D3EE] to-[#0A3A67] opacity-20 blur-xl group-hover:opacity-30 transition-opacity"></div>
-            <div className="relative flex h-9 w-9 lg:h-10 lg:w-10 xl:h-14 xl:w-14 items-center justify-center rounded-2xl bg-linear-to-br from-[#22D3EE] to-[#0A3A67] shadow-[0_0_20px_rgba(34,211,238,0.4)] group-hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] transition-all">
+            <div className="relative flex h-9 w-9 lg:h-10 lg:w-10 xl:h-14 xl:w-14 items-center justify-center rounded-2xl bg-linear-to-br from-[#22D3EE] to-[#0A3A67] transition-all">
               <span className="text-base lg:text-lg xl:text-2xl font-black text-[#F2F6F9]">PT</span>
             </div>
           </div>
@@ -62,12 +61,12 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen, themeMode, setT
               </Link>
               
               {item.hasDropdown && item.dropdownItems && (
-                <div className={`absolute left-0 top-full mt-2 w-64 rounded-xl border shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden z-50 ${
+                <div className={`absolute left-0 top-full mt-2 ${item.name === 'Destinations' ? 'w-[520px]' : 'w-64'} rounded-xl border shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden z-50 backdrop-blur-xl ${
                   isDarkMode
-                    ? 'bg-[#141A1F] border-[#1E242B]'
-                    : 'bg-white border-[#E2E8F0] shadow-[rgba(0,0,0,0.15)]'
+                    ? 'bg-[rgba(15,20,25,0.7)] border-[#1E242B]'
+                    : 'bg-[rgba(255,255,255,0.75)] border-[#E2E8F0] shadow-[rgba(0,0,0,0.15)]'
                 }`}>
-                  <div className="p-2">
+                  <div className={item.name === 'Destinations' ? 'p-2 grid grid-cols-2 gap-1' : 'p-2'}>
                     {item.dropdownItems.map((dropItem, dropIndex) => (
                       <Link
                         key={dropIndex}
@@ -79,7 +78,7 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen, themeMode, setT
                         }`}
                       >
                         <div className="flex items-center gap-3">
-                          <span className="text-lg">{dropItem.icon || "🏔️"}</span>
+                          {dropItem.icon && <span className="text-lg">{dropItem.icon}</span>}
                           <span>{dropItem.name}</span>
                         </div>
                       </Link>
@@ -191,7 +190,7 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen, themeMode, setT
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         <span className="flex items-center gap-2">
-                          <span className="text-base">{dropItem.icon}</span>
+                          {dropItem.icon && <span className="text-base">{dropItem.icon}</span>}
                           <span>{dropItem.name}</span>
                         </span>
                       </Link>

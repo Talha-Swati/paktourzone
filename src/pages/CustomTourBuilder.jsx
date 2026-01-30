@@ -118,7 +118,7 @@ const CustomTourBuilder = () => {
   const renderStep1 = () => (
     <div className="space-y-6">
       <h2 className={`text-2xl font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
-        Step 1: Choose Your Destination
+        Step 1, Choose Destination and Dates
       </h2>
 
       {/* Destination Selection */}
@@ -226,7 +226,7 @@ const CustomTourBuilder = () => {
         </div>
         {parseInt(formData.groupSize) >= 4 && (
           <p className="mt-2 text-sm text-green-500">
-            🎉 Group discount applied! Save up to 15%
+            Group discount applied. Save up to 15 percent
           </p>
         )}
       </div>
@@ -236,7 +236,7 @@ const CustomTourBuilder = () => {
   const renderStep2 = () => (
     <div className="space-y-6">
       <h2 className={`text-2xl font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
-        Step 2: Customize Your Experience
+        Step 2, Customize Your Pakistan Tour
       </h2>
 
       {/* Accommodation */}
@@ -250,8 +250,8 @@ const CustomTourBuilder = () => {
         <div className="grid grid-cols-1 gap-3 md:grid-cols-4">
           {[
             { value: 'budget', label: 'Budget', desc: 'Guesthouses & Hostels' },
-            { value: 'standard', label: 'Standard', desc: '2-3 Star Hotels' },
-            { value: 'comfort', label: 'Comfort', desc: '3-4 Star Hotels' },
+            { value: 'standard', label: 'Standard', desc: '2 to 3 Star Hotels' },
+            { value: 'comfort', label: 'Comfort', desc: '3 to 4 Star Hotels' },
             { value: 'luxury', label: 'Luxury', desc: '5 Star Resorts' }
           ].map(option => (
             <button
@@ -374,7 +374,7 @@ const CustomTourBuilder = () => {
   const renderStep3 = () => (
     <div className="space-y-6">
       <h2 className={`text-2xl font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
-        Step 3: Contact Information
+        Step 3, Contact and Preferences
       </h2>
 
       {/* Personal Information */}

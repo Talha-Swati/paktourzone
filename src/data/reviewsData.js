@@ -43,7 +43,7 @@ export const reviews = [
     date: '2025-12-28',
     tour: 'Naran Kaghan Family Package',
     avatar: 'https://ui-avatars.com/api/?name=Muhammad+Ali&background=22D3EE&color=fff',
-    review: 'Great family-friendly tour! My kids loved every moment. The only minor issue was the hotel breakfast variety, but everything else was perfect. Highly recommended for families.',
+    review: 'Great family friendly tour! My kids loved every moment. The only minor issue was the hotel breakfast variety, but everything else was perfect. Highly recommended for families.',
     likes: 18,
     verified: true
   },

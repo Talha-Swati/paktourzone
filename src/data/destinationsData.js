@@ -1,5 +1,7 @@
 import siranVideo1 from '../assets/videos/siran1.mp4';
 import siranVideo2 from '../assets/videos/siran2.mp4';
+import swatImage1 from '../assets/destinations/swat1.jpeg';
+import swatImage2 from '../assets/destinations/swat2.jpeg';
 
 // Complete destinations database for Pakistan tours
 export const destinationsData = {
@@ -10,38 +12,38 @@ export const destinationsData = {
     name: 'K2 Base Camp Trek',
     slug: 'k2-base-camp',
     tagline: 'Ultimate Challenge',
-    location: 'Baltistan, Gilgit-Baltistan',
+    location: 'Baltistan, Gilgit Baltistan',
     duration: '14 Days',
     difficulty: 'extreme',
     rating: 4.9,
     reviews: 127,
     heroImage: '/images/destinations/k2-hero.jpg',
     
-    description: 'Embark on the ultimate trekking adventure to the base camp of K2, the world\'s second-highest mountain. This expedition takes you through breathtaking landscapes, glacial valleys, and offers views of four 8000m peaks including K2, Broad Peak, Gasherbrum I & II.',
+    description: 'Embark on the ultimate trekking adventure to the base camp of K2, the world\'s second highest mountain. This expedition takes you through breathtaking landscapes, glacial valleys, and offers views of four 8000m peaks including K2, Broad Peak, Gasherbrum I & II.',
     
     highlights: [
-      'Concordia - Meeting point of glaciers with 4x 8000m peaks',
+      'Concordia, meeting point of glaciers with 4x 8000m peaks',
       'K2 Base Camp at 5,150m altitude',
-      'Baltoro Glacier - One of the longest glaciers outside polar regions',
+      'Baltoro Glacier, one of the longest glaciers outside polar regions',
       'Masherbrum, Trango Towers, and Cathedral Peak views',
-      'Experience high-altitude camping',
+      'Experience high altitude camping',
       'Professional Balti porters and experienced guides'
     ],
     
     itinerary: [
-      { day: 1, title: 'Arrival in Islamabad', description: 'Airport pickup, hotel check-in, trip briefing' },
+      { day: 1, title: 'Arrival in Islamabad', description: 'Airport pickup, hotel check in, trip briefing' },
       { day: 2, title: 'Islamabad to Skardu', description: 'Scenic flight over Nanga Parbat (weather permitting) or drive via Karakoram Highway' },
       { day: 3, title: 'Skardu Rest Day', description: 'Acclimatization, gear check, visit Kharpocho Fort and Sadpara Lake' },
       { day: 4, title: 'Skardu to Askole', description: 'Drive to last village, meet porter team, final preparations' },
-      { day: 5, title: 'Askole to Jhola Camp', description: 'Trek begins through Braldu Gorge (6-7 hours)' },
-      { day: 6, title: 'Jhola to Paiju', description: 'Trek along Baltoro Glacier snout (6-7 hours)' },
+      { day: 5, title: 'Askole to Jhola Camp', description: 'Trek begins through Braldu Gorge (6 to 7 hours)' },
+      { day: 6, title: 'Jhola to Paiju', description: 'Trek along Baltoro Glacier snout (6 to 7 hours)' },
       { day: 7, title: 'Paiju Rest Day', description: 'Acclimatization, explore Paiju Peak base' },
-      { day: 8, title: 'Paiju to Khoburtse', description: 'Trek on Baltoro Glacier moraine (5-6 hours)' },
-      { day: 9, title: 'Khoburtse to Urdukas', description: 'Spectacular views of Trango Towers (5-6 hours)' },
-      { day: 10, title: 'Urdukas to Goro II', description: 'Deep into Baltoro Glacier (6-7 hours)' },
-      { day: 11, title: 'Goro II to Concordia', description: 'Reach the throne room of mountain gods (4-5 hours)' },
-      { day: 12, title: 'Concordia to K2 Base Camp & Back', description: 'Reach K2 Base Camp at 5,150m, return to Concordia (8-10 hours)' },
-      { day: 13, title: 'Begin Return Trek', description: 'Concordia to Urdukas (6-7 hours)' },
+      { day: 8, title: 'Paiju to Khoburtse', description: 'Trek on Baltoro Glacier moraine (5 to 6 hours)' },
+      { day: 9, title: 'Khoburtse to Urdukas', description: 'Spectacular views of Trango Towers (5 to 6 hours)' },
+      { day: 10, title: 'Urdukas to Goro II', description: 'Deep into Baltoro Glacier (6 to 7 hours)' },
+      { day: 11, title: 'Goro II to Concordia', description: 'Reach the throne room of mountain gods (4 to 5 hours)' },
+      { day: 12, title: 'Concordia to K2 Base Camp & Back', description: 'Reach K2 Base Camp at 5,150m, return to Concordia (8 to 10 hours)' },
+      { day: 13, title: 'Begin Return Trek', description: 'Concordia to Urdukas (6 to 7 hours)' },
       { day: 14, title: 'Return to Askole & Skardu', description: 'Fast trek and drive back to civilization' }
     ],
     
@@ -52,7 +54,7 @@ export const destinationsData = {
       'Porters for personal and camping equipment',
       'All camping equipment (tents, sleeping bags, mats)',
       'Kitchen crew and cooking equipment',
-      'Domestic flights (Islamabad-Skardu-Islamabad)',
+      'Domestic flights (Islamabad to Skardu to Islamabad)',
       'All ground transportation',
       'Jeep safari to Askole and back',
       'National park fees and permits',
@@ -75,8 +77,8 @@ export const destinationsData = {
         title: 'Basic Package',
         features: [
           'Standard camping equipment',
-          'Basic hotel accommodation (3-star)',
-          'Group trekking (8-12 people)',
+          'Basic hotel accommodation (3 star)',
+          'Group trekking (8 to 12 people)',
           'Shared transportation',
           'Standard meals',
           'Basic first aid kit',
@@ -89,30 +91,30 @@ export const destinationsData = {
         popular: true,
         features: [
           'Premium camping equipment (warmer sleeping bags)',
-          'Better hotel accommodation (4-star)',
-          'Smaller group (4-6 people)',
+          'Better hotel accommodation (4 star)',
+          'Smaller group (4 to 6 people)',
           'Private jeep available',
           'Enhanced meals with more variety',
           'Advanced first aid and oxygen',
           'Dedicated guide (1 guide per 4 people)',
           'Satellite communication device',
-          'Pre-trek fitness consultation'
+          'Pre trek fitness consultation'
         ]
       },
       ultimate: {
         price: 1999,
         title: 'Ultimate Package',
         features: [
-          'Top-tier mountaineering equipment',
-          'Luxury hotels (5-star) with spa facilities',
-          'Private expedition (1-3 people)',
+          'Top tier mountaineering equipment',
+          'Luxury hotels (5 star) with spa facilities',
+          'Private expedition (1 to 3 people)',
           'Private transportation throughout',
           'Gourmet meals with chef',
           'Comprehensive medical kit with oxygen',
           'Personal guide + support guide',
           'Helicopter evacuation insurance',
           'Satellite phone for personal use',
-          'Pre and post-trek massage therapy',
+          'Pre and post trek massage therapy',
           'Professional photography service',
           'Personalized itinerary flexibility'
         ]
@@ -122,8 +124,8 @@ export const destinationsData = {
     bestTime: 'June to September (Summer months for stable weather)',
     
     whatToBring: [
-      'Sturdy trekking boots (waterproof, broken-in)',
-      'Warm sleeping bag (-15°C rated minimum)',
+      'Sturdy trekking boots (waterproof, broken in)',
+      'Warm sleeping bag (minus 15 C rated minimum)',
       'Insulated jacket (down or synthetic)',
       'Waterproof shell jacket and pants',
       'Thermal base layers',
@@ -136,7 +138,7 @@ export const destinationsData = {
       'Camera and power bank'
     ],
     
-    fitnessLevel: 'Excellent fitness required. Must be able to trek 6-8 hours daily at high altitude. Prior high-altitude trekking experience recommended.',
+    fitnessLevel: 'Excellent fitness required. Must be able to trek 6 to 8 hours daily at high altitude. Prior high altitude trekking experience recommended.',
     
     gallery: [
       '/images/gallery/k2-1.jpg',
@@ -156,13 +158,13 @@ export const destinationsData = {
           popular: false,
           features: [
             'Standard camping equipment',
-            'Basic hotel accommodation (3-star)',
-            'Group trekking (8-12 people)',
+            'Basic hotel accommodation (3 star)',
+            'Group trekking (8 to 12 people)',
             'Shared transportation',
             'Standard meals during trek',
             'Basic first aid kit',
             'Group guide',
-            '10-day condensed itinerary'
+            '10 day condensed itinerary'
           ]
         },
         premium: {
@@ -171,14 +173,14 @@ export const destinationsData = {
           popular: true,
           features: [
             'Premium camping equipment',
-            'Better hotel accommodation (4-star)',
-            'Smaller group (4-6 people)',
+            'Better hotel accommodation (4 star)',
+            'Smaller group (4 to 6 people)',
             'Private jeep available',
             'Enhanced meals',
             'Advanced first aid and oxygen',
             'Dedicated guide',
             'Satellite communication',
-            '10-day optimized route'
+            '10 day optimized route'
           ]
         },
         ultimate: {
@@ -186,16 +188,16 @@ export const destinationsData = {
           title: 'Ultimate Package',
           popular: false,
           features: [
-            'Top-tier equipment',
-            'Luxury hotels (5-star)',
-            'Private expedition (1-3 people)',
+            'Top tier equipment',
+            'Luxury hotels (5 star)',
+            'Private expedition (1 to 3 people)',
             'Private transportation',
             'Gourmet meals',
             'Comprehensive medical kit',
             'Personal guide + support',
             'Helicopter evacuation insurance',
             'Professional photography',
-            '10-day fast-paced trek'
+            '10 day fast paced trek'
           ]
         }
       },
@@ -206,13 +208,13 @@ export const destinationsData = {
           popular: false,
           features: [
             'Standard camping equipment',
-            'Basic hotel accommodation (3-star)',
-            'Group trekking (8-12 people)',
+            'Basic hotel accommodation (3 star)',
+            'Group trekking (8 to 12 people)',
             'Shared transportation',
             'Standard meals',
             'Basic first aid kit',
             'Group guide (1 per 8 people)',
-            'Standard 14-day itinerary'
+            'Standard 14 day itinerary'
           ]
         },
         premium: {
@@ -221,14 +223,14 @@ export const destinationsData = {
           popular: true,
           features: [
             'Premium camping equipment',
-            'Better hotel accommodation (4-star)',
-            'Smaller group (4-6 people)',
+            'Better hotel accommodation (4 star)',
+            'Smaller group (4 to 6 people)',
             'Private jeep available',
             'Enhanced meals with variety',
             'Advanced first aid and oxygen',
             'Dedicated guide (1 per 4 people)',
             'Satellite communication device',
-            'Pre-trek fitness consultation'
+            'Pre trek fitness consultation'
           ]
         },
         ultimate: {
@@ -236,16 +238,16 @@ export const destinationsData = {
           title: 'Ultimate Package',
           popular: false,
           features: [
-            'Top-tier mountaineering equipment',
-            'Luxury hotels (5-star) with spa',
-            'Private expedition (1-3 people)',
+            'Top tier mountaineering equipment',
+            'Luxury hotels (5 star) with spa',
+            'Private expedition (1 to 3 people)',
             'Private transportation throughout',
             'Gourmet meals with chef',
             'Comprehensive medical kit',
             'Personal guide + support guide',
             'Helicopter evacuation insurance',
             'Satellite phone',
-            'Pre/post-trek massage therapy',
+            'Pre and post trek massage therapy',
             'Professional photography service',
             'Personalized itinerary'
           ]
@@ -680,7 +682,7 @@ export const destinationsData = {
     difficulty: 'easy',
     rating: 4.7,
     reviews: 189,
-    heroImage: '/images/destinations/swat-hero.jpg',
+    heroImage: swatImage1,
     
     description: 'Discover the emerald paradise of Swat Valley, featuring lush green meadows, crystal-clear rivers, Buddhist heritage sites, and the majestic Malam Jabba ski resort. Perfect for families and first-time trekkers.',
     
@@ -954,6 +956,8 @@ export const destinationsData = {
     fitnessLevel: 'Easy - Suitable for all ages and fitness levels. Minimal trekking required.',
     
     gallery: [
+      swatImage1,
+      swatImage2,
       '/images/gallery/swat-1.jpg',
       '/images/gallery/swat-2.jpg',
       '/images/gallery/swat-3.jpg',
@@ -1316,7 +1320,7 @@ export const destinationsData = {
     ],
 
     itinerary: [
-      { day: 1, title: 'Islamabad to Siran Valley', description: 'Drive to Mansehra, continue via Oghi–Ichrian–Baffa, arrive in Jabori area, evening riverside walk' },
+      { day: 1, title: 'Islamabad to Siran Valley', description: 'Drive to Mansehra, continue via Oghi, Ichrian, Baffa, arrive in Jabori area, evening riverside walk' },
       { day: 2, title: 'Meadows Day Trip', description: 'Explore Khandagali and Aram Gali meadows, short hikes, picnic with valley views' },
       { day: 3, title: 'Village & Forest Trails', description: 'Visit local villages, forest walks, and scenic viewpoints toward Musa ka Musalla region' },
       { day: 4, title: 'Return to Islamabad', description: 'Relaxed breakfast, optional local market stop, return via Mansehra' }
@@ -1572,6 +1576,565 @@ export const destinationsData = {
       '/images/gallery/fairy-meadows-3.jpg',
       '/images/gallery/fairy-meadows-4.jpg',
       '/images/gallery/fairy-meadows-5.jpg'
+    ]
+  },
+
+  'neelam-valley': {
+    id: 'neelam-valley',
+    category: 'adventure',
+    regionId: 'kashmir',
+    subregionId: 'neelum',
+    name: 'Neelam Valley Escape',
+    slug: 'neelam-valley',
+    tagline: 'Emerald River Valley',
+    location: 'Neelam Valley, Azad Jammu and Kashmir',
+    duration: '5 Days',
+    difficulty: 'easy',
+    rating: 4.8,
+    reviews: 156,
+    heroImage: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600&q=80',
+
+    description: 'Discover the lush beauty of Neelam Valley with riverside stays, pine forests, and panoramic views. Perfect for families, couples, and first time visitors.',
+
+    highlights: [
+      'Riverside views and scenic walks',
+      'Keran and Upper Neelam viewpoints',
+      'Traditional Kashmiri cuisine',
+      'Comfortable stays in cozy lodges',
+      'Local culture and craft stops',
+      'Photography friendly landscapes'
+    ],
+
+    itinerary: [
+      { day: 1, title: 'Arrival in Muzaffarabad', description: 'Meet and greet, city briefing, evening riverside walk', activities: ['Arrival', 'Briefing', 'Riverside walk'] },
+      { day: 2, title: 'Muzaffarabad to Neelam Valley', description: 'Scenic drive to Keran, check in and relax', activities: ['Drive', 'Check in', 'Leisure'] },
+      { day: 3, title: 'Upper Neelam Views', description: 'Explore Upper Neelam viewpoints, picnic and photography', activities: ['Viewpoints', 'Picnic', 'Photography'] },
+      { day: 4, title: 'Local Culture Day', description: 'Village visits, local crafts, and riverside leisure', activities: ['Village visit', 'Culture', 'Leisure'] },
+      { day: 5, title: 'Return to Muzaffarabad', description: 'Morning tea with views, drive back, departure', activities: ['Morning views', 'Drive', 'Departure'] }
+    ],
+
+    inclusions: [
+      'Accommodation in selected hotels or lodges',
+      'Daily breakfast and welcome tea',
+      'All ground transportation during the tour',
+      'Local guide for key sightseeing',
+      'All tolls and permits'
+    ],
+
+    exclusions: [
+      'Travel insurance',
+      'Personal expenses and shopping',
+      'Tips for guides and drivers',
+      'Meals not listed in inclusions',
+      'Any items not mentioned in inclusions'
+    ],
+
+    pricing: {
+      basic: {
+        price: 449,
+        title: 'Basic Package',
+        features: [
+          'Standard hotel stays',
+          'Shared transport',
+          'Daily breakfast',
+          'Local guide support',
+          'All tolls and permits'
+        ]
+      },
+      premium: {
+        price: 649,
+        title: 'Premium Package',
+        popular: true,
+        features: [
+          'Comfort hotels with views',
+          'Private transport',
+          'Breakfast and dinner',
+          'Dedicated guide',
+          'Flexible sightseeing'
+        ]
+      },
+      ultimate: {
+        price: 899,
+        title: 'Ultimate Package',
+        features: [
+          'Premium riverside stays',
+          'Private vehicle and driver',
+          'All meals included',
+          'Personal guide',
+          'Flexible itinerary'
+        ]
+      }
+    },
+
+    bestTime: 'April to October for pleasant weather and clear views',
+
+    whatToBring: [
+      'Comfortable walking shoes',
+      'Light jacket and warm layers',
+      'Sunglasses and sunscreen',
+      'Personal medications',
+      'Camera and power bank'
+    ],
+
+    fitnessLevel: 'Easy travel with light walking, suitable for all ages.',
+
+    gallery: [
+      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80',
+      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80',
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80'
+    ]
+  },
+
+  'arang-kel': {
+    id: 'arang-kel',
+    category: 'adventure',
+    regionId: 'kashmir',
+    subregionId: 'arang-kel',
+    name: 'Arang Kel Meadows',
+    slug: 'arang-kel',
+    tagline: 'Hilltop Hamlet Views',
+    location: 'Arang Kel, Neelam Valley, Azad Jammu and Kashmir',
+    duration: '4 Days',
+    difficulty: 'moderate',
+    rating: 4.8,
+    reviews: 112,
+    heroImage: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80',
+
+    description: 'A scenic escape to Arang Kel with cable car access and a short trek to lush hilltop meadows. Ideal for hikers and nature lovers.',
+
+    highlights: [
+      'Cable car experience to Kel',
+      'Short trek to Arang Kel',
+      'Alpine meadows and wooden cottages',
+      'Peaceful sunrise and sunset views',
+      'Local village hospitality',
+      'Photography friendly landscapes'
+    ],
+
+    itinerary: [
+      { day: 1, title: 'Arrival in Neelam Valley', description: 'Drive to Keran, rest and prepare for trek', activities: ['Drive', 'Check in', 'Rest'] },
+      { day: 2, title: 'Kel and Arang Kel', description: 'Cable car to Kel, trek to Arang Kel, settle in', activities: ['Cable car', 'Trek', 'Meadow stay'] },
+      { day: 3, title: 'Meadow Exploration', description: 'Leisure hikes, viewpoints, and village walk', activities: ['Hiking', 'Viewpoints', 'Village walk'] },
+      { day: 4, title: 'Return to Keran', description: 'Trek back, cable car, and drive out', activities: ['Trek back', 'Cable car', 'Drive'] }
+    ],
+
+    inclusions: [
+      'Accommodation in Keran and Arang Kel',
+      'Daily breakfast',
+      'Cable car tickets for Kel',
+      'Local guide for the trek',
+      'All ground transportation'
+    ],
+
+    exclusions: [
+      'Travel insurance',
+      'Personal expenses',
+      'Tips for guides and drivers',
+      'Meals not listed in inclusions',
+      'Any items not mentioned in inclusions'
+    ],
+
+    pricing: {
+      basic: {
+        price: 399,
+        title: 'Basic Package',
+        features: [
+          'Standard guest house',
+          'Shared transport',
+          'Breakfast included',
+          'Local guide'
+        ]
+      },
+      premium: {
+        price: 559,
+        title: 'Premium Package',
+        popular: true,
+        features: [
+          'Comfort stay in Arang Kel',
+          'Private transport',
+          'Breakfast and dinner',
+          'Guide and porter support'
+        ]
+      },
+      ultimate: {
+        price: 749,
+        title: 'Ultimate Package',
+        features: [
+          'Best view cottage stay',
+          'Private vehicle',
+          'All meals included',
+          'Personal guide'
+        ]
+      }
+    },
+
+    bestTime: 'May to September for clear weather and meadow blooms',
+
+    whatToBring: [
+      'Trekking shoes',
+      'Warm layers for evenings',
+      'Rain jacket',
+      'Water bottle',
+      'Camera'
+    ],
+
+    fitnessLevel: 'Moderate fitness for short uphill trekking.',
+
+    gallery: [
+      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80',
+      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80'
+    ]
+  },
+
+  'ratti-gali': {
+    id: 'ratti-gali',
+    category: 'trekking',
+    regionId: 'kashmir',
+    subregionId: 'ratti-gali',
+    name: 'Ratti Gali Lake Trek',
+    slug: 'ratti-gali',
+    tagline: 'Alpine Lake Adventure',
+    location: 'Ratti Gali Lake, Azad Jammu and Kashmir',
+    duration: '4 Days',
+    difficulty: 'moderate',
+    rating: 4.9,
+    reviews: 98,
+    heroImage: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600&q=80',
+
+    description: 'Trek to the stunning Ratti Gali Lake with alpine meadows, pristine water, and dramatic mountain views.',
+
+    highlights: [
+      'Jeep ride to base camp',
+      'High altitude lake views',
+      'Meadow landscapes and wildflowers',
+      'Picnic at the lakeside',
+      'Camping under the stars'
+    ],
+
+    itinerary: [
+      { day: 1, title: 'Drive to Base Camp', description: 'Travel to Dowarian, jeep to base camp, camp setup', activities: ['Drive', 'Jeep ride', 'Camping'] },
+      { day: 2, title: 'Trek to Ratti Gali', description: 'Trek to the lake, explore and enjoy views', activities: ['Trekking', 'Lake visit', 'Photography'] },
+      { day: 3, title: 'Exploration Day', description: 'Leisure day around the lake and nearby meadows', activities: ['Leisure', 'Hiking', 'Camping'] },
+      { day: 4, title: 'Return to Dowarian', description: 'Trek back to base camp, jeep and drive out', activities: ['Trek back', 'Jeep', 'Drive'] }
+    ],
+
+    inclusions: [
+      'Camping accommodation and basic gear',
+      'Daily meals during the trek',
+      'Jeep transport to base camp',
+      'Local guide and support staff',
+      'All permits and fees'
+    ],
+
+    exclusions: [
+      'Travel insurance',
+      'Personal trekking gear',
+      'Tips for guide and staff',
+      'Snacks and personal items',
+      'Any items not mentioned in inclusions'
+    ],
+
+    pricing: {
+      basic: {
+        price: 499,
+        title: 'Basic Package',
+        features: [
+          'Shared tents and camping gear',
+          'Shared transport',
+          'Basic meals',
+          'Group guide'
+        ]
+      },
+      premium: {
+        price: 699,
+        title: 'Premium Package',
+        popular: true,
+        features: [
+          'Comfort camping setup',
+          'Private transport',
+          'Enhanced meals',
+          'Dedicated guide'
+        ]
+      },
+      ultimate: {
+        price: 899,
+        title: 'Ultimate Package',
+        features: [
+          'Premium camping',
+          'Private vehicle and jeep',
+          'All meals included',
+          'Personal guide'
+        ]
+      }
+    },
+
+    bestTime: 'June to September for clear trails and lake views',
+
+    whatToBring: [
+      'Trekking shoes',
+      'Warm jacket and gloves',
+      'Water bottle',
+      'Sun protection',
+      'Power bank'
+    ],
+
+    fitnessLevel: 'Moderate fitness required for uphill trekking at altitude.',
+
+    gallery: [
+      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80',
+      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80'
+    ]
+  },
+
+  'taobat': {
+    id: 'taobat',
+    category: 'adventure',
+    regionId: 'kashmir',
+    subregionId: 'taobat',
+    name: 'Taobat Valley Retreat',
+    slug: 'taobat',
+    tagline: 'Peaceful Last Village',
+    location: 'Taobat, Neelam Valley, Azad Jammu and Kashmir',
+    duration: '5 Days',
+    difficulty: 'easy',
+    rating: 4.7,
+    reviews: 74,
+    heroImage: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80',
+
+    description: 'Travel to Taobat, the last village of Neelam Valley, with pristine river views, quiet forests, and serene stays.',
+
+    highlights: [
+      'Scenic Neelam River views',
+      'Quiet village atmosphere',
+      'Forest walks and viewpoints',
+      'Local cuisine and hospitality',
+      'Photography friendly landscapes'
+    ],
+
+    itinerary: [
+      { day: 1, title: 'Arrival in Neelam Valley', description: 'Drive to Keran, check in and rest', activities: ['Drive', 'Check in', 'Rest'] },
+      { day: 2, title: 'Travel to Taobat', description: 'Scenic drive along the river to Taobat', activities: ['Drive', 'River views', 'Arrival'] },
+      { day: 3, title: 'Taobat Exploration', description: 'Village walks and viewpoint photography', activities: ['Village walk', 'Viewpoints', 'Photography'] },
+      { day: 4, title: 'Leisure Day', description: 'Relax by the river and enjoy local culture', activities: ['Leisure', 'Culture', 'Relax'] },
+      { day: 5, title: 'Return to Muzaffarabad', description: 'Drive back, departure', activities: ['Drive', 'Departure'] }
+    ],
+
+    inclusions: [
+      'Accommodation in valley lodges',
+      'Daily breakfast and tea',
+      'All ground transportation',
+      'Local guide for key stops',
+      'All tolls and permits'
+    ],
+
+    exclusions: [
+      'Travel insurance',
+      'Personal expenses',
+      'Tips for guides and drivers',
+      'Meals not listed in inclusions',
+      'Any items not mentioned in inclusions'
+    ],
+
+    pricing: {
+      basic: {
+        price: 479,
+        title: 'Basic Package',
+        features: [
+          'Standard guest house',
+          'Shared transport',
+          'Breakfast included',
+          'Local guide support'
+        ]
+      },
+      premium: {
+        price: 679,
+        title: 'Premium Package',
+        popular: true,
+        features: [
+          'Comfort stay with views',
+          'Private transport',
+          'Breakfast and dinner',
+          'Flexible sightseeing'
+        ]
+      },
+      ultimate: {
+        price: 899,
+        title: 'Ultimate Package',
+        features: [
+          'Premium lodging',
+          'Private vehicle and driver',
+          'All meals included',
+          'Personal guide'
+        ]
+      }
+    },
+
+    bestTime: 'May to October for pleasant weather and clear views',
+
+    whatToBring: [
+      'Comfortable shoes',
+      'Light jacket and warm layers',
+      'Sunglasses and sunscreen',
+      'Camera'
+    ],
+
+    fitnessLevel: 'Easy travel with light walking, suitable for all ages.',
+
+    gallery: [
+      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80',
+      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80'
+    ]
+  },
+
+  'tolipeer-top': {
+    id: 'tolipeer-top',
+    category: 'adventure',
+    regionId: 'kashmir',
+    subregionId: 'tolipeer',
+    name: 'Tolipeer Top Viewpoint',
+    slug: 'tolipeer-top',
+    tagline: 'Panoramic Ridge Views',
+    location: 'Tolipeer Top, Azad Jammu and Kashmir',
+    duration: '3 Days',
+    difficulty: 'easy',
+    rating: 4.7,
+    reviews: 65,
+    heroImage: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600&q=80',
+
+    description: 'A short getaway to Tolipeer Top with sweeping ridge views, fresh air, and beautiful sunsets.',
+
+    highlights: [
+      'Sunrise and sunset viewpoints',
+      'Short nature walks',
+      'Ideal for weekend trips',
+      'Family friendly travel'
+    ],
+
+    itinerary: [
+      { day: 1, title: 'Arrival in Rawalakot', description: 'Drive to Rawalakot, local market visit', activities: ['Drive', 'Market', 'Rest'] },
+      { day: 2, title: 'Tolipeer Top', description: 'Drive to Tolipeer Top, explore viewpoints', activities: ['Drive', 'Viewpoints', 'Photography'] },
+      { day: 3, title: 'Return', description: 'Morning tea with views, return to city', activities: ['Views', 'Drive', 'Departure'] }
+    ],
+
+    inclusions: [
+      'Accommodation in Rawalakot',
+      'Daily breakfast',
+      'All ground transportation',
+      'Local guide for viewpoints',
+      'All tolls and permits'
+    ],
+
+    exclusions: [
+      'Travel insurance',
+      'Personal expenses',
+      'Tips for guides and drivers',
+      'Meals not listed in inclusions',
+      'Any items not mentioned in inclusions'
+    ],
+
+    pricing: {
+      basic: {
+        price: 249,
+        title: 'Basic Package',
+        features: ['Standard hotel stay', 'Shared transport', 'Breakfast included']
+      },
+      premium: {
+        price: 349,
+        title: 'Premium Package',
+        popular: true,
+        features: ['Comfort hotel', 'Private transport', 'Breakfast and dinner']
+      },
+      ultimate: {
+        price: 449,
+        title: 'Ultimate Package',
+        features: ['Premium stay', 'Private vehicle', 'All meals included']
+      }
+    },
+
+    bestTime: 'April to October for clear skies and pleasant weather',
+
+    whatToBring: ['Light jacket', 'Comfortable shoes', 'Sunglasses', 'Camera'],
+
+    fitnessLevel: 'Easy travel with light walking, suitable for all ages.',
+
+    gallery: [
+      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80'
+    ]
+  },
+
+  'ganga-choti': {
+    id: 'ganga-choti',
+    category: 'trekking',
+    regionId: 'kashmir',
+    subregionId: 'ganga-choti',
+    name: 'Ganga Choti Hike',
+    slug: 'ganga-choti',
+    tagline: 'Cloud Level Views',
+    location: 'Ganga Choti, Azad Jammu and Kashmir',
+    duration: '3 Days',
+    difficulty: 'moderate',
+    rating: 4.8,
+    reviews: 58,
+    heroImage: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80',
+
+    description: 'A rewarding hike to Ganga Choti with dramatic ridge views, cool breezes, and a peaceful summit experience.',
+
+    highlights: [
+      'Scenic summit trek',
+      'Wide valley views',
+      'Cool summer weather',
+      'Photography and stargazing'
+    ],
+
+    itinerary: [
+      { day: 1, title: 'Arrival in Bagh', description: 'Drive to Bagh, local orientation', activities: ['Drive', 'Orientation', 'Rest'] },
+      { day: 2, title: 'Ganga Choti Trek', description: 'Trek to summit, picnic and views, return', activities: ['Trek', 'Summit', 'Photography'] },
+      { day: 3, title: 'Return', description: 'Leisure morning and drive back', activities: ['Leisure', 'Drive', 'Departure'] }
+    ],
+
+    inclusions: [
+      'Accommodation in Bagh',
+      'Daily breakfast',
+      'Local guide for the hike',
+      'All ground transportation',
+      'All permits and fees'
+    ],
+
+    exclusions: [
+      'Travel insurance',
+      'Personal trekking gear',
+      'Tips for guides and drivers',
+      'Meals not listed in inclusions',
+      'Any items not mentioned in inclusions'
+    ],
+
+    pricing: {
+      basic: {
+        price: 269,
+        title: 'Basic Package',
+        features: ['Standard stay', 'Shared transport', 'Breakfast included']
+      },
+      premium: {
+        price: 369,
+        title: 'Premium Package',
+        popular: true,
+        features: ['Comfort stay', 'Private transport', 'Breakfast and dinner']
+      },
+      ultimate: {
+        price: 469,
+        title: 'Ultimate Package',
+        features: ['Premium stay', 'Private vehicle', 'All meals included']
+      }
+    },
+
+    bestTime: 'May to September for stable weather and clear views',
+
+    whatToBring: ['Trekking shoes', 'Warm layers', 'Water bottle', 'Headlamp'],
+
+    fitnessLevel: 'Moderate fitness for a steady uphill hike.',
+
+    gallery: [
+      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80'
     ]
   }
 };

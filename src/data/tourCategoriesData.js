@@ -23,7 +23,7 @@ export const baseTourCategories = [
     path: '/trip/family',
     color: 'from-green-400 to-green-600',
     description: 'Perfect adventures for families with children',
-    features: ['Child-friendly', 'Safe & Comfortable', 'Educational'],
+    features: ['Child friendly', 'Safe & Comfortable', 'Educational'],
     image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80'
   },
   {
@@ -67,7 +67,7 @@ export const baseTourCategories = [
     path: '/trip/budget',
     color: 'from-yellow-400 to-orange-500',
     description: 'Affordable adventures without compromising quality',
-    features: ['Budget-Friendly', 'Shared Transport', 'Value for Money'],
+    features: ['Budget Friendly', 'Shared Transport', 'Value for Money'],
     image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80'
   }
 ];

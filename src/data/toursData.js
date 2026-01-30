@@ -1,20 +1,23 @@
 // Tours Data - All tour packages organized by category
 
+import swatImage1 from '../assets/destinations/swat1.jpeg';
+import swatImage2 from '../assets/destinations/swat2.jpeg';
+
 export const toursData = {
   family: {
     id: 'family',
     category: 'Family Packages',
-    title: 'Family-Friendly Adventures',
-    description: 'Family‑friendly journeys with safe transport, flexible pacing, and memorable activities for all ages—ideal for international travelers.',
+    title: 'Family Friendly Adventures',
+    description: 'Family friendly Pakistan tours with safe transport, comfortable stays, and flexible itineraries, ideal for international families.',
     heroImage: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1920&q=80',
-    icon: '👨‍👩‍👧‍👦',
+    icon: '',
     features: [
-      'Child-friendly accommodations',
-      'Experienced family guides',
-      'Flexible itineraries',
+      'Child friendly accommodations',
+      'Experienced family guides in Northern Pakistan',
+      'Flexible itineraries for families',
       'Safe and comfortable transport',
-      'Educational activities',
-      'Age-appropriate adventures'
+      'Educational activities and cultural visits',
+      'Age appropriate adventures'
     ],
     packages: [
       {
@@ -28,17 +31,17 @@ export const toursData = {
         rating: 4.8,
         reviews: 156,
         image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-        shortDescription: 'Perfect introduction to Northern Pakistan for families with comfortable stays and child-friendly activities.',
+        shortDescription: 'Perfect introduction to Northern Pakistan for families with comfortable stays and child friendly activities.',
         highlights: [
           'Visit Eagle\'s Nest viewpoint',
           'Altit & Baltit Fort exploration',
           'Cherry blossom walks (seasonal)',
           'Interactive cultural experiences',
-          'Kids-friendly hiking trails',
+          'Kids friendly hiking trails',
           'Traditional handicraft workshops'
         ],
         itinerary: [
-          { day: 1, title: 'Arrival & Orientation', activities: 'Islamabad pickup, hotel check-in, family briefing, evening at leisure' },
+          { day: 1, title: 'Arrival & Orientation', activities: 'Islamabad pickup, hotel check in, family briefing, evening at leisure' },
           { day: 2, title: 'Journey to Hunza', activities: 'Scenic drive on KKH, photo stops, arrival at family resort' },
           { day: 3, title: 'Hunza Valley Tour', activities: 'Eagle\'s Nest, Duikar viewpoint, local market, cultural show' },
           { day: 4, title: 'Fort Adventure Day', activities: 'Baltit Fort, Altit Fort, traditional lunch, kids activities' },
@@ -48,7 +51,7 @@ export const toursData = {
         ],
         inclusions: [
           'All accommodations (family rooms)',
-          'All meals (child-friendly menu)',
+          'All meals (child friendly menu)',
           'Private family transport',
           'Experienced family guide',
           'All entrance fees',
@@ -73,13 +76,13 @@ export const toursData = {
         destination: 'Swat Valley',
         rating: 4.7,
         reviews: 98,
-        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-        shortDescription: 'Explore the Switzerland of Pakistan with family-oriented activities and comfortable accommodations.',
+        image: swatImage1,
+        shortDescription: 'Explore the Switzerland of Pakistan with family oriented activities and comfortable accommodations.',
         highlights: [
           'Malam Jabba ski resort visit',
           'Fizagat Park family picnic',
           'Buddhist archaeology sites',
-          'River-side camping (safe)',
+          'Riverside camping (safe)',
           'Local fruit orchards',
           'Traditional Swati cuisine'
         ],
@@ -97,15 +100,15 @@ export const toursData = {
     id: 'honeymoon',
     category: 'Honeymoon Specials',
     title: 'Romantic Mountain Escapes',
-    description: 'Romantic escapes with private moments, scenic stays, and thoughtful touches—perfect for couples seeking comfort and beauty.',
+    description: 'Romantic Pakistan honeymoon tours with private moments, scenic stays, and thoughtful touches, perfect for couples seeking comfort and beauty.',
     heroImage: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=80',
-    icon: '💑',
+    icon: '',
     features: [
       'Luxury romantic accommodations',
       'Private tours and experiences',
-      'Candlelight dinners',
+      'Candlelight dinners and scenic views',
       'Couple photography sessions',
-      'Spa and wellness',
+      'Spa and wellness options',
       'Personalized service'
     ],
     packages: [
@@ -182,13 +185,13 @@ export const toursData = {
   corporate: {
     id: 'corporate',
     category: 'Corporate Tours',
-    title: 'Team Building & Corporate Retreats',
-    description: 'Professional retreats with team‑building activities, smooth logistics, and inspiring mountain settings for leadership and culture.',
+    title: 'Team Building and Corporate Retreats',
+    description: 'Corporate retreats in Northern Pakistan with team building activities, smooth logistics, and inspiring mountain settings for leadership and culture.',
     heroImage: 'https://images.unsplash.com/photo-1454391304352-2bf4678b1a7a?w=1920&q=80',
-    icon: '💼',
+    icon: '',
     features: [
       'Team building activities',
-      'Conference facilities',
+      'Conference facilities and meeting support',
       'Professional event management',
       'Customizable itineraries',
       'Group accommodations',
@@ -240,17 +243,17 @@ export const toursData = {
         duration: '3 Days / 2 Nights',
         difficulty: 'Moderate',
         minAge: '18+',
-        groupSize: '15-40 people',
+        groupSize: '15 to 40 people',
         destination: 'Naran Kaghan',
         rating: 4.6,
         reviews: 67,
         image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-        shortDescription: 'High-energy corporate team building with adventure challenges and strategic planning sessions.',
+        shortDescription: 'High energy corporate team building with adventure challenges and strategic planning sessions.',
         highlights: [
           'Outdoor team challenges',
-          'Problem-solving activities',
+          'Problem solving activities',
           'Leadership simulations',
-          'High-altitude team trek',
+          'High altitude team trek',
           'Corporate bonfire night',
           'Strategy sessions'
         ],
@@ -268,13 +271,13 @@ export const toursData = {
     id: 'budget',
     category: 'Budget Tours',
     title: 'Affordable Mountain Adventures',
-    description: 'Great‑value adventures with reliable service, smart itineraries, and honest pricing for international travelers.',
+    description: 'Great value Pakistan tours with reliable service, smart itineraries, and honest pricing for international travelers.',
     heroImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80',
-    icon: '💰',
+    icon: '',
     features: [
       'Economical accommodations',
       'Group sharing options',
-      'Budget-friendly meals',
+      'Budget friendly meals',
       'Shared transportation',
       'Essential inclusions',
       'Great value for money'
@@ -286,7 +289,7 @@ export const toursData = {
         duration: '3 Days / 2 Nights',
         difficulty: 'Easy',
         minAge: '12+',
-        groupSize: '8-15 people',
+        groupSize: '8 to 15 people',
         destination: 'Naran Kaghan',
         rating: 4.5,
         reviews: 312,
@@ -301,13 +304,13 @@ export const toursData = {
           'Photography stops'
         ],
         itinerary: [
-          { day: 1, title: 'Islamabad to Naran', activities: 'Early morning departure, scenic drive, arrival & check-in' },
+          { day: 1, title: 'Islamabad to Naran', activities: 'Early morning departure, scenic drive, arrival, check in' },
           { day: 2, title: 'Lake Saiful Muluk', activities: 'Jeep ride to lake, full day exploration, return to hotel' },
           { day: 3, title: 'Return Journey', activities: 'Morning at Kunhar River, drive back to Islamabad' }
         ],
         inclusions: [
           'Basic hotel accommodation',
-          'Breakfast & dinner',
+          'Breakfast and dinner',
           'Shared transport (coaster)',
           'Jeep ride to lake',
           'Basic guide service'
@@ -325,7 +328,7 @@ export const toursData = {
         duration: '5 Days / 4 Nights',
         difficulty: 'Easy',
         minAge: '12+',
-        groupSize: '8-15 people',
+        groupSize: '8 to 15 people',
         destination: 'Hunza Valley',
         rating: 4.6,
         reviews: 267,
@@ -337,7 +340,7 @@ export const toursData = {
           'Karimabad village',
           'Passu Cones views',
           'Local culture experience',
-          'Budget-friendly stays'
+          'Budget friendly stays'
         ],
         pricing: {
           'per_person': 349,
@@ -352,11 +355,11 @@ export const toursData = {
         duration: '4 Days / 3 Nights',
         difficulty: 'Easy',
         minAge: '10+',
-        groupSize: '10-15 people',
+        groupSize: '10 to 15 people',
         destination: 'Swat Valley',
         rating: 4.4,
         reviews: 198,
-        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+        image: swatImage2,
         shortDescription: 'Economical Swat tour covering major attractions with comfortable group arrangements.',
         highlights: [
           'Malam Jabba visit',

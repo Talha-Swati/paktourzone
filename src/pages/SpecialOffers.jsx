@@ -56,7 +56,7 @@ const SpecialOffers = () => {
     <PageLayout
       seo={{
         title: 'Pakistan Tour Deals | Limited-Time Offers',
-        description: 'Limited-time savings on Northern Pakistan tours. Secure special prices for Hunza, Skardu, Fairy Meadows, and Naran Kaghan trips.',
+        description: 'Limited time savings on Northern Pakistan tours. Secure special prices for Hunza, Skardu, Fairy Meadows, and Naran Kaghan trips.',
         keywords: 'Pakistan tour deals, Northern Pakistan discounts, Hunza offers, Skardu specials, tour package savings',
         url: '/offers',
         structuredData
@@ -84,10 +84,10 @@ const SpecialOffers = () => {
                   isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
                 } bg-clip-text text-transparent`}
               >
-                Limited-Time Pakistan Tour Deals
+                Limited Time Pakistan Tour Deals
               </h1>
               <p className={`text-lg md:text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
-                Save up to 30% on our best‑selling routes. Perfect for international travelers who want great value and trusted local guides.
+                Save up to 30% on our best selling routes. Perfect for international travelers who want great value and trusted local guides.
               </p>
 
               {/* Stats */}
@@ -270,7 +270,7 @@ const SpecialOffers = () => {
                           </span>
                         </div>
                         <div className={`text-sm mt-1 ${isDarkMode ? 'text-[#4DBBFF]' : 'text-green-600'}`}>
-                          💰 Save ${savings}
+                          Save ${savings}
                         </div>
                       </div>
 

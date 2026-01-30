@@ -11,15 +11,15 @@ import {
 } from 'react-icons/fa';
 
 export const customTourDestinations = [
-  { value: 'hunza', label: 'Hunza Valley', icon: '🏔️' },
-  { value: 'swat', label: 'Swat Valley', icon: '🌲' },
-  { value: 'skardu', label: 'Skardu & Baltistan', icon: '⛰️' },
-  { value: 'naran', label: 'Naran Kaghan', icon: '🏞️' },
-  { value: 'k2', label: 'K2 Base Camp', icon: '🗻' },
-  { value: 'fairy-meadows', label: 'Fairy Meadows', icon: '🌸' },
-  { value: 'siran-valley', label: 'Siran Valley', icon: '🌿' },
-  { value: 'chitral', label: 'Chitral & Kalash', icon: '🏛️' },
-  { value: 'gilgit', label: 'Gilgit Region', icon: '🏔️' },
+  { value: 'hunza', label: 'Hunza Valley', icon: '' },
+  { value: 'swat', label: 'Swat Valley', icon: '' },
+  { value: 'skardu', label: 'Skardu & Baltistan', icon: '' },
+  { value: 'naran', label: 'Naran Kaghan', icon: '' },
+  { value: 'k2', label: 'K2 Base Camp', icon: '' },
+  { value: 'fairy-meadows', label: 'Fairy Meadows', icon: '' },
+  { value: 'siran-valley', label: 'Siran Valley', icon: '' },
+  { value: 'chitral', label: 'Chitral & Kalash', icon: '' },
+  { value: 'gilgit', label: 'Gilgit Region', icon: '' },
 ];
 
 export const customTourActivities = [

@@ -38,8 +38,8 @@ const HoneymoonTours = () => {
     <PageLayout
       seo={{
         title: 'Honeymoon Tours in Northern Pakistan | PakTourZone',
-        description: 'Romantic Pakistan honeymoon packages with private experiences, scenic stays, and stress‑free planning.',
-        keywords: 'Pakistan honeymoon tours, romantic Northern Pakistan, couples travel Hunza, Skardu honeymoon',
+        description: 'Romantic honeymoon packages in Pakistan with private experiences, scenic stays, and seamless planning for couples.',
+        keywords: 'Pakistan honeymoon tours, romantic Northern Pakistan, couples travel Hunza, Skardu honeymoon, honeymoon packages Pakistan',
         url: '/trip/honeymoon'
       }}
       className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}
@@ -71,11 +71,11 @@ const HoneymoonTours = () => {
               </div>
               <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-3 rounded-xl border border-white/20">
                 <Camera className="w-6 h-6 text-blue-300" />
-                <span className="font-semibold">Pro Photography</span>
+                <span className="font-semibold">Professional Photography</span>
               </div>
               <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-3 rounded-xl border border-white/20">
                 <Gift className="w-6 h-6 text-pink-300" />
-                <span className="font-semibold">Special Surprises</span>
+                <span className="font-semibold">Thoughtful Surprises</span>
               </div>
             </div>
           </div>
@@ -90,7 +90,7 @@ const HoneymoonTours = () => {
               ? 'bg-linear-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent' 
               : 'text-pink-600'
           }`}>
-            What Makes Our Honeymoon Packages Special?
+            Why Couples Choose PakTourZone
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {tourData.features.map((feature, index) => (
@@ -120,10 +120,10 @@ const HoneymoonTours = () => {
       <div className={`py-20 ${isDarkMode ? 'bg-[#0B0C0E]' : 'bg-gray-50'}`}>
         <div className="container mx-auto px-4">
           <h2 className={`text-5xl font-bold text-center mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-            Exclusive Honeymoon Packages
+            Honeymoon Packages in Northern Pakistan
           </h2>
           <p className={`text-center text-lg mb-16 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-            Create unforgettable memories with our specially designed romantic getaways
+            Create unforgettable memories with curated romantic getaways in the mountains
           </p>
           
           <div className="space-y-12">

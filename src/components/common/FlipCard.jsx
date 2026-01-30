@@ -6,7 +6,7 @@ const FlipCard = ({ frontImage, title, subtitle, price, description, highlights,
 
   return (
     <div 
-      className="group perspective-1000 h-[500px]"
+      className="group perspective-1000 h-125"
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
     >
@@ -29,9 +29,9 @@ const FlipCard = ({ frontImage, title, subtitle, price, description, highlights,
                 isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'
               }`}>{subtitle}</span>
             </div>
-            <h3 className="text-3xl font-black text-white mb-2">{title}</h3>
+            <h3 className="text-3xl font-semibold text-white mb-2">{title}</h3>
             <div className="flex items-center justify-between">
-              <span className={`text-2xl font-black ${
+              <span className={`text-2xl font-semibold ${
                 isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'
               }`}>{price}</span>
               <span className="text-sm text-white/80">per person</span>
@@ -47,10 +47,10 @@ const FlipCard = ({ frontImage, title, subtitle, price, description, highlights,
         }`}>
           <div className="p-6 h-full flex flex-col justify-between">
             <div>
-              <h3 className="text-2xl font-black text-white mb-4">{title}</h3>
+              <h3 className="text-2xl font-semibold text-white mb-4">{title}</h3>
               <p className="text-sm text-white/80 mb-6 leading-relaxed">{description}</p>
               <div className="space-y-2 mb-6">
-                <p className={`text-xs font-bold uppercase tracking-wider mb-2 ${
+                <p className={`text-xs font-semibold uppercase tracking-wider mb-2 ${
                   isDarkMode ? 'text-[#22D3EE]' : 'text-white'
                 }`}>Highlights:</p>
                 {highlights.map((highlight, i) => (
@@ -62,7 +62,7 @@ const FlipCard = ({ frontImage, title, subtitle, price, description, highlights,
               </div>
             </div>
             <Link to={link}>
-              <button className={`w-full rounded-xl px-6 py-3 text-sm font-bold uppercase tracking-wider shadow-lg transition-all duration-300 hover:scale-105 ${
+              <button className={`w-full rounded-xl px-6 py-3 text-sm font-semibold uppercase tracking-wider shadow-lg transition-all duration-300 hover:scale-105 ${
                 isDarkMode
                   ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] shadow-[0_0_20px_rgba(34,211,238,0.5)] hover:shadow-[0_0_30px_rgba(34,211,238,0.7)]'
                   : 'bg-white text-[#3B82F6] shadow-[0_0_20px_rgba(255,255,255,0.5)] hover:shadow-[0_0_30px_rgba(255,255,255,0.7)]'

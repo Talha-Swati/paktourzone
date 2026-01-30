@@ -30,15 +30,14 @@ const CorporateTours = () => {
     <PageLayout
       seo={{
         title: 'Corporate Retreats in Northern Pakistan | PakTourZone',
-        description: 'Team‑building and corporate retreat packages with expert planning, safe logistics, and inspiring mountain settings.',
-        keywords: 'corporate tours Pakistan, team building retreat, Northern Pakistan corporate trips, company travel',
+        description: 'Corporate retreat packages with expert planning, safe logistics, and inspiring mountain settings for teams and leaders.',
+        keywords: 'corporate tours Pakistan, team building retreat, Northern Pakistan corporate trips, company travel, executive retreat Pakistan',
         url: '/trip/corporate'
       }}
       className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}
     >
-
       {/* Hero Section */}
-      <div className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: `url(${tourData.heroImage})` }}>
+      <div className="relative h-125 bg-cover bg-center" style={{ backgroundImage: `url(${tourData.heroImage})` }}>
         <div className="absolute inset-0 bg-linear-to-r from-blue-900/90 to-indigo-900/80" />
         <div className="relative h-full container mx-auto px-4 flex items-center">
           <div className="max-w-3xl text-white">
@@ -50,9 +49,9 @@ const CorporateTours = () => {
             <p className="text-xl text-gray-200 mb-6">{tourData.description}</p>
             <div className="flex flex-wrap gap-4">
               {[
-                { icon: Target, text: 'Team Building' },
-                { icon: Award, text: 'Leadership Development' },
-                { icon: TrendingUp, text: 'Performance Boost' }
+                { icon: Target, text: 'Strategic Team Building' },
+                { icon: Award, text: 'Leadership Growth' },
+                { icon: TrendingUp, text: 'Productivity Gains' }
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
                   <item.icon className="w-5 h-5" />
@@ -68,7 +67,7 @@ const CorporateTours = () => {
       <div className={`py-12 ${isDarkMode ? 'bg-[#0F1419]' : 'bg-white'}`}>
         <div className="container mx-auto px-4">
           <h2 className={`text-3xl font-bold text-center mb-8 ${isDarkMode ? 'text-[#22D3EE]' : 'text-blue-600'}`}>
-            Corporate Retreat Benefits
+            Why Companies Choose PakTourZone
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tourData.features.map((feature, index) => (
@@ -85,7 +84,7 @@ const CorporateTours = () => {
       <div className={`py-16 ${isDarkMode ? 'bg-[#0B0C0E]' : 'bg-gray-50'}`}>
         <div className="container mx-auto px-4">
           <h2 className={`text-4xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-            Professional Corporate Packages
+            Corporate Retreat Packages in Northern Pakistan
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -123,7 +122,7 @@ const CorporateTours = () => {
                     <ul className="space-y-2">
                       {pkg.highlights.slice(0, 4).map((highlight, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-sm">
-                          <Check className={`w-4 h-4 mt-0.5 flex-shrink-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
+                          <Check className={`w-4 h-4 mt-0.5 shrink-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
                           <span className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>{highlight}</span>
                         </li>
                       ))}

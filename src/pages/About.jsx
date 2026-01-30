@@ -12,7 +12,7 @@ const About = () => {
     {
       id: 1,
       name: 'Talha Riaz',
-      position: 'Co-Founder',
+      position: 'Co Founder',
       avatar: talhadp,
       bio: 'Visionary leader with over 10 years of experience in tourism and hospitality industry. Talha founded PakTourZone with a dream to showcase the unparalleled beauty of Northern Pakistan to the world. His passion for adventure travel and deep understanding of local culture has transformed countless travelers\' experiences. Under his leadership, PakTourZone has become one of Pakistan\'s most trusted tour operators, serving thousands of satisfied clients from around the globe.',
       expertise: ['Strategic Leadership', 'Tourism Development', 'Business Growth', 'International Relations'],
@@ -26,28 +26,28 @@ const About = () => {
     {
       id: 2,
       name: 'Muhammad Saeed',
-      position: 'Co-Founder',
+      position: 'Co Founder',
       avatar: 'https://ui-avatars.com/api/?name=Muhammad+Saeed&background=4DBBFF&color=fff&size=300&bold=true',
       bio: 'Operations expert with exceptional organizational skills and a keen eye for detail. Muhammad ensures every tour runs smoothly from start to finish. With extensive experience in logistics and customer service, he has built a reputation for delivering flawless travel experiences. His dedication to quality and safety has earned PakTourZone numerous accolades and repeat customers.',
       expertise: ['Operations Management', 'Logistics & Planning', 'Quality Assurance', 'Team Leadership'],
       achievements: [
-        'Managed operations for 800+ successful tours',
-        '99.5% customer satisfaction rating',
-        'Implemented industry-leading safety protocols',
-        'Built a network of 100+ local service providers'
+        'Managed operations for 800 plus successful tours',
+        '99.5 percent customer satisfaction rating',
+        'Implemented industry leading safety protocols',
+        'Built a network of 100 plus local service providers'
       ]
     },
     {
       id: 3,
       name: 'Hammad Ashraf',
-      position: 'Co-Founder',
+      position: 'Co Founder',
       avatar: hammaddp,
-      bio: 'Creative marketing strategist and digital innovation expert. Hammad has revolutionized how PakTourZone connects with travelers worldwide through cutting-edge digital marketing and engaging storytelling. His background in technology and passion for photography has helped showcase Pakistan\'s beauty to millions across social media platforms.',
+      bio: 'Creative marketing strategist and digital innovation expert. Hammad has revolutionized how PakTourZone connects with travelers worldwide through cutting edge digital marketing and engaging storytelling. His background in technology and passion for photography has helped showcase Pakistan\'s beauty to millions across social media platforms.',
       expertise: ['Digital Marketing', 'Brand Strategy', 'Social Media', 'Content Creation'],
       achievements: [
-        'Grew social media following to 100K+ engaged travelers',
-        'Launched viral marketing campaigns reaching 5M+ people',
-        'Developed award-winning digital presence',
+        'Grew social media following to 100K plus engaged travelers',
+        'Launched viral marketing campaigns reaching 5M plus people',
+        'Developed award winning digital presence',
         'Created strategic partnerships with travel influencers'
       ]
     }
@@ -147,7 +147,7 @@ const About = () => {
               <div className={`relative p-8 rounded-xl ${isDarkMode ? 'bg-[#141A1F]' : 'bg-white'} max-w-3xl mx-auto`}>
                 <FaQuoteLeft className={`absolute top-4 left-4 text-3xl ${isDarkMode ? 'text-[#22D3EE]/20' : 'text-[#3B82F6]/20'}`} />
                 <p className={`text-xl italic ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
-                  "We believe every journey should be more than just a trip—it should be a transformative experience that connects you with nature, culture, and yourself."
+                  "We believe every journey should be more than just a trip, it should be a transformative experience that connects you with nature, culture, and yourself."
                 </p>
                 <p className={`mt-4 font-semibold ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>
                   - Core Team, PakTourZone
@@ -189,13 +189,13 @@ const About = () => {
               </h2>
               <div className={`space-y-6 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'} text-lg leading-relaxed`}>
                 <p>
-                  PakTourZone was born from a simple yet powerful vision: to share the breathtaking beauty of Northern Pakistan with the world. What started as a passion project by three friends who loved adventure and exploration has grown into one of Pakistan's most trusted tour operators.
+                  PakTourZone was born from a simple yet powerful vision, to share the breathtaking beauty of Northern Pakistan with the world. What started as a passion project by three friends who loved adventure and exploration has grown into one of Pakistan's most trusted tour operators.
                 </p>
                 <p>
                   In 2016, Talha Riaz, Muhammad Saeed, and Hammad Ashraf came together with a shared dream. Talha, with his entrepreneurial spirit and deep love for mountain landscapes, saw the untapped potential of Pakistan's northern regions. Muhammad brought his expertise in operations and unwavering commitment to quality. Hammad contributed his creative vision and digital expertise to tell Pakistan's story to the world.
                 </p>
                 <p>
-                  Today, PakTourZone is more than just a tour company—we're a community of passionate travelers, experienced guides, and local partners who work together to create extraordinary experiences. We've helped thousands of travelers from around the globe discover the magic of places like Hunza Valley, Skardu, Fairy Meadows, and the legendary Karakoram Highway.
+                  Today, PakTourZone is more than just a tour company, we are a community of passionate travelers, experienced guides, and local partners who work together to create extraordinary experiences. We have helped thousands of travelers from around the globe discover the magic of places like Hunza Valley, Skardu, Fairy Meadows, and the legendary Karakoram Highway.
                 </p>
                 <p>
                   Our commitment goes beyond tourism. We believe in responsible travel that benefits local communities, preserves natural beauty, and creates meaningful cultural exchanges. Every tour we organize contributes to the economic development of the regions we visit, supporting local businesses and families.

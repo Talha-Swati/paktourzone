@@ -31,8 +31,8 @@ const FamilyTours = () => {
     <PageLayout
       seo={{
         title: 'Family Tours in Northern Pakistan | PakTourZone',
-        description: 'Family‑friendly Pakistan tours with safe transport, comfortable stays, and flexible itineraries for all ages.',
-        keywords: 'family tours Pakistan, Northern Pakistan family trips, Hunza family tour, safe travel Pakistan',
+        description: 'Family friendly tours in Pakistan with safe transport, comfortable stays, and flexible itineraries for every age group.',
+        keywords: 'family tours Pakistan, Northern Pakistan family trips, Hunza family tour, safe travel Pakistan, family holiday Pakistan',
         url: '/trip/family'
       }}
       className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}
@@ -40,7 +40,7 @@ const FamilyTours = () => {
 
       {/* Hero Section */}
       <div 
-        className="relative h-[500px] bg-cover bg-center"
+        className="relative h-125 bg-cover bg-center"
         style={{ backgroundImage: `url(${tourData.heroImage})` }}
       >
         <div className="absolute inset-0 bg-black/60" />
@@ -57,15 +57,15 @@ const FamilyTours = () => {
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
                 <Users className="w-5 h-5" />
-                <span>Family Friendly</span>
+                <span>Family Friendly Travel</span>
               </div>
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
                 <Shield className="w-5 h-5" />
-                <span>Safe & Secure</span>
+                <span>Safe and Secure Travel</span>
               </div>
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
                 <Award className="w-5 h-5" />
-                <span>Expert Guides</span>
+                <span>Expert Local Guides</span>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ const FamilyTours = () => {
       <div className={`py-12 ${isDarkMode ? 'bg-[#0F1419]' : 'bg-white'}`}>
         <div className="container mx-auto px-4">
           <h2 className={`text-3xl font-bold text-center mb-8 ${isDarkMode ? 'text-[#22D3EE]' : 'text-blue-600'}`}>
-            Why Choose Our Family Packages?
+            Why Families Choose PakTourZone
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tourData.features.map((feature, index) => (
@@ -102,7 +102,7 @@ const FamilyTours = () => {
       <div className={`py-16 ${isDarkMode ? 'bg-[#0B0C0E]' : 'bg-gray-50'}`}>
         <div className="container mx-auto px-4">
           <h2 className={`text-4xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-            Our Family Tour Packages
+            Family Tour Packages in Northern Pakistan
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -192,7 +192,7 @@ const FamilyTours = () => {
                     <ul className="space-y-2">
                       {pkg.highlights.slice(0, 4).map((highlight, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-sm">
-                          <Check className={`w-4 h-4 mt-0.5 flex-shrink-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
+                          <Check className={`w-4 h-4 mt-0.5 shrink-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
                           <span className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>{highlight}</span>
                         </li>
                       ))}
@@ -346,7 +346,7 @@ const FamilyTours = () => {
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {selectedPackage.inclusions.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
+                        <Check className={`w-5 h-5 mt-0.5 shrink-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
                         <span className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>{item}</span>
                       </li>
                     ))}
@@ -372,5 +372,4 @@ const FamilyTours = () => {
     </PageLayout>
   );
 };
-
 export default FamilyTours;

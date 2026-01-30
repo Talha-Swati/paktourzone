@@ -117,7 +117,7 @@ const Contact = () => {
                 Plan Your Pakistan Tour
               </h1>
               <p className={`text-lg md:text-xl mb-4 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
-                Tell us your dates and interests—our team will build a safe, seamless itinerary
+                Tell us your dates and interests, our team will build a safe, seamless itinerary
               </p>
               <p className={`text-base ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
                 Serving international travelers worldwide • WhatsApp support available
@@ -182,10 +182,10 @@ const Contact = () => {
                   } shadow-xl`}
                 >
                   <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
-                    Send Us Your Travel Inquiry
+                    Request Your Pakistan Tour Plan
                   </h2>
                   <p className={`mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
-                    Fill out the form below and our travel experts will get back to you within 24 hours
+                    Share your plans and our travel experts will reply within 24 hours
                   </p>
 
                   {formStatus.submitted && (
@@ -314,8 +314,8 @@ const Contact = () => {
                         >
                           <option value="1">1 Person</option>
                           <option value="2">2 People</option>
-                          <option value="3-5">3-5 People</option>
-                          <option value="6-10">6-10 People</option>
+                          <option value="3-5">3 to 5 People</option>
+                          <option value="6-10">6 to 10 People</option>
                           <option value="10+">More than 10</option>
                         </select>
                       </div>
@@ -337,10 +337,10 @@ const Contact = () => {
                         >
                           <option value="">Select Travel Type</option>
                           <option value="solo">Solo Traveler</option>
-                          <option value="couple">Couple/Honeymoon</option>
+                          <option value="couple">Couple, Honeymoon</option>
                           <option value="family">Family Vacation</option>
                           <option value="friends">Friends Group</option>
-                          <option value="corporate">Corporate/Team Building</option>
+                          <option value="corporate">Corporate, Team Building</option>
                         </select>
                       </div>
                     </div>
@@ -409,10 +409,10 @@ const Contact = () => {
                         } focus:outline-none focus:ring-2 focus:ring-opacity-20`}
                       >
                         <option value="">Select Budget Range</option>
-                        <option value="500-1000">$500 - $1,000</option>
-                        <option value="1000-2000">$1,000 - $2,000</option>
-                        <option value="2000-3000">$2,000 - $3,000</option>
-                        <option value="3000-5000">$3,000 - $5,000</option>
+                        <option value="500-1000">$500 to $1,000</option>
+                        <option value="1000-2000">$1,000 to $2,000</option>
+                        <option value="2000-3000">$2,000 to $3,000</option>
+                        <option value="3000-5000">$3,000 to $5,000</option>
                         <option value="5000+">$5,000+</option>
                       </select>
                     </div>

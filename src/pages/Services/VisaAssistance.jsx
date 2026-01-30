@@ -13,7 +13,7 @@ const VisaAssistance = () => {
     <PageLayout
       seo={{
         title: 'Pakistan Visa Assistance | PakTourZone',
-        description: 'Step‑by‑step visa guidance for international travelers. Clear requirements, timelines, and support for your Pakistan tour.',
+        description: 'Step by step visa guidance for international travelers. Clear requirements, timelines, and support for your Pakistan tour.',
         keywords: 'Pakistan visa assistance, Pakistan tourist visa, visa help for Pakistan travel',
         url: '/services/visa'
       }}

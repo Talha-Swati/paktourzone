@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const HeroSection = ({ isDarkMode, currentSlide, setCurrentSlide, heroImages }) => {
   const [typedIndex, setTypedIndex] = useState(0);
-  const fullText = 'Discover Northern Pakistan';
+  const fullText = 'Discover Pakistan Tours';
   const words = fullText.split(' ');
 
   useEffect(() => {
@@ -126,7 +126,7 @@ const HeroSection = ({ isDarkMode, currentSlide, setCurrentSlide, heroImages }) 
         </div>
 
         {/* Main Heading */}
-        <h1 className={`mb-6 text-4xl font-bold tracking-normal sm:text-5xl md:text-6xl lg:text-7xl transition-colors duration-500 ${
+        <h1 className={`mb-6 text-3xl font-bold tracking-normal sm:text-4xl md:text-6xl lg:text-7xl transition-colors duration-500 ${
           isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'
         }`} style={{ fontFamily: 'Playfair Display, serif', letterSpacing: '0.02em' }}>
           {renderText()}
@@ -136,7 +136,7 @@ const HeroSection = ({ isDarkMode, currentSlide, setCurrentSlide, heroImages }) 
         <p className={`mx-auto mb-12 max-w-2xl text-lg font-medium sm:text-xl md:text-2xl transition-colors duration-500 ${
           isDarkMode ? 'text-[#8B949E]' : 'text-[#4A5568]'
         }`}>
-          Safe, comfortable journeys for international travelers. Explore majestic valleys, iconic peaks, and authentic culture with expert local guides.
+          Safe, comfortable journeys for international travelers. Explore Northern Areas and Kashmir with trusted local guides and smooth logistics.
         </p>
 
         {/* CTA Buttons */}
@@ -165,7 +165,7 @@ const HeroSection = ({ isDarkMode, currentSlide, setCurrentSlide, heroImages }) 
             <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
-            Watch Video
+            View Gallery
           </Link>
         </div>
 

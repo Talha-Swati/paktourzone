@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import PageLayout from '../components/layout/PageLayout';
 import { getDestinationBySlug } from '../data/destinationsData';
+import { getRegionById } from '../data/regionsData';
 import { 
   FaMapMarkerAlt, FaClock, FaUsers, FaStar, FaCheck, FaTimes, 
   FaChevronLeft, FaChevronRight, FaCalendar, FaShieldAlt,
@@ -132,11 +133,13 @@ const DestinationDetail = memo(() => {
     return clean.length > 160 ? `${clean.slice(0, 157)}...` : clean;
   };
 
+  const regionLabel = destination?.regionId ? getRegionById(destination.regionId)?.name : null;
+
   const seo = destination
     ? {
         title: `${destination.name} Tour Packages | PakTourZone`,
         description: buildSeoDescription(destination.description),
-        keywords: `${destination.name}, ${destination.location}, Northern Pakistan tours, guided tour, travel package`,
+        keywords: `${destination.name}, ${destination.location}, ${regionLabel || 'Pakistan'} tours, guided tour, travel package`,
         url: `/destination/${destination.slug}`,
         image: destination.heroImage
       }

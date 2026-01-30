@@ -53,7 +53,7 @@ const TransportServices = () => {
       <div className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-            Our Vehicle Fleet
+            Vehicle Fleet for Northern Pakistan Travel
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -127,7 +127,7 @@ const TransportServices = () => {
       <div className={`py-16 px-4 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto">
           <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-            Additional Services
+            Additional Transport Services
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -164,7 +164,7 @@ const TransportServices = () => {
       <div className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-            Why Choose Our Transport
+            Why Choose Our Transport Service
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -189,7 +189,7 @@ const TransportServices = () => {
       <div className={`py-16 px-4 ${isDarkMode ? 'bg-gray-800' : 'bg-linear-to-r from-green-50 to-emerald-50'}`}>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-            Ready to Book Your Transport?
+            Ready to Book Transport for Your Tour?
           </h2>
           <p className={`text-lg mb-8 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
             Safe, comfortable, and reliable transport for your entire journey

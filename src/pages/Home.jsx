@@ -48,9 +48,9 @@ const Home = () => {
   return (
     <PageLayout
       seo={{
-        title: "PakTourZone | Northern Pakistan Tours for European Travelers",
-        description: "Plan safe, comfortable, and authentic tours to Hunza, Skardu, Fairy Meadows, and the Karakoram. Small groups, local experts, and transparent pricing for international travelers.",
-        keywords: "Northern Pakistan tours, Pakistan travel agency, European travelers, Hunza tours, Skardu trips, Karakoram tours, guided Pakistan travel, mountain tours",
+        title: "PakTourZone | Pakistan Tours for International Travelers",
+        description: "Plan safe, comfortable, and authentic tours across Northern Areas and Kashmir. Small groups, local experts, and transparent pricing for international travelers.",
+        keywords: "Pakistan tours, Northern Areas, Kashmir tours, Hunza tours, Skardu trips, Neelam Valley, guided Pakistan travel",
         url: "/",
         structuredData
       }}
@@ -76,12 +76,15 @@ const Home = () => {
                   isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
                 }`}>PakTourZone</span>
               </h2>
+              <p className={`text-lg md:text-xl ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                Trusted by international travelers for safe transport, licensed guides, and authentic Northern Pakistan experiences
+              </p>
             </header>
             <article className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <FeatureFlipCard icon="🛡️" title="Safety First" description="Your safety is our top priority with certified guides" isDarkMode={isDarkMode} />
-              <FeatureFlipCard icon="👥" title="Expert Guides" description="Local experts with years of experience" isDarkMode={isDarkMode} />
-              <FeatureFlipCard icon="💎" title="Premium Experience" description="Luxury accommodations and services" isDarkMode={isDarkMode} />
-              <FeatureFlipCard icon="🌟" title="Best Value" description="Competitive prices with no hidden costs" isDarkMode={isDarkMode} />
+              <FeatureFlipCard icon="" title="Safety First" description="Certified guides, vetted routes, and reliable transport on every trip" isDarkMode={isDarkMode} />
+              <FeatureFlipCard icon="" title="Local Experts" description="English speaking guides who know the culture, history, and landscapes" isDarkMode={isDarkMode} />
+              <FeatureFlipCard icon="" title="Comfort and Care" description="Quality stays, flexible pacing, and support for international guests" isDarkMode={isDarkMode} />
+              <FeatureFlipCard icon="" title="Transparent Value" description="Clear pricing and inclusions, no surprises, no hidden fees" isDarkMode={isDarkMode} />
             </article>
           </div>
         </section>
@@ -101,21 +104,24 @@ const Home = () => {
                   isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
                 }`}>Destinations</span>
               </h2>
+              <p className={`text-lg md:text-xl ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                Explore signature journeys across Northern Areas and Kashmir with curated landscapes and cultural highlights
+              </p>
             </header>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {['Hunza Valley', 'Skardu', 'Swat Valley', 'Naran Kaghan', 'Fairy Meadows', 'Murree'].map((dest, i) => (
+              {['Hunza Valley', 'Skardu', 'Swat Valley', 'Naran Kaghan', 'Neelam Valley', 'Arang Kel'].map((dest, i) => (
                 <Link key={i} to="/destinations" className="group relative aspect-4/3 overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500" aria-label={`Explore ${dest} tours`}>
                   <img 
                     src={`https://images.unsplash.com/photo-${i % 2 === 0 ? '1506905925346-21bda4d32df4' : '1464207687429-7505649dae38'}?w=600`} 
-                    alt={`Scenic view of ${dest}, Pakistan`} 
+                    alt={`${dest} tours in Pakistan`} 
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-125" 
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-[rgba(11,12,14,0.9)] to-transparent opacity-60 group-hover:opacity-80 transition-opacity" aria-hidden="true" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <h3 className="text-2xl font-bold text-white mb-2">{dest}</h3>
-                    <p className="text-sm text-[#22D3EE]">{8 + i} Tours Available</p>
+                    <p className="text-sm text-[#22D3EE]">{8 + i} curated tours</p>
                   </div>
                 </Link>
               ))}
@@ -138,13 +144,16 @@ const Home = () => {
                   isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
                 }`}>Stories</span>
               </h2>
+              <p className={`text-lg md:text-xl ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                Real feedback from international guests who explored Northern Areas and Kashmir with us
+              </p>
             </header>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: 'Sarah Johnson', country: 'UK', text: 'Absolutely breathtaking! The Hunza Valley tour exceeded all expectations.' },
-              { name: 'Michael Schmidt', country: 'Germany', text: 'Best adventure of my life! Professional and well-organized.' },
-              { name: 'Emma Williams', country: 'USA', text: 'Safe, unforgettable experience. Highly recommend!' }
+              { name: 'Sarah Johnson', country: 'UK', text: 'Hunza was stunning and the planning was flawless. Clear communication, safe transport, and amazing guides.' },
+              { name: 'Michael Schmidt', country: 'Germany', text: 'Professional team and honest pricing. Skardu was unforgettable, exactly what I hoped for.' },
+              { name: 'Emma Williams', country: 'USA', text: 'Everything felt smooth from booking to the final day. Great care, great views, great value.' }
             ].map((review, i) => (
               <div key={i} className={`p-8 rounded-2xl border transition-colors ${
                 isDarkMode ? 'bg-[rgba(20,26,31,0.6)] border-[rgba(34,211,238,0.2)]' : 'bg-white border-[rgba(59,130,246,0.2)]'
@@ -179,8 +188,9 @@ const Home = () => {
       }`}>
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <SectionHeader
-            title="Photo"
+            title="Pakistan"
             accent="Gallery"
+            subtitle="See real destinations and seasons before you book your tour"
             isDarkMode={isDarkMode}
             className="mb-20"
           />
@@ -188,7 +198,7 @@ const Home = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[...Array(8)].map((_, i) => (
               <Link key={i} to="/gallery" className="group relative aspect-square overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all">
-                <img src={`https://images.unsplash.com/photo-${i % 2 === 0 ? '1506905925346-21bda4d32df4' : '1464207687429-7505649dae38'}?w=400`} alt={`Gallery ${i+1}`} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-125" />
+                <img src={`https://images.unsplash.com/photo-${i % 2 === 0 ? '1506905925346-21bda4d32df4' : '1464207687429-7505649dae38'}?w=400`} alt={`Northern Pakistan travel photo ${i+1}`} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-125" />
                 <div className="absolute inset-0 bg-linear-to-t from-[rgba(11,12,14,0.9)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </Link>
             ))}
@@ -215,18 +225,18 @@ const Home = () => {
         
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
           <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white">
-            Start Your Adventure Today
+            Plan Your Pakistan Journey
           </h2>
           <p className="text-xl mb-12 text-white/90">
-            Book your dream tour to Pakistan's most stunning destinations
+            Get a clear itinerary, expert support, and unforgettable landscapes
           </p>
           
           <div className="flex flex-wrap items-center justify-center gap-6">
             <Link to="/tours" className="px-12 py-6 bg-[#0B0C0E] text-[#22D3EE] rounded-2xl text-lg font-bold uppercase shadow-lg hover:scale-110 transition-all">
-              Browse Tours
+              View Tour Packages
             </Link>
             <Link to="/contact" className="px-12 py-6 bg-transparent border-3 border-white text-white rounded-2xl text-lg font-bold uppercase hover:bg-white hover:text-[#3B82F6] transition-all">
-              Contact Us
+              Get a Custom Plan
             </Link>
           </div>
         </div>

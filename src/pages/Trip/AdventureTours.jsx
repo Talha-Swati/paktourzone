@@ -32,9 +32,9 @@ const AdventureTours = () => {
   return (
     <PageLayout
       seo={{
-        title: 'Adventure Tours in Northern Pakistan | PakTourZone',
-        description: 'High‑energy treks, base‑camp routes, and mountain adventures designed for international travelers. Expert guides and safe logistics included.',
-        keywords: 'Pakistan adventure tours, trekking Pakistan, K2 base camp, Northern Pakistan hikes, mountain tours',
+        title: 'Adventure Tours in Northern Areas and Kashmir | PakTourZone',
+        description: 'High energy treks, base camp routes, and mountain adventures across Northern Areas and Kashmir. Expert guides and safe logistics included.',
+        keywords: 'Pakistan adventure tours, trekking Pakistan, K2 base camp, Kashmir hikes, Northern Areas tours',
         url: '/trip/adventure'
       }}
       className={`transition-colors duration-500 ${
@@ -65,7 +65,7 @@ const AdventureTours = () => {
               ? 'border-[rgba(34,211,238,0.3)] bg-[rgba(20,26,31,0.6)]'
               : 'border-[rgba(59,130,246,0.3)] bg-[rgba(255,255,255,0.6)]'
           }`}>
-            <span className="text-2xl">🏔️</span>
+            <span className="text-2xl">Adventure</span>
             <span className={`text-sm font-bold uppercase tracking-wider ${
               isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'
             }`}>Adventure Awaits</span>
@@ -81,7 +81,7 @@ const AdventureTours = () => {
           <p className={`text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed mb-8 ${
             isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'
           }`}>
-            Push your limits with safe, guided treks through Pakistan’s most spectacular mountain ranges—built for international travelers.
+            Push your limits with safe, guided treks through Pakistan’s most spectacular mountain ranges, built for international travelers.
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 mb-12">
@@ -158,8 +158,8 @@ const AdventureTours = () => {
                 }`}
               >
                 <option value="all">All Durations</option>
-                <option value="short">1-7 Days</option>
-                <option value="medium">8-10 Days</option>
+                <option value="short">1 to 7 Days</option>
+                <option value="medium">8 to 10 Days</option>
                 <option value="long">10+ Days</option>
               </select>
 
@@ -179,6 +179,7 @@ const AdventureTours = () => {
                 <option value="gilgit">Gilgit</option>
                 <option value="swat">Swat Valley</option>
                 <option value="chitral">Chitral</option>
+                <option value="kashmir">Kashmir</option>
               </select>
             </div>
 
@@ -225,7 +226,7 @@ const AdventureTours = () => {
             </div>
           ) : (
             <div className="text-center py-20">
-              <div className="text-6xl mb-4">🏔️</div>
+              <div className="text-2xl mb-4">No tours found</div>
               <h3 className={`text-2xl font-bold mb-2 ${isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'}`}>
                 No tours match your filters
               </h3>

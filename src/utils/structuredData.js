@@ -13,7 +13,7 @@ export const getOrganizationSchema = () => ({
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "Pakistan",
-    "addressRegion": "Gilgit-Baltistan"
+    "addressRegion": "Gilgit Baltistan"
   },
   "sameAs": [
     "https://facebook.com/paktourzone",
@@ -65,7 +65,7 @@ export const getDestinationSchema = (destination) => ({
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "Pakistan",
-    "addressRegion": destination.region || "Gilgit-Baltistan"
+    "addressRegion": destination.region || "Gilgit Baltistan"
   },
   "touristType": ["Adventure Traveler", "Nature Lover", "Mountain Enthusiast"],
   "geo": destination.coordinates ? {

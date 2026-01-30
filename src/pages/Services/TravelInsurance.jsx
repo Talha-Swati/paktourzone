@@ -220,7 +220,6 @@ const TravelInsurance = () => {
           <div className={`p-8 rounded-xl ${isDarkMode ? 'bg-gray-700' : 'bg-white'} shadow-lg`}>
             <div className="grid md:grid-cols-3 gap-6">
               <div>
-                <div className="text-3xl mb-2">📞</div>
                 <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} mb-1`}>
                   Hotline
                 </div>
@@ -229,7 +228,6 @@ const TravelInsurance = () => {
                 </div>
               </div>
               <div>
-                <div className="text-3xl mb-2">📧</div>
                 <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} mb-1`}>
                   Email
                 </div>
@@ -238,7 +236,6 @@ const TravelInsurance = () => {
                 </div>
               </div>
               <div>
-                <div className="text-3xl mb-2">💬</div>
                 <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} mb-1`}>
                   WhatsApp
                 </div>

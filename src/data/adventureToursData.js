@@ -8,13 +8,13 @@ export const adventureTours = [
     duration: '14 Days',
     difficulty: 'extreme',
     region: 'baltistan',
-    description: "Embark on the journey of a lifetime to K2 Base Camp, the world's second-highest mountain. Experience breathtaking glaciers, towering peaks, and the raw beauty of Karakoram.",
+    description: "Embark on a guided Pakistan trekking tour to K2 Base Camp, the world’s second highest mountain. Experience glaciers, towering peaks, and the raw beauty of the Karakoram.",
     highlights: [
-      "Trek to Concordia - 'Throne of Mountain Gods'",
+      "Trek to Concordia, Throne of Mountain Gods",
       "Witness 4 of the world's 14 8000m peaks",
       'Experience Baltoro Glacier crossing',
-      'Professional high-altitude guides',
-      'Complete camping & trekking equipment'
+      'Professional high altitude guides',
+      'Complete camping and trekking equipment'
     ],
     link: '/destination/k2-base-camp'
   },
@@ -27,11 +27,11 @@ export const adventureTours = [
     duration: '10 Days',
     difficulty: 'hard',
     region: 'gilgit',
-    description: 'Challenge yourself with the trek to Nanga Parbat Base Camp, the 9th highest mountain. Trek through lush meadows, alpine forests, and rocky terrain.',
+    description: 'Challenge yourself on a guided trek to Nanga Parbat Base Camp, the ninth highest mountain. Trek through lush meadows, alpine forests, and rocky terrain.',
     highlights: [
-      "Fairy Meadows - World's most beautiful campsite",
+      "Fairy Meadows, one of the world’s most beautiful campsites",
       'Spectacular Raikot Glacier views',
-      "Rupal Valley - World's highest cliff face",
+      "Rupal Valley, the world’s highest cliff face",
       'Experienced mountain guides',
       'Comfortable camping facilities'
     ],
@@ -46,7 +46,7 @@ export const adventureTours = [
     duration: '7 Days',
     difficulty: 'moderate',
     region: 'hunza',
-    description: 'Explore the legendary Hunza Valley with its stunning landscapes, ancient forts, and vibrant local culture. Perfect blend of adventure and cultural immersion.',
+    description: 'Explore the legendary Hunza Valley with stunning landscapes, ancient forts, and vibrant culture. A balanced Pakistan tour for nature and heritage lovers.',
     highlights: [
       'Baltit & Altit Fort explorations',
       'Eagles Nest viewpoint at sunrise',
@@ -60,12 +60,12 @@ export const adventureTours = [
     id: 4,
     frontImage: 'https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800',
     title: 'Skardu Jeep Safari',
-    subtitle: 'Off-Road Expedition',
+    subtitle: 'Off Road Expedition',
     price: '$2,299',
     duration: '8 Days',
     difficulty: 'moderate',
     region: 'baltistan',
-    description: "An adrenaline-pumping jeep safari through Skardu's rugged terrain. Visit pristine lakes, ancient Buddha rock carvings, and remote mountain villages.",
+    description: "An adrenaline pumping jeep safari through Skardu’s rugged terrain. Visit pristine lakes, ancient rock carvings, and remote mountain villages.",
     highlights: [
       'Shangrila Resort & Lower Kachura Lake',
       'Shigar Fort heritage hotel visit',
@@ -84,7 +84,7 @@ export const adventureTours = [
     duration: '6 Days',
     difficulty: 'easy',
     region: 'swat',
-    description: "Discover the green valleys, crystal-clear rivers, and snow-capped peaks of Swat. Perfect for beginners and families seeking mountain adventure.",
+    description: "Discover green valleys, crystal clear rivers, and snow capped peaks of Swat. Perfect for beginners and families seeking mountain adventure.",
     highlights: [
       'Malam Jabba ski resort visit',
       'Mahodand Lake camping',
@@ -97,7 +97,7 @@ export const adventureTours = [
   {
     id: 6,
     frontImage: 'https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800',
-    title: 'Chitral & Kalash Valley',
+    title: 'Chitral and Kalash Valley',
     subtitle: 'Cultural Mountain Trek',
     price: '$1,999',
     duration: '9 Days',
@@ -107,10 +107,48 @@ export const adventureTours = [
     highlights: [
       'Kalash Valley cultural immersion',
       'Traditional Kalash festivals',
-      'Chitral Fort & Shahi Mosque',
-      'Shandur Pass - Roof of the World',
+      'Chitral Fort and Shahi Mosque',
+      'Shandur Pass, Roof of the World',
       'Ancient silk route exploration'
     ],
     link: '/tours/chitral-kalash'
+  },
+  {
+    id: 7,
+    frontImage: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800',
+    title: 'Neelam Valley Adventure',
+    subtitle: 'Kashmir Valley Escape',
+    price: '$1,299',
+    duration: '6 Days',
+    difficulty: 'easy',
+    region: 'kashmir',
+    description: 'Explore the lush Neelam Valley with riverside views, forest trails, and cultural village stops. Ideal for first time travelers and families.',
+    highlights: [
+      'Riverside viewpoints and forest walks',
+      'Keran and Upper Neelam scenery',
+      'Local cuisine and cultural stops',
+      'Comfortable valley stays',
+      'Photography friendly landscapes'
+    ],
+    link: '/destination/neelam-valley'
+  },
+  {
+    id: 8,
+    frontImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+    title: 'Ratti Gali Lake Trek',
+    subtitle: 'Alpine Lake Adventure',
+    price: '$1,499',
+    duration: '5 Days',
+    difficulty: 'moderate',
+    region: 'kashmir',
+    description: 'Trek to Ratti Gali Lake with alpine meadows and pristine water views. A rewarding Kashmir hike with expert guidance.',
+    highlights: [
+      'Jeep ride to base camp',
+      'Scenic meadow trekking',
+      'Alpine lake views',
+      'Camping under the stars',
+      'Professional trekking support'
+    ],
+    link: '/destination/ratti-gali'
   }
 ];
