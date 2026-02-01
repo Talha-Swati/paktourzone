@@ -62,11 +62,11 @@ const Home = () => {
           <FeaturedTours isDarkMode={isDarkMode} />
 
           {/* Section Separator */}
-          <hr className={`border-t ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`} aria-hidden="true" />
+          <hr className={`border-t ${isDarkMode ? 'border-gray-800' : 'border-[#E2E8F0]'}`} aria-hidden="true" />
 
           {/* Why Choose Us Section */}
           <section aria-labelledby="why-choose-us" className={`relative py-32 overflow-hidden transition-colors duration-500 ${
-            isDarkMode ? 'bg-[#0B0C0E]' : 'bg-[#F8FAFB]'
+            isDarkMode ? 'bg-[#121212]' : 'bg-[#D9F4FF]'
           }`}>
         <div className="relative z-10 mx-auto max-w-7xl px-6">
             <header className="text-center mb-20">
@@ -76,7 +76,7 @@ const Home = () => {
                   isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
                 }`}>PakTourZone</span>
               </h2>
-              <p className={`text-lg md:text-xl ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+              <p className={`text-lg md:text-xl ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                 Trusted by international travelers for safe transport, licensed guides, and authentic Northern Pakistan experiences
               </p>
             </header>
@@ -90,7 +90,7 @@ const Home = () => {
         </section>
 
         {/* Section Separator */}
-        <hr className={`border-t ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`} aria-hidden="true" />
+        <hr className={`border-t ${isDarkMode ? 'border-gray-800' : 'border-[#E2E8F0]'}`} aria-hidden="true" />
 
         {/* Destinations Grid */}
         <section aria-labelledby="destinations" className={`relative py-32 overflow-hidden transition-colors duration-500 ${
@@ -104,7 +104,7 @@ const Home = () => {
                   isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
                 }`}>Destinations</span>
               </h2>
-              <p className={`text-lg md:text-xl ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+              <p className={`text-lg md:text-xl ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                 Explore signature journeys across Northern Areas and Kashmir with curated landscapes and cultural highlights
               </p>
             </header>
@@ -130,7 +130,7 @@ const Home = () => {
         </section>
 
         {/* Section Separator */}
-        <hr className={`border-t ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`} aria-hidden="true" />
+        <hr className={`border-t ${isDarkMode ? 'border-gray-800' : 'border-[#E2E8F0]'}`} aria-hidden="true" />
 
         {/* Testimonials */}
         <section aria-labelledby="testimonials" className={`relative py-32 overflow-hidden transition-colors duration-500 ${
@@ -144,7 +144,7 @@ const Home = () => {
                   isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF]' : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA]'
                 }`}>Stories</span>
               </h2>
-              <p className={`text-lg md:text-xl ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+              <p className={`text-lg md:text-xl ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                 Real feedback from international guests who explored Northern Areas and Kashmir with us
               </p>
             </header>
@@ -156,16 +156,16 @@ const Home = () => {
               { name: 'Emma Williams', country: 'USA', text: 'Everything felt smooth from booking to the final day. Great care, great views, great value.' }
             ].map((review, i) => (
               <div key={i} className={`p-8 rounded-2xl border transition-colors ${
-                isDarkMode ? 'bg-[rgba(20,26,31,0.6)] border-[rgba(34,211,238,0.2)]' : 'bg-white border-[rgba(59,130,246,0.2)]'
+                isDarkMode ? 'bg-[rgba(20,26,31,0.6)] border-[rgba(34,211,238,0.2)]' : 'bg-white border-[#E2E8F0] shadow-sm'
               }`}>
                 <div className="flex items-center gap-4 mb-4">
                   <img src={`https://i.pravatar.cc/60?img=${i+1}`} alt={review.name} className="w-12 h-12 rounded-full" />
                   <div>
                     <h4 className={`font-bold ${isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'}`}>{review.name}</h4>
-                    <p className={`text-sm ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#6B7280]'}`}>{review.country}</p>
+                    <p className={`text-sm ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#64748B]'}`}>{review.country}</p>
                   </div>
                 </div>
-                <p className={isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}>{review.text}</p>
+                <p className={isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}>{review.text}</p>
                 <div className="flex gap-1 mt-4">
                   {[...Array(5)].map((_, j) => (
                     <svg key={j} className="w-5 h-5 text-[#FFD700]" fill="currentColor" viewBox="0 0 20 20">
@@ -180,11 +180,11 @@ const Home = () => {
       </section>
 
       {/* Section Separator */}
-      <div className={`border-b ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`} />
+      <div className={`border-b ${isDarkMode ? 'border-gray-800' : 'border-[#E2E8F0]'}`} />
 
       {/* Gallery Preview */}
       <section className={`relative py-32 overflow-hidden transition-colors duration-500 ${
-        isDarkMode ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419]' : 'bg-linear-to-b from-[#F8FAFB] to-white'
+        isDarkMode ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419]' : 'bg-linear-to-b from-[#F8FAFC] to-white'
       }`}>
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <SectionHeader
@@ -206,7 +206,7 @@ const Home = () => {
 
           <div className="text-center mt-12">
             <Link to="/gallery" className={`inline-block px-8 py-4 rounded-xl border-2 font-bold transition-all hover:scale-105 ${
-              isDarkMode ? 'border-[#22D3EE] text-[#22D3EE] hover:bg-[rgba(34,211,238,0.1)]' : 'border-[#3B82F6] text-[#3B82F6] hover:bg-[rgba(59,130,246,0.1)]'
+              isDarkMode ? 'border-[#22D3EE] text-[#22D3EE] hover:bg-[rgba(34,211,238,0.1)]' : 'border-[#2563EB] text-[#1D4ED8] hover:bg-[rgba(37,99,235,0.08)]'
             }`}>
               View Full Gallery
             </Link>
@@ -215,7 +215,7 @@ const Home = () => {
       </section>
 
       {/* Section Separator */}
-      <div className={`border-b ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`} />
+      <div className={`border-b ${isDarkMode ? 'border-gray-800' : 'border-[#E2E8F0]'}`} />
 
       {/* CTA Section */}
       <section className="relative py-40 overflow-hidden">

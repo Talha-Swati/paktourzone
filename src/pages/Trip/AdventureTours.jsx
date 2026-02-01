@@ -40,7 +40,7 @@ const AdventureTours = () => {
       className={`transition-colors duration-500 ${
       isDarkMode
         ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
-        : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
+        : 'bg-linear-to-b from-white to-[#F8FAFC] text-[#0F172A]'
     }`}
     >
 
@@ -63,11 +63,11 @@ const AdventureTours = () => {
           <div className={`inline-flex items-center gap-2 mb-6 rounded-full border backdrop-blur-sm px-6 py-3 ${
             isDarkMode
               ? 'border-[rgba(34,211,238,0.3)] bg-[rgba(20,26,31,0.6)]'
-              : 'border-[rgba(59,130,246,0.3)] bg-[rgba(255,255,255,0.6)]'
+              : 'border-[#E2E8F0] bg-[rgba(255,255,255,0.85)]'
           }`}>
             <span className="text-2xl">Adventure</span>
             <span className={`text-sm font-bold uppercase tracking-wider ${
-              isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'
+              isDarkMode ? 'text-[#22D3EE]' : 'text-[#2563EB]'
             }`}>Adventure Awaits</span>
           </div>
 
@@ -79,14 +79,14 @@ const AdventureTours = () => {
           </h1>
 
           <p className={`text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed mb-8 ${
-            isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'
+            isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'
           }`}>
             Push your limits with safe, guided treks through Pakistan’s most spectacular mountain ranges, built for international travelers.
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 mb-12">
             <div className={`flex items-center gap-2 px-6 py-3 rounded-xl ${
-              isDarkMode ? 'bg-[rgba(34,211,238,0.1)] border border-[rgba(34,211,238,0.3)]' : 'bg-[rgba(59,130,246,0.1)] border border-[rgba(59,130,246,0.3)]'
+              isDarkMode ? 'bg-[rgba(34,211,238,0.1)] border border-[rgba(34,211,238,0.3)]' : 'bg-[rgba(37,99,235,0.08)] border border-[#BFDBFE]'
             }`}>
               <svg className={`w-6 h-6 ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -94,7 +94,7 @@ const AdventureTours = () => {
               <span className="font-semibold">Expert Guides</span>
             </div>
             <div className={`flex items-center gap-2 px-6 py-3 rounded-xl ${
-              isDarkMode ? 'bg-[rgba(34,211,238,0.1)] border border-[rgba(34,211,238,0.3)]' : 'bg-[rgba(59,130,246,0.1)] border border-[rgba(59,130,246,0.3)]'
+              isDarkMode ? 'bg-[rgba(34,211,238,0.1)] border border-[rgba(34,211,238,0.3)]' : 'bg-[rgba(37,99,235,0.08)] border border-[#BFDBFE]'
             }`}>
               <svg className={`w-6 h-6 ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -102,7 +102,7 @@ const AdventureTours = () => {
               <span className="font-semibold">Safety First</span>
             </div>
             <div className={`flex items-center gap-2 px-6 py-3 rounded-xl ${
-              isDarkMode ? 'bg-[rgba(34,211,238,0.1)] border border-[rgba(34,211,238,0.3)]' : 'bg-[rgba(59,130,246,0.1)] border border-[rgba(59,130,246,0.3)]'
+              isDarkMode ? 'bg-[rgba(34,211,238,0.1)] border border-[rgba(34,211,238,0.3)]' : 'bg-[rgba(37,99,235,0.08)] border border-[#BFDBFE]'
             }`}>
               <svg className={`w-6 h-6 ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -114,11 +114,11 @@ const AdventureTours = () => {
       </section>
 
       {/* Section Separator */}
-      <div className={`border-b ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`} />
+      <div className={`border-b ${isDarkMode ? 'border-gray-800' : 'border-[#E2E8F0]'}`} />
 
       {/* Filters Section */}
       <section className={`py-12 backdrop-blur-xl transition-colors ${
-        isDarkMode ? 'bg-[rgba(11,12,14,0.9)] border-b border-gray-800' : 'bg-[rgba(255,255,255,0.9)] border-b border-gray-200'
+        isDarkMode ? 'bg-[rgba(11,12,14,0.9)] border-b border-gray-800' : 'bg-[rgba(255,255,255,0.95)] border-b border-[#E2E8F0]'
       }`}>
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-wrap items-center gap-4 justify-between">
@@ -137,7 +137,7 @@ const AdventureTours = () => {
                 className={`px-4 py-2 rounded-lg font-semibold transition-all cursor-pointer ${
                   isDarkMode 
                     ? 'bg-[#141A1F] border border-[rgba(34,211,238,0.3)] text-[#E0E7EE] hover:border-[#22D3EE]' 
-                    : 'bg-white border border-[rgba(59,130,246,0.3)] text-[#1F2937] hover:border-[#3B82F6]'
+                    : 'bg-white border border-[#CBD5E1] text-[#0F172A] hover:border-[#2563EB]'
                 }`}
               >
                 <option value="all">All Levels</option>
@@ -154,7 +154,7 @@ const AdventureTours = () => {
                 className={`px-4 py-2 rounded-lg font-semibold transition-all cursor-pointer ${
                   isDarkMode 
                     ? 'bg-[#141A1F] border border-[rgba(34,211,238,0.3)] text-[#E0E7EE] hover:border-[#22D3EE]' 
-                    : 'bg-white border border-[rgba(59,130,246,0.3)] text-[#1F2937] hover:border-[#3B82F6]'
+                    : 'bg-white border border-[#CBD5E1] text-[#0F172A] hover:border-[#2563EB]'
                 }`}
               >
                 <option value="all">All Durations</option>
@@ -170,7 +170,7 @@ const AdventureTours = () => {
                 className={`px-4 py-2 rounded-lg font-semibold transition-all cursor-pointer ${
                   isDarkMode 
                     ? 'bg-[#141A1F] border border-[rgba(34,211,238,0.3)] text-[#E0E7EE] hover:border-[#22D3EE]' 
-                    : 'bg-white border border-[rgba(59,130,246,0.3)] text-[#1F2937] hover:border-[#3B82F6]'
+                    : 'bg-white border border-[#CBD5E1] text-[#0F172A] hover:border-[#2563EB]'
                 }`}
               >
                 <option value="all">All Regions</option>
@@ -192,7 +192,7 @@ const AdventureTours = () => {
 
       {/* Tours Grid */}
       <section className={`py-20 transition-colors ${
-        isDarkMode ? 'bg-[#0B0C0E]' : 'bg-[#F8FAFB]'
+        isDarkMode ? 'bg-[#0B0C0E]' : 'bg-[#F8FAFC]'
       }`}>
         <div className="mx-auto max-w-7xl px-6">
           {filteredTours.length > 0 ? (
@@ -230,7 +230,7 @@ const AdventureTours = () => {
               <h3 className={`text-2xl font-bold mb-2 ${isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'}`}>
                 No tours match your filters
               </h3>
-              <p className={isDarkMode ? 'text-[#C4CCD4]' : 'text-[#6B7280]'}>
+              <p className={isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}>
                 Try adjusting your filter criteria to see more options
               </p>
             </div>
@@ -239,7 +239,7 @@ const AdventureTours = () => {
       </section>
 
       {/* Section Separator */}
-      <div className={`border-b ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`} />
+      <div className={`border-b ${isDarkMode ? 'border-gray-800' : 'border-[#E2E8F0]'}`} />
 
       {/* CTA Section */}
       <section className="relative py-32 overflow-hidden">

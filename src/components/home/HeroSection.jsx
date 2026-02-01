@@ -134,7 +134,7 @@ const HeroSection = ({ isDarkMode, currentSlide, setCurrentSlide, heroImages }) 
 
         {/* Subtitle */}
         <p className={`mx-auto mb-12 max-w-2xl text-lg font-medium sm:text-xl md:text-2xl transition-colors duration-500 ${
-          isDarkMode ? 'text-[#8B949E]' : 'text-[#4A5568]'
+          isDarkMode ? 'text-[#8B949E]' : 'text-[#374151]'
         }`}>
           Safe, comfortable journeys for international travelers. Explore Northern Areas and Kashmir with trusted local guides and smooth logistics.
         </p>
@@ -159,7 +159,7 @@ const HeroSection = ({ isDarkMode, currentSlide, setCurrentSlide, heroImages }) 
             className={`flex items-center gap-3 rounded-2xl border-2 px-8 py-4 text-base font-bold uppercase tracking-wider backdrop-blur-md transition-all duration-300 hover:scale-105 ${
               isDarkMode
                 ? 'border-[#4DBBFF] bg-[rgba(20,26,31,0.6)] text-[#4DBBFF] hover:bg-[rgba(77,187,255,0.1)]'
-                : 'border-[#60A5FA] bg-[rgba(255,255,255,0.6)] text-[#60A5FA] hover:bg-[rgba(96,165,250,0.1)]'
+                : 'border-[#2563EB] bg-[rgba(255,255,255,0.85)] text-[#1D4ED8] hover:bg-[rgba(37,99,235,0.08)]'
             }`}
           >
             <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -180,13 +180,13 @@ const HeroSection = ({ isDarkMode, currentSlide, setCurrentSlide, heroImages }) 
             <div key={index} className={`rounded-2xl border backdrop-blur-md p-6 transition-all duration-300 hover:scale-105 ${
               isDarkMode
                 ? 'border-[rgba(34,211,238,0.2)] bg-[rgba(20,26,31,0.5)]'
-                : 'border-[rgba(59,130,246,0.2)] bg-[rgba(255,255,255,0.5)]'
+                : 'border-[#E2E8F0] bg-[rgba(255,255,255,0.75)] shadow-sm'
             }`}>
               <div className={`text-4xl font-black ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>
                 {stat.number}
               </div>
               <div className={`mt-2 text-sm font-semibold uppercase tracking-wider ${
-                isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'
+                isDarkMode ? 'text-[#8B949E]' : 'text-[#475569]'
               }`}>
                 {stat.label}
               </div>

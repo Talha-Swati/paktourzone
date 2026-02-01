@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import ThemeSelector from './ThemeSelector';
 
-const TopBar = ({ isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen, themeDropdownRef }) => {
+const TopBar = ({ isDarkMode, setThemeMode }) => {
 
   return (
     <div className={`relative z-[60] border-b transition-colors duration-500 backdrop-blur-sm ${
@@ -24,11 +24,7 @@ const TopBar = ({ isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThe
         <div className="flex items-center gap-4">
           <ThemeSelector 
             isDarkMode={isDarkMode}
-            themeMode={themeMode}
             setThemeMode={setThemeMode}
-            themeDropdownOpen={themeDropdownOpen}
-            setThemeDropdownOpen={setThemeDropdownOpen}
-            themeDropdownRef={themeDropdownRef}
           />
         </div>
       </div>

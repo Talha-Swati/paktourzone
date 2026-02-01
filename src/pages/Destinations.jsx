@@ -114,7 +114,7 @@ const Destinations = () => {
         keywords: 'Pakistan destinations, Northern Areas, Kashmir, Hunza Valley, Skardu, Neelam Valley, Pakistan travel',
         url: '/destinations'
       }}
-      className="bg-gray-50 dark:bg-gray-900"
+      className={isDarkMode ? '' : 'bg-[#F8FAFC]'}
     >
       {/* Hero Section */}
       <PageHero
@@ -122,7 +122,7 @@ const Destinations = () => {
         subtitle="Compare highlights, travel seasons, and difficulty to choose the perfect destination"
         isDarkMode={isDarkMode}
       >
-        <div className="mt-8 text-sm text-blue-100">
+        <div className={`mt-8 text-sm ${isDarkMode ? 'text-blue-100' : 'text-[#2563EB]'}`}>
           <span className="inline-flex items-center gap-2">
             <MapPin className="w-4 h-4" />
             {allDestinations.length} Amazing Destinations
@@ -131,18 +131,24 @@ const Destinations = () => {
       </PageHero>
 
       {/* Filters Section */}
-      <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-md">
+      <div className={`border-b shadow-md ${
+        isDarkMode ? 'bg-[#0B0C0E]/95 border-[#1E242B]' : 'bg-white border-[#E2E8F0]'
+      }`}>
         <div className="container mx-auto px-4 py-6">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
             {/* Search */}
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Search className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 ${isDarkMode ? 'text-[#8B949E]' : 'text-[#94A3B8]'}`} />
               <input
                 type="text"
                 placeholder="Search destinations..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className={`w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                  isDarkMode
+                    ? 'border-[#1E242B] bg-[#141A1F] text-[#E0E7EE]'
+                    : 'border-[#CBD5E1] bg-white text-[#0F172A]'
+                }`}
               />
             </div>
 
@@ -150,7 +156,11 @@ const Destinations = () => {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className={`px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                isDarkMode
+                  ? 'border-[#1E242B] bg-[#141A1F] text-[#E0E7EE]'
+                  : 'border-[#CBD5E1] bg-white text-[#0F172A]'
+              }`}
             >
               <option value="all">All Categories</option>
               <option value="adventure">Adventure</option>
@@ -162,7 +172,11 @@ const Destinations = () => {
             <select
               value={selectedDifficulty}
               onChange={(e) => setSelectedDifficulty(e.target.value)}
-              className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className={`px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                isDarkMode
+                  ? 'border-[#1E242B] bg-[#141A1F] text-[#E0E7EE]'
+                  : 'border-[#CBD5E1] bg-white text-[#0F172A]'
+              }`}
             >
               <option value="all">All Difficulty Levels</option>
               <option value="easy">Easy</option>
@@ -175,7 +189,11 @@ const Destinations = () => {
             <select
               value={selectedRegion}
               onChange={(e) => setSelectedRegion(e.target.value)}
-              className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className={`px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                isDarkMode
+                  ? 'border-[#1E242B] bg-[#141A1F] text-[#E0E7EE]'
+                  : 'border-[#CBD5E1] bg-white text-[#0F172A]'
+              }`}
             >
               <option value="all">All Regions</option>
               {regions.map((region) => (
@@ -189,7 +207,11 @@ const Destinations = () => {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className={`px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                isDarkMode
+                  ? 'border-[#1E242B] bg-[#141A1F] text-[#E0E7EE]'
+                  : 'border-[#CBD5E1] bg-white text-[#0F172A]'
+              }`}
             >
               <option value="rating">Sort by Rating</option>
               <option value="price">Sort by Price</option>
@@ -200,24 +222,32 @@ const Destinations = () => {
           {/* Active Filters Display */}
           {(searchQuery || selectedCategory !== 'all' || selectedDifficulty !== 'all' || selectedRegion !== 'all') && (
             <div className="mt-4 flex items-center gap-2 flex-wrap">
-              <span className="text-sm text-gray-600 dark:text-gray-400">Active filters:</span>
+              <span className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#475569]'}`}>Active filters:</span>
               {searchQuery && (
-                <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full">
+                <span className={`px-3 py-1 text-sm rounded-full ${
+                  isDarkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-800'
+                }`}>
                   Search: {searchQuery}
                 </span>
               )}
               {selectedCategory !== 'all' && (
-                <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-sm rounded-full">
+                <span className={`px-3 py-1 text-sm rounded-full ${
+                  isDarkMode ? 'bg-purple-900 text-purple-200' : 'bg-purple-100 text-purple-800'
+                }`}>
                   {selectedCategory}
                 </span>
               )}
               {selectedDifficulty !== 'all' && (
-                <span className="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 text-sm rounded-full">
+                <span className={`px-3 py-1 text-sm rounded-full ${
+                  isDarkMode ? 'bg-orange-900 text-orange-200' : 'bg-orange-100 text-orange-800'
+                }`}>
                   {selectedDifficulty}
                 </span>
               )}
               {selectedRegion !== 'all' && (
-                <span className="px-3 py-1 bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200 text-sm rounded-full">
+                <span className={`px-3 py-1 text-sm rounded-full ${
+                  isDarkMode ? 'bg-emerald-900 text-emerald-200' : 'bg-emerald-100 text-emerald-800'
+                }`}>
                   {regionNameById[selectedRegion]}
                 </span>
               )}
@@ -228,7 +258,7 @@ const Destinations = () => {
                   setSelectedDifficulty('all');
                   setSelectedRegion('all');
                 }}
-                className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+                className={`text-sm hover:underline ${isDarkMode ? 'text-blue-400' : 'text-[#2563EB]'}`}
               >
                 Clear all
               </button>
@@ -239,7 +269,7 @@ const Destinations = () => {
 
       {/* Results Count */}
       <div className="container mx-auto px-4 py-6">
-        <p className="text-gray-600 dark:text-gray-400">
+        <p className={isDarkMode ? 'text-[#8B949E]' : 'text-[#475569]'}>
           Showing {filteredDestinations.length} of {allDestinations.length} destinations
         </p>
       </div>
@@ -248,11 +278,11 @@ const Destinations = () => {
       <div className="container mx-auto px-4 pb-16">
         {filteredDestinations.length === 0 ? (
           <div className="text-center py-20">
-            <Filter className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-            <h3 className="text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
+            <Filter className={`w-16 h-16 mx-auto mb-4 ${isDarkMode ? 'text-[#8B949E]' : 'text-[#94A3B8]'}`} />
+            <h3 className={`text-2xl font-semibold mb-2 ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#0F172A]'}`}>
               No destinations found
             </h3>
-            <p className="text-gray-500 dark:text-gray-400">
+            <p className={isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}>
               Try adjusting your filters or search query
             </p>
           </div>
@@ -262,7 +292,9 @@ const Destinations = () => {
               <Link
                 key={destination.id}
                 to={`/destination/${destination.slug}`}
-                className="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                className={`group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 ${
+                  isDarkMode ? 'bg-[#141A1F]' : 'bg-white border border-[#E2E8F0]'
+                }`}
               >
                 {/* Image */}
                 <div className="relative h-64 overflow-hidden">
@@ -295,42 +327,46 @@ const Destinations = () => {
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <h3 className={`text-2xl font-bold mb-2 transition-colors ${
+                    isDarkMode ? 'text-white group-hover:text-blue-400' : 'text-[#0F172A] group-hover:text-[#2563EB]'
+                  }`}>
                     {destination.name}
                   </h3>
 
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                  <p className={`text-sm mb-2 ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                     {regionNameById[destination.regionId || 'north']}
                     {destination.subregionId && subregionNameById[destination.subregionId]
                       ? `, ${subregionNameById[destination.subregionId]}`
                       : ''}
                   </p>
                   
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 italic">
+                  <p className={`text-sm mb-3 italic ${isDarkMode ? 'text-[#8B949E]' : 'text-[#475569]'}`}>
                     {destination.tagline}
                   </p>
 
-                  <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 mb-4">
+                  <div className={`flex items-center gap-2 mb-4 ${isDarkMode ? 'text-[#8B949E]' : 'text-[#475569]'}`}>
                     <MapPin className="w-4 h-4" />
                     <span className="text-sm">{destination.location}</span>
                   </div>
 
-                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
+                  <p className={`text-sm mb-4 line-clamp-2 ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#475569]'}`}>
                     {destination.description}
                   </p>
 
                   {/* Stats Row */}
-                  <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                  <div className={`flex items-center justify-between mb-4 pb-4 border-b ${
+                    isDarkMode ? 'border-gray-700' : 'border-[#E2E8F0]'
+                  }`}>
                     <div className="flex items-center gap-1">
                       <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                      <span className="text-sm font-semibold text-gray-900 dark:text-white">
+                      <span className={`text-sm font-semibold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                         {destination.rating}
                       </span>
-                      <span className="text-xs text-gray-500 dark:text-gray-400">
+                      <span className={`text-xs ${isDarkMode ? 'text-[#8B949E]' : 'text-[#94A3B8]'}`}>
                         ({destination.reviews} reviews)
                       </span>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                    <div className={`flex items-center gap-2 text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                       <Clock className="w-4 h-4" />
                       <span>{destination.duration}</span>
                     </div>
@@ -339,24 +375,28 @@ const Destinations = () => {
                   {/* Pricing */}
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">Starting from</p>
-                      <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                      <p className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#94A3B8]'}`}>Starting from</p>
+                      <p className={`text-2xl font-bold ${isDarkMode ? 'text-blue-400' : 'text-[#2563EB]'}`}>
                         ${destination.pricing.basic.price}
                       </p>
                     </div>
-                    <div className="px-4 py-2 bg-blue-600 text-white rounded-lg group-hover:bg-blue-700 transition-colors">
+                    <div className={`px-4 py-2 rounded-lg transition-colors ${
+                      isDarkMode ? 'bg-[#22D3EE] text-[#0B0C0E]' : 'bg-[#2563EB] text-white group-hover:bg-[#1D4ED8]'
+                    }`}>
                       View Details
                     </div>
                   </div>
 
                   {/* Highlights Preview */}
-                  <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-                    <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">Top Highlights:</p>
+                  <div className={`mt-4 pt-4 border-t ${isDarkMode ? 'border-gray-700' : 'border-[#E2E8F0]'} `}>
+                    <p className={`text-xs mb-2 ${isDarkMode ? 'text-[#8B949E]' : 'text-[#94A3B8]'}`}>Top Highlights:</p>
                     <div className="flex flex-wrap gap-1">
                       {destination.highlights.slice(0, 3).map((highlight, index) => (
                         <span
                           key={index}
-                          className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded"
+                          className={`text-xs px-2 py-1 rounded ${
+                            isDarkMode ? 'bg-gray-700 text-gray-300' : 'bg-[#F8FAFC] text-[#475569]'
+                          }`}
                         >
                           {highlight.split(' - ')[0]}
                         </span>

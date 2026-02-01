@@ -10,11 +10,14 @@ const FeatureFlipCard = ({ icon, title, description, isDarkMode }) => {
     >
       <div className={`relative w-full h-full transition-transform duration-700 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
         {/* Front */}
-        <div className={`absolute inset-0 backface-hidden rounded-2xl overflow-hidden border backdrop-blur-sm p-8 flex flex-col items-center justify-center text-center shadow-xl transition-colors ${
-          isDarkMode
-            ? 'border-[rgba(30,36,43,0.5)] bg-linear-to-br from-[rgba(20,26,31,0.8)] to-[rgba(11,12,14,0.6)] hover:border-[rgba(34,211,238,0.5)]'
-            : 'border-[rgba(226,232,240,0.5)] bg-linear-to-br from-[rgba(255,255,255,0.8)] to-[rgba(248,250,251,0.6)] hover:border-[rgba(59,130,246,0.5)]'
-        }`}>
+        <div
+          style={!isDarkMode ? { backgroundColor: 'transparent' } : undefined}
+          className={`absolute inset-0 backface-hidden rounded-2xl overflow-hidden border backdrop-blur-sm p-8 flex flex-col items-center justify-center text-center shadow-xl transition-colors transition-shadow ${
+            isDarkMode
+              ? 'border-[rgba(18,18,18,0.7)] bg-linear-to-b from-[#0A0A0A] via-[#080808] to-[#000000] shadow-[0_12px_28px_-18px_rgba(0,0,0,0.95)] group-hover:shadow-[0_28px_55px_-28px_rgba(0,0,0,0.98)]'
+              : 'border-[rgba(15,23,42,0.2)] bg-transparent hover:border-[rgba(37,99,235,0.6)]'
+          }`}
+        >
           {icon && <div className="text-6xl mb-4">{icon}</div>}
           <h3 className={`text-xl font-black ${
             isDarkMode ? 'text-[#F2F6F9]' : 'text-[#1A202C]'
@@ -27,8 +30,8 @@ const FeatureFlipCard = ({ icon, title, description, isDarkMode }) => {
         {/* Back */}
         <div className={`absolute inset-0 backface-hidden rotate-y-180 rounded-2xl overflow-hidden border p-8 flex flex-col items-center justify-center text-center shadow-xl ${
           isDarkMode
-            ? 'border-[rgba(34,211,238,0.5)] bg-linear-to-br from-[#0A3A67] to-[#0B0C0E]'
-            : 'border-[rgba(59,130,246,0.5)] bg-linear-to-br from-[#3B82F6] to-[#2563EB]'
+            ? 'border-[rgba(34,211,238,0.4)] bg-linear-to-b from-[#0C1420] via-[#07090C] to-[#000000]'
+            : 'border-[rgba(59,130,246,0.5)] bg-linear-to-br from-[#2563EB] to-[#1D4ED8]'
         }`}>
           {icon && <div className="text-4xl mb-4">{icon}</div>}
           <h3 className="text-lg font-black text-white mb-3">{title}</h3>

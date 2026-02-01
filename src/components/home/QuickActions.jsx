@@ -47,12 +47,12 @@ const QuickActions = ({ isDarkMode }) => {
         <div className={`rounded-2xl border backdrop-blur-xl shadow-2xl overflow-hidden transition-colors duration-500 ${
           isDarkMode
             ? 'border-[rgba(34,211,238,0.15)] bg-[rgba(20,26,31,0.95)]'
-            : 'border-[rgba(59,130,246,0.15)] bg-[rgba(255,255,255,0.95)]'
+            : 'border-[#E2E8F0] bg-[rgba(255,255,255,0.98)]'
         }`}>
           <div className={`flex flex-wrap items-center divide-x transition-colors duration-500 ${
             isDarkMode
               ? 'divide-[rgba(34,211,238,0.1)]'
-              : 'divide-[rgba(59,130,246,0.1)]'
+              : 'divide-[#E2E8F0]'
           }`}>
             {actions.map((action, index) => (
               <button
@@ -64,7 +64,7 @@ const QuickActions = ({ isDarkMode }) => {
                         : 'bg-[rgba(255,107,107,0.08)] hover:bg-[rgba(255,107,107,0.12)]')
                     : 'border-transparent ' + (isDarkMode
                         ? 'hover:bg-[rgba(34,211,238,0.08)] hover:border-[#22D3EE]'
-                        : 'hover:bg-[rgba(59,130,246,0.08)] hover:border-[#3B82F6]')
+                        : 'hover:bg-[rgba(37,99,235,0.06)] hover:border-[#2563EB]')
                 }`}
               >
                 {action.special && (
@@ -81,7 +81,7 @@ const QuickActions = ({ isDarkMode }) => {
                       ? 'text-[#FF6B6B]'
                       : isDarkMode
                         ? 'text-[#22D3EE]'
-                        : 'text-[#3B82F6]'
+                        : 'text-[#2563EB]'
                   }`} 
                   fill="none" 
                   stroke="currentColor" 
@@ -94,7 +94,7 @@ const QuickActions = ({ isDarkMode }) => {
                     ? 'text-[#FF6B6B] group-hover:text-[#FF8E53] font-bold'
                     : isDarkMode
                       ? 'text-[#C4CCD4] group-hover:text-[#22D3EE]'
-                      : 'text-[#4A5568] group-hover:text-[#3B82F6]'
+                      : 'text-[#374151] group-hover:text-[#1D4ED8]'
                 }`}>
                   {action.label}
                 </span>

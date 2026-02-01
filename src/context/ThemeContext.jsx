@@ -12,14 +12,13 @@ export const useTheme = () => {
 
 export const ThemeProvider = ({ children }) => {
   const [themeMode, setThemeMode] = useState(() => {
-    // Load theme from localStorage or default to 'system'
-    return localStorage.getItem('theme') || 'system';
+    // Load theme from localStorage or default to 'dark'
+    const storedTheme = localStorage.getItem('theme');
+    return storedTheme === 'light' ? 'light' : 'dark';
   });
 
-  const [themeDropdownOpen, setThemeDropdownOpen] = useState(false);
-
   // Compute dark mode based on theme setting
-  const isDarkMode = themeMode === 'system' ? true : themeMode === 'dark';
+  const isDarkMode = themeMode === 'dark';
 
   // Save theme preference to localStorage whenever it changes
   useEffect(() => {
@@ -30,8 +29,6 @@ export const ThemeProvider = ({ children }) => {
     themeMode,
     setThemeMode,
     isDarkMode,
-    themeDropdownOpen,
-    setThemeDropdownOpen,
   };
 
   return (

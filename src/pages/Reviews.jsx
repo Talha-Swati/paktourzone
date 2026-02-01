@@ -73,7 +73,7 @@ const Reviews = () => {
       {[...Array(5)].map((_, index) => (
         <FaStar
           key={index}
-          className={`${size} ${index < rating ? 'text-yellow-500' : isDarkMode ? 'text-gray-600' : 'text-gray-300'}`}
+          className={`${size} ${index < rating ? 'text-yellow-500' : isDarkMode ? 'text-gray-600' : 'text-slate-300'}`}
         />
       ))}
     </div>
@@ -104,14 +104,14 @@ const Reviews = () => {
               >
                 Traveler Reviews
               </h1>
-              <p className={`text-lg md:text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+              <p className={`text-lg md:text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                 Honest feedback from guests who toured Northern Pakistan with PakTourZone
               </p>
 
               {/* Overall Rating Card */}
               <div
                 className={`max-w-2xl mx-auto p-8 rounded-2xl border ${
-                  isDarkMode ? 'bg-[#141A1F] border-[rgba(34,211,238,0.2)]' : 'bg-white border-gray-200'
+                  isDarkMode ? 'bg-[#141A1F] border-[rgba(34,211,238,0.2)]' : 'bg-white border-[#E2E8F0]'
                 }`}
               >
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8">
@@ -120,7 +120,7 @@ const Reviews = () => {
                       {averageRating}
                     </div>
                     <StarRating rating={Math.round(parseFloat(averageRating))} size="text-xl" />
-                    <p className={`mt-2 ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+                    <p className={`mt-2 ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                       Based on {reviews.length} reviews
                     </p>
                   </div>
@@ -129,18 +129,18 @@ const Reviews = () => {
                     {ratings.map((rating) => (
                       <div key={rating.stars} className="flex items-center gap-3 mb-2">
                         <div className="flex items-center gap-1 w-16">
-                          <span className={`text-sm ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                          <span className={`text-sm ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                             {rating.stars}
                           </span>
                           <FaStar className="text-yellow-500 text-sm" />
                         </div>
-                        <div className={`flex-1 h-2 rounded-full ${isDarkMode ? 'bg-[#1E242B]' : 'bg-gray-200'}`}>
+                        <div className={`flex-1 h-2 rounded-full ${isDarkMode ? 'bg-[#1E242B]' : 'bg-[#E2E8F0]'}`}>
                           <div
                             className="h-2 rounded-full bg-linear-to-r from-yellow-500 to-yellow-400"
                             style={{ width: `${rating.percentage}%` }}
                           ></div>
                         </div>
-                        <span className={`text-sm w-12 text-right ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+                        <span className={`text-sm w-12 text-right ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                           {rating.count}
                         </span>
                       </div>
@@ -153,7 +153,7 @@ const Reviews = () => {
         </section>
 
         {/* Filters Section */}
-        <section className={`py-4 backdrop-blur-lg border-b ${isDarkMode ? 'bg-[#0B0C0E]/95 border-[#1E242B]' : 'bg-white/95 border-gray-200'}`}>
+        <section className={`py-4 backdrop-blur-lg border-b ${isDarkMode ? 'bg-[#0B0C0E]/95 border-[#1E242B]' : 'bg-white/95 border-[#E2E8F0]'}`}>
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap items-center justify-between gap-4">
               {/* Rating Filter */}
@@ -170,7 +170,7 @@ const Reviews = () => {
                           : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white'
                         : isDarkMode
                         ? 'bg-[#141A1F] text-[#C4CCD4] border border-[rgba(34,211,238,0.2)] hover:border-[#22D3EE]'
-                        : 'bg-white text-[#4A5568] border border-gray-200 hover:border-blue-400'
+                          : 'bg-white text-[#334155] border border-[#E2E8F0] hover:border-[#2563EB]'
                     }`}
                   >
                     {rating === 'all' ? 'All' : `${rating} ⭐`}
@@ -185,7 +185,7 @@ const Reviews = () => {
                 className={`px-4 py-2 rounded-lg font-semibold transition-all border ${
                   isDarkMode
                     ? 'bg-[#141A1F] text-[#C4CCD4] border-[rgba(34,211,238,0.2)]'
-                    : 'bg-white text-[#4A5568] border-gray-200'
+                    : 'bg-white text-[#334155] border-[#E2E8F0]'
                 } focus:outline-none`}
               >
                 <option value="recent">Most Recent</option>
@@ -194,7 +194,7 @@ const Reviews = () => {
               </select>
             </div>
 
-            <div className={`mt-4 text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+            <div className={`mt-4 text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
               Showing {filteredReviews.length} {filteredReviews.length === 1 ? 'review' : 'reviews'}
             </div>
           </div>
@@ -210,7 +210,7 @@ const Reviews = () => {
                   className={`p-6 rounded-xl border transition-all duration-300 hover:shadow-xl ${
                     isDarkMode
                       ? 'bg-[#141A1F] border-[rgba(34,211,238,0.1)] hover:border-[rgba(34,211,238,0.3)]'
-                      : 'bg-white border-gray-200 hover:border-blue-300'
+                      : 'bg-white border-[#E2E8F0] hover:border-[#93C5FD]'
                   }`}
                 >
                   {/* Header */}
@@ -223,7 +223,7 @@ const Reviews = () => {
                       />
                       <div>
                         <div className="flex items-center gap-2">
-                          <h3 className={`font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                          <h3 className={`font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                             {review.name}
                           </h3>
                           {review.verified && (
@@ -234,7 +234,7 @@ const Reviews = () => {
                         </div>
                         <div className="flex items-center gap-2 mt-1">
                           <FaMapMarkerAlt className={`text-xs ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`} />
-                          <span className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+                          <span className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                             {review.location}
                           </span>
                         </div>
@@ -244,8 +244,8 @@ const Reviews = () => {
                   </div>
 
                   {/* Tour Info */}
-                  <div className={`mb-4 p-3 rounded-lg ${isDarkMode ? 'bg-[#0F1419]' : 'bg-gray-50'}`}>
-                    <span className={`text-sm ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                  <div className={`mb-4 p-3 rounded-lg ${isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F8FAFC]'} `}>
+                    <span className={`text-sm ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                       Tour: <span className="font-semibold">{review.tour}</span>
                     </span>
                   </div>
@@ -253,16 +253,16 @@ const Reviews = () => {
                   {/* Review Text */}
                   <div className="relative mb-4">
                     <FaQuoteLeft className={`absolute -top-2 -left-2 text-2xl ${isDarkMode ? 'text-[#22D3EE]/20' : 'text-[#3B82F6]/20'}`} />
-                    <p className={`pl-6 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                    <p className={`pl-6 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                       {review.review}
                     </p>
                   </div>
 
                   {/* Footer */}
-                  <div className="flex items-center justify-between pt-4 border-t ${isDarkMode ? 'border-[#1E242B]' : 'border-gray-200'}">
+                  <div className={`flex items-center justify-between pt-4 border-t ${isDarkMode ? 'border-[#1E242B]' : 'border-[#E2E8F0]'} `}>
                     <div className="flex items-center gap-2">
-                      <FaCalendarAlt className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`} />
-                      <span className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+                      <FaCalendarAlt className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`} />
+                      <span className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                         {new Date(review.date).toLocaleDateString('en-US', { 
                           year: 'numeric', 
                           month: 'short', 
@@ -275,7 +275,7 @@ const Reviews = () => {
                         className={`flex items-center gap-2 px-3 py-1 rounded-lg transition-colors ${
                           isDarkMode
                             ? 'hover:bg-[#1E242B] text-[#8B949E]'
-                            : 'hover:bg-gray-100 text-[#6B7280]'
+                            : 'hover:bg-[#F8FAFC] text-[#64748B]'
                         }`}
                       >
                         <FaThumbsUp className="text-sm" />
@@ -292,14 +292,14 @@ const Reviews = () => {
         {/* Call to Action */}
         <section
           className={`py-16 ${
-            isDarkMode ? 'bg-linear-to-r from-[#0F1419] to-[#141A1F]' : 'bg-linear-to-r from-gray-50 to-blue-50'
+            isDarkMode ? 'bg-linear-to-r from-[#0F1419] to-[#141A1F]' : 'bg-linear-to-r from-[#F8FAFC] to-[#EFF6FF]'
           }`}
         >
           <div className="container mx-auto px-4 text-center">
-            <h2 className={`text-3xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+            <h2 className={`text-3xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
               Ready to Create Your Own Story?
             </h2>
-            <p className={`text-lg mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+            <p className={`text-lg mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
               Join thousands of satisfied travelers who have explored Northern Pakistan with us
             </p>
             <a

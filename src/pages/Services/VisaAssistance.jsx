@@ -20,7 +20,7 @@ const VisaAssistance = () => {
       className={`transition-colors duration-500 ${
       isDarkMode
         ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
-        : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
+        : 'bg-linear-to-b from-white to-[#F8FAFC] text-[#0F172A]'
     }`}
     >
 
@@ -52,7 +52,7 @@ const VisaAssistance = () => {
       {/* Visa Types */}
       <div className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Visa Types
           </h2>
 
@@ -67,28 +67,28 @@ const VisaAssistance = () => {
                     : ''
                 } ${isDarkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg hover:shadow-xl`}
               >
-                <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                   {visa.name}
                 </h3>
-                <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-[#64748B]'}`}>
                   {visa.description}
                 </p>
                 
                 <div className="space-y-2 mb-4">
                   <div className="flex justify-between">
-                    <span className={isDarkMode ? 'text-gray-400' : 'text-gray-600'}>Duration:</span>
-                    <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                    <span className={isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}>Duration:</span>
+                    <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                       {visa.duration}
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className={isDarkMode ? 'text-gray-400' : 'text-gray-600'}>Processing:</span>
-                    <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                    <span className={isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}>Processing:</span>
+                    <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                       {visa.processing}
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className={isDarkMode ? 'text-gray-400' : 'text-gray-600'}>Service Fee:</span>
+                    <span className={isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}>Service Fee:</span>
                     <span className="font-semibold text-orange-600">
                       {visa.price}
                     </span>
@@ -101,7 +101,7 @@ const VisaAssistance = () => {
                       ? 'bg-orange-600 text-white'
                       : isDarkMode
                       ? 'bg-gray-700 text-white hover:bg-gray-600'
-                      : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
+                      : 'bg-[#F8FAFC] text-[#0F172A] hover:bg-[#E2E8F0]'
                   }`}
                 >
                   {selectedVisaType.id === visa.id ? 'Selected' : 'Select'}
@@ -113,19 +113,19 @@ const VisaAssistance = () => {
           {/* Selected Visa Requirements */}
           {selectedVisaType && (
             <div className={`p-8 rounded-xl ${isDarkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
-              <h3 className={`text-2xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-2xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                 Requirements for {selectedVisaType.name}
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className={`font-semibold mb-3 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                  <h4 className={`font-semibold mb-3 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                     Required Documents:
                   </h4>
                   <ul className="space-y-2">
                     {selectedVisaType.requirements.map((req, idx) => (
                       <li key={idx} className="flex items-start gap-2">
                         <span className="text-orange-600 mt-1">✓</span>
-                        <span className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}>
+                        <span className={isDarkMode ? 'text-gray-300' : 'text-[#64748B]'}>
                           {req}
                         </span>
                       </li>
@@ -133,31 +133,31 @@ const VisaAssistance = () => {
                   </ul>
                 </div>
                 <div>
-                  <h4 className={`font-semibold mb-3 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                  <h4 className={`font-semibold mb-3 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                     Details:
                   </h4>
                   <div className="space-y-3">
-                    <div className={`p-4 rounded-lg ${isDarkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
-                      <span className={`block text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    <div className={`p-4 rounded-lg ${isDarkMode ? 'bg-gray-700' : 'bg-[#F8FAFC]'}`}>
+                      <span className={`block text-sm ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
                         Eligibility
                       </span>
-                      <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                      <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                         {selectedVisaType.eligibility}
                       </span>
                     </div>
-                    <div className={`p-4 rounded-lg ${isDarkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
-                      <span className={`block text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    <div className={`p-4 rounded-lg ${isDarkMode ? 'bg-gray-700' : 'bg-[#F8FAFC]'}`}>
+                      <span className={`block text-sm ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
                         Processing Time
                       </span>
-                      <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                      <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                         {selectedVisaType.processing}
                       </span>
                     </div>
-                    <div className={`p-4 rounded-lg ${isDarkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
-                      <span className={`block text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    <div className={`p-4 rounded-lg ${isDarkMode ? 'bg-gray-700' : 'bg-[#F8FAFC]'}`}>
+                      <span className={`block text-sm ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
                         Validity
                       </span>
-                      <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                      <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                         {selectedVisaType.duration}
                       </span>
                     </div>
@@ -172,7 +172,7 @@ const VisaAssistance = () => {
       {/* Country Information */}
       <div className={`py-16 px-4 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Processing Time by Country
           </h2>
 
@@ -181,16 +181,16 @@ const VisaAssistance = () => {
               <div
                 key={index}
                 className={`p-6 rounded-xl ${
-                  isDarkMode ? 'bg-gray-700' : 'bg-gray-50'
+                  isDarkMode ? 'bg-gray-700' : 'bg-[#F8FAFC]'
                 } hover:shadow-lg transition-shadow`}
               >
-                <h3 className={`text-lg font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                <h3 className={`text-lg font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                   {country.name}
                 </h3>
                 <div className="text-orange-600 font-semibold mb-2">
                   {country.processing}
                 </div>
-                <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-[#64748B]'}`}>
                   {country.notes}
                 </p>
               </div>
@@ -202,7 +202,7 @@ const VisaAssistance = () => {
       {/* Process */}
       <div className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Our Process
           </h2>
 
@@ -212,10 +212,10 @@ const VisaAssistance = () => {
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-orange-600 flex items-center justify-center text-white text-xl font-bold">
                   {step.step}
                 </div>
-                <h3 className={`text-lg font-semibold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                <h3 className={`text-lg font-semibold mb-2 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                   {step.title}
                 </h3>
-                <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-[#64748B]'}`}>
                   {step.desc}
                 </p>
               </div>
@@ -227,7 +227,7 @@ const VisaAssistance = () => {
       {/* Our Services */}
       <div className={`py-16 px-4 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
         <div className="max-w-4xl mx-auto">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             What We Handle
           </h2>
 
@@ -236,11 +236,11 @@ const VisaAssistance = () => {
               <div
                 key={index}
                 className={`p-4 rounded-lg ${
-                  isDarkMode ? 'bg-gray-700' : 'bg-gray-50'
+                  isDarkMode ? 'bg-gray-700' : 'bg-[#F8FAFC]'
                 } flex items-center gap-3`}
               >
                 <span className="text-orange-600 text-xl">✓</span>
-                <span className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>
+                <span className={isDarkMode ? 'text-gray-300' : 'text-[#475569]'}>
                   {service}
                 </span>
               </div>
@@ -252,10 +252,10 @@ const VisaAssistance = () => {
       {/* CTA */}
       <div className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Ready to Apply?
           </h2>
-          <p className={`text-lg mb-8 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+          <p className={`text-lg mb-8 ${isDarkMode ? 'text-gray-300' : 'text-[#64748B]'}`}>
             Let us handle your visa application while you plan your adventure
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
@@ -268,7 +268,7 @@ const VisaAssistance = () => {
             <Link
               to="/contact"
               className={`px-8 py-3 rounded-lg font-semibold transition-colors ${
-                isDarkMode ? 'bg-gray-700 text-white hover:bg-gray-600' : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
+                isDarkMode ? 'bg-gray-700 text-white hover:bg-gray-600' : 'bg-[#F8FAFC] text-[#0F172A] hover:bg-[#E2E8F0]'
               }`}
             >
               Contact Us

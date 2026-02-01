@@ -86,7 +86,7 @@ const SpecialOffers = () => {
               >
                 Limited Time Pakistan Tour Deals
               </h1>
-              <p className={`text-lg md:text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+              <p className={`text-lg md:text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                 Save up to 30% on our best selling routes. Perfect for international travelers who want great value and trusted local guides.
               </p>
 
@@ -94,39 +94,39 @@ const SpecialOffers = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
                 <div
                   className={`p-4 rounded-xl border ${
-                    isDarkMode ? 'bg-[#141A1F] border-[rgba(34,211,238,0.2)]' : 'bg-white border-blue-200'
+                    isDarkMode ? 'bg-[#141A1F] border-[rgba(34,211,238,0.2)]' : 'bg-white border-[#E2E8F0]'
                   }`}
                 >
                   <div className={`text-2xl font-bold ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>
                     {specialOfferPackages.length}
                   </div>
-                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>Active Deals</div>
+                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>Active Deals</div>
                 </div>
                 <div
                   className={`p-4 rounded-xl border ${
-                    isDarkMode ? 'bg-[#141A1F] border-[rgba(34,211,238,0.2)]' : 'bg-white border-blue-200'
+                    isDarkMode ? 'bg-[#141A1F] border-[rgba(34,211,238,0.2)]' : 'bg-white border-[#E2E8F0]'
                   }`}
                 >
                   <div className={`text-2xl font-bold ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>30%</div>
-                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>Max Discount</div>
+                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>Max Discount</div>
                 </div>
                 <div
                   className={`p-4 rounded-xl border ${
-                    isDarkMode ? 'bg-[#141A1F] border-[rgba(34,211,238,0.2)]' : 'bg-white border-blue-200'
+                    isDarkMode ? 'bg-[#141A1F] border-[rgba(34,211,238,0.2)]' : 'bg-white border-[#E2E8F0]'
                   }`}
                 >
                   <div className={`text-2xl font-bold ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>$540</div>
-                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>Max Savings</div>
+                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>Max Savings</div>
                 </div>
                 <div
                   className={`p-4 rounded-xl border ${
-                    isDarkMode ? 'bg-[#141A1F] border-[rgba(34,211,238,0.2)]' : 'bg-white border-blue-200'
+                    isDarkMode ? 'bg-[#141A1F] border-[rgba(34,211,238,0.2)]' : 'bg-white border-[#E2E8F0]'
                   }`}
                 >
                   <div className={`text-2xl font-bold text-red-500`}>
                     {Math.min(...specialOfferPackages.map(p => getDaysRemaining(p.validUntil)))}
                   </div>
-                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>Days Left</div>
+                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>Days Left</div>
                 </div>
               </div>
             </div>
@@ -134,7 +134,7 @@ const SpecialOffers = () => {
         </section>
 
         {/* Filter Section */}
-        <section className={`py-6 border-b ${isDarkMode ? 'border-[#1E242B]' : 'border-gray-200'}`}>
+        <section className={`py-6 border-b ${isDarkMode ? 'border-[#1E242B]' : 'border-[#E2E8F0]'}`}>
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap gap-3 justify-center">
               {[
@@ -153,7 +153,7 @@ const SpecialOffers = () => {
                         : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white shadow-lg'
                       : isDarkMode
                       ? 'bg-[#141A1F] text-[#C4CCD4] border border-[rgba(34,211,238,0.2)] hover:border-[#22D3EE]'
-                      : 'bg-white text-[#4A5568] border border-gray-200 hover:border-blue-400'
+                      : 'bg-white text-[#334155] border border-[#E2E8F0] hover:border-[#2563EB]'
                   }`}
                 >
                   {filter.icon}
@@ -178,7 +178,7 @@ const SpecialOffers = () => {
                     className={`group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 ${
                       isDarkMode
                         ? 'bg-[#141A1F] border border-[rgba(34,211,238,0.1)] hover:border-[rgba(34,211,238,0.3)]'
-                        : 'bg-white border border-gray-200 hover:border-blue-300'
+                        : 'bg-white border border-[#E2E8F0] hover:border-[#93C5FD]'
                     }`}
                   >
                     {/* Image Section */}
@@ -218,19 +218,19 @@ const SpecialOffers = () => {
                       {/* Title */}
                       <h3
                         className={`text-xl font-bold mb-3 group-hover:text-[#22D3EE] transition-colors ${
-                          isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+                          isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
                         }`}
                       >
                         {pkg.name}
                       </h3>
 
                       {/* Description */}
-                      <p className={`text-sm mb-4 ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+                      <p className={`text-sm mb-4 ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                         {pkg.description}
                       </p>
 
                       {/* Details */}
-                      <div className={`space-y-2 mb-4 text-sm ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                      <div className={`space-y-2 mb-4 text-sm ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                         <div className="flex items-center gap-2">
                           <FaClock className={isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'} />
                           <span>{pkg.duration}</span>
@@ -262,10 +262,10 @@ const SpecialOffers = () => {
                       {/* Price */}
                       <div className="mb-4">
                         <div className="flex items-baseline gap-2">
-                          <span className={`text-2xl font-bold ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>
+                          <span className={`text-2xl font-bold ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#2563EB]'}`}>
                             ${pkg.offerPrice}
                           </span>
-                          <span className={`text-sm line-through ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+                          <span className={`text-sm line-through ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                             ${pkg.originalPrice}
                           </span>
                         </div>
@@ -296,11 +296,11 @@ const SpecialOffers = () => {
         {/* Why Book Now Section */}
         <section
           className={`py-16 ${
-            isDarkMode ? 'bg-linear-to-r from-[#0F1419] to-[#141A1F]' : 'bg-linear-to-r from-gray-50 to-blue-50'
+            isDarkMode ? 'bg-linear-to-r from-[#0F1419] to-[#141A1F]' : 'bg-linear-to-r from-[#F8FAFC] to-[#EFF6FF]'
           }`}
         >
           <div className="container mx-auto px-4">
-            <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+            <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
               Why Book Now?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -308,10 +308,10 @@ const SpecialOffers = () => {
                 <div className={`text-4xl mb-4 ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>
                   <FaTag className="mx-auto" />
                 </div>
-                <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                   Best Price Guarantee
                 </h3>
-                <p className={isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}>
+                <p className={isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}>
                   Lowest prices guaranteed or we'll match it
                 </p>
               </div>
@@ -319,10 +319,10 @@ const SpecialOffers = () => {
                 <div className={`text-4xl mb-4 ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>
                   <FaCheckCircle className="mx-auto" />
                 </div>
-                <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                   Instant Confirmation
                 </h3>
-                <p className={isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}>
+                <p className={isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}>
                   Book now and receive instant confirmation
                 </p>
               </div>
@@ -330,10 +330,10 @@ const SpecialOffers = () => {
                 <div className={`text-4xl mb-4 ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>
                   <FaCalendarAlt className="mx-auto" />
                 </div>
-                <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                   Flexible Booking
                 </h3>
-                <p className={isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}>
+                <p className={isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}>
                   Free cancellation up to 7 days before departure
                 </p>
               </div>

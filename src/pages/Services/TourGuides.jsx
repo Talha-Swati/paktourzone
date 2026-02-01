@@ -281,7 +281,7 @@ const TourGuides = () => {
       {[...Array(5)].map((_, index) => (
         <FaStar
           key={index}
-          className={`text-sm ${index < Math.floor(rating) ? 'text-yellow-500' : isDarkMode ? 'text-gray-600' : 'text-gray-300'}`}
+          className={`text-sm ${index < Math.floor(rating) ? 'text-yellow-500' : isDarkMode ? 'text-gray-600' : 'text-slate-300'}`}
         />
       ))}
     </div>
@@ -316,7 +316,7 @@ const TourGuides = () => {
               >
                 Meet Our Expert Tour Guides
               </h1>
-              <p className={`text-lg md:text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+              <p className={`text-lg md:text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                 English speaking, safety focused guides who turn every destination into a meaningful story
               </p>
 
@@ -326,7 +326,7 @@ const TourGuides = () => {
                   <div className={`text-3xl font-bold ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>
                     {tourGuides.length}+
                   </div>
-                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                     Expert Guides
                   </div>
                 </div>
@@ -334,7 +334,7 @@ const TourGuides = () => {
                   <div className={`text-3xl font-bold ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>
                     {averageRating}⭐
                   </div>
-                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                     Average Rating
                   </div>
                 </div>
@@ -342,7 +342,7 @@ const TourGuides = () => {
                   <div className={`text-3xl font-bold ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>
                     6
                   </div>
-                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                     Regions Covered
                   </div>
                 </div>
@@ -352,12 +352,12 @@ const TourGuides = () => {
         </section>
 
         {/* Filters Section */}
-        <section className={`py-6 backdrop-blur-lg border-b ${isDarkMode ? 'bg-[#0B0C0E]/95 border-[#1E242B]' : 'bg-white/95 border-gray-200'}`}>
+        <section className={`py-6 backdrop-blur-lg border-b ${isDarkMode ? 'bg-[#0B0C0E]/95 border-[#1E242B]' : 'bg-white/95 border-[#E2E8F0]'}`}>
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row gap-4">
               {/* Region Filter */}
               <div className="flex-1">
-                <label className={`block mb-2 text-sm font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                <label className={`block mb-2 text-sm font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                   Filter by Region
                 </label>
                 <div className="flex flex-wrap gap-2">
@@ -372,7 +372,7 @@ const TourGuides = () => {
                             : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white'
                           : isDarkMode
                           ? 'bg-[#141A1F] text-[#C4CCD4] border border-[rgba(34,211,238,0.2)] hover:border-[#22D3EE]'
-                          : 'bg-white text-[#4A5568] border border-gray-200 hover:border-blue-400'
+                          : 'bg-white text-[#334155] border border-[#E2E8F0] hover:border-[#2563EB]'
                       }`}
                     >
                       {region.icon}
@@ -384,7 +384,7 @@ const TourGuides = () => {
 
               {/* Specialty Filter */}
               <div className="w-full md:w-64">
-                <label className={`block mb-2 text-sm font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                <label className={`block mb-2 text-sm font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                   Filter by Specialty
                 </label>
                 <select
@@ -393,7 +393,7 @@ const TourGuides = () => {
                   className={`w-full px-4 py-2 rounded-lg font-semibold transition-all border ${
                     isDarkMode
                       ? 'bg-[#141A1F] text-[#C4CCD4] border-[rgba(34,211,238,0.2)]'
-                      : 'bg-white text-[#4A5568] border-gray-200'
+                      : 'bg-white text-[#334155] border-[#E2E8F0]'
                   } focus:outline-none`}
                 >
                   {specialties.map((specialty) => (
@@ -405,7 +405,7 @@ const TourGuides = () => {
               </div>
             </div>
 
-            <div className={`mt-4 text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+            <div className={`mt-4 text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
               Showing {filteredGuides.length} {filteredGuides.length === 1 ? 'guide' : 'guides'}
             </div>
           </div>
@@ -421,7 +421,7 @@ const TourGuides = () => {
                   className={`p-6 rounded-xl border transition-all duration-300 hover:shadow-xl ${
                     isDarkMode
                       ? 'bg-[#141A1F] border-[rgba(34,211,238,0.1)] hover:border-[rgba(34,211,238,0.3)]'
-                      : 'bg-white border-gray-200 hover:border-blue-300'
+                      : 'bg-white border-[#E2E8F0] hover:border-[#93C5FD]'
                   }`}
                 >
                   {/* Header */}
@@ -432,7 +432,7 @@ const TourGuides = () => {
                       className="w-20 h-20 rounded-full border-4 border-[#22D3EE]"
                     />
                     <div className="flex-1">
-                      <h3 className={`text-2xl font-bold mb-1 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                      <h3 className={`text-2xl font-bold mb-1 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                         {guide.name}
                       </h3>
                       <div className="flex items-center gap-2 mb-2">
@@ -443,7 +443,7 @@ const TourGuides = () => {
                       </div>
                       <div className="flex items-center gap-3">
                         <StarRating rating={guide.rating} />
-                        <span className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+                        <span className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                           {guide.rating} • {guide.experience}
                         </span>
                       </div>
@@ -451,14 +451,14 @@ const TourGuides = () => {
                   </div>
 
                   {/* Bio */}
-                  <p className={`mb-4 leading-relaxed ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                  <p className={`mb-4 leading-relaxed ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                     {guide.bio}
                   </p>
 
                   {/* Stats */}
-                  <div className={`grid grid-cols-2 gap-3 mb-4 p-3 rounded-lg ${isDarkMode ? 'bg-[#0F1419]' : 'bg-gray-50'}`}>
+                  <div className={`grid grid-cols-2 gap-3 mb-4 p-3 rounded-lg ${isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F8FAFC]'} `}>
                     <div>
-                      <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+                      <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                         Tours Completed
                       </div>
                       <div className={`text-xl font-bold ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>
@@ -466,7 +466,7 @@ const TourGuides = () => {
                       </div>
                     </div>
                     <div>
-                      <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+                      <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                         Experience
                       </div>
                       <div className={`text-xl font-bold ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>
@@ -477,7 +477,7 @@ const TourGuides = () => {
 
                   {/* Specialties */}
                   <div className="mb-4">
-                    <div className={`text-sm font-semibold mb-2 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                    <div className={`text-sm font-semibold mb-2 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                       Specialties
                     </div>
                     <div className="flex flex-wrap gap-2">
@@ -498,7 +498,7 @@ const TourGuides = () => {
 
                   {/* Languages */}
                   <div className="mb-4">
-                    <div className={`text-sm font-semibold mb-2 flex items-center gap-2 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                    <div className={`text-sm font-semibold mb-2 flex items-center gap-2 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                       <FaLanguage />
                       <span>Languages</span>
                     </div>
@@ -509,7 +509,7 @@ const TourGuides = () => {
                           className={`px-2 py-1 text-xs rounded ${
                             isDarkMode
                               ? 'bg-[#0F1419] text-[#8B949E]'
-                              : 'bg-gray-100 text-[#6B7280]'
+                              : 'bg-[#F8FAFC] text-[#64748B]'
                           }`}
                         >
                           {language}
@@ -520,11 +520,11 @@ const TourGuides = () => {
 
                   {/* Certifications */}
                   <div>
-                    <div className={`text-sm font-semibold mb-2 flex items-center gap-2 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                    <div className={`text-sm font-semibold mb-2 flex items-center gap-2 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                       <FaAward />
                       <span>Certifications</span>
                     </div>
-                    <ul className={`space-y-1 ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+                    <ul className={`space-y-1 ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                       {guide.certifications.map((cert, idx) => (
                         <li key={idx} className="flex items-center gap-2 text-sm">
                           <span className="text-green-500">✓</span>
@@ -542,14 +542,14 @@ const TourGuides = () => {
         {/* Call to Action */}
         <section
           className={`py-16 ${
-            isDarkMode ? 'bg-linear-to-r from-[#0F1419] to-[#141A1F]' : 'bg-linear-to-r from-gray-50 to-blue-50'
+            isDarkMode ? 'bg-linear-to-r from-[#0F1419] to-[#141A1F]' : 'bg-linear-to-r from-[#F8FAFC] to-[#EFF6FF]'
           }`}
         >
           <div className="container mx-auto px-4 text-center">
-            <h2 className={`text-3xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+            <h2 className={`text-3xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
               Ready to Explore with an Expert?
             </h2>
-            <p className={`text-lg mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+            <p className={`text-lg mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
               Book your tour and get matched with the perfect guide for your adventure
             </p>
             <a

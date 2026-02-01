@@ -53,7 +53,7 @@ const Tours = () => {
               } bg-clip-text text-transparent`}>
                 Choose Your Pakistan Tour Package
               </h1>
-              <p className={`text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+              <p className={`text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                 Handpicked itineraries with expert guides, comfortable transport, and clear pricing, built for international travelers
               </p>
               
@@ -83,7 +83,7 @@ const Tours = () => {
 
         {/* Category Filter */}
         <section className={`py-6 backdrop-blur-lg border-b ${
-          isDarkMode ? 'bg-[#0B0C0E]/95 border-[#1E242B]' : 'bg-white/95 border-gray-200'
+          isDarkMode ? 'bg-[#0B0C0E]/95 border-[#1E242B]' : 'bg-white/95 border-[#E2E8F0]'
         }`}>
           <div className="container mx-auto px-4">
             <div className="flex overflow-x-auto gap-3 pb-2 scrollbar-hide">
@@ -98,7 +98,7 @@ const Tours = () => {
                         : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white shadow-lg shadow-blue-500/50'
                       : isDarkMode
                       ? 'bg-[#141A1F] text-[#C4CCD4] hover:bg-[#1E242B]'
-                      : 'bg-gray-100 text-[#4A5568] hover:bg-gray-200'
+                      : 'bg-[#F8FAFC] text-[#475569] hover:bg-[#E2E8F0]'
                   } transform hover:scale-105`}
                 >
                   <span className="text-lg">
@@ -127,7 +127,7 @@ const Tours = () => {
                   key={tour.id}
                   to={tour.path}
                   className={`group relative rounded-2xl overflow-hidden ${
-                    isDarkMode ? 'bg-[#141A1F]' : 'bg-white'
+                    isDarkMode ? 'bg-[#141A1F]' : 'bg-white border border-[#E2E8F0]'
                   } shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -150,12 +150,12 @@ const Tours = () => {
                   {/* Content */}
                   <div className="p-6">
                     <h3 className={`text-2xl font-bold mb-3 transition-all ${
-                      isDarkMode ? 'text-[#E0E7EE] group-hover:text-[#22D3EE]' : 'text-[#1F2937] group-hover:text-[#3B82F6]'
+                      isDarkMode ? 'text-[#E0E7EE] group-hover:text-[#22D3EE]' : 'text-[#0F172A] group-hover:text-[#3B82F6]'
                     }`}>
                       {tour.name}
                     </h3>
                     
-                    <p className={`mb-4 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                    <p className={`mb-4 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                       {tour.description}
                     </p>
 
@@ -164,7 +164,7 @@ const Tours = () => {
                       {tour.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-2">
                           <FaCheckCircle className="text-green-500 shrink-0" />
-                          <span className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-gray-600'}`}>
+                          <span className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                             {feature}
                           </span>
                         </div>
@@ -173,13 +173,13 @@ const Tours = () => {
 
                     {/* CTA Button */}
                     <div className={`flex items-center justify-between pt-4 border-t ${
-                      isDarkMode ? 'border-[#1E242B]' : 'border-gray-200'
+                      isDarkMode ? 'border-[#1E242B]' : 'border-[#E2E8F0]'
                     }`}>
-                      <span className={`font-bold ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>
+                      <span className={`font-bold ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#1D4ED8]'}`}>
                         View All Packages
                       </span>
                       <FaArrowRight className={`transform group-hover:translate-x-2 transition-transform ${
-                        isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'
+                        isDarkMode ? 'text-[#22D3EE]' : 'text-[#1D4ED8]'
                       }`} />
                     </div>
                   </div>
@@ -188,7 +188,7 @@ const Tours = () => {
                   <div className={`absolute inset-0 rounded-2xl border-2 transition-all duration-300 pointer-events-none ${
                     isDarkMode 
                       ? 'border-transparent group-hover:border-[#22D3EE]'
-                      : 'border-transparent group-hover:border-[#3B82F6]'
+                        : 'border-transparent group-hover:border-[#2563EB]'
                   }`}></div>
                 </Link>
               ))}
@@ -197,7 +197,7 @@ const Tours = () => {
         </section>
 
         {/* Why Choose Us */}
-        <section className={`py-16 ${isDarkMode ? 'bg-[#141A1F]' : 'bg-gray-50'}`}>
+        <section className={`py-16 ${isDarkMode ? 'bg-[#141A1F]' : 'bg-[#F8FAFC]'}`}>
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className={`text-4xl font-bold mb-4 ${
@@ -205,7 +205,7 @@ const Tours = () => {
               } bg-clip-text text-transparent`}>
                 Why Choose PakTourZone?
               </h2>
-              <p className={isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}>
+              <p className={isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}>
                 We make your journey unforgettable
               </p>
             </div>
@@ -220,7 +220,7 @@ const Tours = () => {
                 <div
                   key={idx}
                   className={`p-6 rounded-xl text-center ${
-                    isDarkMode ? 'bg-[#0F1419]' : 'bg-white'
+                    isDarkMode ? 'bg-[#0F1419]' : 'bg-white border border-[#E2E8F0]'
                   } shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1`}
                 >
                   <div className={`text-4xl mb-4 ${
@@ -229,11 +229,11 @@ const Tours = () => {
                     {item.icon}
                   </div>
                   <h3 className={`text-xl font-bold mb-2 ${
-                    isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+                    isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
                   }`}>
                     {item.title}
                   </h3>
-                  <p className={isDarkMode ? 'text-[#8B949E]' : 'text-gray-600'}>
+                  <p className={isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}>
                     {item.desc}
                   </p>
                 </div>
@@ -247,12 +247,12 @@ const Tours = () => {
           isDarkMode ? 'bg-linear-to-br from-[#0A3A67] to-[#0B0C0E]' : 'bg-linear-to-br from-[#EBF8FF] to-white'
         }`}>
           <div className="container mx-auto px-4 text-center">
-            <h2 className={`text-4xl font-bold mb-6 ${
-              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+              <h2 className={`text-4xl font-bold mb-6 ${
+              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
             }`}>
               Can't Find What You're Looking For?
             </h2>
-            <p className={`text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+            <p className={`text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
               Let us create a custom tour package tailored to your preferences
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
@@ -271,7 +271,7 @@ const Tours = () => {
                 className={`px-8 py-4 rounded-xl font-bold text-lg border-2 transition-all duration-300 ${
                   isDarkMode
                     ? 'border-[#22D3EE] text-[#22D3EE] hover:bg-[#22D3EE] hover:text-[#0B0C0E]'
-                    : 'border-[#3B82F6] text-[#3B82F6] hover:bg-[#3B82F6] hover:text-white'
+                    : 'border-[#2563EB] text-[#1D4ED8] hover:bg-[#2563EB] hover:text-white'
                 }`}
               >
                 Contact Us

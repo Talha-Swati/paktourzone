@@ -116,10 +116,10 @@ const Contact = () => {
               >
                 Plan Your Pakistan Tour
               </h1>
-              <p className={`text-lg md:text-xl mb-4 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+              <p className={`text-lg md:text-xl mb-4 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                 Tell us your dates and interests, our team will build a safe, seamless itinerary
               </p>
-              <p className={`text-base ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+              <p className={`text-base ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                 Serving international travelers worldwide • WhatsApp support available
               </p>
             </div>
@@ -127,14 +127,14 @@ const Contact = () => {
         </section>
 
         {/* Contact Info Cards */}
-        <section className={`py-12 ${isDarkMode ? 'bg-[#0F1419]' : 'bg-gray-50'}`}>
+        <section className={`py-12 ${isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F8FAFC]'}`}>
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {contactInfo.map((info, idx) => (
                 <div
                   key={idx}
                   className={`p-6 rounded-xl text-center transition-all duration-300 hover:shadow-xl ${
-                    isDarkMode ? 'bg-[#141A1F] hover:bg-[#1A2129]' : 'bg-white hover:bg-gray-50'
+                    isDarkMode ? 'bg-[#141A1F] hover:bg-[#1A2129]' : 'bg-white border border-[#E2E8F0] hover:bg-[#F8FAFC]'
                   }`}
                 >
                   <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 ${
@@ -144,7 +144,7 @@ const Contact = () => {
                       {iconMap[info.iconKey]}
                     </div>
                   </div>
-                  <h3 className={`text-lg font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                  <h3 className={`text-lg font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                     {info.title}
                   </h3>
                   {info.link ? (
@@ -157,11 +157,11 @@ const Contact = () => {
                       {info.details}
                     </a>
                   ) : (
-                    <p className={`text-base font-semibold mb-1 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                      <p className={`text-base font-semibold mb-1 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                       {info.details}
                     </p>
                   )}
-                  <p className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+                  <p className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                     {info.subtext}
                   </p>
                 </div>
@@ -178,13 +178,13 @@ const Contact = () => {
               <div className="lg:col-span-2">
                 <div
                   className={`p-8 rounded-2xl ${
-                    isDarkMode ? 'bg-[#141A1F]' : 'bg-white'
+                    isDarkMode ? 'bg-[#141A1F]' : 'bg-white border border-[#E2E8F0]'
                   } shadow-xl`}
                 >
-                  <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                  <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                     Request Your Pakistan Tour Plan
                   </h2>
-                  <p className={`mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                  <p className={`mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                     Share your plans and our travel experts will reply within 24 hours
                   </p>
 
@@ -200,7 +200,7 @@ const Contact = () => {
                     {/* Personal Information */}
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                        <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                           Full Name *
                         </label>
                         <input
@@ -213,13 +213,13 @@ const Contact = () => {
                           className={`w-full px-4 py-3 rounded-lg border transition-all ${
                             isDarkMode
                               ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE] placeholder-[#8B949E] focus:border-[#22D3EE]'
-                              : 'bg-white border-gray-300 text-[#1F2937] placeholder-gray-400 focus:border-[#3B82F6]'
+                              : 'bg-white border-[#CBD5E1] text-[#0F172A] placeholder-[#94A3B8] focus:border-[#2563EB]'
                           } focus:outline-none focus:ring-2 focus:ring-opacity-20`}
                         />
                       </div>
 
                       <div>
-                        <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                        <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                           Email Address *
                         </label>
                         <input
@@ -232,7 +232,7 @@ const Contact = () => {
                           className={`w-full px-4 py-3 rounded-lg border transition-all ${
                             isDarkMode
                               ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE] placeholder-[#8B949E] focus:border-[#22D3EE]'
-                              : 'bg-white border-gray-300 text-[#1F2937] placeholder-gray-400 focus:border-[#3B82F6]'
+                              : 'bg-white border-[#CBD5E1] text-[#0F172A] placeholder-[#94A3B8] focus:border-[#2563EB]'
                           } focus:outline-none focus:ring-2 focus:ring-opacity-20`}
                         />
                       </div>
@@ -240,7 +240,7 @@ const Contact = () => {
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                        <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                           Country *
                         </label>
                         <input
@@ -253,13 +253,13 @@ const Contact = () => {
                           className={`w-full px-4 py-3 rounded-lg border transition-all ${
                             isDarkMode
                               ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE] placeholder-[#8B949E] focus:border-[#22D3EE]'
-                              : 'bg-white border-gray-300 text-[#1F2937] placeholder-gray-400 focus:border-[#3B82F6]'
+                              : 'bg-white border-[#CBD5E1] text-[#0F172A] placeholder-[#94A3B8] focus:border-[#2563EB]'
                           } focus:outline-none focus:ring-2 focus:ring-opacity-20`}
                         />
                       </div>
 
                       <div>
-                        <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                        <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                           Phone Number (with WhatsApp)
                         </label>
                         <div className="flex gap-2">
@@ -270,7 +270,7 @@ const Contact = () => {
                             className={`px-3 py-3 rounded-lg border transition-all ${
                               isDarkMode
                                 ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE]'
-                                : 'bg-white border-gray-300 text-[#1F2937]'
+                                : 'bg-white border-[#CBD5E1] text-[#0F172A]'
                             } focus:outline-none`}
                           >
                             {countryCodes.map((item) => (
@@ -288,7 +288,7 @@ const Contact = () => {
                             className={`flex-1 px-4 py-3 rounded-lg border transition-all ${
                               isDarkMode
                                 ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE] placeholder-[#8B949E] focus:border-[#22D3EE]'
-                                : 'bg-white border-gray-300 text-[#1F2937] placeholder-gray-400 focus:border-[#3B82F6]'
+                                : 'bg-white border-[#CBD5E1] text-[#0F172A] placeholder-[#94A3B8] focus:border-[#2563EB]'
                             } focus:outline-none focus:ring-2 focus:ring-opacity-20`}
                           />
                         </div>
@@ -298,7 +298,7 @@ const Contact = () => {
                     {/* Travel Details */}
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                        <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                           Number of Travelers *
                         </label>
                         <select
@@ -309,7 +309,7 @@ const Contact = () => {
                           className={`w-full px-4 py-3 rounded-lg border transition-all ${
                             isDarkMode
                               ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE]'
-                              : 'bg-white border-gray-300 text-[#1F2937]'
+                              : 'bg-white border-[#CBD5E1] text-[#0F172A]'
                           } focus:outline-none focus:ring-2 focus:ring-opacity-20`}
                         >
                           <option value="1">1 Person</option>
@@ -321,7 +321,7 @@ const Contact = () => {
                       </div>
 
                       <div>
-                        <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                        <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                           Travel Type *
                         </label>
                         <select
@@ -332,7 +332,7 @@ const Contact = () => {
                           className={`w-full px-4 py-3 rounded-lg border transition-all ${
                             isDarkMode
                               ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE]'
-                              : 'bg-white border-gray-300 text-[#1F2937]'
+                              : 'bg-white border-[#CBD5E1] text-[#0F172A]'
                           } focus:outline-none focus:ring-2 focus:ring-opacity-20`}
                         >
                           <option value="">Select Travel Type</option>
@@ -347,7 +347,7 @@ const Contact = () => {
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                        <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                           Tour Interest *
                         </label>
                         <select
@@ -358,7 +358,7 @@ const Contact = () => {
                           className={`w-full px-4 py-3 rounded-lg border transition-all ${
                             isDarkMode
                               ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE]'
-                              : 'bg-white border-gray-300 text-[#1F2937]'
+                              : 'bg-white border-[#CBD5E1] text-[#0F172A]'
                           } focus:outline-none focus:ring-2 focus:ring-opacity-20`}
                         >
                           <option value="">Select Your Interest</option>
@@ -371,7 +371,7 @@ const Contact = () => {
                       </div>
 
                       <div>
-                        <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                        <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                           Preferred Travel Month
                         </label>
                         <select
@@ -381,7 +381,7 @@ const Contact = () => {
                           className={`w-full px-4 py-3 rounded-lg border transition-all ${
                             isDarkMode
                               ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE]'
-                              : 'bg-white border-gray-300 text-[#1F2937]'
+                              : 'bg-white border-[#CBD5E1] text-[#0F172A]'
                           } focus:outline-none focus:ring-2 focus:ring-opacity-20`}
                         >
                           <option value="">Select Month</option>
@@ -395,7 +395,7 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                      <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                         Budget Range (USD per person)
                       </label>
                       <select
@@ -405,7 +405,7 @@ const Contact = () => {
                         className={`w-full px-4 py-3 rounded-lg border transition-all ${
                           isDarkMode
                             ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE]'
-                            : 'bg-white border-gray-300 text-[#1F2937]'
+                            : 'bg-white border-[#CBD5E1] text-[#0F172A]'
                         } focus:outline-none focus:ring-2 focus:ring-opacity-20`}
                       >
                         <option value="">Select Budget Range</option>
@@ -418,7 +418,7 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                      <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                         Additional Details / Special Requests
                       </label>
                       <textarea
@@ -430,7 +430,7 @@ const Contact = () => {
                         className={`w-full px-4 py-3 rounded-lg border transition-all ${
                           isDarkMode
                             ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE] placeholder-[#8B949E] focus:border-[#22D3EE]'
-                            : 'bg-white border-gray-300 text-[#1F2937] placeholder-gray-400 focus:border-[#3B82F6]'
+                            : 'bg-white border-[#CBD5E1] text-[#0F172A] placeholder-[#94A3B8] focus:border-[#2563EB]'
                         } focus:outline-none focus:ring-2 focus:ring-opacity-20`}
                       ></textarea>
                     </div>
@@ -455,13 +455,13 @@ const Contact = () => {
                 {/* Why Choose Us */}
                 <div
                   className={`p-6 rounded-xl ${
-                    isDarkMode ? 'bg-[#141A1F]' : 'bg-white'
+                    isDarkMode ? 'bg-[#141A1F]' : 'bg-white border border-[#E2E8F0]'
                   } shadow-xl`}
                 >
-                  <h3 className={`text-xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                  <h3 className={`text-xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                     Why Contact Us?
                   </h3>
-                  <ul className={`space-y-3 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                  <ul className={`space-y-3 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                     <li className="flex items-start gap-2">
                       <span className={`mt-1 ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>✓</span>
                       <span>24-hour response guarantee</span>
@@ -492,14 +492,14 @@ const Contact = () => {
                 {/* Quick Contact via WhatsApp */}
                 <div
                   className={`p-6 rounded-xl text-center ${
-                    isDarkMode ? 'bg-linear-to-br from-green-900/20 to-green-800/20 border border-green-500/20' : 'bg-linear-to-br from-green-50 to-green-100'
+                    isDarkMode ? 'bg-linear-to-br from-green-900/20 to-green-800/20 border border-green-500/20' : 'bg-linear-to-br from-green-50 to-green-100 border border-green-200'
                   }`}
                 >
                   <FaWhatsapp className="text-5xl text-green-500 mx-auto mb-4" />
-                  <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                  <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                     Need Instant Response?
                   </h3>
-                  <p className={`mb-4 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                  <p className={`mb-4 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                     Chat with us directly on WhatsApp
                   </p>
                   <a
@@ -515,10 +515,10 @@ const Contact = () => {
                 {/* Social Media */}
                 <div
                   className={`p-6 rounded-xl ${
-                    isDarkMode ? 'bg-[#141A1F]' : 'bg-white'
+                    isDarkMode ? 'bg-[#141A1F]' : 'bg-white border border-[#E2E8F0]'
                   } shadow-xl`}
                 >
-                  <h3 className={`text-xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                  <h3 className={`text-xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                     Follow Us
                   </h3>
                   <div className="flex gap-4 justify-center">
@@ -527,7 +527,7 @@ const Contact = () => {
                       className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${
                         isDarkMode
                           ? 'bg-[#0F1419] hover:bg-blue-600 text-[#22D3EE]'
-                          : 'bg-gray-100 hover:bg-blue-600 text-[#3B82F6]'
+                          : 'bg-[#F8FAFC] hover:bg-blue-600 text-[#2563EB]'
                       } hover:text-white`}
                     >
                       <FaFacebook className="text-xl" />
@@ -537,7 +537,7 @@ const Contact = () => {
                       className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${
                         isDarkMode
                           ? 'bg-[#0F1419] hover:bg-pink-600 text-[#22D3EE]'
-                          : 'bg-gray-100 hover:bg-pink-600 text-[#3B82F6]'
+                          : 'bg-[#F8FAFC] hover:bg-pink-600 text-[#2563EB]'
                       } hover:text-white`}
                     >
                       <FaInstagram className="text-xl" />
@@ -547,7 +547,7 @@ const Contact = () => {
                       className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${
                         isDarkMode
                           ? 'bg-[#0F1419] hover:bg-blue-400 text-[#22D3EE]'
-                          : 'bg-gray-100 hover:bg-blue-400 text-[#3B82F6]'
+                          : 'bg-[#F8FAFC] hover:bg-blue-400 text-[#2563EB]'
                       } hover:text-white`}
                     >
                       <FaTwitter className="text-xl" />

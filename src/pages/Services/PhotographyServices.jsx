@@ -20,7 +20,7 @@ const PhotographyServices = () => {
       className={`min-h-screen transition-colors duration-500 ${
       isDarkMode
         ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
-        : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
+        : 'bg-linear-to-b from-white to-[#F8FAFC] text-[#0F172A]'
     }`}
     >
 
@@ -52,7 +52,7 @@ const PhotographyServices = () => {
       {/* Photographers */}
       <div className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Our Photographers
           </h2>
 
@@ -73,7 +73,7 @@ const PhotographyServices = () => {
                   <div className="md:w-3/5 p-6">
                     <div className="flex justify-between items-start mb-4">
                       <div>
-                        <h3 className={`text-2xl font-bold mb-1 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        <h3 className={`text-2xl font-bold mb-1 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                           {photographer.name}
                         </h3>
                         <p className="text-indigo-600 font-semibold mb-2">
@@ -82,7 +82,7 @@ const PhotographyServices = () => {
                       </div>
                       <div className="flex items-center gap-1">
                         <span className="text-yellow-500">⭐</span>
-                        <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                           {photographer.rating}
                         </span>
                       </div>
@@ -90,25 +90,25 @@ const PhotographyServices = () => {
 
                     <div className="grid grid-cols-2 gap-4 mb-4">
                       <div>
-                        <span className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                        <span className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
                           Experience
                         </span>
-                        <p className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        <p className={`font-semibold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                           {photographer.experience}
                         </p>
                       </div>
                       <div>
-                        <span className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                        <span className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
                           Projects
                         </span>
-                        <p className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        <p className={`font-semibold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                           {photographer.portfolio}
                         </p>
                       </div>
                     </div>
 
                     <div className="mb-4">
-                      <span className={`text-sm block mb-2 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                      <span className={`text-sm block mb-2 ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
                         Equipment
                       </span>
                       <div className="flex flex-wrap gap-2">
@@ -125,12 +125,12 @@ const PhotographyServices = () => {
                       </div>
                     </div>
 
-                    <div className="flex justify-between items-center pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <div className="flex justify-between items-center pt-4 border-t border-[#E2E8F0] dark:border-gray-700">
                       <div>
                         <div className="text-2xl font-bold text-indigo-600">
                           {photographer.price}
                         </div>
-                        <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                        <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
                           per day
                         </div>
                       </div>
@@ -148,7 +148,7 @@ const PhotographyServices = () => {
           </div>
 
           {/* Packages */}
-          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Photography Packages
           </h2>
 
@@ -171,7 +171,7 @@ const PhotographyServices = () => {
                   </div>
                 )}
                 
-                <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                   {pkg.name}
                 </h3>
                 
@@ -179,13 +179,13 @@ const PhotographyServices = () => {
                   <div className="text-3xl font-bold text-indigo-600 mb-1">
                     {pkg.price}
                   </div>
-                  <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                  <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
                     {pkg.duration}
                   </div>
                 </div>
 
                 {pkg.bestFor && (
-                  <p className={`text-sm mb-4 italic ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                  <p className={`text-sm mb-4 italic ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
                     Best for: {pkg.bestFor}
                   </p>
                 )}
@@ -194,7 +194,7 @@ const PhotographyServices = () => {
                   {pkg.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-sm">
                       <span className="text-indigo-600 mt-1">✓</span>
-                      <span className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}>
+                      <span className={isDarkMode ? 'text-gray-300' : 'text-[#64748B]'}>
                         {feature}
                       </span>
                     </li>
@@ -209,7 +209,7 @@ const PhotographyServices = () => {
       {/* Additional Services */}
       <div className={`py-16 px-4 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Add-On Services
           </h2>
 
@@ -218,13 +218,13 @@ const PhotographyServices = () => {
               <div
                 key={index}
                 className={`p-6 rounded-xl ${
-                  isDarkMode ? 'bg-gray-700' : 'bg-gray-50'
+                  isDarkMode ? 'bg-gray-700' : 'bg-[#F8FAFC]'
                 } hover:shadow-lg transition-shadow`}
               >
-                <h3 className={`text-lg font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                <h3 className={`text-lg font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                   {service.name}
                 </h3>
-                <p className={`mb-3 text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                <p className={`mb-3 text-sm ${isDarkMode ? 'text-gray-300' : 'text-[#64748B]'}`}>
                   {service.description}
                 </p>
                 <div className="text-xl font-bold text-indigo-600 mb-4">
@@ -232,7 +232,7 @@ const PhotographyServices = () => {
                 </div>
                 <ul className="space-y-1">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    <li key={idx} className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
                       • {feature}
                     </li>
                   ))}
@@ -248,14 +248,14 @@ const PhotographyServices = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className={`text-3xl font-bold mb-8 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-3xl font-bold mb-8 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                 Professional Equipment
               </h2>
               <ul className="space-y-3">
                 {photoData.equipment.map((item, index) => (
                   <li key={index} className="flex items-center gap-3">
                     <span className="text-indigo-600 text-xl">✓</span>
-                    <span className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>
+                    <span className={isDarkMode ? 'text-gray-300' : 'text-[#475569]'}>
                       {item}
                     </span>
                   </li>
@@ -264,39 +264,39 @@ const PhotographyServices = () => {
             </div>
 
             <div>
-              <h2 className={`text-3xl font-bold mb-8 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-3xl font-bold mb-8 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                 Delivery Timeline
               </h2>
               <div className="space-y-4">
                 <div className={`p-4 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'} shadow-md`}>
-                  <div className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                  <div className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
                     Preview Photos
                   </div>
-                  <div className={`font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                  <div className={`font-bold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                     {photoData.deliveryTimeline.preview}
                   </div>
                 </div>
                 <div className={`p-4 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'} shadow-md`}>
-                  <div className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                  <div className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
                     Full Photo Delivery
                   </div>
-                  <div className={`font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                  <div className={`font-bold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                     {photoData.deliveryTimeline.fullDelivery}
                   </div>
                 </div>
                 <div className={`p-4 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'} shadow-md`}>
-                  <div className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                  <div className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
                     Video Production
                   </div>
-                  <div className={`font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                  <div className={`font-bold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                     {photoData.deliveryTimeline.video}
                   </div>
                 </div>
                 <div className={`p-4 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'} shadow-md`}>
-                  <div className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                  <div className={`text-sm mb-1 ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
                     Photo Book
                   </div>
-                  <div className={`font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                  <div className={`font-bold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                     {photoData.deliveryTimeline.photoBook}
                   </div>
                 </div>
@@ -309,10 +309,10 @@ const PhotographyServices = () => {
       {/* CTA */}
       <div className={`py-16 px-4 ${isDarkMode ? 'bg-gray-800' : 'bg-linear-to-r from-indigo-50 to-purple-50'}`}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Capture Your Journey Forever
           </h2>
-          <p className={`text-lg mb-8 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+          <p className={`text-lg mb-8 ${isDarkMode ? 'text-gray-300' : 'text-[#64748B]'}`}>
             Professional photography to preserve your Pakistan adventure in stunning detail
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
@@ -325,7 +325,7 @@ const PhotographyServices = () => {
             <Link
               to="/services"
               className={`px-8 py-3 rounded-lg font-semibold transition-colors ${
-                isDarkMode ? 'bg-gray-700 text-white hover:bg-gray-600' : 'bg-white text-gray-900 hover:bg-gray-100'
+                isDarkMode ? 'bg-gray-700 text-white hover:bg-gray-600' : 'bg-white text-[#0F172A] hover:bg-[#F8FAFC]'
               }`}
             >
               View All Services

@@ -33,7 +33,7 @@ const BudgetTours = () => {
         keywords: 'budget Pakistan tours, affordable Northern Pakistan trips, low cost travel Pakistan, affordable tours Pakistan',
         url: '/trip/budget'
       }}
-      className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}
+      className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-[#F8FAFC] text-[#0F172A]'}
     >
 
       {/* Hero Section */}
@@ -66,12 +66,12 @@ const BudgetTours = () => {
       {/* Features */}
       <div className={`py-12 ${isDarkMode ? 'bg-[#0F1419]' : 'bg-white'}`}>
         <div className="container mx-auto px-4">
-          <h2 className={`text-3xl font-bold text-center mb-8 ${isDarkMode ? 'text-[#22D3EE]' : 'text-green-600'}`}>
+          <h2 className={`text-3xl font-bold text-center mb-8 ${isDarkMode ? 'text-[#22D3EE]' : 'text-green-700'}`}>
             Why Travelers Choose Our Budget Tours
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tourData.features.map((feature, index) => (
-              <div key={index} className={`p-6 rounded-xl border-2 ${isDarkMode ? 'bg-[#141A1F] border-[#1E242B] hover:border-green-500' : 'bg-white border-gray-200 hover:border-green-400'} transition-all`}>
+              <div key={index} className={`p-6 rounded-xl border-2 ${isDarkMode ? 'bg-[#141A1F] border-[#1E242B] hover:border-green-500' : 'bg-white border-[#E2E8F0] hover:border-green-600'} transition-all`}>
                 <Check className={`w-6 h-6 ${isDarkMode ? 'text-green-400' : 'text-green-600'} mb-2`} />
                 <span className="font-semibold">{feature}</span>
               </div>
@@ -81,18 +81,18 @@ const BudgetTours = () => {
       </div>
 
       {/* Packages */}
-      <div className={`py-16 ${isDarkMode ? 'bg-[#0B0C0E]' : 'bg-gray-50'}`}>
+      <div className={`py-16 ${isDarkMode ? 'bg-[#0B0C0E]' : 'bg-[#F8FAFC]'} `}>
         <div className="container mx-auto px-4">
-          <h2 className={`text-4xl font-bold text-center mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-4xl font-bold text-center mb-4 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Affordable Tours in Northern Pakistan
           </h2>
-          <p className={`text-center text-lg mb-12 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+          <p className={`text-center text-lg mb-12 ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
             Explore northern Pakistan with a smart budget and a premium experience
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {tourData.packages.map((pkg) => (
-              <div key={pkg.id} className={`rounded-2xl overflow-hidden shadow-xl ${isDarkMode ? 'bg-[#141A1F]' : 'bg-white'} hover:shadow-2xl transition-all`}>
+              <div key={pkg.id} className={`rounded-2xl overflow-hidden shadow-xl ${isDarkMode ? 'bg-[#141A1F]' : 'bg-white border border-[#E2E8F0]'} hover:shadow-2xl transition-all`}>
                 <div className="relative h-56 overflow-hidden group">
                   <img src={pkg.image} alt={pkg.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'; }}
@@ -103,23 +103,23 @@ const BudgetTours = () => {
                   {pkg.rating && (
                     <div className="absolute top-4 left-4 bg-white/90 px-2 py-1 rounded-lg flex items-center gap-1">
                       <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" />
-                      <span className="font-bold text-gray-900 text-sm">{pkg.rating}</span>
+                      <span className="font-bold text-[#0F172A] text-sm">{pkg.rating}</span>
                     </div>
                   )}
                 </div>
 
                 <div className="p-6">
-                  <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{pkg.name}</h3>
-                  <p className={`text-sm mb-4 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>{pkg.shortDescription}</p>
+                  <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>{pkg.name}</h3>
+                  <p className={`text-sm mb-4 ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>{pkg.shortDescription}</p>
 
                   <div className="grid grid-cols-2 gap-3 mb-4">
                     <div className="flex items-center gap-2">
                       <Calendar className={`w-4 h-4 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
-                      <div><p className="text-xs text-gray-500">Duration</p><p className={`text-sm font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{pkg.duration}</p></div>
+                      <div><p className="text-xs text-[#94A3B8]">Duration</p><p className={`text-sm font-semibold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>{pkg.duration}</p></div>
                     </div>
                     <div className="flex items-center gap-2">
                       <Users className={`w-4 h-4 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
-                      <div><p className="text-xs text-gray-500">Group</p><p className={`text-sm font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{pkg.groupSize}</p></div>
+                      <div><p className="text-xs text-[#94A3B8]">Group</p><p className={`text-sm font-semibold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>{pkg.groupSize}</p></div>
                     </div>
                   </div>
 
@@ -129,19 +129,19 @@ const BudgetTours = () => {
                       {pkg.highlights.slice(0, 3).map((highlight, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-xs">
                           <Check className={`w-3 h-3 mt-0.5 shrink-0 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
-                          <span className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>{highlight}</span>
+                          <span className={isDarkMode ? 'text-gray-300' : 'text-[#475569]'}>{highlight}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className={`border-t pt-4 mb-4 ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+                  <div className={`border-t pt-4 mb-4 ${isDarkMode ? 'border-gray-700' : 'border-[#E2E8F0]'}`}>
                     <div className="flex items-baseline gap-2">
-                      <span className="text-xs text-gray-500">Only</span>
+                      <span className="text-xs text-[#94A3B8]">Only</span>
                       <span className={`text-2xl font-bold ${isDarkMode ? 'text-green-400' : 'text-green-600'}`}>
                         ${Object.values(pkg.pricing)[0]}
                       </span>
-                      <span className="text-xs text-gray-500">pp</span>
+                      <span className="text-xs text-[#94A3B8]">pp</span>
                     </div>
                   </div>
 
@@ -159,7 +159,7 @@ const BudgetTours = () => {
       {/* Value Proposition */}
       <div className={`py-16 ${isDarkMode ? 'bg-[#0F1419]' : 'bg-white'}`}>
         <div className="container mx-auto px-4">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             High Value, Low Cost Travel
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -171,12 +171,12 @@ const BudgetTours = () => {
             ].map((item, idx) => (
               <div key={idx} className="text-center">
                 <div className={`w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center ${
-                  isDarkMode ? 'bg-green-900/30' : 'bg-green-100'
+                  isDarkMode ? 'bg-green-900/30' : 'bg-green-50'
                 }`}>
                   <item.icon className={`w-8 h-8 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
                 </div>
-                <h3 className={`font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{item.title}</h3>
-                <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>{item.desc}</p>
+                <h3 className={`font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>{item.title}</h3>
+                <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>{item.desc}</p>
               </div>
             ))}
           </div>

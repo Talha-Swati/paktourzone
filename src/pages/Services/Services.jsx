@@ -55,7 +55,7 @@ const Services = () => {
         keywords: 'Pakistan travel services, hotel booking Pakistan, transport services, tour guides Pakistan, visa assistance',
         url: '/services'
       }}
-      className={`transition-colors duration-500 ${isDarkMode ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'}`}
+      className={`transition-colors duration-500 ${isDarkMode ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-linear-to-b from-[#F8FAFC] to-white text-[#0F172A]'}`}
     >
 
       <div className="relative h-[60vh] min-h-[500px]">
@@ -77,12 +77,12 @@ const Services = () => {
       <div id="services" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Our Services</h2>
-            <p className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>Professional travel support for Northern Pakistan, built for comfort, safety, and clear pricing</p>
+            <h2 className={`text-4xl md:text-5xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>Our Services</h2>
+            <p className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-[#475569]'}`}>Professional travel support for Northern Pakistan, built for comfort, safety, and clear pricing</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Link key={service.path} to={service.path} onMouseEnter={() => setHoveredService(index)} onMouseLeave={() => setHoveredService(null)} className={`group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${isDarkMode ? 'bg-linear-to-br from-[#141A1F] to-[#0B0C0E] border border-[rgba(34,211,238,0.1)] hover:border-[rgba(34,211,238,0.3)]' : 'bg-white border border-gray-100 hover:border-blue-200'}`}>
+              <Link key={service.path} to={service.path} onMouseEnter={() => setHoveredService(index)} onMouseLeave={() => setHoveredService(null)} className={`group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${isDarkMode ? 'bg-linear-to-br from-[#141A1F] to-[#0B0C0E] border border-[rgba(34,211,238,0.1)] hover:border-[rgba(34,211,238,0.3)]' : 'bg-white border border-[#E2E8F0] hover:border-[#93C5FD]'}`}>
                 <div className={`h-48 bg-linear-to-br ${service.gradient} p-8 text-white relative overflow-hidden`}>
                   <div className="relative z-10">
                     <div className="text-5xl mb-4">{service.icon}</div>
@@ -95,7 +95,7 @@ const Services = () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className={`mb-6 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-gray-600'}`}>{service.description}</p>
+                  <p className={`mb-6 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>{service.description}</p>
                   <div className={`flex items-center gap-2 font-semibold group-hover:gap-4 transition-all ${isDarkMode ? 'text-[#22D3EE]' : `text-${service.color}-600`}`}>
                     Explore Service
                     <span className="transform group-hover:translate-x-2 transition-transform">→</span>
@@ -108,13 +108,13 @@ const Services = () => {
         </div>
       </div>
 
-      <div className={`py-20 px-4 ${isDarkMode ? 'bg-[#0F1419]' : 'bg-linear-to-br from-blue-50 via-white to-purple-50'}`}>
+      <div className={`py-20 px-4 ${isDarkMode ? 'bg-[#0F1419]' : 'bg-linear-to-br from-[#EFF6FF] via-white to-[#F5F3FF]'}`}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className={`text-4xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Ready to Plan Your Journey?</h2>
-          <p className={`text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-gray-600'}`}>We handle the details, you enjoy the mountains, culture, and scenery</p>
+          <h2 className={`text-4xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>Ready to Plan Your Journey?</h2>
+          <p className={`text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>We handle the details, you enjoy the mountains, culture, and scenery</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link to="/custom-tour" className={`px-8 py-4 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 ${isDarkMode ? 'bg-linear-to-r from-[#22D3EE] to-[#4DBBFF] text-[#0B0C0E] hover:from-[#4DBBFF] hover:to-[#22D3EE]' : 'bg-linear-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700'}`}>Build Your Custom Tour</Link>
-            <Link to="/contact" className={`px-8 py-4 rounded-lg font-semibold transition-all ${isDarkMode ? 'bg-[#141A1F] text-white hover:bg-[#1A2229] border border-[rgba(34,211,238,0.2)]' : 'bg-white text-gray-900 hover:bg-gray-100 border border-gray-200'} shadow-lg`}>Contact Us</Link>
+            <Link to="/contact" className={`px-8 py-4 rounded-lg font-semibold transition-all ${isDarkMode ? 'bg-[#141A1F] text-white hover:bg-[#1A2229] border border-[rgba(34,211,238,0.2)]' : 'bg-white text-[#0F172A] hover:bg-[#F1F5F9] border border-[#E2E8F0]'} shadow-lg`}>Contact Us</Link>
           </div>
         </div>
       </div>

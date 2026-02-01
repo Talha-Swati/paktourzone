@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo } from 'react';
 import { useTheme } from '../context/ThemeContext';
 
 /**
@@ -6,20 +6,15 @@ import { useTheme } from '../context/ThemeContext';
  * Eliminates duplicate code for navbar state management and props
  */
 export const useNavbarSetup = () => {
-  const { isDarkMode, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen } = useTheme();
+  const { isDarkMode, setThemeMode } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const themeDropdownRef = useRef(null);
 
   const navbarProps = useMemo(() => ({
     isDarkMode,
     mobileMenuOpen,
     setMobileMenuOpen,
-    themeMode,
     setThemeMode,
-    themeDropdownOpen,
-    setThemeDropdownOpen,
-    themeDropdownRef,
-  }), [isDarkMode, mobileMenuOpen, themeMode, themeDropdownOpen, setThemeDropdownOpen]);
+  }), [isDarkMode, mobileMenuOpen, setThemeMode]);
 
-  return { navbarProps, isDarkMode, themeDropdownRef };
+  return { navbarProps, isDarkMode };
 };

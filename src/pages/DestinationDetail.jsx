@@ -78,7 +78,7 @@ const DestinationDetail = memo(() => {
   if (!destination) {
     return (
       <div className={`min-h-screen flex items-center justify-center ${
-        isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-white text-[#1F2937]'
+        isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-white text-[#0F172A]'
       }`}>
         <div className="text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-[#22D3EE] mx-auto mb-4"></div>
@@ -149,7 +149,7 @@ const DestinationDetail = memo(() => {
     <PageLayout
       seo={seo}
       className={`min-h-screen ${
-      isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-white text-[#1F2937]'
+      isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-[#F8FAFC] text-[#0F172A]'
     }`}
     >
 
@@ -288,10 +288,10 @@ const DestinationDetail = memo(() => {
             
             {/* Overview */}
             <section>
-              <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+              <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                 Overview
               </h2>
-              <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#4B5563]'}`}>
+              <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#334155]'}`}>
                 {destination.description}
               </p>
             </section>
@@ -299,14 +299,14 @@ const DestinationDetail = memo(() => {
             {/* Videos */}
             {destination.videos?.length > 0 && (
               <section>
-                <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                   Snow View Videos
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {destination.videos.map((video, index) => (
                     <div
                       key={`${video.title}-${index}`}
-                      className={`rounded-xl overflow-hidden border ${isDarkMode ? 'border-gray-800 bg-[#0F1419]' : 'border-gray-200 bg-white'}`}
+                      className={`rounded-xl overflow-hidden border ${isDarkMode ? 'border-gray-800 bg-[#0F1419]' : 'border-[#E2E8F0] bg-white'}`}
                     >
                       <video
                         className="w-full aspect-video object-cover"
@@ -319,10 +319,10 @@ const DestinationDetail = memo(() => {
                         preload="metadata"
                       />
                       <div className="p-4">
-                        <p className={`text-sm font-semibold ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#4B5563]'}`}>
+                        <p className={`text-sm font-semibold ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#334155]'}`}>
                           {video.title}
                         </p>
-                        <p className={`text-xs mt-1 ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+                        <p className={`text-xs mt-1 ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                           Autoplay is muted by default.
                         </p>
                       </div>
@@ -334,7 +334,7 @@ const DestinationDetail = memo(() => {
 
             {/* Highlights */}
             <section>
-              <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+              <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                 Tour Highlights
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -342,11 +342,11 @@ const DestinationDetail = memo(() => {
                   <div
                     key={index}
                     className={`flex items-start gap-3 p-4 rounded-lg ${
-                      isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F9FAFB]'
+                      isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F8FAFC]'
                     }`}
                   >
                     <FaCheck className="text-[#22D3EE] mt-1 shrink-0" />
-                    <span className={isDarkMode ? 'text-[#C9D6DF]' : 'text-[#4B5563]'}>
+                    <span className={isDarkMode ? 'text-[#C9D6DF]' : 'text-[#334155]'}>
                       {highlight}
                     </span>
                   </div>
@@ -356,7 +356,7 @@ const DestinationDetail = memo(() => {
 
             {/* Itinerary with Duration Selector */}
             <section id="itinerary">
-              <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+              <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                 Detailed Itinerary
               </h2>
 
@@ -374,7 +374,7 @@ const DestinationDetail = memo(() => {
                             ? 'bg-[#22D3EE] text-white shadow-lg shadow-[#22D3EE]/30'
                             : isDarkMode
                               ? 'bg-[#0F1419] text-[#C9D6DF] hover:bg-[#1a1f26]'
-                              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                              : 'bg-[#F8FAFC] text-[#475569] hover:bg-[#E2E8F0]'
                         }`}
                       >
                         {duration} Days Trip
@@ -388,18 +388,18 @@ const DestinationDetail = memo(() => {
                       <div
                         key={index}
                         className={`p-6 rounded-lg border-l-4 border-[#22D3EE] ${
-                          isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F9FAFB]'
+                          isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F8FAFC]'
                         }`}
                       >
                         <div className="flex items-center gap-3 mb-2">
                           <span className="px-3 py-1 bg-[#22D3EE]/20 text-[#22D3EE] rounded-full text-sm font-semibold">
                             Day {day.day}
                           </span>
-                          <h3 className={`font-bold text-lg ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                          <h3 className={`font-bold text-lg ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                             {day.title}
                           </h3>
                         </div>
-                        <p className={`mb-3 ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#6B7280]'}`}>
+                        <p className={`mb-3 ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#64748B]'}`}>
                           {day.description}
                         </p>
                         {day.activities && day.activities.length > 0 && (
@@ -408,7 +408,7 @@ const DestinationDetail = memo(() => {
                               <span
                                 key={actIndex}
                                 className={`px-3 py-1 rounded-full text-xs ${
-                                  isDarkMode ? 'bg-[#22D3EE]/10 text-[#22D3EE]' : 'bg-cyan-100 text-cyan-700'
+                                  isDarkMode ? 'bg-[#22D3EE]/10 text-[#22D3EE]' : 'bg-sky-100 text-sky-700'
                                 }`}
                               >
                                 {activity}
@@ -427,18 +427,18 @@ const DestinationDetail = memo(() => {
                     <div
                       key={index}
                       className={`p-6 rounded-lg border-l-4 border-[#22D3EE] ${
-                        isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F9FAFB]'
+                        isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F8FAFC]'
                       }`}
                     >
                       <div className="flex items-center gap-3 mb-2">
                         <span className="px-3 py-1 bg-[#22D3EE]/20 text-[#22D3EE] rounded-full text-sm font-semibold">
                           Day {day.day}
                         </span>
-                        <h3 className={`font-bold text-lg ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                        <h3 className={`font-bold text-lg ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                           {day.title}
                         </h3>
                       </div>
-                      <p className={isDarkMode ? 'text-[#C9D6DF]' : 'text-[#6B7280]'}>
+                      <p className={isDarkMode ? 'text-[#C9D6DF]' : 'text-[#64748B]'}>
                         {day.description}
                       </p>
                     </div>
@@ -449,7 +449,7 @@ const DestinationDetail = memo(() => {
 
             {/* Pricing with Duration Selector */}
             <section id="pricing">
-              <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+              <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                 Package Pricing
               </h2>
 
@@ -467,7 +467,7 @@ const DestinationDetail = memo(() => {
                             ? 'bg-[#22D3EE] text-white shadow-lg shadow-[#22D3EE]/30'
                             : isDarkMode
                               ? 'bg-[#0F1419] text-[#C9D6DF] hover:bg-[#1a1f26]'
-                              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                              : 'bg-[#F8FAFC] text-[#475569] hover:bg-[#E2E8F0]'
                         }`}
                       >
                         {duration} Days Trip
@@ -485,7 +485,7 @@ const DestinationDetail = memo(() => {
                             ? 'border-[#22D3EE] shadow-lg shadow-[#22D3EE]/20'
                             : isDarkMode 
                               ? 'border-gray-700' 
-                              : 'border-gray-200'
+                              : 'border-[#E2E8F0]'
                         } ${isDarkMode ? 'bg-[#0F1419]' : 'bg-white'}`}
                       >
                         {pkg.popular && (
@@ -495,14 +495,14 @@ const DestinationDetail = memo(() => {
                         )}
                         
                         <div className="p-6 pt-8">
-                          <h3 className={`text-2xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                          <h3 className={`text-2xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                             {pkg.title}
                           </h3>
                           <div className="mb-6">
                             <span className="text-4xl font-bold text-[#22D3EE]">
                               ${pkg.price}
                             </span>
-                            <span className={`text-sm ml-2 ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#6B7280]'}`}>
+                            <span className={`text-sm ml-2 ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#64748B]'}`}>
                               per person
                             </span>
                           </div>
@@ -511,7 +511,7 @@ const DestinationDetail = memo(() => {
                             {pkg.features.map((feature, index) => (
                               <li key={index} className="flex items-start gap-2">
                                 <FaCheck className="text-[#22D3EE] mt-1 shrink-0" size={14} />
-                                <span className={`text-sm ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#4B5563]'}`}>
+                                <span className={`text-sm ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#475569]'}`}>
                                   {feature}
                                 </span>
                               </li>
@@ -525,7 +525,7 @@ const DestinationDetail = memo(() => {
                                 ? 'bg-[#22D3EE] hover:bg-[#4DBBFF] text-white'
                                 : isDarkMode
                                   ? 'bg-[#0B0C0E] hover:bg-gray-800 text-[#E0E7EE] border border-gray-700'
-                                  : 'bg-gray-100 hover:bg-gray-200 text-[#1F2937]'
+                                  : 'bg-[#F8FAFC] hover:bg-[#E2E8F0] text-[#0F172A]'
                             }`}
                           >
                             Book Now
@@ -537,13 +537,13 @@ const DestinationDetail = memo(() => {
 
                   {/* Custom Tour CTA */}
                   <div className={`mt-8 p-6 rounded-xl border-2 border-dashed ${
-                    isDarkMode ? 'border-gray-700 bg-[#0F1419]/50' : 'border-gray-300 bg-gray-50'
+                    isDarkMode ? 'border-gray-700 bg-[#0F1419]/50' : 'border-[#E2E8F0] bg-[#F8FAFC]'
                   }`}>
                     <div className="text-center">
-                      <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                      <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                         Need a Custom Itinerary?
                       </h3>
-                      <p className={`mb-4 ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#6B7280]'}`}>
+                      <p className={`mb-4 ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#475569]'}`}>
                         Build your perfect trip with our custom tour builder and get a personalized quote
                       </p>
                       <button
@@ -567,7 +567,7 @@ const DestinationDetail = memo(() => {
                             ? 'border-[#22D3EE] shadow-lg shadow-[#22D3EE]/20'
                             : isDarkMode 
                               ? 'border-gray-700' 
-                              : 'border-gray-200'
+                              : 'border-[#E2E8F0]'
                         } ${isDarkMode ? 'bg-[#0F1419]' : 'bg-white'}`}
                       >
                         {pkg.popular && (
@@ -577,14 +577,14 @@ const DestinationDetail = memo(() => {
                         )}
                         
                         <div className="p-6">
-                          <h3 className={`text-2xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                          <h3 className={`text-2xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                             {pkg.title}
                           </h3>
                           <div className="mb-6">
                             <span className="text-4xl font-bold text-[#22D3EE]">
                               ${pkg.price}
                             </span>
-                            <span className={`text-sm ml-2 ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#6B7280]'}`}>
+                            <span className={`text-sm ml-2 ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#64748B]'}`}>
                               per person
                             </span>
                           </div>
@@ -593,7 +593,7 @@ const DestinationDetail = memo(() => {
                             {pkg.features.map((feature, index) => (
                               <li key={index} className="flex items-start gap-2">
                                 <FaCheck className="text-[#22D3EE] mt-1 shrink-0" size={14} />
-                                <span className={`text-sm ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#4B5563]'}`}>
+                                <span className={`text-sm ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#475569]'}`}>
                                   {feature}
                                 </span>
                               </li>
@@ -607,7 +607,7 @@ const DestinationDetail = memo(() => {
                                 ? 'bg-[#22D3EE] hover:bg-[#4DBBFF] text-white'
                                 : isDarkMode
                                   ? 'bg-[#0B0C0E] hover:bg-gray-800 text-[#E0E7EE] border border-gray-700'
-                                  : 'bg-gray-100 hover:bg-gray-200 text-[#1F2937]'
+                                  : 'bg-[#F8FAFC] hover:bg-[#E2E8F0] text-[#0F172A]'
                             }`}
                           >
                             Book Now
@@ -623,7 +623,7 @@ const DestinationDetail = memo(() => {
             {/* What's Included/Excluded */}
             <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Included */}
-              <div className={`p-6 rounded-xl ${isDarkMode ? 'bg-[#0F1419]' : 'bg-green-50'}`}>
+              <div className={`p-6 rounded-xl ${isDarkMode ? 'bg-[#0F1419]' : 'bg-green-50 border border-green-100'}`}>
                 <h3 className={`text-xl font-bold mb-4 flex items-center gap-2 ${
                   isDarkMode ? 'text-[#E0E7EE]' : 'text-green-900'
                 }`}>
@@ -643,7 +643,7 @@ const DestinationDetail = memo(() => {
               </div>
 
               {/* Excluded */}
-              <div className={`p-6 rounded-xl ${isDarkMode ? 'bg-[#0F1419]' : 'bg-red-50'}`}>
+                <div className={`p-6 rounded-xl ${isDarkMode ? 'bg-[#0F1419]' : 'bg-red-50 border border-red-100'}`}>
                 <h3 className={`text-xl font-bold mb-4 flex items-center gap-2 ${
                   isDarkMode ? 'text-[#E0E7EE]' : 'text-red-900'
                 }`}>
@@ -665,7 +665,7 @@ const DestinationDetail = memo(() => {
 
             {/* What to Bring */}
             <section>
-              <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+              <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                 What to Bring
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -673,7 +673,7 @@ const DestinationDetail = memo(() => {
                   <div
                     key={index}
                     className={`p-3 rounded-lg text-sm text-center ${
-                      isDarkMode ? 'bg-[#0F1419] text-[#C9D6DF]' : 'bg-[#F9FAFB] text-[#4B5563]'
+                      isDarkMode ? 'bg-[#0F1419] text-[#C9D6DF]' : 'bg-[#F8FAFC] text-[#475569]'
                     }`}
                   >
                     {item}
@@ -688,8 +688,8 @@ const DestinationDetail = memo(() => {
             <div className="space-y-6">
               
               {/* Quick Info Card */}
-              <div className={`p-6 rounded-xl ${isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F9FAFB]'}`}>
-                <h3 className={`text-xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+              <div className={`p-6 rounded-xl ${isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F8FAFC] border border-[#E2E8F0]'}`}>
+                <h3 className={`text-xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                   Quick Information
                 </h3>
                 
@@ -697,10 +697,10 @@ const DestinationDetail = memo(() => {
                   <div className="flex items-start gap-3">
                     <FaCalendar className="text-[#22D3EE] mt-1" />
                     <div>
-                      <p className={`text-sm font-semibold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                      <p className={`text-sm font-semibold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                         Best Time to Visit
                       </p>
-                      <p className={`text-sm ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#6B7280]'}`}>
+                      <p className={`text-sm ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#64748B]'}`}>
                         {destination.bestTime}
                       </p>
                     </div>
@@ -709,10 +709,10 @@ const DestinationDetail = memo(() => {
                   <div className="flex items-start gap-3">
                     <FaShieldAlt className="text-[#22D3EE] mt-1" />
                     <div>
-                      <p className={`text-sm font-semibold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                      <p className={`text-sm font-semibold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                         Fitness Level Required
                       </p>
-                      <p className={`text-sm ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#6B7280]'}`}>
+                      <p className={`text-sm ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#64748B]'}`}>
                         {destination.fitnessLevel}
                       </p>
                     </div>
@@ -732,8 +732,8 @@ const DestinationDetail = memo(() => {
               </div>
 
               {/* Share Card */}
-              <div className={`p-6 rounded-xl ${isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F9FAFB]'}`}>
-                <h3 className={`text-lg font-bold mb-3 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+              <div className={`p-6 rounded-xl ${isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F8FAFC] border border-[#E2E8F0]'}`}>
+                <h3 className={`text-lg font-bold mb-3 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                   Share This Tour
                 </h3>
                 <div className="flex gap-2">
@@ -754,12 +754,12 @@ const DestinationDetail = memo(() => {
       </div>
 
       {/* Call to Action Section */}
-      <section className={`py-16 ${isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F9FAFB]'}`}>
+      <section className={`py-16 ${isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F8FAFC]'}`}>
         <div className="container mx-auto px-4 text-center">
-          <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+          <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
             Ready for Your Adventure?
           </h2>
-          <p className={`text-lg mb-8 max-w-2xl mx-auto ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#6B7280]'}`}>
+          <p className={`text-lg mb-8 max-w-2xl mx-auto ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#475569]'}`}>
             Book now and embark on the journey of a lifetime. Our team will handle all the details so you can focus on creating memories.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

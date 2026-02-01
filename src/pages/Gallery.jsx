@@ -92,14 +92,14 @@ const Gallery = () => {
               >
                 Pakistan Gallery
               </h1>
-              <p className={`text-lg md:text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+              <p className={`text-lg md:text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                 Explore real locations, seasons, and landscapes to plan your ideal journey
               </p>
 
               {/* Search Bar */}
               <div className="max-w-xl mx-auto">
                 <div className="relative">
-                  <FaSearch className={`absolute left-4 top-1/2 -translate-y-1/2 ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`} />
+                  <FaSearch className={`absolute left-4 top-1/2 -translate-y-1/2 ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`} />
                   <input
                     type="text"
                     placeholder="Search photos by location, tags..."
@@ -108,7 +108,7 @@ const Gallery = () => {
                     className={`w-full pl-12 pr-4 py-4 rounded-xl border transition-colors ${
                       isDarkMode
                         ? 'bg-[#141A1F] border-[rgba(34,211,238,0.2)] text-[#E0E7EE] focus:border-[#22D3EE]'
-                        : 'bg-white border-gray-200 text-[#1F2937] focus:border-blue-400'
+                        : 'bg-white border-[#CBD5E1] text-[#0F172A] focus:border-[#2563EB]'
                     } focus:outline-none`}
                   />
                 </div>
@@ -118,7 +118,7 @@ const Gallery = () => {
         </section>
 
         {/* Filter & Layout Controls */}
-        <section className={`py-4 backdrop-blur-lg border-b ${isDarkMode ? 'bg-[#0B0C0E]/95 border-[#1E242B]' : 'bg-white/95 border-gray-200'}`}>
+        <section className={`py-4 backdrop-blur-lg border-b ${isDarkMode ? 'bg-[#0B0C0E]/95 border-[#1E242B]' : 'bg-white/95 border-[#E2E8F0]'}`}>
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap items-center justify-between gap-4">
               {/* Category Filters */}
@@ -134,7 +134,7 @@ const Gallery = () => {
                           : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white'
                         : isDarkMode
                         ? 'bg-[#141A1F] text-[#C4CCD4] border border-[rgba(34,211,238,0.2)] hover:border-[#22D3EE]'
-                        : 'bg-white text-[#4A5568] border border-gray-200 hover:border-blue-400'
+                        : 'bg-white text-[#334155] border border-[#E2E8F0] hover:border-[#2563EB]'
                     }`}
                   >
                     <span className="mr-1">{cat.icon}</span>
@@ -154,7 +154,7 @@ const Gallery = () => {
                         : 'bg-[#3B82F6] text-white'
                       : isDarkMode
                       ? 'bg-[#141A1F] text-[#C4CCD4]'
-                      : 'bg-gray-100 text-[#4A5568]'
+                        : 'bg-[#F8FAFC] text-[#475569]'
                   }`}
                   aria-label="Grid layout"
                 >
@@ -169,7 +169,7 @@ const Gallery = () => {
                         : 'bg-[#3B82F6] text-white'
                       : isDarkMode
                       ? 'bg-[#141A1F] text-[#C4CCD4]'
-                      : 'bg-gray-100 text-[#4A5568]'
+                        : 'bg-[#F8FAFC] text-[#475569]'
                   }`}
                   aria-label="Masonry layout"
                 >
@@ -179,7 +179,7 @@ const Gallery = () => {
             </div>
 
             {/* Results count */}
-            <div className={`mt-4 text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+              <div className={`mt-4 text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#475569]'}`}>
               Showing {filteredPhotos.length} {filteredPhotos.length === 1 ? 'photo' : 'photos'}
             </div>
           </div>
@@ -191,10 +191,10 @@ const Gallery = () => {
             {filteredPhotos.length === 0 ? (
               <div className="text-center py-20">
                 <div className="text-6xl mb-4">Search</div>
-                <h3 className={`text-2xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                <h3 className={`text-2xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                   No photos found
                 </h3>
-                <p className={isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}>
+                <p className={isDarkMode ? 'text-[#8B949E]' : 'text-[#475569]'}>
                   Try adjusting your filters or search query
                 </p>
               </div>
@@ -246,7 +246,7 @@ const Gallery = () => {
                         className={`px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm ${
                           isDarkMode
                             ? 'bg-[#22D3EE]/20 border border-[#22D3EE] text-[#22D3EE]'
-                            : 'bg-white/80 text-[#3B82F6]'
+                            : 'bg-white/90 text-[#2563EB]'
                         }`}
                       >
                         {categories.find(c => c.id === photo.category)?.icon} {photo.category}

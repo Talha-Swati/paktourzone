@@ -116,7 +116,7 @@ const FeaturedTours = ({ isDarkMode }) => {
             <button className={`group rounded-xl border-2 backdrop-blur-sm px-8 py-4 text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:scale-105 ${
               isDarkMode
                 ? 'border-[rgba(77,187,255,0.5)] bg-[rgba(20,26,31,0.6)] text-[#F2F6F9] hover:border-[#22D3EE] hover:bg-[rgba(34,211,238,0.1)]'
-                : 'border-[rgba(59,130,246,0.5)] bg-[rgba(255,255,255,0.6)] text-[#1A202C] hover:border-[#3B82F6] hover:bg-[rgba(59,130,246,0.1)]'
+                : 'border-[#E2E8F0] bg-[rgba(255,255,255,0.9)] text-[#0F172A] hover:border-[#2563EB] hover:bg-[rgba(37,99,235,0.08)]'
             }`}>
               <span className="flex items-center gap-2">
                 View All Tours

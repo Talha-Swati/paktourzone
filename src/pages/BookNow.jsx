@@ -137,25 +137,25 @@ const BookNow = () => {
         }}
       >
         <div className={`min-h-screen transition-colors duration-500 ${
-          isDarkMode ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
+          isDarkMode ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]' : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#0F172A]'
         }`}>
           <div className="container mx-auto px-4 py-16">
             <div className="max-w-2xl mx-auto text-center">
               <div className="mb-8">
                 <FaCheckCircle className="text-8xl text-green-500 mx-auto mb-6" />
-                <h1 className={`text-4xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                <h1 className={`text-4xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                   Booking Confirmed!
                 </h1>
-                <p className={`text-xl mb-6 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                <p className={`text-xl mb-6 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                   Thank you for choosing PakTourZone
                 </p>
               </div>
 
-              <div className={`p-8 rounded-xl ${isDarkMode ? 'bg-[#141A1F]' : 'bg-white'} shadow-xl mb-8`}>
-                <h2 className={`text-2xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+              <div className={`p-8 rounded-xl ${isDarkMode ? 'bg-[#141A1F]' : 'bg-white border border-[#E2E8F0]'} shadow-xl mb-8`}>
+                <h2 className={`text-2xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                   What's Next?
                 </h2>
-                <div className={`text-left space-y-4 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                <div className={`text-left space-y-4 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                   <div className="flex items-start gap-3">
                     <FaCheckCircle className="text-green-500 mt-1 shrink-0" />
                     <p>Check your email for booking confirmation and detailed itinerary</p>
@@ -174,8 +174,8 @@ const BookNow = () => {
                   </div>
                 </div>
 
-                <div className={`mt-6 p-4 rounded-lg ${isDarkMode ? 'bg-[#0F1419]' : 'bg-gray-50'}`}>
-                  <p className={`font-semibold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                <div className={`mt-6 p-4 rounded-lg ${isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F8FAFC]'} `}>
+                  <p className={`font-semibold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                     Need immediate assistance?
                   </p>
                   <a
@@ -206,7 +206,7 @@ const BookNow = () => {
                   className={`px-8 py-4 rounded-lg font-bold transition-all duration-300 border-2 ${
                     isDarkMode
                       ? 'border-[#22D3EE] text-[#22D3EE] hover:bg-[#22D3EE] hover:text-[#0B0C0E]'
-                      : 'border-[#3B82F6] text-[#3B82F6] hover:bg-[#3B82F6] hover:text-white'
+                      : 'border-[#2563EB] text-[#1D4ED8] hover:bg-[#2563EB] hover:text-white'
                   }`}
                 >
                   Explore More Tours
@@ -237,14 +237,14 @@ const BookNow = () => {
             } bg-clip-text text-transparent`}>
               Complete Your Booking
             </h1>
-            <p className={`text-center ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+            <p className={`text-center ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
               {packageData.title}
             </p>
           </div>
         </section>
 
         {/* Progress Bar */}
-        <div className={`py-4 backdrop-blur-lg border-b ${isDarkMode ? 'bg-[#0B0C0E]/95 border-[#1E242B]' : 'bg-white/95 border-gray-200'}`}>
+        <div className={`py-4 backdrop-blur-lg border-b ${isDarkMode ? 'bg-[#0B0C0E]/95 border-[#1E242B]' : 'bg-white/95 border-[#E2E8F0]'}`}>
           <div className="container mx-auto px-4">
             <div className="flex justify-between items-center max-w-4xl mx-auto">
               {progressSteps.map((item, idx) => (
@@ -257,14 +257,14 @@ const BookNow = () => {
                           : 'bg-linear-to-r from-[#3B82F6] to-[#60A5FA] text-white'
                         : isDarkMode
                         ? 'bg-[#1E242B] text-[#8B949E]'
-                        : 'bg-gray-200 text-gray-400'
+                        : 'bg-[#F8FAFC] text-[#94A3B8]'
                     }`}>
                       {item.icon}
                     </div>
                     <span className={`mt-2 text-xs hidden md:block ${
                       step >= item.number
                         ? isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'
-                        : isDarkMode ? 'text-[#8B949E]' : 'text-gray-400'
+                      : isDarkMode ? 'text-[#8B949E]' : 'text-[#94A3B8]'
                     }`}>
                       {item.title}
                     </span>
@@ -273,7 +273,7 @@ const BookNow = () => {
                     <div className={`h-1 flex-1 mx-2 ${
                       step > item.number
                         ? isDarkMode ? 'bg-[#22D3EE]' : 'bg-[#3B82F6]'
-                        : isDarkMode ? 'bg-[#1E242B]' : 'bg-gray-200'
+                      : isDarkMode ? 'bg-[#1E242B]' : 'bg-[#E2E8F0]'
                     }`}></div>
                   )}
                 </div>
@@ -289,17 +289,17 @@ const BookNow = () => {
               {/* Form Column */}
               <div className="lg:col-span-2">
                 <form onSubmit={step === 4 ? handleSubmit : handleNextStep}>
-                  <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-[#141A1F]' : 'bg-white'} shadow-xl`}>
+                  <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-[#141A1F]' : 'bg-white border border-[#E2E8F0]'} shadow-xl`}>
                     
                     {/* Step 1: Personal Information */}
                     {step === 1 && (
                       <div className="space-y-6">
-                        <h2 className={`text-2xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                        <h2 className={`text-2xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                           Personal Information
                         </h2>
 
                         <div>
-                          <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                          <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                             Full Name *
                           </label>
                           <input
@@ -312,14 +312,14 @@ const BookNow = () => {
                             className={`w-full px-4 py-3 rounded-lg border transition-all ${
                               isDarkMode
                                 ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE] placeholder-[#8B949E]'
-                                : 'bg-white border-gray-300 text-[#1F2937] placeholder-gray-400'
+                                : 'bg-white border-[#CBD5E1] text-[#0F172A] placeholder-[#94A3B8]'
                             } focus:outline-none focus:ring-2 focus:ring-opacity-20`}
                           />
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-6">
                           <div>
-                            <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                            <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                               Email Address *
                             </label>
                             <input
@@ -332,13 +332,13 @@ const BookNow = () => {
                               className={`w-full px-4 py-3 rounded-lg border transition-all ${
                                 isDarkMode
                                   ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE] placeholder-[#8B949E]'
-                                  : 'bg-white border-gray-300 text-[#1F2937] placeholder-gray-400'
+                                  : 'bg-white border-[#CBD5E1] text-[#0F172A] placeholder-[#94A3B8]'
                               } focus:outline-none focus:ring-2 focus:ring-opacity-20`}
                             />
                           </div>
 
                           <div>
-                            <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                            <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                               Phone (WhatsApp) *
                             </label>
                             <div className="flex gap-2">
@@ -349,7 +349,7 @@ const BookNow = () => {
                                 className={`px-3 py-3 rounded-lg border ${
                                   isDarkMode
                                     ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE]'
-                                    : 'bg-white border-gray-300'
+                                    : 'bg-white border-[#CBD5E1]'
                                 } focus:outline-none`}
                               >
                                 {countryCodes.map((item) => (
@@ -368,7 +368,7 @@ const BookNow = () => {
                                 className={`flex-1 px-4 py-3 rounded-lg border ${
                                   isDarkMode
                                     ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE] placeholder-[#8B949E]'
-                                    : 'bg-white border-gray-300 placeholder-gray-400'
+                                    : 'bg-white border-[#CBD5E1] placeholder-[#94A3B8]'
                                 } focus:outline-none focus:ring-2`}
                               />
                             </div>
@@ -377,7 +377,7 @@ const BookNow = () => {
 
                         <div className="grid md:grid-cols-2 gap-6">
                           <div>
-                            <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                            <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                               Country of Residence *
                             </label>
                             <input
@@ -390,13 +390,13 @@ const BookNow = () => {
                               className={`w-full px-4 py-3 rounded-lg border ${
                                 isDarkMode
                                   ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE] placeholder-[#8B949E]'
-                                  : 'bg-white border-gray-300 placeholder-gray-400'
+                                  : 'bg-white border-[#CBD5E1] placeholder-[#94A3B8]'
                               } focus:outline-none focus:ring-2`}
                             />
                           </div>
 
                           <div>
-                            <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                            <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                               Nationality *
                             </label>
                             <input
@@ -409,7 +409,7 @@ const BookNow = () => {
                               className={`w-full px-4 py-3 rounded-lg border ${
                                 isDarkMode
                                   ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE] placeholder-[#8B949E]'
-                                  : 'bg-white border-gray-300 placeholder-gray-400'
+                                  : 'bg-white border-[#CBD5E1] placeholder-[#94A3B8]'
                               } focus:outline-none focus:ring-2`}
                             />
                           </div>
@@ -420,13 +420,13 @@ const BookNow = () => {
                     {/* Step 2: Travel Details */}
                     {step === 2 && (
                       <div className="space-y-6">
-                        <h2 className={`text-2xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                        <h2 className={`text-2xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                           Travel Details
                         </h2>
 
                         <div className="grid md:grid-cols-2 gap-6">
                           <div>
-                            <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                            <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                               Number of Adults *
                             </label>
                             <select
@@ -437,7 +437,7 @@ const BookNow = () => {
                               className={`w-full px-4 py-3 rounded-lg border ${
                                 isDarkMode
                                   ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE]'
-                                  : 'bg-white border-gray-300'
+                                  : 'bg-white border-[#CBD5E1]'
                               } focus:outline-none focus:ring-2`}
                             >
                               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
@@ -447,7 +447,7 @@ const BookNow = () => {
                           </div>
 
                           <div>
-                            <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                            <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                               Number of Children (Under 12)
                             </label>
                             <select
@@ -457,7 +457,7 @@ const BookNow = () => {
                               className={`w-full px-4 py-3 rounded-lg border ${
                                 isDarkMode
                                   ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE]'
-                                  : 'bg-white border-gray-300'
+                                  : 'bg-white border-[#CBD5E1]'
                               } focus:outline-none focus:ring-2`}
                             >
                               {[0, 1, 2, 3, 4, 5].map(num => (
@@ -468,7 +468,7 @@ const BookNow = () => {
                         </div>
 
                         <div>
-                          <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                          <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                             Preferred Travel Date *
                           </label>
                           <input
@@ -481,13 +481,13 @@ const BookNow = () => {
                             className={`w-full px-4 py-3 rounded-lg border ${
                               isDarkMode
                                 ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE]'
-                                : 'bg-white border-gray-300'
+                                : 'bg-white border-[#CBD5E1]'
                             } focus:outline-none focus:ring-2`}
                           />
                         </div>
 
                         <div>
-                          <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                          <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                             Special Requests / Dietary Requirements
                           </label>
                           <textarea
@@ -499,7 +499,7 @@ const BookNow = () => {
                             className={`w-full px-4 py-3 rounded-lg border ${
                               isDarkMode
                                 ? 'bg-[#0F1419] border-[#1E242B] text-[#E0E7EE] placeholder-[#8B949E]'
-                                : 'bg-white border-gray-300 placeholder-gray-400'
+                                : 'bg-white border-[#CBD5E1] placeholder-[#94A3B8]'
                             } focus:outline-none focus:ring-2`}
                           ></textarea>
                         </div>
@@ -509,12 +509,12 @@ const BookNow = () => {
                     {/* Step 3: Customization */}
                     {step === 3 && (
                       <div className="space-y-6">
-                        <h2 className={`text-2xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                        <h2 className={`text-2xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                           Customize Your Package
                         </h2>
 
                         <div>
-                          <label className={`block mb-3 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                          <label className={`block mb-3 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                             Accommodation Type
                           </label>
                           <div className="grid md:grid-cols-3 gap-4">
@@ -529,10 +529,10 @@ const BookNow = () => {
                                   bookingData.accommodation === option.value
                                     ? isDarkMode
                                       ? 'border-[#22D3EE] bg-[#22D3EE]/10'
-                                      : 'border-[#3B82F6] bg-blue-50'
+                                      : 'border-[#2563EB] bg-blue-50'
                                     : isDarkMode
                                     ? 'border-[#1E242B] hover:border-[#22D3EE]/50'
-                                    : 'border-gray-200 hover:border-blue-200'
+                                    : 'border-[#E2E8F0] hover:border-[#93C5FD]'
                                 }`}
                               >
                                 <input
@@ -544,10 +544,10 @@ const BookNow = () => {
                                   className="sr-only"
                                 />
                                 <div className="text-center">
-                                  <div className={`font-bold mb-1 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                                  <div className={`font-bold mb-1 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                                     {option.label}
                                   </div>
-                                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-gray-600'}`}>
+                                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#475569]'}`}>
                                     {option.price}
                                   </div>
                                 </div>
@@ -557,7 +557,7 @@ const BookNow = () => {
                         </div>
 
                         <div>
-                          <label className={`block mb-3 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                          <label className={`block mb-3 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                             Transport Preference
                           </label>
                           <div className="grid md:grid-cols-2 gap-4">
@@ -571,10 +571,10 @@ const BookNow = () => {
                                   bookingData.transport === option.value
                                     ? isDarkMode
                                       ? 'border-[#22D3EE] bg-[#22D3EE]/10'
-                                      : 'border-[#3B82F6] bg-blue-50'
+                                      : 'border-[#2563EB] bg-blue-50'
                                     : isDarkMode
                                     ? 'border-[#1E242B] hover:border-[#22D3EE]/50'
-                                    : 'border-gray-200 hover:border-blue-200'
+                                    : 'border-[#E2E8F0] hover:border-[#93C5FD]'
                                 }`}
                               >
                                 <input
@@ -586,10 +586,10 @@ const BookNow = () => {
                                   className="sr-only"
                                 />
                                 <div className="text-center">
-                                  <div className={`font-bold mb-1 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                                  <div className={`font-bold mb-1 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                                     {option.label}
                                   </div>
-                                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-gray-600'}`}>
+                                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#475569]'}`}>
                                     {option.price}
                                   </div>
                                 </div>
@@ -599,7 +599,7 @@ const BookNow = () => {
                         </div>
 
                         <div>
-                          <label className={`block mb-3 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                          <label className={`block mb-3 font-semibold ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                             Meal Plan
                           </label>
                           <div className="grid md:grid-cols-3 gap-4">
@@ -614,10 +614,10 @@ const BookNow = () => {
                                   bookingData.meals === option.value
                                     ? isDarkMode
                                       ? 'border-[#22D3EE] bg-[#22D3EE]/10'
-                                      : 'border-[#3B82F6] bg-blue-50'
+                                      : 'border-[#2563EB] bg-blue-50'
                                     : isDarkMode
                                     ? 'border-[#1E242B] hover:border-[#22D3EE]/50'
-                                    : 'border-gray-200 hover:border-blue-200'
+                                    : 'border-[#E2E8F0] hover:border-[#93C5FD]'
                                 }`}
                               >
                                 <input
@@ -629,10 +629,10 @@ const BookNow = () => {
                                   className="sr-only"
                                 />
                                 <div className="text-center">
-                                  <div className={`font-bold mb-1 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                                  <div className={`font-bold mb-1 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                                     {option.label}
                                   </div>
-                                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-gray-600'}`}>
+                                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#475569]'}`}>
                                     {option.price}
                                   </div>
                                 </div>
@@ -646,14 +646,14 @@ const BookNow = () => {
                     {/* Step 4: Payment */}
                     {step === 4 && (
                       <div className="space-y-6">
-                        <h2 className={`text-2xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                        <h2 className={`text-2xl font-bold mb-6 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                           Payment Method
                         </h2>
 
-                        <div className={`p-4 rounded-lg ${isDarkMode ? 'bg-blue-500/10 border border-blue-500/20' : 'bg-blue-50 border border-blue-200'}`}>
+                        <div className={`p-4 rounded-lg ${isDarkMode ? 'bg-blue-500/10 border border-blue-500/20' : 'bg-blue-50 border border-[#BFDBFE]'} `}>
                           <div className="flex items-start gap-3">
                             <FaInfoCircle className="text-blue-500 mt-1" />
-                            <div className={`text-sm ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                            <div className={`text-sm ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                               <p className="font-semibold mb-1">Payment Terms:</p>
                               <p>30% advance payment required to confirm booking. Balance due 15 days before departure.</p>
                             </div>
@@ -673,10 +673,10 @@ const BookNow = () => {
                                 bookingData.paymentMethod === method.value
                                   ? isDarkMode
                                     ? 'border-[#22D3EE] bg-[#22D3EE]/10'
-                                    : 'border-[#3B82F6] bg-blue-50'
+                                    : 'border-[#2563EB] bg-blue-50'
                                   : isDarkMode
                                   ? 'border-[#1E242B] hover:border-[#22D3EE]/50'
-                                  : 'border-gray-200 hover:border-blue-200'
+                                  : 'border-[#E2E8F0] hover:border-[#93C5FD]'
                               }`}
                             >
                               <input
@@ -689,14 +689,14 @@ const BookNow = () => {
                                 className="w-5 h-5"
                               />
                               <div className="flex-1">
-                                <div className={`font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                                <div className={`font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                                   {method.label}
                                 </div>
-                                <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-gray-600'}`}>
+                                <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#475569]'}`}>
                                   {method.desc}
                                 </div>
                               </div>
-                              <FaLock className={isDarkMode ? 'text-[#8B949E]' : 'text-gray-400'} />
+                              <FaLock className={isDarkMode ? 'text-[#8B949E]' : 'text-[#94A3B8]'} />
                             </label>
                           ))}
                         </div>
@@ -710,15 +710,15 @@ const BookNow = () => {
                             required
                             className="mt-1 w-5 h-5"
                           />
-                          <label className={`text-sm ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
-                            I agree to the <a href="/terms-conditions" className={isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}>Terms & Conditions</a> and <a href="/privacy-policy" className={isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}>Privacy Policy</a>
+                          <label className={`text-sm ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
+                            I agree to the <a href="/terms-conditions" className={isDarkMode ? 'text-[#22D3EE]' : 'text-[#2563EB]'}>Terms & Conditions</a> and <a href="/privacy-policy" className={isDarkMode ? 'text-[#22D3EE]' : 'text-[#2563EB]'}>Privacy Policy</a>
                           </label>
                         </div>
                       </div>
                     )}
 
                     {/* Navigation Buttons */}
-                    <div className="flex gap-4 mt-8 pt-6 border-t ${isDarkMode ? 'border-[#1E242B]' : 'border-gray-200'}">
+                    <div className={`flex gap-4 mt-8 pt-6 border-t ${isDarkMode ? 'border-[#1E242B]' : 'border-[#E2E8F0]'}`}>
                       {step > 1 && (
                         <button
                           type="button"
@@ -726,7 +726,7 @@ const BookNow = () => {
                           className={`px-6 py-3 rounded-lg font-semibold transition-all ${
                             isDarkMode
                               ? 'bg-[#1E242B] text-[#C4CCD4] hover:bg-[#2A3038]'
-                              : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                              : 'bg-[#F8FAFC] text-[#475569] hover:bg-[#E2E8F0]'
                           }`}
                         >
                           Previous
@@ -749,56 +749,56 @@ const BookNow = () => {
 
               {/* Summary Sidebar */}
               <div>
-                <div className={`p-6 rounded-xl ${isDarkMode ? 'bg-[#141A1F]' : 'bg-white'} shadow-xl`}>
-                  <h3 className={`text-xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                <div className={`p-6 rounded-xl ${isDarkMode ? 'bg-[#141A1F]' : 'bg-white border border-[#E2E8F0]'} shadow-xl`}>
+                  <h3 className={`text-xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                     Booking Summary
                   </h3>
 
                   <div className="space-y-3 mb-6">
-                    <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-gray-600'}`}>
+                    <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#475569]'}`}>
                       Package
                     </div>
-                    <div className={`font-semibold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                    <div className={`font-semibold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                       {packageData.title}
                     </div>
-                    <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-gray-600'}`}>
+                    <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#475569]'}`}>
                       Duration: {packageData.duration}
                     </div>
                   </div>
 
-                  <div className={`border-t pt-4 space-y-2 ${isDarkMode ? 'border-[#1E242B]' : 'border-gray-200'}`}>
+                  <div className={`border-t pt-4 space-y-2 ${isDarkMode ? 'border-[#1E242B]' : 'border-[#E2E8F0]'} `}>
                     <div className="flex justify-between">
-                      <span className={isDarkMode ? 'text-[#C4CCD4]' : 'text-gray-600'}>Travelers:</span>
-                      <span className={isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}>
+                      <span className={isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}>Travelers:</span>
+                      <span className={isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}>
                         {parseInt(bookingData.adults) + parseInt(bookingData.children)}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className={isDarkMode ? 'text-[#C4CCD4]' : 'text-gray-600'}>Base Price:</span>
-                      <span className={isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}>
+                      <span className={isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}>Base Price:</span>
+                      <span className={isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}>
                         ${packageData.price}
                       </span>
                     </div>
                   </div>
 
-                  <div className={`border-t mt-4 pt-4 ${isDarkMode ? 'border-[#1E242B]' : 'border-gray-200'}`}>
+                  <div className={`border-t mt-4 pt-4 ${isDarkMode ? 'border-[#1E242B]' : 'border-[#E2E8F0]'} `}>
                     <div className="flex justify-between text-xl font-bold">
-                      <span className={isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}>Total:</span>
-                      <span className={isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}>
+                      <span className={isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}>Total:</span>
+                      <span className={isDarkMode ? 'text-[#22D3EE]' : 'text-[#2563EB]'}>
                         ${calculateTotalPrice()}
                       </span>
                     </div>
-                    <div className={`text-xs mt-2 ${isDarkMode ? 'text-[#8B949E]' : 'text-gray-500'}`}>
+                    <div className={`text-xs mt-2 ${isDarkMode ? 'text-[#8B949E]' : 'text-[#64748B]'}`}>
                       * 30% deposit required: ${(calculateTotalPrice() * 0.3).toFixed(2)}
                     </div>
                   </div>
 
-                  <div className={`mt-6 p-4 rounded-lg ${isDarkMode ? 'bg-green-500/10' : 'bg-green-50'}`}>
+                  <div className={`mt-6 p-4 rounded-lg ${isDarkMode ? 'bg-green-500/10' : 'bg-green-50 border border-green-200'} `}>
                     <div className="flex items-center gap-2 text-green-500 font-semibold mb-2">
                       <FaLock />
                       <span>Secure Booking</span>
                     </div>
-                    <p className={`text-xs ${isDarkMode ? 'text-[#C4CCD4]' : 'text-gray-600'}`}>
+                    <p className={`text-xs ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                       Your information is protected with 256-bit SSL encryption
                     </p>
                   </div>

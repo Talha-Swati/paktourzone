@@ -42,7 +42,7 @@ const HoneymoonTours = () => {
         keywords: 'Pakistan honeymoon tours, romantic Northern Pakistan, couples travel Hunza, Skardu honeymoon, honeymoon packages Pakistan',
         url: '/trip/honeymoon'
       }}
-      className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-gray-50 text-gray-900'}
+      className={isDarkMode ? 'bg-[#0B0C0E] text-[#E0E7EE]' : 'bg-[#F8FAFC] text-[#0F172A]'}
     >
 
       {/* Hero Section with Romantic Gradient */}
@@ -106,7 +106,7 @@ const HoneymoonTours = () => {
                   <Heart className={`w-8 h-8 ${
                     isDarkMode ? 'text-pink-400' : 'text-pink-600'
                   } group-hover:scale-110 transition-transform`} />
-                  <span className={`text-lg font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                  <span className={`text-lg font-bold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                     {feature}
                   </span>
                 </div>
@@ -117,12 +117,12 @@ const HoneymoonTours = () => {
       </div>
 
       {/* Honeymoon Packages */}
-      <div className={`py-20 ${isDarkMode ? 'bg-[#0B0C0E]' : 'bg-gray-50'}`}>
+      <div className={`py-20 ${isDarkMode ? 'bg-[#0B0C0E]' : 'bg-[#F8FAFC]'} `}>
         <div className="container mx-auto px-4">
-          <h2 className={`text-5xl font-bold text-center mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-5xl font-bold text-center mb-4 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Honeymoon Packages in Northern Pakistan
           </h2>
-          <p className={`text-center text-lg mb-16 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+          <p className={`text-center text-lg mb-16 ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
             Create unforgettable memories with curated romantic getaways in the mountains
           </p>
           
@@ -154,8 +154,8 @@ const HoneymoonTours = () => {
                       {pkg.rating && (
                         <div className="bg-white/95 backdrop-blur-sm px-4 py-3 rounded-xl inline-flex items-center gap-2">
                           <Star className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                          <span className="font-bold text-gray-900 text-lg">{pkg.rating}</span>
-                          <span className="text-sm text-gray-600">({pkg.reviews} couples loved it)</span>
+                          <span className="font-bold text-[#0F172A] text-lg">{pkg.rating}</span>
+                          <span className="text-sm text-[#64748B]">({pkg.reviews} couples loved it)</span>
                         </div>
                       )}
                     </div>
@@ -172,27 +172,27 @@ const HoneymoonTours = () => {
                       </span>
                     </div>
                     
-                    <h3 className={`text-3xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                    <h3 className={`text-3xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                       {pkg.name}
                     </h3>
                     
-                    <p className={`text-lg mb-6 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    <p className={`text-lg mb-6 ${isDarkMode ? 'text-gray-300' : 'text-[#475569]'}`}>
                       {pkg.shortDescription}
                     </p>
 
                     {/* Quick Info */}
                     <div className="grid grid-cols-2 gap-4 mb-6">
-                      <div className={`p-4 rounded-xl ${isDarkMode ? 'bg-[#0F1419]' : 'bg-pink-50'}`}>
+                      <div className={`p-4 rounded-xl ${isDarkMode ? 'bg-[#0F1419]' : 'bg-pink-50'} `}>
                         <Calendar className={`w-6 h-6 mb-2 ${isDarkMode ? 'text-pink-400' : 'text-pink-600'}`} />
-                        <p className="text-xs text-gray-500 mb-1">Duration</p>
-                        <p className={`font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        <p className="text-xs text-[#94A3B8] mb-1">Duration</p>
+                        <p className={`font-bold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                           {pkg.duration}
                         </p>
                       </div>
-                      <div className={`p-4 rounded-xl ${isDarkMode ? 'bg-[#0F1419]' : 'bg-pink-50'}`}>
+                      <div className={`p-4 rounded-xl ${isDarkMode ? 'bg-[#0F1419]' : 'bg-pink-50'} `}>
                         <Shield className={`w-6 h-6 mb-2 ${isDarkMode ? 'text-pink-400' : 'text-pink-600'}`} />
-                        <p className="text-xs text-gray-500 mb-1">Type</p>
-                        <p className={`font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        <p className="text-xs text-[#94A3B8] mb-1">Type</p>
+                        <p className={`font-bold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                           Private Tour
                         </p>
                       </div>
@@ -209,7 +209,7 @@ const HoneymoonTours = () => {
                             <Sparkles className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
                               isDarkMode ? 'text-yellow-400' : 'text-yellow-500'
                             }`} />
-                            <span className={`${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                            <span className={`${isDarkMode ? 'text-gray-300' : 'text-[#475569]'}`}>
                               {highlight}
                             </span>
                           </div>
@@ -219,16 +219,16 @@ const HoneymoonTours = () => {
 
                     {/* Pricing Tiers */}
                     <div className={`border-t pt-6 mb-6 ${isDarkMode ? 'border-gray-700' : 'border-pink-200'}`}>
-                      <h4 className={`font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                      <h4 className={`font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                         Choose Your Package
                       </h4>
                       <div className="space-y-3">
                         {pricingTiers.map((tier) => (
                           <div key={tier} className={`flex justify-between items-center p-4 rounded-xl ${
-                            isDarkMode ? 'bg-[#0F1419]' : 'bg-gray-50'
+                            isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F8FAFC]'
                           } ${tier === 'deluxe' ? 'ring-2 ring-pink-500' : ''}`}>
                             <div>
-                              <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                              <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                                 {tierNames[tier]}
                               </span>
                               {tier === 'deluxe' && (
@@ -245,7 +245,7 @@ const HoneymoonTours = () => {
                           </div>
                         ))}
                       </div>
-                      <p className="text-xs text-gray-500 mt-3">Best Time: {pkg.bestTime}</p>
+                      <p className="text-xs text-[#94A3B8] mt-3">Best Time: {pkg.bestTime}</p>
                     </div>
 
                     {/* Actions */}
@@ -282,7 +282,7 @@ const HoneymoonTours = () => {
       {/* Why Choose Us */}
       <div className={`py-20 ${isDarkMode ? 'bg-linear-to-b from-[#0F1419] to-[#0B0C0E]' : 'bg-linear-to-b from-pink-50 to-white'}`}>
         <div className="container mx-auto px-4">
-          <h2 className={`text-4xl font-bold text-center mb-16 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-4xl font-bold text-center mb-16 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Creating Unforgettable Memories Since Day One
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -298,10 +298,10 @@ const HoneymoonTours = () => {
                 } group-hover:scale-110 transition-transform`}>
                   <item.icon className={`w-10 h-10 ${isDarkMode ? 'text-pink-400' : 'text-pink-600'}`} />
                 </div>
-                <h3 className={`font-bold text-lg mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                <h3 className={`font-bold text-lg mb-2 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                   {item.title}
                 </h3>
-                <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
                   {item.desc}
                 </p>
               </div>
@@ -322,16 +322,16 @@ const HoneymoonTours = () => {
             <div className="p-8">
               <div className="flex justify-between items-start mb-8">
                 <div>
-                  <h2 className={`text-4xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                  <h2 className={`text-4xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                     {selectedPackage.name}
                   </h2>
-                  <p className={`text-lg ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                  <p className={`text-lg ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
                     {selectedPackage.shortDescription}
                   </p>
                 </div>
                 <button 
                   onClick={() => setShowDetails(false)}
-                  className={`text-3xl ${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
+                  className={`text-3xl ${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-[#64748B] hover:text-[#0F172A]'}`}
                 >
                   ×
                 </button>
@@ -350,7 +350,7 @@ const HoneymoonTours = () => {
                         <Sparkles className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
                           isDarkMode ? 'text-pink-400' : 'text-pink-600'
                         }`} />
-                        <span className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>{item}</span>
+                        <span className={isDarkMode ? 'text-gray-300' : 'text-[#475569]'}>{item}</span>
                       </div>
                     ))}
                   </div>

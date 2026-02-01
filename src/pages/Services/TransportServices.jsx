@@ -20,7 +20,7 @@ const TransportServices = () => {
       className={`transition-colors duration-500 ${
       isDarkMode
         ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
-        : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
+        : 'bg-linear-to-b from-[#F8FAFC] to-white text-[#0F172A]'
     }`}
     >
 
@@ -52,7 +52,7 @@ const TransportServices = () => {
       {/* Vehicle Fleet */}
       <div className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Vehicle Fleet for Northern Pakistan Travel
           </h2>
 
@@ -61,7 +61,7 @@ const TransportServices = () => {
               <div
                 key={vehicle.id}
                 className={`rounded-xl overflow-hidden ${
-                  isDarkMode ? 'bg-gray-800' : 'bg-white'
+                  isDarkMode ? 'bg-gray-800' : 'bg-white border border-[#E2E8F0]'
                 } shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 cursor-pointer`}
                 onClick={() => setSelectedVehicle(selectedVehicle === index ? null : index)}
               >
@@ -71,20 +71,20 @@ const TransportServices = () => {
                 ></div>
                 
                 <div className="p-6">
-                  <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                  <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                     {vehicle.name}
                   </h3>
                   
                   <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
                     <div>
-                      <span className={isDarkMode ? 'text-gray-400' : 'text-gray-600'}>Capacity</span>
-                      <p className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                      <span className={isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}>Capacity</span>
+                      <p className={`font-semibold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                         {vehicle.capacity}
                       </p>
                     </div>
                     <div>
-                      <span className={isDarkMode ? 'text-gray-400' : 'text-gray-600'}>Luggage</span>
-                      <p className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                      <span className={isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}>Luggage</span>
+                      <p className={`font-semibold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                         {vehicle.luggage}
                       </p>
                     </div>
@@ -94,7 +94,7 @@ const TransportServices = () => {
                     <div className="text-2xl font-bold text-green-600 mb-2">
                       {vehicle.price}
                     </div>
-                    <p className={`text-sm mb-3 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    <p className={`text-sm mb-3 ${isDarkMode ? 'text-gray-400' : 'text-[#475569]'}`}>
                       {vehicle.bestFor}
                     </p>
                   </div>
@@ -103,7 +103,7 @@ const TransportServices = () => {
                     {vehicle.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm">
                         <span className="text-green-600">✓</span>
-                        <span className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}>
+                        <span className={isDarkMode ? 'text-gray-300' : 'text-[#475569]'}>
                           {feature}
                         </span>
                       </li>
@@ -126,7 +126,7 @@ const TransportServices = () => {
       {/* Additional Services */}
       <div className={`py-16 px-4 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Additional Transport Services
           </h2>
 
@@ -135,13 +135,13 @@ const TransportServices = () => {
               <div
                 key={index}
                 className={`p-6 rounded-xl ${
-                  isDarkMode ? 'bg-gray-700' : 'bg-gray-50'
+                  isDarkMode ? 'bg-gray-700' : 'bg-[#F8FAFC] border border-[#E2E8F0]'
                 } hover:shadow-lg transition-shadow`}
               >
-                <h3 className={`text-lg font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                <h3 className={`text-lg font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                   {service.name}
                 </h3>
-                <p className={`mb-3 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                <p className={`mb-3 ${isDarkMode ? 'text-gray-300' : 'text-[#475569]'}`}>
                   {service.description}
                 </p>
                 <div className="text-xl font-bold text-green-600 mb-4">
@@ -149,7 +149,7 @@ const TransportServices = () => {
                 </div>
                 <ul className="space-y-1">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    <li key={idx} className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-[#475569]'}`}>
                       • {feature}
                     </li>
                   ))}
@@ -163,7 +163,7 @@ const TransportServices = () => {
       {/* Why Choose Us */}
       <div className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Why Choose Our Transport Service
           </h2>
 
@@ -173,10 +173,10 @@ const TransportServices = () => {
                 <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-linear-to-br from-green-500 to-emerald-600 flex items-center justify-center">
                   <span className="text-3xl">✓</span>
                 </div>
-                <h3 className={`text-lg font-semibold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                <h3 className={`text-lg font-semibold mb-2 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                   {reason.title}
                 </h3>
-                <p className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}>
+                <p className={isDarkMode ? 'text-gray-300' : 'text-[#475569]'}>
                   {reason.desc}
                 </p>
               </div>
@@ -188,10 +188,10 @@ const TransportServices = () => {
       {/* CTA */}
       <div className={`py-16 px-4 ${isDarkMode ? 'bg-gray-800' : 'bg-linear-to-r from-green-50 to-emerald-50'}`}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Ready to Book Transport for Your Tour?
           </h2>
-          <p className={`text-lg mb-8 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+          <p className={`text-lg mb-8 ${isDarkMode ? 'text-gray-300' : 'text-[#475569]'}`}>
             Safe, comfortable, and reliable transport for your entire journey
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
@@ -204,7 +204,7 @@ const TransportServices = () => {
             <Link
               to="/services"
               className={`px-8 py-3 rounded-lg font-semibold transition-colors ${
-                isDarkMode ? 'bg-gray-700 text-white hover:bg-gray-600' : 'bg-white text-gray-900 hover:bg-gray-100'
+                isDarkMode ? 'bg-gray-700 text-white hover:bg-gray-600' : 'bg-white text-[#0F172A] hover:bg-[#F1F5F9] border border-[#E2E8F0]'
               }`}
             >
               View All Services

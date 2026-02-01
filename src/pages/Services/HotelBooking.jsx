@@ -29,7 +29,7 @@ const HotelBooking = () => {
       className={`transition-colors duration-500 ${
       isDarkMode
         ? 'bg-linear-to-b from-[#0B0C0E] to-[#0F1419] text-[#E0E7EE]'
-        : 'bg-linear-to-b from-white to-[#F8FAFB] text-[#1F2937]'
+        : 'bg-linear-to-b from-[#F8FAFC] to-white text-[#0F172A]'
     }`}
     >
 
@@ -61,7 +61,7 @@ const HotelBooking = () => {
       {/* Categories */}
       <div className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Hotel Categories in Northern Pakistan
           </h2>
 
@@ -70,23 +70,23 @@ const HotelBooking = () => {
               <div
                 key={category.id}
                 className={`p-8 rounded-xl ${
-                  isDarkMode ? 'bg-gray-800' : 'bg-white'
+                  isDarkMode ? 'bg-gray-800' : 'bg-white border border-[#E2E8F0]'
                 } shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2`}
               >
-                <h3 className={`text-2xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                <h3 className={`text-2xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                   {category.name}
                 </h3>
                 <div className="text-2xl font-bold text-blue-600 mb-4">
                   {category.priceRange}
                 </div>
-                <p className={`mb-6 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                <p className={`mb-6 ${isDarkMode ? 'text-gray-300' : 'text-[#475569]'}`}>
                   {category.description}
                 </p>
                 <ul className="space-y-2">
                   {category.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2">
                       <span className="text-blue-600">✓</span>
-                      <span className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}>
+                      <span className={isDarkMode ? 'text-gray-300' : 'text-[#475569]'}>
                         {feature}
                       </span>
                     </li>
@@ -97,17 +97,17 @@ const HotelBooking = () => {
           </div>
 
           {/* Filters */}
-          <div className={`p-6 rounded-xl mb-8 ${isDarkMode ? 'bg-gray-800' : 'bg-white'} shadow-md`}>
+          <div className={`p-6 rounded-xl mb-8 ${isDarkMode ? 'bg-gray-800' : 'bg-white border border-[#E2E8F0]'} shadow-md`}>
             <div className="flex flex-wrap gap-4 items-center">
               <div>
-                <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                   Category
                 </label>
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
                   className={`px-4 py-2 rounded-lg ${
-                    isDarkMode ? 'bg-gray-700 text-white' : 'bg-gray-100 text-gray-900'
+                    isDarkMode ? 'bg-gray-700 text-white' : 'bg-[#F8FAFC] text-[#0F172A]'
                   }`}
                 >
                   <option value="all">All Categories</option>
@@ -117,14 +117,14 @@ const HotelBooking = () => {
                 </select>
               </div>
               <div>
-                <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                   Location
                 </label>
                 <select
                   value={selectedLocation}
                   onChange={(e) => setSelectedLocation(e.target.value)}
                   className={`px-4 py-2 rounded-lg ${
-                    isDarkMode ? 'bg-gray-700 text-white' : 'bg-gray-100 text-gray-900'
+                    isDarkMode ? 'bg-gray-700 text-white' : 'bg-[#F8FAFC] text-[#0F172A]'
                   }`}
                 >
                   {locations.map(loc => (
@@ -138,7 +138,7 @@ const HotelBooking = () => {
           </div>
 
           {/* Featured Properties */}
-          <h2 className={`text-3xl font-bold mb-8 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-3xl font-bold mb-8 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Featured Hotels and Resorts
           </h2>
 
@@ -147,7 +147,7 @@ const HotelBooking = () => {
               <div
                 key={property.id}
                 className={`rounded-xl overflow-hidden ${
-                  isDarkMode ? 'bg-gray-800' : 'bg-white'
+                  isDarkMode ? 'bg-gray-800' : 'bg-white border border-[#E2E8F0]'
                 } shadow-lg hover:shadow-xl transition-all`}
               >
                 <div className="h-64 bg-cover bg-center" style={{ backgroundImage: `url('${property.image}')` }}></div>
@@ -155,10 +155,10 @@ const HotelBooking = () => {
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className={`text-xl font-bold mb-1 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                      <h3 className={`text-xl font-bold mb-1 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                         {property.name}
                       </h3>
-                      <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                      <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-[#475569]'}`}>
                         📍 {property.location}
                       </p>
                     </div>
@@ -174,16 +174,16 @@ const HotelBooking = () => {
                   <div className="flex items-center gap-4 mb-4">
                     <div className="flex items-center gap-1">
                       <span className="text-yellow-500">⭐</span>
-                      <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                      <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                         {property.rating}
                       </span>
                     </div>
-                    <span className={isDarkMode ? 'text-gray-400' : 'text-gray-600'}>
+                    <span className={isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}>
                       ({property.reviews} reviews)
                     </span>
                   </div>
 
-                  <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                  <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-[#475569]'}`}>
                     {property.description}
                   </p>
 
@@ -192,7 +192,7 @@ const HotelBooking = () => {
                       <span
                         key={idx}
                         className={`px-3 py-1 rounded-full text-xs ${
-                          isDarkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-700'
+                          isDarkMode ? 'bg-gray-700 text-gray-300' : 'bg-[#F8FAFC] text-[#475569]'
                         }`}
                       >
                         {amenity}
@@ -205,7 +205,7 @@ const HotelBooking = () => {
                       <div className="text-3xl font-bold text-blue-600">
                         ${property.price}
                       </div>
-                      <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                      <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-[#64748B]'}`}>
                         per night
                       </div>
                     </div>
@@ -226,7 +226,7 @@ const HotelBooking = () => {
       {/* Booking Process */}
       <div className={`py-16 px-4 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
         <div className="max-w-6xl mx-auto">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-3xl font-bold text-center mb-12 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Easy Booking Process
           </h2>
 
@@ -236,10 +236,10 @@ const HotelBooking = () => {
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-600 flex items-center justify-center text-white text-xl font-bold">
                   {step.step}
                 </div>
-                <h3 className={`text-lg font-semibold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                <h3 className={`text-lg font-semibold mb-2 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
                   {step.title}
                 </h3>
-                <p className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}>
+                <p className={isDarkMode ? 'text-gray-300' : 'text-[#475569]'}>
                   {step.desc}
                 </p>
               </div>
@@ -251,10 +251,10 @@ const HotelBooking = () => {
       {/* CTA */}
       <div className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-[#0F172A]'}`}>
             Need Help Choosing?
           </h2>
-          <p className={`text-lg mb-8 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+          <p className={`text-lg mb-8 ${isDarkMode ? 'text-gray-300' : 'text-[#475569]'}`}>
             Our team can help you find the perfect accommodation for your journey
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
@@ -267,7 +267,7 @@ const HotelBooking = () => {
             <Link
               to="/contact"
               className={`px-8 py-3 rounded-lg font-semibold transition-colors ${
-                isDarkMode ? 'bg-gray-700 text-white hover:bg-gray-600' : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
+                isDarkMode ? 'bg-gray-700 text-white hover:bg-gray-600' : 'bg-[#F8FAFC] text-[#0F172A] hover:bg-[#E2E8F0]'
               }`}
             >
               Contact Us

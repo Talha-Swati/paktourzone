@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { getNavItems } from '../../data/navigationData';
 import ThemeSelector from './ThemeSelector';
 
-const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen, themeMode, setThemeMode, themeDropdownOpen, setThemeDropdownOpen, themeDropdownRef }) => {
+const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen, setThemeMode }) => {
   const navItems = getNavItems();
   const [openDropdowns, setOpenDropdowns] = useState({});
   const location = useLocation();
@@ -16,7 +16,7 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen, themeMode, setT
   };
 
   return (
-    <header className={`sticky top-0 z-50 border-b backdrop-blur-xl shadow-lg transition-colors duration-500 ${
+    <header className={`fixed top-0 left-0 right-0 z-50 w-full border-b backdrop-blur-xl shadow-lg transition-colors duration-500 ${
       isDarkMode
         ? 'border-[rgba(30,36,43,0.5)] bg-[rgba(11,12,14,0.98)]'
         : 'border-[rgba(59,130,246,0.2)] bg-[rgba(255,255,255,0.95)]'
@@ -106,11 +106,7 @@ const Navbar = ({ isDarkMode, mobileMenuOpen, setMobileMenuOpen, themeMode, setT
           
           <ThemeSelector 
             isDarkMode={isDarkMode}
-            themeMode={themeMode}
             setThemeMode={setThemeMode}
-            themeDropdownOpen={themeDropdownOpen}
-            setThemeDropdownOpen={setThemeDropdownOpen}
-            themeDropdownRef={themeDropdownRef}
           />
           
           <button 

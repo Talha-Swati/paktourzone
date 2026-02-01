@@ -139,14 +139,14 @@ const About = () => {
               >
                 About PakTourZone
               </h1>
-              <p className={`text-lg md:text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+              <p className={`text-lg md:text-xl mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
                 Local experts creating safe, memorable journeys for international travelers since 2016
               </p>
 
               {/* Quote */}
-              <div className={`relative p-8 rounded-xl ${isDarkMode ? 'bg-[#141A1F]' : 'bg-white'} max-w-3xl mx-auto`}>
+              <div className={`relative p-8 rounded-xl ${isDarkMode ? 'bg-[#141A1F]' : 'bg-white border border-[#E2E8F0]'} max-w-3xl mx-auto`}>
                 <FaQuoteLeft className={`absolute top-4 left-4 text-3xl ${isDarkMode ? 'text-[#22D3EE]/20' : 'text-[#3B82F6]/20'}`} />
-                <p className={`text-xl italic ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                <p className={`text-xl italic ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                   "We believe every journey should be more than just a trip, it should be a transformative experience that connects you with nature, culture, and yourself."
                 </p>
                 <p className={`mt-4 font-semibold ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>
@@ -158,20 +158,20 @@ const About = () => {
         </section>
 
         {/* Stats Section */}
-        <section className={`py-16 ${isDarkMode ? 'bg-[#0F1419]' : 'bg-gray-50'}`}>
+        <section className={`py-16 ${isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F8FAFC]'}`}>
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {stats.map((stat, idx) => (
                 <div
                   key={idx}
                   className={`text-center p-6 rounded-xl ${
-                    isDarkMode ? 'bg-[#141A1F]' : 'bg-white'
+                    isDarkMode ? 'bg-[#141A1F]' : 'bg-white border border-[#E2E8F0]'
                   }`}
                 >
                   <div className={`text-4xl font-bold mb-2 ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>
                     {stat.number}
                   </div>
-                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#6B7280]'}`}>
+                  <div className={`text-sm ${isDarkMode ? 'text-[#8B949E]' : 'text-[#475569]'}`}>
                     {stat.label}
                   </div>
                 </div>
@@ -184,10 +184,10 @@ const About = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                 Our Story
               </h2>
-              <div className={`space-y-6 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'} text-lg leading-relaxed`}>
+              <div className={`space-y-6 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'} text-lg leading-relaxed`}>
                 <p>
                   PakTourZone was born from a simple yet powerful vision, to share the breathtaking beauty of Northern Pakistan with the world. What started as a passion project by three friends who loved adventure and exploration has grown into one of Pakistan's most trusted tour operators.
                 </p>
@@ -206,9 +206,9 @@ const About = () => {
         </section>
 
         {/* Team Section */}
-        <section className={`py-16 ${isDarkMode ? 'bg-[#0F1419]' : 'bg-gray-50'}`}>
+        <section className={`py-16 ${isDarkMode ? 'bg-[#0F1419]' : 'bg-[#F8FAFC]'}`}>
           <div className="container mx-auto px-4">
-            <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+            <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
               Meet Our Leadership Team
             </h2>
 
@@ -217,7 +217,7 @@ const About = () => {
                 <div
                   key={member.id}
                   className={`rounded-2xl overflow-hidden ${
-                    isDarkMode ? 'bg-[#141A1F]' : 'bg-white'
+                    isDarkMode ? 'bg-[#141A1F]' : 'bg-white border border-[#E2E8F0]'
                   } shadow-xl`}
                 >
                   <div className="md:flex">
@@ -232,20 +232,20 @@ const About = () => {
 
                     {/* Content */}
                     <div className="md:w-2/3 p-8">
-                      <h3 className={`text-2xl md:text-3xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                      <h3 className={`text-2xl md:text-3xl font-bold mb-2 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                         {member.name}
                       </h3>
                       <p className={`text-lg font-semibold mb-4 ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>
                         {member.position}
                       </p>
 
-                      <p className={`mb-6 leading-relaxed ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                      <p className={`mb-6 leading-relaxed ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                         {member.bio}
                       </p>
 
                       {/* Expertise */}
                       <div className="mb-6">
-                        <h4 className={`font-semibold mb-3 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                        <h4 className={`font-semibold mb-3 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                           Areas of Expertise
                         </h4>
                         <div className="flex flex-wrap gap-2">
@@ -255,7 +255,7 @@ const About = () => {
                               className={`px-3 py-1 rounded-full text-sm ${
                                 isDarkMode
                                   ? 'bg-[#22D3EE]/10 text-[#22D3EE]'
-                                  : 'bg-blue-50 text-[#3B82F6]'
+                                  : 'bg-blue-50 text-[#2563EB]'
                               }`}
                             >
                               {skill}
@@ -266,10 +266,10 @@ const About = () => {
 
                       {/* Achievements */}
                       <div>
-                        <h4 className={`font-semibold mb-3 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                        <h4 className={`font-semibold mb-3 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                           Key Achievements
                         </h4>
-                        <ul className={`space-y-2 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                        <ul className={`space-y-2 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                           {member.achievements.map((achievement, idx) => (
                             <li key={idx} className="flex items-start gap-2">
                               <span className={`mt-1 ${isDarkMode ? 'text-[#22D3EE]' : 'text-[#3B82F6]'}`}>✓</span>
@@ -289,7 +289,7 @@ const About = () => {
         {/* Company Values */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+            <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
               Our Core Values
             </h2>
 
@@ -300,7 +300,7 @@ const About = () => {
                   className={`p-6 rounded-xl text-center transition-all duration-300 hover:shadow-xl ${
                     isDarkMode
                       ? 'bg-[#141A1F] hover:bg-[#1A2129]'
-                      : 'bg-white hover:bg-gray-50'
+                      : 'bg-white border border-[#E2E8F0] hover:bg-[#F8FAFC]'
                   }`}
                 >
                   <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 ${
@@ -310,10 +310,10 @@ const About = () => {
                       {value.icon}
                     </div>
                   </div>
-                  <h3 className={`text-xl font-bold mb-3 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+                  <h3 className={`text-xl font-bold mb-3 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
                     {value.title}
                   </h3>
-                  <p className={`${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+                  <p className={`${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#374151]'}`}>
                     {value.description}
                   </p>
                 </div>
@@ -325,14 +325,14 @@ const About = () => {
         {/* Call to Action */}
         <section
           className={`py-16 ${
-            isDarkMode ? 'bg-linear-to-r from-[#0F1419] to-[#141A1F]' : 'bg-linear-to-r from-gray-50 to-blue-50'
+            isDarkMode ? 'bg-linear-to-r from-[#0F1419] to-[#141A1F]' : 'bg-linear-to-r from-[#F8FAFC] to-[#EFF6FF]'
           }`}
         >
           <div className="container mx-auto px-4 text-center">
-            <h2 className={`text-3xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+            <h2 className={`text-3xl font-bold mb-4 ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
               Ready to Start Your Adventure?
             </h2>
-            <p className={`text-lg mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#4A5568]'}`}>
+            <p className={`text-lg mb-8 ${isDarkMode ? 'text-[#C4CCD4]' : 'text-[#475569]'}`}>
               Join thousands of satisfied travelers and explore Northern Pakistan with us
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
@@ -351,7 +351,7 @@ const About = () => {
                 className={`inline-block px-8 py-4 rounded-lg font-bold transition-all duration-300 border-2 ${
                   isDarkMode
                     ? 'border-[#22D3EE] text-[#22D3EE] hover:bg-[#22D3EE] hover:text-[#0B0C0E]'
-                    : 'border-[#3B82F6] text-[#3B82F6] hover:bg-[#3B82F6] hover:text-white'
+                    : 'border-[#2563EB] text-[#1D4ED8] hover:bg-[#2563EB] hover:text-white'
                 }`}
               >
                 Contact Us

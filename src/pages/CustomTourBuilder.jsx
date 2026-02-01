@@ -117,14 +117,14 @@ const CustomTourBuilder = () => {
 
   const renderStep1 = () => (
     <div className="space-y-6">
-      <h2 className={`text-2xl font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+      <h2 className={`text-2xl font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
         Step 1, Choose Destination and Dates
       </h2>
 
       {/* Destination Selection */}
       <div>
         <label className={`mb-3 block text-sm font-semibold ${
-          isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+          isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
         }`}>
           <FaMapMarkerAlt className="mr-2 inline text-[#22D3EE]" />
           Select Destination *
@@ -140,7 +140,7 @@ const CustomTourBuilder = () => {
                   ? 'bg-[#22D3EE] text-white shadow-lg scale-105'
                   : isDarkMode
                     ? 'bg-[#0B0C0E] text-[#C9D6DF] hover:bg-gray-800'
-                    : 'bg-gray-100 text-[#4B5563] hover:bg-gray-200'
+                    : 'bg-[#F8FAFC] text-[#475569] hover:bg-[#E2E8F0]'
               }`}
             >
               <div className="mb-2 text-2xl">{dest.icon}</div>
@@ -154,7 +154,7 @@ const CustomTourBuilder = () => {
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
           <label className={`mb-3 block text-sm font-semibold ${
-            isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+            isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
           }`}>
             <FaCalendar className="mr-2 inline text-[#22D3EE]" />
             Trip Duration *
@@ -165,7 +165,7 @@ const CustomTourBuilder = () => {
             className={`w-full rounded-lg border px-4 py-3 ${
               isDarkMode
                 ? 'bg-[#0B0C0E] border-gray-700 text-[#E0E7EE]'
-                : 'bg-white border-gray-300 text-[#1F2937]'
+                : 'bg-white border-[#CBD5E1] text-[#0F172A]'
             }`}
           >
             <option value="3">3 Days / 2 Nights</option>
@@ -179,7 +179,7 @@ const CustomTourBuilder = () => {
 
         <div>
           <label className={`mb-3 block text-sm font-semibold ${
-            isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+            isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
           }`}>
             <FaCalendar className="mr-2 inline text-[#22D3EE]" />
             Preferred Start Date
@@ -192,7 +192,7 @@ const CustomTourBuilder = () => {
             className={`w-full rounded-lg border px-4 py-3 ${
               isDarkMode
                 ? 'bg-[#0B0C0E] border-gray-700 text-[#E0E7EE] scheme-dark'
-                : 'bg-white border-gray-300 text-[#1F2937]'
+                : 'bg-white border-[#CBD5E1] text-[#0F172A]'
             }`}
           />
         </div>
@@ -201,7 +201,7 @@ const CustomTourBuilder = () => {
       {/* Group Size */}
       <div>
         <label className={`mb-3 block text-sm font-semibold ${
-          isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+          isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
         }`}>
           <FaUsers className="mr-2 inline text-[#22D3EE]" />
           Number of Travelers *
@@ -217,7 +217,7 @@ const CustomTourBuilder = () => {
                   ? 'bg-[#22D3EE] text-white scale-110'
                   : isDarkMode
                     ? 'bg-[#0B0C0E] text-[#C9D6DF] hover:bg-gray-800'
-                    : 'bg-gray-100 text-[#4B5563] hover:bg-gray-200'
+                    : 'bg-[#F8FAFC] text-[#475569] hover:bg-[#E2E8F0]'
               }`}
             >
               {size}
@@ -235,14 +235,14 @@ const CustomTourBuilder = () => {
 
   const renderStep2 = () => (
     <div className="space-y-6">
-      <h2 className={`text-2xl font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+      <h2 className={`text-2xl font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
         Step 2, Customize Your Pakistan Tour
       </h2>
 
       {/* Accommodation */}
       <div>
         <label className={`mb-3 block text-sm font-semibold ${
-          isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+          isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
         }`}>
           <FaHotel className="mr-2 inline text-[#22D3EE]" />
           Accommodation Level *
@@ -263,7 +263,7 @@ const CustomTourBuilder = () => {
                   ? 'bg-[#22D3EE] text-white shadow-lg'
                   : isDarkMode
                     ? 'bg-[#0B0C0E] text-[#C9D6DF] hover:bg-gray-800 border border-gray-700'
-                    : 'bg-white text-[#4B5563] hover:bg-gray-50 border border-gray-200'
+                    : 'bg-white text-[#475569] hover:bg-[#F8FAFC] border border-[#E2E8F0]'
               }`}
             >
               <div className="font-bold">{option.label}</div>
@@ -276,7 +276,7 @@ const CustomTourBuilder = () => {
       {/* Transportation */}
       <div>
         <label className={`mb-3 block text-sm font-semibold ${
-          isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+          isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
         }`}>
           <FaCar className="mr-2 inline text-[#22D3EE]" />
           Transportation *
@@ -296,7 +296,7 @@ const CustomTourBuilder = () => {
                   ? 'bg-[#22D3EE] text-white shadow-lg'
                   : isDarkMode
                     ? 'bg-[#0B0C0E] text-[#C9D6DF] hover:bg-gray-800 border border-gray-700'
-                    : 'bg-white text-[#4B5563] hover:bg-gray-50 border border-gray-200'
+                    : 'bg-white text-[#475569] hover:bg-[#F8FAFC] border border-[#E2E8F0]'
               }`}
             >
               <div className="font-bold">{option.label}</div>
@@ -309,7 +309,7 @@ const CustomTourBuilder = () => {
       {/* Meals */}
       <div>
         <label className={`mb-3 block text-sm font-semibold ${
-          isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+          isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
         }`}>
           <FaUtensils className="mr-2 inline text-[#22D3EE]" />
           Meal Plan *
@@ -329,7 +329,7 @@ const CustomTourBuilder = () => {
                   ? 'bg-[#22D3EE] text-white shadow-lg'
                   : isDarkMode
                     ? 'bg-[#0B0C0E] text-[#C9D6DF] hover:bg-gray-800 border border-gray-700'
-                    : 'bg-white text-[#4B5563] hover:bg-gray-50 border border-gray-200'
+                    : 'bg-white text-[#475569] hover:bg-[#F8FAFC] border border-[#E2E8F0]'
               }`}
             >
               <div className="font-bold">{option.label}</div>
@@ -342,7 +342,7 @@ const CustomTourBuilder = () => {
       {/* Activities */}
       <div>
         <label className={`mb-3 block text-sm font-semibold ${
-          isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+          isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
         }`}>
           Select Activities (Optional)
         </label>
@@ -357,7 +357,7 @@ const CustomTourBuilder = () => {
                   ? 'bg-[#22D3EE] text-white shadow-lg scale-105'
                   : isDarkMode
                     ? 'bg-[#0B0C0E] text-[#C9D6DF] hover:bg-gray-800 border border-gray-700'
-                    : 'bg-white text-[#4B5563] hover:bg-gray-50 border border-gray-200'
+                    : 'bg-white text-[#475569] hover:bg-[#F8FAFC] border border-[#E2E8F0]'
               }`}
             >
               <div className="mb-2 text-2xl">
@@ -373,19 +373,19 @@ const CustomTourBuilder = () => {
 
   const renderStep3 = () => (
     <div className="space-y-6">
-      <h2 className={`text-2xl font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+      <h2 className={`text-2xl font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
         Step 3, Contact and Preferences
       </h2>
 
       {/* Personal Information */}
       <div>
-        <h4 className={`mb-4 text-lg font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+        <h4 className={`mb-4 text-lg font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
           Personal Information
         </h4>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div>
             <label className={`mb-2 block text-sm font-semibold ${
-              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
             }`}>
               Full Name *
             </label>
@@ -398,14 +398,14 @@ const CustomTourBuilder = () => {
               className={`w-full rounded-lg border px-4 py-3 ${
                 isDarkMode
                   ? 'bg-[#0B0C0E] border-gray-700 text-[#E0E7EE]'
-                  : 'bg-white border-gray-300 text-[#1F2937]'
+                  : 'bg-white border-[#CBD5E1] text-[#0F172A]'
               }`}
             />
           </div>
 
           <div>
             <label className={`mb-2 block text-sm font-semibold ${
-              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
             }`}>
               Email Address *
             </label>
@@ -418,14 +418,14 @@ const CustomTourBuilder = () => {
               className={`w-full rounded-lg border px-4 py-3 ${
                 isDarkMode
                   ? 'bg-[#0B0C0E] border-gray-700 text-[#E0E7EE]'
-                  : 'bg-white border-gray-300 text-[#1F2937]'
+                  : 'bg-white border-[#CBD5E1] text-[#0F172A]'
               }`}
             />
           </div>
 
           <div>
             <label className={`mb-2 block text-sm font-semibold ${
-              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
             }`}>
               Phone Number *
             </label>
@@ -438,14 +438,14 @@ const CustomTourBuilder = () => {
               className={`w-full rounded-lg border px-4 py-3 ${
                 isDarkMode
                   ? 'bg-[#0B0C0E] border-gray-700 text-[#E0E7EE]'
-                  : 'bg-white border-gray-300 text-[#1F2937]'
+                  : 'bg-white border-[#CBD5E1] text-[#0F172A]'
               }`}
             />
           </div>
 
           <div>
             <label className={`mb-2 block text-sm font-semibold ${
-              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
             }`}>
               Age *
             </label>
@@ -460,14 +460,14 @@ const CustomTourBuilder = () => {
               className={`w-full rounded-lg border px-4 py-3 ${
                 isDarkMode
                   ? 'bg-[#0B0C0E] border-gray-700 text-[#E0E7EE]'
-                  : 'bg-white border-gray-300 text-[#1F2937]'
+                  : 'bg-white border-[#CBD5E1] text-[#0F172A]'
               }`}
             />
           </div>
 
           <div>
             <label className={`mb-2 block text-sm font-semibold ${
-              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
             }`}>
               Country of Residence *
             </label>
@@ -480,14 +480,14 @@ const CustomTourBuilder = () => {
               className={`w-full rounded-lg border px-4 py-3 ${
                 isDarkMode
                   ? 'bg-[#0B0C0E] border-gray-700 text-[#E0E7EE]'
-                  : 'bg-white border-gray-300 text-[#1F2937]'
+                  : 'bg-white border-[#CBD5E1] text-[#0F172A]'
               }`}
             />
           </div>
 
           <div>
             <label className={`mb-2 block text-sm font-semibold ${
-              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
             }`}>
               Nationality *
             </label>
@@ -500,7 +500,7 @@ const CustomTourBuilder = () => {
               className={`w-full rounded-lg border px-4 py-3 ${
                 isDarkMode
                   ? 'bg-[#0B0C0E] border-gray-700 text-[#E0E7EE]'
-                  : 'bg-white border-gray-300 text-[#1F2937]'
+                  : 'bg-white border-[#CBD5E1] text-[#0F172A]'
               }`}
             />
           </div>
@@ -509,13 +509,13 @@ const CustomTourBuilder = () => {
 
       {/* Travel Information */}
       <div>
-        <h4 className={`mb-4 text-lg font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+        <h4 className={`mb-4 text-lg font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
           Travel Information
         </h4>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div>
             <label className={`mb-2 block text-sm font-semibold ${
-              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
             }`}>
               Arrival City in Pakistan *
             </label>
@@ -526,7 +526,7 @@ const CustomTourBuilder = () => {
               className={`w-full rounded-lg border px-4 py-3 ${
                 isDarkMode
                   ? 'bg-[#0B0C0E] border-gray-700 text-[#E0E7EE]'
-                  : 'bg-white border-gray-300 text-[#1F2937]'
+                  : 'bg-white border-[#CBD5E1] text-[#0F172A]'
               }`}
             >
               <option value="">Select arrival city</option>
@@ -541,7 +541,7 @@ const CustomTourBuilder = () => {
 
           <div>
             <label className={`mb-2 block text-sm font-semibold ${
-              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
             }`}>
               Have you visited Pakistan before? *
             </label>
@@ -552,7 +552,7 @@ const CustomTourBuilder = () => {
               className={`w-full rounded-lg border px-4 py-3 ${
                 isDarkMode
                   ? 'bg-[#0B0C0E] border-gray-700 text-[#E0E7EE]'
-                  : 'bg-white border-gray-300 text-[#1F2937]'
+                  : 'bg-white border-[#CBD5E1] text-[#0F172A]'
               }`}
             >
               <option value="no">No, First Time</option>
@@ -562,7 +562,7 @@ const CustomTourBuilder = () => {
 
           <div>
             <label className={`mb-2 block text-sm font-semibold ${
-              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
             }`}>
               Do you have Travel Insurance? *
             </label>
@@ -573,7 +573,7 @@ const CustomTourBuilder = () => {
               className={`w-full rounded-lg border px-4 py-3 ${
                 isDarkMode
                   ? 'bg-[#0B0C0E] border-gray-700 text-[#E0E7EE]'
-                  : 'bg-white border-gray-300 text-[#1F2937]'
+                  : 'bg-white border-[#CBD5E1] text-[#0F172A]'
               }`}
             >
               <option value="no">No</option>
@@ -586,13 +586,13 @@ const CustomTourBuilder = () => {
 
       {/* Emergency Contact */}
       <div>
-        <h4 className={`mb-4 text-lg font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+        <h4 className={`mb-4 text-lg font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
           Emergency Contact Information
         </h4>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div>
             <label className={`mb-2 block text-sm font-semibold ${
-              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
             }`}>
               Emergency Contact Name *
             </label>
@@ -605,14 +605,14 @@ const CustomTourBuilder = () => {
               className={`w-full rounded-lg border px-4 py-3 ${
                 isDarkMode
                   ? 'bg-[#0B0C0E] border-gray-700 text-[#E0E7EE]'
-                  : 'bg-white border-gray-300 text-[#1F2937]'
+                  : 'bg-white border-[#CBD5E1] text-[#0F172A]'
               }`}
             />
           </div>
 
           <div>
             <label className={`mb-2 block text-sm font-semibold ${
-              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
             }`}>
               Emergency Contact Phone *
             </label>
@@ -625,7 +625,7 @@ const CustomTourBuilder = () => {
               className={`w-full rounded-lg border px-4 py-3 ${
                 isDarkMode
                   ? 'bg-[#0B0C0E] border-gray-700 text-[#E0E7EE]'
-                  : 'bg-white border-gray-300 text-[#1F2937]'
+                  : 'bg-white border-[#CBD5E1] text-[#0F172A]'
               }`}
             />
           </div>
@@ -634,13 +634,13 @@ const CustomTourBuilder = () => {
 
       {/* Health & Dietary */}
       <div>
-        <h4 className={`mb-4 text-lg font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+        <h4 className={`mb-4 text-lg font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
           Health & Dietary Information
         </h4>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div>
             <label className={`mb-2 block text-sm font-semibold ${
-              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
             }`}>
               Dietary Restrictions
             </label>
@@ -652,14 +652,14 @@ const CustomTourBuilder = () => {
               className={`w-full rounded-lg border px-4 py-3 ${
                 isDarkMode
                   ? 'bg-[#0B0C0E] border-gray-700 text-[#E0E7EE]'
-                  : 'bg-white border-gray-300 text-[#1F2937]'
+                  : 'bg-white border-[#CBD5E1] text-[#0F172A]'
               }`}
             />
           </div>
 
           <div>
             <label className={`mb-2 block text-sm font-semibold ${
-              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+              isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
             }`}>
               Medical Conditions or Allergies
             </label>
@@ -671,7 +671,7 @@ const CustomTourBuilder = () => {
               className={`w-full rounded-lg border px-4 py-3 ${
                 isDarkMode
                   ? 'bg-[#0B0C0E] border-gray-700 text-[#E0E7EE]'
-                  : 'bg-white border-gray-300 text-[#1F2937]'
+                  : 'bg-white border-[#CBD5E1] text-[#0F172A]'
               }`}
             />
           </div>
@@ -681,7 +681,7 @@ const CustomTourBuilder = () => {
       {/* Additional Requests */}
       <div>
         <label className={`mb-2 block text-sm font-semibold ${
-          isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'
+          isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'
         }`}>
           Special Requests or Additional Information
         </label>
@@ -693,7 +693,7 @@ const CustomTourBuilder = () => {
           className={`w-full rounded-lg border px-4 py-3 ${
             isDarkMode
               ? 'bg-[#0B0C0E] border-gray-700 text-[#E0E7EE]'
-              : 'bg-white border-gray-300 text-[#1F2937]'
+              : 'bg-white border-[#CBD5E1] text-[#0F172A]'
           }`}
         />
       </div>
@@ -704,18 +704,18 @@ const CustomTourBuilder = () => {
           ? 'bg-linear-to-r from-[#0A3A67] to-[#22D3EE]/20' 
           : 'bg-linear-to-r from-blue-50 to-cyan-50'
       }`}>
-        <h3 className={`mb-2 text-xl font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+        <h3 className={`mb-2 text-xl font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
           Estimated Total Price
         </h3>
         <div className="mb-2">
           <span className="text-4xl font-bold text-[#22D3EE]">
             ${estimatedPrice.toLocaleString()}
           </span>
-          <span className={`ml-2 text-sm ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#6B7280]'}`}>
+          <span className={`ml-2 text-sm ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#64748B]'}`}>
             for {formData.groupSize} {parseInt(formData.groupSize) > 1 ? 'people' : 'person'}
           </span>
         </div>
-        <p className={`text-sm ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#6B7280]'}`}>
+        <p className={`text-sm ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#64748B]'}`}>
           * This is an estimated price. Final price will be confirmed after reviewing your requirements.
         </p>
       </div>
@@ -730,16 +730,16 @@ const CustomTourBuilder = () => {
         keywords: 'custom Pakistan tour, tailor-made itinerary, Northern Pakistan travel planner, bespoke tour',
         url: '/custom-tour'
       }}
-      className={`min-h-screen ${isDarkMode ? 'bg-[#0B0C0E]' : 'bg-[#F8FAFB]'}`}
+      className={`min-h-screen ${isDarkMode ? 'bg-[#0B0C0E]' : 'bg-[#F8FAFC]'}`}
     >
 
       <div className="container mx-auto px-4 py-12">
         {/* Header */}
         <div className="mb-8 text-center">
-          <h1 className={`mb-4 text-4xl font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#1F2937]'}`}>
+          <h1 className={`mb-4 text-4xl font-bold ${isDarkMode ? 'text-[#E0E7EE]' : 'text-[#0F172A]'}`}>
             Build Your Custom Tour
           </h1>
-          <p className={`text-lg ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#6B7280]'}`}>
+          <p className={`text-lg ${isDarkMode ? 'text-[#C9D6DF]' : 'text-[#64748B]'}`}>
             Design your perfect adventure tailored to your preferences
           </p>
         </div>
@@ -756,7 +756,7 @@ const CustomTourBuilder = () => {
                         ? 'bg-[#22D3EE] text-white shadow-lg'
                         : isDarkMode
                           ? 'bg-[#0B0C0E] text-[#C9D6DF] border border-gray-700'
-                          : 'bg-gray-200 text-[#6B7280]'
+                          : 'bg-[#F8FAFC] text-[#64748B]'
                     }`}
                   >
                     {stepNum}
@@ -766,14 +766,14 @@ const CustomTourBuilder = () => {
                       ? 'text-[#22D3EE]'
                       : isDarkMode
                         ? 'text-[#C9D6DF]'
-                        : 'text-[#6B7280]'
+                        : 'text-[#64748B]'
                   }`}>
                     {stepNum === 1 ? 'Destination' : stepNum === 2 ? 'Customize' : 'Contact'}
                   </span>
                 </div>
                 {stepNum < 3 && (
                   <div className={`h-1 flex-1 mx-4 ${
-                    step > stepNum ? 'bg-[#22D3EE]' : isDarkMode ? 'bg-gray-700' : 'bg-gray-300'
+                    step > stepNum ? 'bg-[#22D3EE]' : isDarkMode ? 'bg-gray-700' : 'bg-[#E2E8F0]'
                   }`} />
                 )}
               </Fragment>
@@ -799,7 +799,7 @@ const CustomTourBuilder = () => {
                   className={`rounded-lg px-6 py-3 font-semibold transition-all ${
                     isDarkMode
                       ? 'bg-[#0B0C0E] text-[#E0E7EE] hover:bg-gray-800 border border-gray-700'
-                      : 'bg-gray-100 text-[#1F2937] hover:bg-gray-200'
+                      : 'bg-[#F8FAFC] text-[#0F172A] hover:bg-[#E2E8F0]'
                   }`}
                 >
                   Previous
